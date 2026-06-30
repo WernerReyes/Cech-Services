@@ -1,0 +1,19 @@
+
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ComponentCardComponent } from '../../../common/component-card/component-card.component';
+import { CheckboxComponent } from '../../input/checkbox.component';
+
+
+@Component({
+  selector: 'app-checkbox-components',
+  imports: [ComponentCardComponent, CheckboxComponent],
+  templateUrl: './checkbox-components.component.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
+  styles: ``
+})
+export class CheckboxComponentsComponent {
+
+  isChecked = false;
+  isCheckedTwo = true;
+  isCheckedDisabled = false;
+}
