@@ -1,9 +1,8 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   computed,
   inject,
-  signal,
+  signal
 } from "@angular/core";
 import {
   email,
@@ -14,7 +13,6 @@ import {
   submit,
 } from "@angular/forms/signals";
 import { RouterModule } from "@angular/router";
-import { AuthLayout } from "../layout/auth.ayout";
 
 import { ButtonModule } from "primeng/button";
 import { FloatLabelModule } from "primeng/floatlabel";
@@ -27,6 +25,9 @@ import { MessageModule } from "primeng/message";
 import { Envelope } from "@primeicons/angular/envelope";
 import { Eye } from "@primeicons/angular/eye";
 import { EyeSlash } from "@primeicons/angular/eye-slash";
+import { Lock } from "@primeicons/angular/lock";
+import { Spinner } from '@primeicons/angular/spinner';
+
 import { MessageService } from "primeng/api";
 
 const baseFormData = {
@@ -38,7 +39,6 @@ const baseFormData = {
   selector: "app-login-page",
   imports: [
     RouterModule,
-    AuthLayout,
     InputPasswordModule,
     ButtonModule,
     FloatLabelModule,
@@ -49,15 +49,16 @@ const baseFormData = {
     Envelope,
     Eye,
     EyeSlash,
+    Lock,
     FormField,
+    Spinner,
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: "./login.page.html",
 })
 export class LoginPage {
   private readonly messageService = inject(MessageService);
 
-  readonly mask = signal(true);
+   mask = signal(true);
   readonly model = signal({ ...baseFormData });
 
   readonly form = form(this.model, (path) => {
