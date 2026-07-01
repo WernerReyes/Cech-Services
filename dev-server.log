@@ -1,0 +1,2081 @@
+
+> ng-tailadmin@1.1.0 start
+> ng serve --host 127.0.0.1 --port 4200
+
+[32m✔[0m [33mConsole Ninja[0m extension is connected to [33mAngular[0m, see [36mhttps://tinyurl.com/2vt8jxzw[0m
+> Building...
+√ Building...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZYKISARD.js   | client-page-component |  48.83 kB | 
+
+Application bundle generation complete. [21.226 seconds] - 2026-07-01T19:35:19.780Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m4200[22m/[39m
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.18 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-23DKXL5L.js   | client-page-component | 49.02 kB | 
+
+Application bundle generation complete. [12.448 seconds] - 2026-07-01T19:37:15.897Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.18 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-FZAZSHL6.js   | client-page-component | 43.03 kB | 
+
+Application bundle generation complete. [4.785 seconds] - 2026-07-01T19:37:20.713Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.18 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-WAEFF7Y5.js   | client-page-component | 42.96 kB | 
+
+Application bundle generation complete. [3.947 seconds] - 2026-07-01T19:37:51.901Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.18 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-IPEUVXLE.js   | client-page-component | 41.08 kB | 
+
+Application bundle generation complete. [3.493 seconds] - 2026-07-01T19:38:38.460Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.18 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-7M4LQQFW.js   | client-page-component | 40.90 kB | 
+
+Application bundle generation complete. [3.411 seconds] - 2026-07-01T19:40:13.629Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.18 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-LYARMO2D.js   | client-page-component | 40.90 kB | 
+
+Application bundle generation complete. [3.721 seconds] - 2026-07-01T19:40:17.780Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.437 seconds] - 2026-07-01T19:44:49.766Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.989 seconds] - 2026-07-01T19:44:52.782Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZXW6WIBQ.js   | client-page-component |  40.84 kB | 
+
+Application bundle generation complete. [3.673 seconds] - 2026-07-01T19:44:56.480Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.623 seconds] - 2026-07-01T19:45:01.981Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.508 seconds] - 2026-07-01T19:45:11.497Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-Q2CAEA2C.js   | client-page-component |  40.88 kB | 
+
+Application bundle generation complete. [4.416 seconds] - 2026-07-01T19:45:15.939Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.298 seconds] - 2026-07-01T19:45:20.263Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.923 seconds] - 2026-07-01T19:45:24.204Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.069 seconds] - 2026-07-01T19:45:27.304Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.931 seconds] - 2026-07-01T19:45:29.256Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.493 seconds] - 2026-07-01T19:46:17.619Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.071 seconds] - 2026-07-01T19:46:23.608Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.217 seconds] - 2026-07-01T19:46:26.178Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.963 seconds] - 2026-07-01T19:46:28.155Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.058 seconds] - 2026-07-01T19:46:30.433Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.718 seconds] - 2026-07-01T19:46:32.161Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.796 seconds] - 2026-07-01T19:46:42.988Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-AAD2WW53.js   | client-page-component |  41.03 kB | 
+
+Application bundle generation complete. [3.800 seconds] - 2026-07-01T19:46:46.804Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.18 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-B2OGXH7M.js   | client-page-component | 41.03 kB | 
+
+Application bundle generation complete. [3.608 seconds] - 2026-07-01T19:47:20.076Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.763 seconds] - 2026-07-01T19:47:24.885Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.368 seconds] - 2026-07-01T19:47:27.265Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.019 seconds] - 2026-07-01T19:47:29.298Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.168 seconds] - 2026-07-01T19:47:36.117Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.275 seconds] - 2026-07-01T19:47:39.341Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.355 seconds] - 2026-07-01T19:47:41.709Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.560 seconds] - 2026-07-01T19:47:43.291Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-FRDQYX4J.js   | client-page-component |  41.31 kB | 
+
+Application bundle generation complete. [3.544 seconds] - 2026-07-01T19:48:24.040Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.194 seconds] - 2026-07-01T19:48:37.706Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.170 seconds] - 2026-07-01T19:48:42.969Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-PJBX4QOL.js   | client-page-component |  41.33 kB | 
+
+Application bundle generation complete. [3.430 seconds] - 2026-07-01T19:48:46.416Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-PJBX4QOL.js   | client-page-component |  41.33 kB | 
+
+Application bundle generation complete. [1.898 seconds] - 2026-07-01T19:48:48.333Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.251 seconds] - 2026-07-01T19:49:00.109Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-2IRHZSJX.js   | client-page-component |  41.33 kB | 
+
+Application bundle generation complete. [2.953 seconds] - 2026-07-01T19:49:03.071Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.328 seconds] - 2026-07-01T19:49:58.670Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-HTEEYRUO.js   | client-page-component |  41.35 kB | 
+
+Application bundle generation complete. [4.301 seconds] - 2026-07-01T19:50:05.678Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.18 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-TRIPONZK.js   | client-page-component | 41.35 kB | 
+
+Application bundle generation complete. [5.489 seconds] - 2026-07-01T19:50:11.203Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [7.172 seconds] - 2026-07-01T19:50:18.409Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.350 seconds] - 2026-07-01T19:50:20.777Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.815 seconds] - 2026-07-01T19:50:23.690Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.145 seconds] - 2026-07-01T19:51:03.738Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.996 seconds] - 2026-07-01T19:51:05.750Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-PJBX4QOL.js   | client-page-component |  41.33 kB | 
+
+Application bundle generation complete. [3.211 seconds] - 2026-07-01T19:51:09.916Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.385 seconds] - 2026-07-01T19:51:12.333Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.008 seconds] - 2026-07-01T19:51:17.532Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.901 seconds] - 2026-07-01T19:51:24.157Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.750 seconds] - 2026-07-01T19:51:32.084Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.073 seconds] - 2026-07-01T19:51:37.066Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.752 seconds] - 2026-07-01T19:51:41.081Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.756 seconds] - 2026-07-01T19:52:04.093Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.046 seconds] - 2026-07-01T19:52:12.301Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.011 seconds] - 2026-07-01T19:52:15.256Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-MPF4DKYU.js   | client-page-component |  41.46 kB | 
+
+Application bundle generation complete. [2.722 seconds] - 2026-07-01T19:52:19.470Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.026 seconds] - 2026-07-01T19:52:26.445Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.349 seconds] - 2026-07-01T19:52:34.275Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.907 seconds] - 2026-07-01T19:52:36.197Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.344 seconds] - 2026-07-01T19:52:39.122Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.168 seconds] - 2026-07-01T19:52:41.309Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.851 seconds] - 2026-07-01T19:52:43.171Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.316 seconds] - 2026-07-01T19:52:45.708Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-MPF4DKYU.js   | client-page-component |  41.46 kB | 
+
+Application bundle generation complete. [2.313 seconds] - 2026-07-01T19:52:48.039Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-MPF4DKYU.js   | client-page-component |  41.46 kB | 
+
+Application bundle generation complete. [2.497 seconds] - 2026-07-01T19:52:50.551Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.18 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-6NC3UAKH.js   | client-page-component | 41.42 kB | 
+
+Application bundle generation complete. [2.661 seconds] - 2026-07-01T19:53:05.010Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.18 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-YMUYK6TN.js   | client-page-component | 41.42 kB | 
+
+Application bundle generation complete. [2.831 seconds] - 2026-07-01T19:53:34.115Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.18 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-OOANBWUP.js   | client-page-component | 41.42 kB | 
+
+Application bundle generation complete. [5.798 seconds] - 2026-07-01T19:54:30.225Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.18 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-RHUXIJWT.js   | client-page-component | 41.45 kB | 
+
+Application bundle generation complete. [6.572 seconds] - 2026-07-01T19:54:39.218Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-RHUXIJWT.js   | client-page-component |  41.45 kB | 
+
+Application bundle generation complete. [6.413 seconds] - 2026-07-01T19:54:45.662Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.665 seconds] - 2026-07-01T19:54:54.900Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.411 seconds] - 2026-07-01T19:55:01.650Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.351 seconds] - 2026-07-01T19:55:05.784Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.920 seconds] - 2026-07-01T19:55:31.761Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-RHUXIJWT.js   | client-page-component |  41.45 kB | 
+
+Application bundle generation complete. [3.027 seconds] - 2026-07-01T19:55:37.198Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-RHUXIJWT.js   | client-page-component |  41.45 kB | 
+
+Application bundle generation complete. [6.025 seconds] - 2026-07-01T19:56:47.247Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.05 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-RHUXIJWT.js   | client-page-component |  41.45 kB | 
+
+Application bundle generation complete. [2.978 seconds] - 2026-07-01T19:56:50.250Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.542 seconds] - 2026-07-01T20:02:15.676Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [5.299 seconds] - 2026-07-01T20:02:21.277Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.177 seconds] - 2026-07-01T20:02:23.480Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [5.168 seconds] - 2026-07-01T20:02:29.353Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.007 seconds] - 2026-07-01T20:02:30.166Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.008 seconds] - 2026-07-01T20:06:24.383Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.016 seconds] - 2026-07-01T20:11:26.409Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.718 seconds] - 2026-07-01T20:11:39.963Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.191 seconds] - 2026-07-01T20:11:43.176Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.640 seconds] - 2026-07-01T20:11:53.629Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [6.070 seconds] - 2026-07-01T20:13:23.157Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.442 seconds] - 2026-07-01T20:13:39.098Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.809 seconds] - 2026-07-01T20:14:02.012Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.098 seconds] - 2026-07-01T20:14:30.396Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.678 seconds] - 2026-07-01T20:15:43.968Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.876 seconds] - 2026-07-01T20:16:07.834Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.895 seconds] - 2026-07-01T20:16:09.753Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.328 seconds] - 2026-07-01T20:16:48.731Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [5.798 seconds] - 2026-07-01T20:17:02.657Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.256 seconds] - 2026-07-01T20:17:51.966Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.864 seconds] - 2026-07-01T20:21:05.646Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.375 seconds] - 2026-07-01T20:21:08.038Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.897 seconds] - 2026-07-01T20:21:31.741Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.151 seconds] - 2026-07-01T20:22:12.970Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.693 seconds] - 2026-07-01T20:22:19.795Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.126 seconds] - 2026-07-01T20:22:27.863Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.240 seconds] - 2026-07-01T20:22:30.299Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.088 seconds] - 2026-07-01T20:22:42.617Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.216 seconds] - 2026-07-01T20:23:06.599Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.377 seconds] - 2026-07-01T20:23:53.835Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.928 seconds] - 2026-07-01T20:23:55.779Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.863 seconds] - 2026-07-01T20:29:58.520Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.315 seconds] - 2026-07-01T20:33:07.444Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.657 seconds] - 2026-07-01T20:33:10.118Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.517 seconds] - 2026-07-01T20:33:13.361Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.008 seconds] - 2026-07-01T20:33:13.618Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [5.114 seconds] - 2026-07-01T20:33:24.800Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.010 seconds] - 2026-07-01T20:33:26.049Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.188 seconds] - 2026-07-01T20:33:40.538Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.018 seconds] - 2026-07-01T20:33:59.270Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.891 seconds] - 2026-07-01T20:34:02.514Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.836 seconds] - 2026-07-01T20:34:06.929Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.573 seconds] - 2026-07-01T20:34:21.662Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.686 seconds] - 2026-07-01T20:34:24.359Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.933 seconds] - 2026-07-01T20:34:27.308Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.530 seconds] - 2026-07-01T20:34:30.857Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.251 seconds] - 2026-07-01T20:34:35.124Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.807 seconds] - 2026-07-01T20:34:38.950Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.095 seconds] - 2026-07-01T20:34:43.417Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.765 seconds] - 2026-07-01T20:34:54.723Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.313 seconds] - 2026-07-01T20:34:58.678Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.70 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZMH75SHO.js   | client-page-component |  53.52 kB | 
+
+Application bundle generation complete. [10.635 seconds] - 2026-07-01T20:35:09.465Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [6.481 seconds] - 2026-07-01T20:35:16.039Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.170 seconds] - 2026-07-01T20:35:24.847Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.710 seconds] - 2026-07-01T20:35:30.572Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.310 seconds] - 2026-07-01T20:35:35.264Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.507 seconds] - 2026-07-01T20:35:39.943Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [5.046 seconds] - 2026-07-01T20:35:45.084Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.70 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZMH75SHO.js   | client-page-component |  53.52 kB | 
+
+Application bundle generation complete. [5.335 seconds] - 2026-07-01T20:35:50.439Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.70 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZMH75SHO.js   | client-page-component |  53.52 kB | 
+
+Application bundle generation complete. [4.454 seconds] - 2026-07-01T20:35:54.933Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.794 seconds] - 2026-07-01T20:36:00.227Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.549 seconds] - 2026-07-01T20:36:03.795Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.433 seconds] - 2026-07-01T20:36:15.068Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.903 seconds] - 2026-07-01T20:36:18.272Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.231 seconds] - 2026-07-01T20:36:22.516Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.732 seconds] - 2026-07-01T20:36:25.282Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.70 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZMH75SHO.js   | client-page-component |  53.52 kB | 
+
+Application bundle generation complete. [4.255 seconds] - 2026-07-01T20:36:32.486Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [2.477 seconds] - 2026-07-01T20:36:41.158Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [3.132 seconds] - 2026-07-01T20:37:01.307Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.70 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZMH75SHO.js   | client-page-component |  53.52 kB | 
+
+Application bundle generation complete. [2.463 seconds] - 2026-07-01T20:37:03.796Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.861 seconds] - 2026-07-01T20:37:06.805Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.70 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZMH75SHO.js   | client-page-component |  53.52 kB | 
+
+Application bundle generation complete. [5.474 seconds] - 2026-07-01T20:37:12.295Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.297 seconds] - 2026-07-01T20:37:17.193Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.264 seconds] - 2026-07-01T20:37:20.621Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.70 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZMH75SHO.js   | client-page-component |  53.52 kB | 
+
+Application bundle generation complete. [5.352 seconds] - 2026-07-01T20:37:26.557Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [4.336 seconds] - 2026-07-01T20:37:31.109Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.819 seconds] - 2026-07-01T20:37:35.193Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.70 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZMH75SHO.js   | client-page-component |  53.52 kB | 
+
+Application bundle generation complete. [3.274 seconds] - 2026-07-01T20:37:38.485Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [2.887 seconds] - 2026-07-01T20:37:52.259Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.70 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZMH75SHO.js   | client-page-component |  53.52 kB | 
+
+Application bundle generation complete. [3.124 seconds] - 2026-07-01T20:37:55.410Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [2.488 seconds] - 2026-07-01T20:37:58.119Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [2.726 seconds] - 2026-07-01T20:38:10.997Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [2.911 seconds] - 2026-07-01T20:38:17.363Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.659 seconds] - 2026-07-01T20:38:24.332Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.70 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZMH75SHO.js   | client-page-component |  53.52 kB | 
+
+Application bundle generation complete. [5.624 seconds] - 2026-07-01T20:38:29.972Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [5.013 seconds] - 2026-07-01T20:38:35.033Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.70 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZMH75SHO.js   | client-page-component |  53.52 kB | 
+
+Application bundle generation complete. [4.961 seconds] - 2026-07-01T20:38:40.030Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.302 seconds] - 2026-07-01T20:38:43.854Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.523 seconds] - 2026-07-01T20:38:47.572Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.456 seconds] - 2026-07-01T20:38:50.044Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.670 seconds] - 2026-07-01T20:38:56.513Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.16 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.70 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.17 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZMH75SHO.js   | client-page-component |  53.52 kB | 
+
+Application bundle generation complete. [2.554 seconds] - 2026-07-01T20:38:59.091Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [3.415 seconds] - 2026-07-01T20:39:02.708Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.17 MB | 
+
+Application bundle generation complete. [4.404 seconds] - 2026-07-01T20:41:40.485Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.17 MB | 
+
+Application bundle generation complete. [10.107 seconds] - 2026-07-01T20:48:48.508Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.17 MB | 
+
+Application bundle generation complete. [13.519 seconds] - 2026-07-01T20:49:02.057Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [11.031 seconds] - 2026-07-01T20:49:13.128Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.093 seconds] - 2026-07-01T20:49:16.239Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.438 seconds] - 2026-07-01T20:49:20.873Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.671 seconds] - 2026-07-01T20:49:24.704Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.073 seconds] - 2026-07-01T20:49:27.796Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.277 seconds] - 2026-07-01T20:49:31.097Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.620 seconds] - 2026-07-01T20:49:33.734Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.053 seconds] - 2026-07-01T20:49:36.801Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.673 seconds] - 2026-07-01T20:50:07.153Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.867 seconds] - 2026-07-01T20:50:11.356Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.259 seconds] - 2026-07-01T20:50:13.637Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.328 seconds] - 2026-07-01T20:50:21.606Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.016 seconds] - 2026-07-01T20:50:24.838Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.793 seconds] - 2026-07-01T20:50:26.647Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.731 seconds] - 2026-07-01T20:50:29.857Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.889 seconds] - 2026-07-01T20:50:33.351Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [4.153 seconds] - 2026-07-01T20:51:20.784Z
+
+Page reload sent to client(s).
+[2m3:52:04 p. m.[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ new dependencies optimized: [33mprimeng/avatar[32m[39m
+[2m3:52:04 p. m.[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ optimized dependencies changed. reloading[39m
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [3.095 seconds] - 2026-07-01T20:52:23.395Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [2.253 seconds] - 2026-07-01T20:52:32.593Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [2.376 seconds] - 2026-07-01T20:52:41.040Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [2.296 seconds] - 2026-07-01T20:52:51.476Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [3.406 seconds] - 2026-07-01T20:52:58.049Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [2.663 seconds] - 2026-07-01T20:53:00.732Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [2.913 seconds] - 2026-07-01T20:53:09.223Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [2.423 seconds] - 2026-07-01T20:53:11.664Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+
+No output file changes.
+
+Application bundle generation complete. [3.749 seconds] - 2026-07-01T20:53:23.134Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.520 seconds] - 2026-07-01T20:53:27.677Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.537 seconds] - 2026-07-01T20:53:31.244Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.921 seconds] - 2026-07-01T20:53:34.178Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.131 seconds] - 2026-07-01T20:53:36.323Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.715 seconds] - 2026-07-01T20:53:45.074Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.429 seconds] - 2026-07-01T20:53:50.868Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.464 seconds] - 2026-07-01T20:53:54.666Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [2.586 seconds] - 2026-07-01T20:53:59.975Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [5.665 seconds] - 2026-07-01T20:54:05.659Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [3.908 seconds] - 2026-07-01T20:54:09.790Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [4.020 seconds] - 2026-07-01T20:54:13.838Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [2.304 seconds] - 2026-07-01T20:54:16.156Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.436 seconds] - 2026-07-01T20:54:29.140Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [3.297 seconds] - 2026-07-01T20:54:32.634Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [2.892 seconds] - 2026-07-01T20:54:45.144Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [4.425 seconds] - 2026-07-01T20:54:49.585Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.837 seconds] - 2026-07-01T20:54:53.450Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [3.518 seconds] - 2026-07-01T20:54:56.984Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [4.124 seconds] - 2026-07-01T20:55:01.134Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.18 MB | 
+
+Application bundle generation complete. [3.417 seconds] - 2026-07-01T20:55:04.589Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [4.255 seconds] - 2026-07-01T20:55:08.876Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [3.323 seconds] - 2026-07-01T20:55:12.222Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [3.591 seconds] - 2026-07-01T20:55:15.841Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.239 seconds] - 2026-07-01T20:55:19.919Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [3.075 seconds] - 2026-07-01T20:55:23.012Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.176 seconds] - 2026-07-01T20:55:45.162Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [3.746 seconds] - 2026-07-01T20:55:48.928Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.612 seconds] - 2026-07-01T20:55:52.880Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.994 seconds] - 2026-07-01T20:55:54.884Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.18 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.20 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [3.387 seconds] - 2026-07-01T20:55:59.531Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.885 seconds] - 2026-07-01T20:57:06.402Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.17 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.61 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.19 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-ZLYSKIXR.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [4.254 seconds] - 2026-07-01T20:57:10.668Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.17 MB | 
+styles.css          | styles                | 207.66 kB | 
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-RWBVQJS3.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [3.673 seconds] - 2026-07-01T20:58:42.906Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.17 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-H6GMGXZT.js   | client-page-component | 58.09 kB | 
+
+Application bundle generation complete. [3.508 seconds] - 2026-07-01T21:00:51.486Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.17 MB | 
+styles.css          | styles                | 207.75 kB | 
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-PMXYFLB6.js   | client-page-component |  58.09 kB | 
+
+Application bundle generation complete. [2.987 seconds] - 2026-07-01T21:00:54.493Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.17 MB | 
+styles.css          | styles                | 207.83 kB | 
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-IKRJ7XZ7.js   | client-page-component |  58.09 kB | 
+
+Application bundle generation complete. [2.753 seconds] - 2026-07-01T21:00:57.269Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.17 MB | 
+styles.css          | styles                | 207.91 kB | 
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-WOP6UUSC.js   | client-page-component |  58.08 kB | 
+
+Application bundle generation complete. [3.293 seconds] - 2026-07-01T21:01:19.634Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.17 MB | 
+
+Application bundle generation complete. [1.358 seconds] - 2026-07-01T21:02:38.535Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.22 MB | 
+
+Application bundle generation complete. [2.651 seconds] - 2026-07-01T21:04:08.410Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.17 MB | 
+
+Application bundle generation complete. [8.237 seconds] - 2026-07-01T21:18:15.948Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.22 MB | 
+
+Application bundle generation complete. [7.265 seconds] - 2026-07-01T21:19:28.902Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.22 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-6566GC3V.js   | client-page-component | 58.02 kB | 
+
+Application bundle generation complete. [2.142 seconds] - 2026-07-01T21:24:41.520Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.22 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-EJ5FDH36.js   | client-page-component | 58.02 kB | 
+
+Application bundle generation complete. [2.379 seconds] - 2026-07-01T21:24:46.408Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.22 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-UIHSEHTV.js   | client-page-component | 58.02 kB | 
+
+Application bundle generation complete. [2.599 seconds] - 2026-07-01T21:24:50.463Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [29.418 seconds] - 2026-07-01T21:28:22.188Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.27 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.91 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.28 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-UIHSEHTV.js   | client-page-component |  58.02 kB | 
+
+Application bundle generation complete. [12.649 seconds] - 2026-07-01T21:28:34.854Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [7.772 seconds] - 2026-07-01T21:35:32.682Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.27 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.91 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.28 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-FPXGWFDH.js   | client-page-component |  63.37 kB | 
+
+Application bundle generation complete. [1.759 seconds] - 2026-07-01T21:35:34.460Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.27 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-UR2QS5VM.js   | client-page-component | 59.74 kB | 
+
+Application bundle generation complete. [2.267 seconds] - 2026-07-01T21:35:45.029Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.851 seconds] - 2026-07-01T21:35:47.990Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.290 seconds] - 2026-07-01T21:35:50.293Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.27 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 207.91 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.28 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-N32NJA2W.js   | client-page-component |  59.89 kB | 
+
+Application bundle generation complete. [2.904 seconds] - 2026-07-01T21:35:53.210Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.27 MB | 
+styles.css          | styles                | 208.31 kB | 
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-E76Y7XJ6.js   | client-page-component |  59.89 kB | 
+
+Application bundle generation complete. [2.988 seconds] - 2026-07-01T21:54:21.374Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.27 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-SSE2EHNG.js   | client-page-component | 59.92 kB | 
+
+Application bundle generation complete. [2.632 seconds] - 2026-07-01T21:54:24.038Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.27 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 208.31 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.29 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-SSE2EHNG.js   | client-page-component |  59.92 kB | 
+
+Application bundle generation complete. [2.221 seconds] - 2026-07-01T21:54:26.280Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.27 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-NFNZZKQL.js   | client-page-component | 63.40 kB | 
+
+Application bundle generation complete. [2.991 seconds] - 2026-07-01T21:57:41.421Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.27 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-SSE2EHNG.js   | client-page-component | 59.92 kB | 
+
+Application bundle generation complete. [3.488 seconds] - 2026-07-01T21:57:50.258Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 | Raw size
+main.js             | main                  |  1.27 MB | 
+
+Lazy chunk files    | Names                 | Raw size
+chunk-7STPDEEL.js   | client-page-component | 14.63 kB | 
+
+Application bundle generation complete. [2.517 seconds] - 2026-07-01T21:57:56.563Z
+
+Page reload sent to client(s).
+[2m4:58:43 p. m.[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ new dependencies optimized: [33mprimeng/drawer, primeng/table, primeng/scroller[32m[39m
+[2m4:58:43 p. m.[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ optimized dependencies changed. reloading[39m
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 206.68 kB | 
+
+Application bundle generation complete. [2.421 seconds] - 2026-07-01T22:06:54.720Z
+
+Stylesheet update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 206.69 kB | 
+
+Application bundle generation complete. [3.246 seconds] - 2026-07-01T22:06:57.991Z
+
+Stylesheet update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 213.78 kB | 
+
+Application bundle generation complete. [3.347 seconds] - 2026-07-01T22:07:13.132Z
+
+Stylesheet update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 206.69 kB | 
+
+Application bundle generation complete. [3.264 seconds] - 2026-07-01T22:07:26.221Z
+
+Stylesheet update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [3.036 seconds] - 2026-07-01T22:13:55.512Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.27 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.69 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.28 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-7STPDEEL.js   | client-page-component |  14.63 kB | 
+
+Application bundle generation complete. [2.500 seconds] - 2026-07-01T22:14:10.555Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.622 seconds] - 2026-07-01T22:14:57.470Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                 |  Raw size
+main.js             | main                  |   1.27 MB | 
+scripts.js          | scripts               | 804.04 kB | 
+styles.css          | styles                | 206.69 kB | 
+chunk-JBIIGMT7.js   | -                     |   6.82 kB | 
+polyfills.js        | polyfills             |  95 bytes | 
+
+                    | Initial total         |   2.28 MB
+
+Lazy chunk files    | Names                 |  Raw size
+chunk-7STPDEEL.js   | client-page-component |  14.63 kB | 
+
+Application bundle generation complete. [2.668 seconds] - 2026-07-01T22:16:55.499Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 210.99 kB | 
+
+Application bundle generation complete. [3.119 seconds] - 2026-07-01T22:17:28.220Z
+
+Stylesheet update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+main.js             | main   |   1.04 MB | 
+styles.css          | styles | 200.42 kB | 
+
+Application bundle generation complete. [2.601 seconds] - 2026-07-01T22:17:38.781Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 206.69 kB | 
+
+Application bundle generation complete. [2.388 seconds] - 2026-07-01T22:17:41.479Z
+
+Stylesheet update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names | Raw size
+main.js             | main  |  1.04 MB | 
+
+Application bundle generation complete. [4.409 seconds] - 2026-07-01T22:18:41.253Z
+
+Page reload sent to client(s).

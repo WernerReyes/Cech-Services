@@ -1,0 +1,127 @@
+<section
+  class="min-w-0 overflow-hidden border border-gray-200 bg-white dark:border-gray-800 dark:bg-white/[0.03] xl:rounded-xl"
+>
+  <div class="border-b border-gray-200 px-4 py-4 dark:border-gray-800">
+    <div class="mb-4 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <svg
+          data-p-icon="building-columns"
+          class="h-5 w-5 text-gray-700 dark:text-gray-300"
+        ></svg>
+        <h3 class="text-lg font-semibold text-gray-800 dark:text-white/90">
+          Bancos
+        </h3>
+      </div>
+
+      <button
+        pButton
+        type="button"
+        severity="secondary"
+        [text]="true"
+        [rounded]="true"
+        [disabled]="clients.isLoading()"
+        aria-label="Actualizar bancos"
+        (click)="reloadClients()"
+      >
+        @if (clients.isLoading()) {
+          <svg data-p-icon="spinner" class="h-4 w-4 animate-spin"></svg>
+        } @else {
+          <svg data-p-icon="refresh" class="h-4 w-4"></svg>
+        }
+      </button>
+    </div>
+
+    @if (clients.hasValue()) {
+      <p class="mb-3 text-xs text-gray-500 dark:text-gray-400">
+        {{ clients.value().length }} bancos disponibles
+      </p>
+    }
+
+  </div>
+
+  @if (clients.hasValue()) {
+    <p-dataview
+      #clientView
+      layout="list"
+      filterBy="cliente,idCliente"
+      [value]="clients.value()"
+      [paginator]="true"
+      [rows]="10"
+      [rowsPerPageOptions]="rowsPerPageOptions"
+      [showCurrentPageReport]="true"
+      [showPageLinks]="false"
+      currentPageReportTemplate="{first}-{last} de {totalRecords} bancos"
+      emptyMessage="No se encontraron bancos."
+    >
+      <ng-template #header>
+        <div class="px-4 py-3">
+          <p-iconfield>
+            <p-inputicon>
+              <svg data-p-icon="search" class="h-4 w-4"></svg>
+            </p-inputicon>
+            <input
+              #clientSearch
+              pInputText
+              type="search"
+              placeholder="Buscar por nombre..."
+              class="w-full"
+              (input)="filterClients(clientView, $event)"
+            />
+          </p-iconfield>
+        </div>
+      </ng-template>
+
+      <ng-template #list let-clientsPage>
+        <div class="max-h-[calc(100vh-280px)] overflow-y-auto xl:max-h-[600px]">
+          @for (client of clientsPage; track client.idCliente) {
+            <button
+              type="button"
+              class="block w-full border-b border-gray-200 px-4 py-3 text-left transition hover:bg-gray-50 dark:border-gray-800 dark:hover:bg-white/[0.04]"
+              [class.bg-brand-50]="selectedClient()?.idCliente === client.idCliente"
+              [class.dark:bg-brand-500\/10]="selectedClient()?.idCliente === client.idCliente"
+              (click)="selectClient(client)"
+            >
+              <span
+                class="block text-sm font-semibold uppercase leading-5"
+                [class.text-brand-700]="selectedClient()?.idCliente === client.idCliente"
+                [class.dark:text-brand-300]="selectedClient()?.idCliente === client.idCliente"
+                [class.text-gray-900]="selectedClient()?.idCliente !== client.idCliente"
+                [class.dark:text-white]="selectedClient()?.idCliente !== client.idCliente"
+              >
+                {{ client.cliente }}
+              </span>
+              <span
+                class="mt-1 block font-mono text-[11px] text-gray-500 dark:text-gray-400"
+              >
+                Cod: {{ client.idCliente }}
+              </span>
+            </button>
+          }
+        </div>
+      </ng-template>
+
+      <ng-template #emptymessage>
+        <div class="px-4 py-10 text-center">
+          <p class="text-sm font-medium text-gray-700 dark:text-gray-300">
+            No se encontraron bancos.
+          </p>
+        </div>
+      </ng-template>
+    </p-dataview>
+  } @else if (clients.error()) {
+    <div
+      class="m-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-500/30 dark:bg-red-500/10 dark:text-red-300"
+    >
+      {{ getErrorMessage(clients.error()) }}
+    </div>
+  } @else if (clients.isLoading()) {
+    <div class="space-y-3 px-4 py-4">
+      @for (item of [1, 2, 3, 4, 5, 6]; track item) {
+        <div class="space-y-2 border-b border-gray-200 pb-3 dark:border-gray-800">
+          <span class="block h-4 w-4/5 animate-pulse rounded bg-gray-200 dark:bg-gray-700"></span>
+          <span class="block h-3 w-24 animate-pulse rounded bg-gray-200 dark:bg-gray-700"></span>
+        </div>
+      }
+    </div>
+  }
+</section>

@@ -1,8 +1,6 @@
-import { Injectable, signal } from '@angular/core';
+import { Service, signal } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Service()
 export class ModalService {
   private readonly isOpenSignal = signal(false);
   readonly isOpen = this.isOpenSignal.asReadonly();

@@ -20,12 +20,16 @@ import { SignUpComponent } from "./pages/auth-pages/sign-up/sign-up.component";
 import { CalenderComponent } from "./pages/calender/calender.component";
 
 import { authRoutes } from "./features/auth/auth.routes";
+import{ clientRoutes } from "./features/client/client.routes";
+import { authGuard } from "./core/guards/auth.guard";
 
 export const routes: Routes = [
   {
     path: "",
     component: AppLayoutComponent,
+    canActivate: [authGuard],
     children: [
+      ...clientRoutes,
       {
         path: "",
         component: EcommerceComponent,
@@ -143,4 +147,3 @@ export const routes: Routes = [
       "Angular NotFound Dashboard | TailAdmin - Angular Admin Dashboard Template",
   },
 ];
-

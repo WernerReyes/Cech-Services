@@ -39,7 +39,7 @@
         <div class="mb-6 flex justify-center">
           <a href="#">
             <img
-              src="https://cdn.aglty.io/scotiabank-peru/Global-Rebrand/logo.svg"
+              src="/images/logo/logo.svg"
               alt="logo"
               class="h-12 object-contain drop-shadow-sm"
             />
@@ -60,29 +60,29 @@
 
         <form novalidate class="space-y-6 mt-10" (submit)="onSignIn($event)">
           <div class="flex flex-col gap-1.5 mx-auto w-full">
-            <label pLabel for="email" class="font-semibold">
-              Correo Electrónico
+            <label pLabel for="username" class="font-semibold">
+              Nombre de Usuario
             </label>
 
             <p-iconfield>
               <p-inputicon>
-                <svg data-p-icon="envelope"></svg>
+                <svg data-p-icon="user"></svg>
               </p-inputicon>
 
               <input
-                [formField]="form.email"
+                [formField]="form.username"
                 fluid
                 pSize="large"
                 pInputText
-                id="email"
-                placeholder="john@readymadeui.com"
+                id="username"
+                placeholder="john.doe"
                 class="bg-white! dark:bg-neutral-800!"
               />
             </p-iconfield>
 
-            @if (form.email().touched() && form.email().invalid()) {
+            @if (form.username().touched() && form.username().invalid()) {
               <p-message severity="error" size="small" variant="simple">
-                {{ form.email().errors()[0].message }}
+                {{ form.username().errors()[0].message }}
               </p-message>
             }
           </div>

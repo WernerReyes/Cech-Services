@@ -1,9 +1,8 @@
-import { Injectable, signal } from '@angular/core';
+import { Service, signal } from '@angular/core';
 
 type Theme = 'light' | 'dark';
 
-@Injectable({ providedIn: 'root' })
-
+@Service()
 export class ThemeService {
   private readonly themeSignal = signal<Theme>('light');
   readonly theme = this.themeSignal.asReadonly();

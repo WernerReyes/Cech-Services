@@ -1,4 +1,9 @@
-import { ApplicationConfig } from "@angular/core";
+import {
+  APP_INITIALIZER,
+  ApplicationConfig,
+  inject,
+  provideAppInitializer,
+} from "@angular/core";
 import { provideRouter } from "@angular/router";
 import { providePrimeNG } from "primeng/config";
 
@@ -7,6 +12,12 @@ import { routes } from "./app.routes";
 
 import Aura from "@primeuix/themes/aura";
 import { MessageService } from "primeng/api";
+import { APP_CONFIG } from "@core/config/app.config.tokens";
+import { environment } from "@environments/environment";
+import { provideHttpClient, withInterceptors } from "@angular/common/http";
+import { authInterceptor } from "@core/interceptors/auth.interceptor";
+import { errorInterceptor } from "@core/interceptors/error.interceptor";
+import { AuthService } from "./core/services/auth.service";
 
 const customPreset = definePreset(Aura, {
   semantic: {
@@ -26,11 +37,21 @@ const customPreset = definePreset(Aura, {
   },
 });
 
+function initializeApp() {
+  const authService = inject(AuthService);
+  return authService.verifyAuthentication();
+  // return Promise.resolve(true);
+}
+
 export const appConfig: ApplicationConfig = {
   providers: [
-
     provideRouter(routes),
     MessageService,
+    {
+      provide: APP_CONFIG,
+      useValue: environment,
+    },
+    provideHttpClient(withInterceptors([authInterceptor, errorInterceptor])),
     providePrimeNG({
       license:
         "eyJpZCI6ImEwOTVlYzIwLWVlZTgtNGQ4Zi05MGQwLWNkMjMxN2EzNjIwMSIsInByb2R1Y3QiOiJwcmltZXVpIiwidGllciI6ImNvbW11bml0eSIsInR5cGUiOiJkZXYiLCJpYXQiOjE3ODI3ODkxMDQsImV4cCI6MTgxNDMyNTEwNH0.SV5OMdhUyqanU0h82Wu_niJ3eIjaOu5Y4YvgWab1tkLvBh5DcDBQmEBwAGv_caRkbytvS68yqs1lKv9zQ0w2CQ",
@@ -41,5 +62,8 @@ export const appConfig: ApplicationConfig = {
         },
       },
     }),
+
+    // 💥 REGISTRO DEL INICIALIZADOR GLOBAL
+    provideAppInitializer(initializeApp),
   ],
 };

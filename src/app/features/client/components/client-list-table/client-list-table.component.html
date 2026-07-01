@@ -1,0 +1,78 @@
+ <div class="mb-3 flex justify-end">
+            <p-iconfield iconPosition="left">
+                <p-inputicon>
+                    <svg data-p-icon="search" />
+                </p-inputicon>
+                <input
+                variant="filled"
+                 (input)="dt.filterGlobal($event.target.value, 'contains')"
+                 pInputText  type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Buscar cliente..."
+                  />
+            </p-iconfield>
+        </div>
+<p-table
+#dt
+  [value]="clients.value()"
+  [loading]="clients.isLoading()"
+  [tableStyle]="{ 'min-width': '50rem' }"
+  paginator
+  [globalFilterFields]="['idCliente', 'cliente']"
+  dataKey="idCliente"
+  paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
+  showGridlines
+  [rows]="10"
+  [reorderableColumns]="true" 
+  [rowsPerPageOptions]="[10, 20, 50, 100]"
+  [showCurrentPageReport]="true"
+  currentPageReportTemplate="Mostrando del {first} al {last} de {totalRecords} bancos"
+>
+  <ng-template #header>
+    <tr>
+      <th pSortableColumn="idCliente">ID
+<p-sort-icon field="idCliente" />
+
+      </th>
+      <th pSortableColumn="cliente">Nombre
+<p-sort-icon field="cliente" />
+        </th>
+      <th></th>
+    </tr>
+  </ng-template>
+
+  <ng-template #empty>
+    <tr>
+      <td colspan="3" class="text-center text-gray-500 dark:text-gray-400">
+        No se encontraron clientes.
+      </td>
+    </tr>
+    </ng-template>
+
+
+  <ng-template #body let-client>
+    <tr>
+      <td>
+        <span class="font-medium">{{ client.idCliente }}</span>
+      </td>
+      <td>
+        <div class="flex items-center gap-2">
+         
+          <span>{{ client.cliente }}</span>
+        </div>
+      </td>
+        <td>
+            <button
+            pButton
+            type="button"
+            /* severity="secondary" */
+            [outlined]="true"
+            class="h-10"
+            /* (click)="selectClient(client)" */
+            >
+            <svg data-p-icon="building-columns" class="h-4 w-4"></svg>
+            ver Agencias
+            </button>
+        </td>
+     
+    </tr>
+  </ng-template>
+</p-table>
