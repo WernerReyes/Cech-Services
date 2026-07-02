@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, contentChild, input, type TemplateRef } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -9,6 +9,9 @@ import { RouterModule } from '@angular/router';
   templateUrl: './page-breadcrumb.component.html',
 })
 export class PageBreadcrumbComponent {
+
+  iconTemplate = contentChild<TemplateRef<any>>('icon');
+
   pageTitle = input('');
-  icon = input('');
+ 
 }

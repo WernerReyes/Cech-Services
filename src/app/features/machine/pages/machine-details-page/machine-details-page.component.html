@@ -27,14 +27,18 @@
         }
       </div>
 
-      <button
+      <a
         pButton
-        type="button"
+        routerLink="/tickets/create"
+        [queryParams]="{
+          idAgencia: machine()?.agencia?.id,
+          idEquipo: machine()?.idEquipo
+        }"
         class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-2xl bg-blue-700 px-5 text-sm font-bold text-white shadow-sm transition hover:bg-blue-800 sm:w-auto"
       >
         <svg data-p-icon="plus" class="size-4"></svg>
         <span>Crear ticket</span>
-      </button>
+      </a>
     </header>
 
     @if (machine(); as selectedMachine) {

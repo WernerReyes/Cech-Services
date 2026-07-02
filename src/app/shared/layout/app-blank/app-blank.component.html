@@ -1,6 +1,7 @@
 <div class="w-full min-w-0 max-w-full overflow-hidden">
-  <app-page-breadcrumb [pageTitle]="title()" />
-
+  @if (headerTemplate()) {
+    <ng-container [ngTemplateOutlet]="headerTemplate()"></ng-container>
+  }
   <div
     class="min-h-screen w-full min-w-0 max-w-full overflow-hidden rounded-2xl border border-gray-200 bg-white px-4 py-6 dark:border-gray-800 dark:bg-white/3 sm:px-5 sm:py-7 xl:px-10 xl:py-12"
   >
