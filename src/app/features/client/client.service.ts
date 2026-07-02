@@ -1,7 +1,7 @@
 import { httpResource } from "@angular/common/http";
-import { Service, inject } from "@angular/core";
+import { Service, inject, signal } from "@angular/core";
 import { APP_CONFIG } from "@core/config/app.config.tokens";
-import { ApiResponse } from "@core/models/api.model";
+import type { ApiResponse } from "@core/models/api.model";
 
 import type { Cliente } from "./client.model";
 
@@ -17,4 +17,6 @@ export class ClientService {
       parse: (response) => (response as ApiResponse<Cliente[]>).data,
     },
   );
+
+  readonly clientSelect = signal<Cliente | null>(null);
 }

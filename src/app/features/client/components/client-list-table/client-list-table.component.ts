@@ -8,6 +8,8 @@ import { IconFieldModule } from "primeng/iconfield";
 import { InputIconModule } from "primeng/inputicon";
 import { InputTextModule } from "primeng/inputtext";
 import { TableModule } from "primeng/table";
+import { Cliente } from "../../client.model";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "client-list-table",
@@ -16,7 +18,14 @@ import { TableModule } from "primeng/table";
 })
 export class ClientListTableComponent {
   private readonly clientService = inject(ClientService);
+  private readonly router = inject(Router);
+
   protected readonly clients = this.clientService.clients;
+
+  onSelectClient(client: Cliente) {
+    this.clientService.clientSelect.set(client);
+    this.router.navigate(["/agencies"]);
+  }
 
   
 }

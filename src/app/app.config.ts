@@ -4,7 +4,7 @@ import {
   inject,
   provideAppInitializer,
 } from "@angular/core";
-import { provideRouter } from "@angular/router";
+import { provideRouter, withComponentInputBinding } from "@angular/router";
 import { providePrimeNG } from "primeng/config";
 
 import { definePreset } from "@primeuix/themes";
@@ -45,7 +45,7 @@ function initializeApp() {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes),
+    provideRouter(routes, withComponentInputBinding()),
     MessageService,
     {
       provide: APP_CONFIG,

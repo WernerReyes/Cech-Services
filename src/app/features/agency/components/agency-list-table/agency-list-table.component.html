@@ -55,8 +55,8 @@
   <!-- Tabla -->
   <p-table
     #dt
-    [value]="agencies.value()"
-    [loading]="agencies.isLoading()"
+    [value]="agencies()"
+    /* [loading]="agencies.isLoading()" */
     [tableStyle]="{
       'min-width': '72rem',
       'table-layout': 'fixed'
@@ -106,55 +106,7 @@
           </div>
         </th>
 
-        <th
-          pSortableColumn="cliente.valor"
-          class="w-[24rem] bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
-        >
-          <div class="flex items-center gap-2">
-            Cliente
-            <p-sort-icon field="cliente.valor" />
-          </div>
-        </th>
-
-        <th
-          pSortableColumn="direccion"
-          class="w-[27rem] bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
-        >
-          <div class="flex items-center gap-2">
-            Dirección
-            <p-sort-icon field="direccion" />
-          </div>
-        </th>
-
-        <th
-          pSortableColumn="ubicacion.valor"
-          class="w-36 bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
-        >
-          <div class="flex items-center gap-2">
-            Ubicación
-            <p-sort-icon field="ubicacion.valor" />
-          </div>
-        </th>
-
-        <th
-          pSortableColumn="zona.valor"
-          class="w-32 bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
-        >
-          <div class="flex items-center gap-2">
-            Zona
-            <p-sort-icon field="zona.valor" />
-          </div>
-        </th>
-
-        <th
-          pSortableColumn="departamento.valor"
-          class="w-44 bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
-        >
-          <div class="flex items-center gap-2">
-            Departamento
-            <p-sort-icon field="departamento.valor" />
-          </div>
-        </th>
+        
 
         <th
           class="w-36 bg-white px-4 py-3 text-right text-xs font-bold uppercase tracking-wide text-slate-500"
@@ -197,7 +149,7 @@
           <span
             class="inline-flex rounded-lg bg-slate-100 px-2.5 py-1 text-xs font-bold text-slate-700"
           >
-            #{{ agency.idAgencia }}
+            #{{ agency.id }}
           </span>
         </td>
 
@@ -214,120 +166,50 @@
               <p
                 class="whitespace-normal break-words text-sm font-semibold leading-5 text-slate-800 [overflow-wrap:anywhere]"
               >
-                {{ agency.agencia || "Sin agencia" }}
+                {{ agency.valor }}
               </p>
 
-              <p class="mt-1 text-xs text-slate-400">
-                Agencia registrada
-              </p>
+             
             </div>
           </div>
         </td>
 
-        <!-- Cliente / Banco -->
-        <td class="px-4 py-3 align-top">
-          <div class="flex min-w-0 items-start gap-2">
-            <span
-              class="flex size-8 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600"
-            >
-              <i class="pi pi-building-columns text-sm"></i>
-            </span>
-
-            <span
-              class="min-w-0 max-w-[20rem] whitespace-normal break-words text-sm font-medium leading-5 text-slate-700 [overflow-wrap:anywhere]"
-            >
-              {{ agency.cliente?.valor || "Sin banco" }}
-            </span>
-          </div>
-        </td>
-
-        <!-- Dirección -->
-        <td class="px-4 py-3 align-top">
-          <div class="max-w-[23rem]">
-            <p
-              class="whitespace-normal break-words text-sm font-medium leading-5 text-slate-700 [overflow-wrap:anywhere]"
-            >
-              {{ agency.direccion || "Sin dirección registrada" }}
-            </p>
-
-            <p
-              class="mt-1 flex flex-wrap items-center gap-1 text-xs leading-4 text-slate-400"
-            >
-              <i class="pi pi-map-marker text-[11px]"></i>
-
-              <span>
-                {{ agency.provincia?.valor || "Sin provincia" }}
-              </span>
-
-              @if (agency.distrito?.valor) {
-                <span>/</span>
-                <span>{{ agency.distrito?.valor }}</span>
-              }
-            </p>
-          </div>
-        </td>
-
-        <!-- Ubicación -->
-        <td class="px-4 py-3 align-top">
-          <span
-            class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold"
-            [class]="{
-              'bg-emerald-50 text-emerald-700':
-                agency.ubicacion?.valor === 'Lima',
-              'bg-amber-50 text-amber-700':
-                agency.ubicacion?.valor === 'Provincia',
-              'bg-slate-100 text-slate-600': !agency.ubicacion?.valor
-            }"
-          >
-            <span
-              class="size-1.5 rounded-full"
-              [class]="{
-                'bg-emerald-500': agency.ubicacion?.valor === 'Lima',
-                'bg-amber-500': agency.ubicacion?.valor === 'Provincia',
-                'bg-slate-400': !agency.ubicacion?.valor
-              }"
-            ></span>
-
-            {{ agency.ubicacion?.valor || "Sin ubicación" }}
-          </span>
-        </td>
-
-        <!-- Zona -->
-        <td class="px-4 py-3 align-top">
-          <span
-            class="inline-flex max-w-full rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold leading-4 text-slate-600 whitespace-normal break-words [overflow-wrap:anywhere]"
-          >
-            {{ agency.zona?.valor || "Sin zona" }}
-          </span>
-        </td>
-
-        <!-- Departamento -->
-        <td class="px-4 py-3 align-top">
-          <div class="min-w-0 max-w-[10rem]">
-            <p
-              class="whitespace-normal break-words text-sm font-semibold leading-5 text-slate-700 [overflow-wrap:anywhere]"
-            >
-              {{ agency.departamento?.valor || "Sin departamento" }}
-            </p>
-
-            <p
-              class="mt-0.5 whitespace-normal break-words text-xs leading-4 text-slate-400 [overflow-wrap:anywhere]"
-            >
-              {{ agency.provincia?.valor || "Sin provincia" }}
-            </p>
-          </div>
-        </td>
+       
 
         <!-- Acción -->
         <td class="px-4 py-3 text-right align-top">
           <button
             pButton
             type="button"
+            (click)="viewMachines(agency)"
             [outlined]="true"
             class="inline-flex h-9 items-center gap-2 rounded-xl border-primary-200 px-3 text-sm font-semibold text-primary-600 transition hover:bg-primary-50"
           >
-            <i class="pi pi-eye text-sm"></i>
-            <span>Ver detalle</span>
+           <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="100%" height="100%">
+  <!-- Cuerpo principal de la máquina -->
+  <path d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Pantalla digital de conteo -->
+  <rect x="6" y="7" width="6" height="4" rx="1" fill="none" stroke="currentColor" stroke-width="2"/>
+  <line x1="8" y1="9" x2="10" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <!-- Botones de control de la máquina -->
+  <circle cx="15.5" cy="8" r="1" fill="currentColor"/>
+  <circle cx="18" cy="8" r="1" fill="currentColor"/>
+  <circle cx="15.5" cy="10" r="1" fill="currentColor"/>
+  <circle cx="18" cy="10" r="1" fill="currentColor"/>
+  
+  <!-- Ranura de salida y rodillo interno -->
+  <path d="M6 14h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="7.5" cy="14" r="1" fill="currentColor"/>
+  <circle cx="16.5" cy="14" r="1" fill="currentColor"/>
+  
+  <!-- Billetes saliendo / apilados en la tolva -->
+  <path d="M5 17h14v2H5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M7 17v-1.5a0.5 0 0 1 0.5-.5h9a0.5 0 0 1 0.5 0.5V17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+</svg>
+
+            <span>Ver Equipos</span>
           </button>
         </td>
       </tr>

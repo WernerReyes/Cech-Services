@@ -1,0 +1,87 @@
+/* Fondo oscuro del modal */
+.agency-select-modal.p-overlay-mask {
+  background: rgba(15, 23, 42, 0.45) !important;
+  backdrop-filter: blur(3px);
+}
+
+/* Caja principal del select en modo modal */
+.agency-select-modal .p-select-overlay,
+.agency-select-modal.p-select-overlay {
+  width: min(92vw, 520px) !important;
+  max-width: 92vw !important;
+  height: auto !important;
+  max-height: 78vh !important;
+  border-radius: 1.25rem !important;
+  overflow: hidden !important;
+  box-shadow:
+    0 24px 60px rgba(15, 23, 42, 0.22),
+    0 0 0 1px rgba(148, 163, 184, 0.16) !important;
+}
+
+/* En móvil que se vea más ancho y tipo bottom modal */
+@media (max-width: 640px) {
+  .agency-select-modal .p-select-overlay,
+  .agency-select-modal.p-select-overlay {
+    width: calc(100vw - 1.5rem) !important;
+    max-width: calc(100vw - 1.5rem) !important;
+    max-height: 82vh !important;
+    border-radius: 1.5rem !important;
+  }
+}
+
+/* Panel interno */
+.agency-select-panel {
+  border-radius: 1.25rem !important;
+  overflow: hidden !important;
+}
+
+/* Buscador */
+.agency-select-panel .p-select-filter-container {
+  padding: 0.85rem !important;
+  border-bottom: 1px solid #e2e8f0 !important;
+  background: #ffffff !important;
+}
+
+.agency-select-panel .p-select-filter {
+  height: 2.75rem !important;
+  border-radius: 0.9rem !important;
+  border-color: #fecaca !important;
+  font-size: 0.875rem !important;
+}
+
+.agency-select-panel .p-select-filter:focus {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.12) !important;
+}
+
+/* Lista */
+.agency-select-panel .p-select-list-container {
+  max-height: 360px !important;
+  padding: 0.35rem 0 !important;
+}
+
+@media (max-width: 640px) {
+  .agency-select-panel .p-select-list-container {
+    max-height: calc(82vh - 90px) !important;
+  }
+}
+
+/* Opción */
+.agency-select-panel .p-select-option {
+  margin: 0.2rem 0.65rem !important;
+  padding: 0.2rem 0.45rem !important;
+  border-radius: 1rem !important;
+}
+
+.agency-select-panel .p-select-option:hover {
+  background: #fef2f2 !important;
+}
+
+.agency-select-panel .p-select-option.p-focus {
+  background: #fef2f2 !important;
+}
+
+.agency-select-panel .p-select-option.p-select-option-selected {
+  background: #fee2e2 !important;
+  color: #991b1b !important;
+}

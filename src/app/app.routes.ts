@@ -23,6 +23,7 @@ import { authRoutes } from "./features/auth/auth.routes";
 import{ clientRoutes } from "./features/client/client.routes";
 import { authGuard } from "./core/guards/auth.guard";
 import { agencyRoutes } from "./features/agency/client.routes";
+import { machineRoutes } from "./features/machine/machine.routes";
 
 export const routes: Routes = [
   {
@@ -30,8 +31,9 @@ export const routes: Routes = [
     component: AppLayoutComponent,
     canActivate: [authGuard],
     children: [
-      ...clientRoutes,
+      // ...clientRoutes,
       ...agencyRoutes,
+      ...machineRoutes,
       {
         path: "",
         component: EcommerceComponent,

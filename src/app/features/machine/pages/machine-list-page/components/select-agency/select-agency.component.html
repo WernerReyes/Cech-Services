@@ -1,0 +1,58 @@
+<div class="w-full">
+  <p-floatlabel variant="on">
+    <p-select
+      [options]="agencies()"
+      [virtualScroll]="true"
+      [(ngModel)]="agencyService.selectedAgency"
+      [virtualScrollItemSize]="40"
+      optionLabel="agencia"
+      size="large"
+      variant="filled"
+      fluid
+      appendTo="body"
+      scrollHeight="320px"
+      styleClass="w-full agency-select"
+      panelStyleClass="agency-select-panel"
+      [filter]="true"
+      filterBy="agencia,direccion,distrito.valor,provincia.valor,departamento.valor,empresa.valor,cliente.valor"
+      filterPlaceholder="Buscar por agencia, dirección o distrito..."
+      [showClear]="true"
+      emptyMessage="No hay agencias disponibles"
+      emptyFilterMessage="No se encontraron agencias"
+    >
+      <!-- Agencia seleccionada -->
+      <ng-template #selectedItem let-agency>
+        @if (agency) {
+          <div class="flex min-w-0 items-center gap-3">
+            <div class="min-w-0 flex-1">
+              <div class="truncate text-sm font-semibold text-slate-800">
+                {{ agency.valor }}
+              </div>
+            </div>
+          </div>
+        }
+      </ng-template>
+
+      <!-- Opciones del dropdown -->
+      <ng-template #item let-agency>
+        <div class="flex w-full gap-3 py-2">
+          <div class="min-w-0 flex-1">
+            <div class="flex items-start justify-between gap-3">
+              <div class="min-w-0 flex items-center gap-2">
+                <span
+                  class="shrink-0 rounded-full bg-red-50 px-2 py-1 text-[11px] font-semibold text-red-600 ring-1 ring-red-100"
+                >
+                  #{{ agency.id }}
+                </span>
+                <div class="truncate text-sm font-semibold text-slate-800">
+                  {{ agency.valor }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-select>
+    <label for="agency-select">Seleccione una agencia</label>
+  </p-floatlabel>
+</div>

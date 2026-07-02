@@ -1,0 +1,295 @@
+<div
+  class="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden"
+>
+  <!-- Header superior -->
+  <div
+    class="flex flex-col gap-4 border-b border-slate-200 bg-slate-50/70 px-4 py-4 sm:flex-row sm:items-center sm:justify-between"
+  >
+    <div>
+      <h2 class="text-base font-bold text-slate-800">Equipos</h2>
+      <p class="mt-1 text-sm text-slate-500">
+        Gestiona los equipos registrados, su agencia, modelo y garantía.
+      </p>
+    </div>
+
+    <!-- Buscador -->
+    <div class="w-full sm:w-96">
+      <p-iconfield iconPosition="left" class="w-full">
+        <p-inputicon>
+          <svg data-p-icon="search" class="h-4 w-4 text-slate-400"></svg>
+        </p-inputicon>
+
+        <input
+          pInputText
+          type="text"
+          pSize="large"
+          class="w-full rounded-xl border-slate-200 bg-white text-sm shadow-sm placeholder:text-slate-400 focus:border-blue-400 focus:ring-blue-400"
+          placeholder="Buscar equipo, serie, agencia o modelo..."
+          (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+        />
+      </p-iconfield>
+    </div>
+  </div>
+
+  <!-- Tabla -->
+  <p-table
+    #dt
+    [value]="machines.value()"
+    [loading]="machines.isLoading()"
+    [tableStyle]="{ 'min-width': '72rem' }"
+    paginator
+    [globalFilterFields]="[
+      'idEquipo',
+      'equipo',
+      'serie',
+      'agencia.valor',
+      'modelo.descripcion',
+      'codigoInventario',
+    ]"
+    dataKey="idEquipo"
+    paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
+    [rows]="10"
+    [reorderableColumns]="true"
+    [rowsPerPageOptions]="[10, 20, 50, 100]"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Mostrando del {first} al {last} de {totalRecords} equipos"
+    styleClass="cech-machine-table"
+  >
+    <!-- Header -->
+    <ng-template #header>
+      <tr>
+        <th
+          pSortableColumn="idEquipo"
+          class="w-28 bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            ID
+            <p-sort-icon field="idEquipo" />
+          </div>
+        </th>
+
+        <th
+          pSortableColumn="equipo"
+          class="bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            Equipo
+            <p-sort-icon field="equipo" />
+          </div>
+        </th>
+
+        <th
+          pSortableColumn="modelo.descripcion"
+          class="bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            Modelo
+            <p-sort-icon field="modelo.descripcion" />
+          </div>
+        </th>
+
+        <th
+          pSortableColumn="agencia.valor"
+          class="bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            Agencia
+            <p-sort-icon field="agencia.valor" />
+          </div>
+        </th>
+
+        <th
+          pSortableColumn="fechaInstalacion"
+          class="w-44 bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            Instalación
+            <p-sort-icon field="fechaInstalacion" />
+          </div>
+        </th>
+
+        <th
+          pSortableColumn="mesGarantia"
+          class="w-36 bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            Garantía
+            <p-sort-icon field="mesGarantia" />
+          </div>
+        </th>
+
+        <th
+          pSortableColumn="codigoInventario"
+          class="w-48 bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            Inventario
+            <p-sort-icon field="codigoInventario" />
+          </div>
+        </th>
+
+        <th
+          class="w-44 bg-white px-4 py-3 text-right text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          Acción
+        </th>
+      </tr>
+    </ng-template>
+
+    <!-- Empty -->
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="8">
+          <div
+            class="flex flex-col items-center justify-center px-6 py-12 text-center"
+          >
+            <div
+              class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-400"
+            >
+              <svg data-p-icon="search" class="h-5 w-5"></svg>
+            </div>
+
+            <p class="text-sm font-semibold text-slate-700">
+              No se encontraron equipos
+            </p>
+
+            <p class="mt-1 text-sm text-slate-500">
+              Intenta buscar por equipo, serie, agencia, modelo o código de
+              inventario.
+            </p>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <!-- Body -->
+    <ng-template #body let-machine>
+      <tr class="transition-colors hover:bg-slate-50">
+        <!-- ID -->
+        <td class="px-4 py-3">
+          <span
+            class="inline-flex rounded-lg bg-slate-100 px-2.5 py-1 text-xs font-bold text-slate-700"
+          >
+            #{{ machine.idEquipo }}
+          </span>
+        </td>
+
+        <!-- Equipo -->
+        <td class="px-4 py-3">
+          <div class="flex min-w-0 items-center gap-3">
+            <div
+              class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-500"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="22"
+                height="22"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 6h-4V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v17c0 .55.45 1 1 1h18c.55 0 1-.45 1-1V8c0-1.1-.9-2-2-2m0 14H4V4h10v3c0 .55.45 1 1 1h5z"
+                ></path>
+                <path
+                  d="M10 6h2v2h-2zM6 6h2v2H6zm0 4h2v2H6zm4 0h2v2h-2zm6 0h2v2h-2zm-6 4h2v2h-2zm-4 0h2v2H6zm10 0h2v2h-2z"
+                ></path>
+              </svg>
+            </div>
+
+            <div class="min-w-0">
+              <p class="truncate text-sm font-semibold text-slate-800">
+                {{ machine.equipo }}
+              </p>
+
+              <p class="truncate text-xs text-slate-400">
+                Serie: {{ machine.serie || "Sin serie" }}
+              </p>
+            </div>
+          </div>
+        </td>
+
+        <!-- Modelo -->
+        <td class="px-4 py-3">
+          <div class="min-w-0">
+            <p class="truncate text-sm font-semibold text-slate-700">
+              {{ machine.modelo?.descripcion || "Sin modelo" }}
+            </p>
+          </div>
+        </td>
+
+        <!-- Agencia -->
+        <td class="px-4 py-3">
+          <div class="flex min-w-0 items-center gap-2">
+            <!-- <div
+              class="flex size-8 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600"
+            >
+              <i class="pi pi-map-marker text-xs"></i>
+            </div> -->
+
+            <div class="min-w-0">
+              <p class="truncate text-sm font-semibold text-slate-700">
+                {{ machine.agencia?.valor || "Sin agencia" }}
+              </p>
+            </div>
+          </div>
+        </td>
+
+        <!-- Fecha instalación -->
+        <td class="px-4 py-3">
+          @if (machine.fechaInstalacion) {
+            <span
+              class="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-semibold text-emerald-700"
+            >
+              <i class="pi pi-calendar text-[11px]"></i>
+              {{ machine.fechaInstalacion | date: "dd/MM/yyyy" }}
+            </span>
+          } @else {
+            <span
+              class="inline-flex items-center gap-2 rounded-full bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-700"
+            >
+              <i class="pi pi-clock text-[11px]"></i>
+              Pendiente
+            </span>
+          }
+        </td>
+
+        <!-- Garantía -->
+        <td class="px-4 py-3">
+          <span
+            class="inline-flex items-center gap-2 rounded-full bg-violet-50 px-2.5 py-1 text-xs font-semibold text-violet-700"
+          >
+            <i class="pi pi-shield text-[11px]"></i>
+            {{ machine.mesGarantia }} meses
+          </span>
+        </td>
+
+        <!-- Código inventario -->
+        <td class="px-4 py-3">
+          @if (machine.codigoInventario) {
+            <span
+              class="inline-flex rounded-lg bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700"
+            >
+              {{ machine.codigoInventario }}
+            </span>
+          } @else {
+            <span class="text-xs font-medium text-slate-400"> Sin código </span>
+          }
+        </td>
+
+        <!-- Acción -->
+        <td class="px-4 py-3 text-right">
+          <button
+            pButton
+            type="button"
+            (click)="viewMachineDetails(machine)"
+            [outlined]="true"
+            class="inline-flex h-9 items-center gap-2 rounded-xl border-blue-200 px-3 text-sm font-semibold text-blue-600 transition hover:bg-blue-50"
+          >
+            <i class="pi pi-eye text-sm"></i>
+            <span>Ver detalle</span>
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

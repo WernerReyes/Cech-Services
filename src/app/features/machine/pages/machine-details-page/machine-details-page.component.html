@@ -1,0 +1,238 @@
+<app-blank [title]="title()">
+  <div class="mx-auto flex w-full max-w-7xl flex-col gap-8">
+    <header class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+      <div class="min-w-0">
+        <a
+          routerLink="/machines"
+          class="inline-flex items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-blue-700"
+        >
+          <svg data-p-icon="arrow-left" class="size-4"></svg>
+          Volver a equipos
+        </a>
+
+        @if (machine(); as selectedMachine) {
+          <h1 class="mt-6 break-words text-3xl font-extrabold text-slate-950 sm:text-4xl">
+            {{ selectedMachine.equipo }}
+          </h1>
+          <p class="mt-2 text-lg font-medium text-slate-500">
+            {{ selectedMachine.modelo?.descripcion || "Modelo no registrado" }}
+          </p>
+        } @else {
+          <h1 class="mt-6 text-3xl font-extrabold text-slate-950 sm:text-4xl">
+            Detalles del Equipo
+          </h1>
+          <p class="mt-2 text-lg font-medium text-slate-500">
+            Buscando información del equipo
+          </p>
+        }
+      </div>
+
+      <button
+        pButton
+        type="button"
+        class="inline-flex h-11 w-full items-center justify-center gap-2 rounded-2xl bg-blue-700 px-5 text-sm font-bold text-white shadow-sm transition hover:bg-blue-800 sm:w-auto"
+      >
+        <svg data-p-icon="plus" class="size-4"></svg>
+        <span>Crear ticket</span>
+      </button>
+    </header>
+
+    @if (machine(); as selectedMachine) {
+      <section class="grid gap-5 xl:grid-cols-[minmax(18rem,22rem)_1fr]">
+        <aside
+          class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+        >
+          <div class="mb-6 flex items-center gap-4">
+            <div
+              class="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-700"
+            >
+              <svg data-p-icon="microchip" class="size-7"></svg>
+            </div>
+
+            <div class="min-w-0">
+              <h2 class="text-xl font-bold text-slate-950">Detalles</h2>
+              <p class="text-sm font-medium text-slate-500">
+                Equipo #{{ selectedMachine.idEquipo }}
+              </p>
+            </div>
+          </div>
+
+          <dl class="space-y-5">
+            <div class="grid grid-cols-[1.5rem_1fr] gap-3">
+              <svg data-p-icon="hashtag" class="mt-1 size-5 text-slate-500"></svg>
+              <div>
+                <dt class="text-xs font-semibold uppercase text-slate-500">Serie</dt>
+                <dd class="mt-1 break-words text-base font-bold text-slate-950">
+                  {{ selectedMachine.serie || "Sin serie" }}
+                </dd>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-[1.5rem_1fr] gap-3">
+              <svg data-p-icon="box" class="mt-1 size-5 text-slate-500"></svg>
+              <div>
+                <dt class="text-xs font-semibold uppercase text-slate-500">
+                  Código de inventario
+                </dt>
+                <dd class="mt-1 break-words text-base font-bold text-slate-950">
+                  {{ selectedMachine.codigoInventario || "Sin código" }}
+                </dd>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-[1.5rem_1fr] gap-3">
+              <svg data-p-icon="calendar" class="mt-1 size-5 text-slate-500"></svg>
+              <div>
+                <dt class="text-xs font-semibold uppercase text-slate-500">
+                  Fecha instalación
+                </dt>
+                <dd class="mt-1 text-base font-bold text-slate-950">
+                  @if (selectedMachine.fechaInstalacion) {
+                    {{ selectedMachine.fechaInstalacion | date: "dd/MM/yyyy" }}
+                  } @else {
+                    Sin fecha
+                  }
+                </dd>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-[1.5rem_1fr] gap-3">
+              <svg data-p-icon="shield" class="mt-1 size-5 text-slate-500"></svg>
+              <div>
+                <dt class="text-xs font-semibold uppercase text-slate-500">Garantía</dt>
+                <dd class="mt-1 text-base font-bold text-slate-950">
+                  {{ selectedMachine.mesGarantia || 0 }} meses
+                </dd>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-[1.5rem_1fr] gap-3">
+              <svg data-p-icon="map-marker" class="mt-1 size-5 text-slate-500"></svg>
+              <div>
+                <dt class="text-xs font-semibold uppercase text-slate-500">Agencia</dt>
+                <dd class="mt-1 break-words text-base font-bold text-slate-950">
+                  {{ selectedMachine.agencia?.valor || "Sin agencia" }}
+                </dd>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-[1.5rem_1fr] gap-3">
+              <svg data-p-icon="microchip" class="mt-1 size-5 text-slate-500"></svg>
+              <div>
+                <dt class="text-xs font-semibold uppercase text-slate-500">Modelo</dt>
+                <dd class="mt-1 break-words text-base font-bold text-slate-950">
+                  {{ selectedMachine.modelo?.descripcion || "Sin modelo" }}
+                  @if (selectedMachine.modelo?.tipoMoneda) {
+                    ({{ selectedMachine.modelo.tipoMoneda }})
+                  }
+                </dd>
+              </div>
+            </div>
+          </dl>
+        </aside>
+
+        <section
+          class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
+        >
+          <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <h2 class="text-xl font-bold text-slate-950">Historial de tickets</h2>
+              <p class="mt-1 text-sm text-slate-500">
+                Preventivos y correctivos registrados para este equipo.
+              </p>
+            </div>
+
+            <span
+              class="inline-flex w-fit rounded-full bg-slate-100 px-3 py-1.5 text-sm font-bold text-slate-700"
+            >
+              {{ tickets.value().length }} tickets
+            </span>
+          </div>
+
+          @if (tickets.isLoading()) {
+            <div class="mt-8 space-y-6">
+              @for (item of [1, 2, 3]; track item) {
+                <div class="animate-pulse border-b border-slate-200 pb-6 last:border-b-0 last:pb-0">
+                  <div class="flex items-center justify-between gap-4">
+                    <div class="h-4 w-44 rounded bg-slate-100"></div>
+                    <div class="h-4 w-24 rounded bg-slate-100"></div>
+                  </div>
+                  <div class="mt-4 h-5 w-3/4 rounded bg-slate-100"></div>
+                  <div class="mt-3 h-4 w-32 rounded bg-slate-100"></div>
+                </div>
+              }
+            </div>
+          } @else if (tickets.error()) {
+            <div
+              class="mt-8 rounded-2xl border border-red-100 bg-red-50 px-5 py-4 text-sm font-semibold text-red-700"
+            >
+              No se pudo cargar el historial de tickets.
+            </div>
+          } @else if (tickets.value().length) {
+            <div class="mt-8 divide-y divide-slate-200">
+              @for (ticket of tickets.value(); track ticket.ticketId) {
+                <article class="grid gap-3 py-6 first:pt-0 last:pb-0 md:grid-cols-[1fr_auto]">
+                  <div class="min-w-0">
+                    <div class="flex flex-wrap items-center gap-3">
+                      <span class="font-mono text-sm font-extrabold text-blue-700">
+                        {{ ticket.number }}
+                      </span>
+
+                      <span
+                        class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold ring-1"
+                        [ngClass]="statusClass(ticket)"
+                      >
+                        <span
+                          class="size-2 rounded-full"
+                          [ngClass]="statusDotClass(ticket)"
+                        ></span>
+                        {{ ticket.status.valor }}
+                      </span>
+                    </div>
+
+                    <h3 class="mt-3 break-words text-xl font-extrabold text-slate-950">
+                      {{ ticket.subject }}
+                    </h3>
+                    <p class="mt-2 text-sm font-medium text-slate-500">
+                      {{ ticketAuthor(ticket) }}
+                    </p>
+                  </div>
+
+                  <time class="text-sm font-medium text-slate-500 md:pt-1">
+                    {{ ticket.fechaSolicitud | date: "dd MMM yyyy" }}
+                  </time>
+                </article>
+              }
+            </div>
+          } @else {
+            <div class="mt-8 flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 px-6 py-12 text-center">
+              <div class="mb-4 flex size-12 items-center justify-center rounded-2xl bg-slate-100 text-slate-500">
+                <svg data-p-icon="ticket" class="size-6"></svg>
+              </div>
+              <p class="text-sm font-bold text-slate-800">
+                Sin tickets registrados
+              </p>
+              <p class="mt-1 text-sm text-slate-500">
+                Este equipo todavía no tiene preventivos ni correctivos asociados.
+              </p>
+            </div>
+          }
+        </section>
+      </section>
+    } @else if (machines.isLoading()) {
+      <section class="grid gap-5 xl:grid-cols-[minmax(18rem,22rem)_1fr]">
+        <div class="h-96 animate-pulse rounded-2xl bg-slate-100"></div>
+        <div class="h-96 animate-pulse rounded-2xl bg-slate-100"></div>
+      </section>
+    } @else {
+      <section
+        class="rounded-2xl border border-amber-100 bg-amber-50 px-6 py-8 text-center"
+      >
+        <p class="text-base font-bold text-amber-800">Equipo no encontrado</p>
+        <p class="mt-2 text-sm text-amber-700">
+          Verifica el identificador o vuelve al listado de equipos.
+        </p>
+      </section>
+    }
+  </div>
+</app-blank>

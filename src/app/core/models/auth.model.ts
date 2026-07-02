@@ -3,40 +3,19 @@ export interface AuthCredentials {
   password: string;
 }
 
+export interface CatalogValue {
+  id: number;
+  valor: string;
+}
+
 export interface AuthResponse {
   token: string;
   username: string;
-  rol: {
-    id: string;
-    valor: string;
-  };
+  rol: CatalogValue;
   nombreCompleto: string;
-  tenant: {
-    id: string;
-    valor: string;
-  };
-  client: {
-    id: string;
-    valor: string;
-  };
-  agencias: [];
+  tenant: CatalogValue;
+  client: CatalogValue;
+  agencias: CatalogValue[];
 }
 
-export interface AuthState {
-  token: string | null;
-  username: string | null;
-  rol: {
-    id: string | null;
-    valor: string | null;
-  };
-  nombreCompleto: string | null;
-  tenant: {
-    id: string | null;
-    valor: string | null;
-  };
-  client: {
-    id: string | null;
-    valor: string | null;
-  };
-  agencias: [];
-}
+export interface AuthState extends AuthResponse {}
