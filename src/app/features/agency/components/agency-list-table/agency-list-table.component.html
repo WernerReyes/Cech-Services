@@ -1,0 +1,336 @@
+<div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+  <!-- Header superior -->
+  <div
+    class="flex flex-col gap-4 border-b border-slate-200 bg-slate-50/80 px-4 py-4 sm:flex-row sm:items-center sm:justify-between"
+  >
+    <div class="flex items-start gap-3">
+      <div
+        class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-600"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="size-5"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M20 6h-4V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v17c0 .55.45 1 1 1h18c.55 0 1-.45 1-1V8c0-1.1-.9-2-2-2m0 14H4V4h10v3c0 .55.45 1 1 1h5z"
+          ></path>
+          <path
+            d="M10 6h2v2h-2zM6 6h2v2H6zm0 4h2v2H6zm4 0h2v2h-2zm6 0h2v2h-2zm-6 4h2v2h-2zm-4 0h2v2H6zm10 0h2v2h-2z"
+          ></path>
+        </svg>
+      </div>
+
+      <div>
+        <h2 class="text-base font-bold text-slate-800">
+          Agencias
+        </h2>
+
+        <p class="mt-1 text-sm text-slate-500">
+          Consulta las agencias registradas, su ubicación y banco asociado.
+        </p>
+      </div>
+    </div>
+
+    <!-- Buscador -->
+    <div class="w-full sm:w-96">
+      <p-iconfield iconPosition="left" class="w-full">
+        <p-inputicon>
+          <i class="pi pi-search text-slate-400"></i>
+        </p-inputicon>
+
+        <input
+          pInputText
+          type="text"
+          pSize="large"
+          class="w-full rounded-xl border-slate-200 bg-white text-sm shadow-sm placeholder:text-slate-400 focus:border-primary-400 focus:ring-primary-400"
+          placeholder="Buscar agencia, banco, dirección..."
+          (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+        />
+      </p-iconfield>
+    </div>
+  </div>
+
+  <!-- Tabla -->
+  <p-table
+    #dt
+    [value]="agencies.value()"
+    [loading]="agencies.isLoading()"
+    [tableStyle]="{
+      'min-width': '72rem',
+      'table-layout': 'fixed'
+    }"
+    paginator
+    [globalFilterFields]="[
+      'idAgencia',
+      'agencia',
+      'direccion',
+      'cliente.valor',
+      'departamento.valor',
+      'provincia.valor',
+      'distrito.valor',
+      'zona.valor',
+      'ubicacion.valor',
+      'empresa.valor'
+    ]"
+    dataKey="idAgencia"
+    paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
+    [rows]="10"
+    [reorderableColumns]="true"
+    [rowsPerPageOptions]="[10, 20, 50, 100]"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Mostrando del {first} al {last} de {totalRecords} agencias"
+    styleClass="cech-agency-table"
+  >
+    <!-- Header -->
+    <ng-template #header>
+      <tr>
+        <th
+          pSortableColumn="idAgencia"
+          class="w-[5.5rem] bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            ID
+            <p-sort-icon field="idAgencia" />
+          </div>
+        </th>
+
+        <th
+          pSortableColumn="agencia"
+          class="w-[28rem] bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            Agencia
+            <p-sort-icon field="agencia" />
+          </div>
+        </th>
+
+        <th
+          pSortableColumn="cliente.valor"
+          class="w-[24rem] bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            Cliente
+            <p-sort-icon field="cliente.valor" />
+          </div>
+        </th>
+
+        <th
+          pSortableColumn="direccion"
+          class="w-[27rem] bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            Dirección
+            <p-sort-icon field="direccion" />
+          </div>
+        </th>
+
+        <th
+          pSortableColumn="ubicacion.valor"
+          class="w-36 bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            Ubicación
+            <p-sort-icon field="ubicacion.valor" />
+          </div>
+        </th>
+
+        <th
+          pSortableColumn="zona.valor"
+          class="w-32 bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            Zona
+            <p-sort-icon field="zona.valor" />
+          </div>
+        </th>
+
+        <th
+          pSortableColumn="departamento.valor"
+          class="w-44 bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            Departamento
+            <p-sort-icon field="departamento.valor" />
+          </div>
+        </th>
+
+        <th
+          class="w-36 bg-white px-4 py-3 text-right text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          Acción
+        </th>
+      </tr>
+    </ng-template>
+
+    <!-- Empty -->
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="8">
+          <div
+            class="flex flex-col items-center justify-center px-6 py-14 text-center"
+          >
+            <div
+              class="mb-3 flex size-14 items-center justify-center rounded-full bg-slate-100 text-slate-400"
+            >
+              <i class="pi pi-building text-xl"></i>
+            </div>
+
+            <p class="text-sm font-semibold text-slate-700">
+              No se encontraron agencias
+            </p>
+
+            <p class="mt-1 text-sm text-slate-500">
+              Intenta buscar por otro nombre, cliente, dirección o ubicación.
+            </p>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <!-- Body -->
+    <ng-template #body let-agency>
+      <tr class="transition-colors hover:bg-slate-50">
+        <!-- ID -->
+        <td class="px-4 py-3 align-top">
+          <span
+            class="inline-flex rounded-lg bg-slate-100 px-2.5 py-1 text-xs font-bold text-slate-700"
+          >
+            #{{ agency.idAgencia }}
+          </span>
+        </td>
+
+        <!-- Agencia -->
+        <td class="px-4 py-3 align-top">
+          <div class="flex min-w-0 items-start gap-3">
+            <div
+              class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-600"
+            >
+              <i class="pi pi-building text-base"></i>
+            </div>
+
+            <div class="min-w-0 max-w-[22rem] flex-1">
+              <p
+                class="whitespace-normal break-words text-sm font-semibold leading-5 text-slate-800 [overflow-wrap:anywhere]"
+              >
+                {{ agency.agencia || "Sin agencia" }}
+              </p>
+
+              <p class="mt-1 text-xs text-slate-400">
+                Agencia registrada
+              </p>
+            </div>
+          </div>
+        </td>
+
+        <!-- Cliente / Banco -->
+        <td class="px-4 py-3 align-top">
+          <div class="flex min-w-0 items-start gap-2">
+            <span
+              class="flex size-8 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600"
+            >
+              <i class="pi pi-building-columns text-sm"></i>
+            </span>
+
+            <span
+              class="min-w-0 max-w-[20rem] whitespace-normal break-words text-sm font-medium leading-5 text-slate-700 [overflow-wrap:anywhere]"
+            >
+              {{ agency.cliente?.valor || "Sin banco" }}
+            </span>
+          </div>
+        </td>
+
+        <!-- Dirección -->
+        <td class="px-4 py-3 align-top">
+          <div class="max-w-[23rem]">
+            <p
+              class="whitespace-normal break-words text-sm font-medium leading-5 text-slate-700 [overflow-wrap:anywhere]"
+            >
+              {{ agency.direccion || "Sin dirección registrada" }}
+            </p>
+
+            <p
+              class="mt-1 flex flex-wrap items-center gap-1 text-xs leading-4 text-slate-400"
+            >
+              <i class="pi pi-map-marker text-[11px]"></i>
+
+              <span>
+                {{ agency.provincia?.valor || "Sin provincia" }}
+              </span>
+
+              @if (agency.distrito?.valor) {
+                <span>/</span>
+                <span>{{ agency.distrito?.valor }}</span>
+              }
+            </p>
+          </div>
+        </td>
+
+        <!-- Ubicación -->
+        <td class="px-4 py-3 align-top">
+          <span
+            class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-bold"
+            [class]="{
+              'bg-emerald-50 text-emerald-700':
+                agency.ubicacion?.valor === 'Lima',
+              'bg-amber-50 text-amber-700':
+                agency.ubicacion?.valor === 'Provincia',
+              'bg-slate-100 text-slate-600': !agency.ubicacion?.valor
+            }"
+          >
+            <span
+              class="size-1.5 rounded-full"
+              [class]="{
+                'bg-emerald-500': agency.ubicacion?.valor === 'Lima',
+                'bg-amber-500': agency.ubicacion?.valor === 'Provincia',
+                'bg-slate-400': !agency.ubicacion?.valor
+              }"
+            ></span>
+
+            {{ agency.ubicacion?.valor || "Sin ubicación" }}
+          </span>
+        </td>
+
+        <!-- Zona -->
+        <td class="px-4 py-3 align-top">
+          <span
+            class="inline-flex max-w-full rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold leading-4 text-slate-600 whitespace-normal break-words [overflow-wrap:anywhere]"
+          >
+            {{ agency.zona?.valor || "Sin zona" }}
+          </span>
+        </td>
+
+        <!-- Departamento -->
+        <td class="px-4 py-3 align-top">
+          <div class="min-w-0 max-w-[10rem]">
+            <p
+              class="whitespace-normal break-words text-sm font-semibold leading-5 text-slate-700 [overflow-wrap:anywhere]"
+            >
+              {{ agency.departamento?.valor || "Sin departamento" }}
+            </p>
+
+            <p
+              class="mt-0.5 whitespace-normal break-words text-xs leading-4 text-slate-400 [overflow-wrap:anywhere]"
+            >
+              {{ agency.provincia?.valor || "Sin provincia" }}
+            </p>
+          </div>
+        </td>
+
+        <!-- Acción -->
+        <td class="px-4 py-3 text-right align-top">
+          <button
+            pButton
+            type="button"
+            [outlined]="true"
+            class="inline-flex h-9 items-center gap-2 rounded-xl border-primary-200 px-3 text-sm font-semibold text-primary-600 transition hover:bg-primary-50"
+          >
+            <i class="pi pi-eye text-sm"></i>
+            <span>Ver detalle</span>
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

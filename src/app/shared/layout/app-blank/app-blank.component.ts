@@ -1,5 +1,6 @@
 
-import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
+import { SidebarService } from '@shared/services/sidebar.service';
 import { PageBreadcrumbComponent } from '@shared/components/common/page-breadcrumb/page-breadcrumb.component';
 
 @Component({
@@ -8,11 +9,11 @@ import { PageBreadcrumbComponent } from '@shared/components/common/page-breadcru
     PageBreadcrumbComponent
 ],
   templateUrl: './app-blank.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  styles: ``
 })
 export class AppBlankComponent {
+  protected readonly sidebarService = inject(SidebarService);
 
   title = input.required<string>();
+  
 
 }

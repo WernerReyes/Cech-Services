@@ -45,7 +45,7 @@ const baseFormData: AuthCredentials = {
     IconFieldModule,
     InputIconModule,
     MessageModule,
-    Envelope,
+   
     Eye,
     EyeSlash,
     Lock,

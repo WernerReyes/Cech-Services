@@ -22,6 +22,7 @@ import { CalenderComponent } from "./pages/calender/calender.component";
 import { authRoutes } from "./features/auth/auth.routes";
 import{ clientRoutes } from "./features/client/client.routes";
 import { authGuard } from "./core/guards/auth.guard";
+import { agencyRoutes } from "./features/agency/client.routes";
 
 export const routes: Routes = [
   {
@@ -30,6 +31,7 @@ export const routes: Routes = [
     canActivate: [authGuard],
     children: [
       ...clientRoutes,
+      ...agencyRoutes,
       {
         path: "",
         component: EcommerceComponent,

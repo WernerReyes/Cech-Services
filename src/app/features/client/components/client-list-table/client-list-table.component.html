@@ -1,79 +1,165 @@
- <div class="mb-3 flex justify-end">
-            <p-iconfield iconPosition="left">
-                <p-inputicon>
-                    <svg data-p-icon="search" />
-                </p-inputicon>
-                <input
-                variant="filled"
-                pSize="large"
-                 (input)="dt.filterGlobal($event.target.value, 'contains')"
-                 pInputText  type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Buscar cliente..."
-                  />
-            </p-iconfield>
-        </div>
-<p-table
-#dt
-  [value]="clients.value()"
-  [loading]="clients.isLoading()"
-  [tableStyle]="{ 'min-width': '50rem' }"
-  paginator
-  [globalFilterFields]="['idCliente', 'cliente']"
-  dataKey="idCliente"
-  paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
-  showGridlines
-  [rows]="10"
-  [reorderableColumns]="true" 
-  [rowsPerPageOptions]="[10, 20, 50, 100]"
-  [showCurrentPageReport]="true"
-  currentPageReportTemplate="Mostrando del {first} al {last} de {totalRecords} bancos"
+<div
+  class="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden"
 >
-  <ng-template #header>
-    <tr>
-      <th pSortableColumn="idCliente">ID
-<p-sort-icon field="idCliente" />
+  <!-- Header superior -->
+  <div
+    class="flex flex-col gap-4 border-b border-slate-200 bg-slate-50/70 px-4 py-4 sm:flex-row sm:items-center sm:justify-between"
+  >
+    <div>
+      <h2 class="text-base font-bold text-slate-800">Clientes</h2>
+      <p class="mt-1 text-sm text-slate-500">
+        Gestiona tus clientes desde esta sección.
+      </p>
+    </div>
 
-      </th>
-      <th pSortableColumn="cliente">Nombre
-<p-sort-icon field="cliente" />
+    <!-- Buscador -->
+    <div class="w-full sm:w-80">
+      <p-iconfield iconPosition="left" class="w-full">
+        <p-inputicon>
+          <svg data-p-icon="search" class="h-4 w-4 text-slate-400"></svg>
+        </p-inputicon>
+
+        <input
+          pInputText
+          type="text"
+          pSize="large"
+          class="w-full rounded-xl border-slate-200 bg-white text-sm shadow-sm placeholder:text-slate-400 focus:border-blue-400 focus:ring-blue-400"
+          placeholder="Buscar cliente..."
+          (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+        />
+      </p-iconfield>
+    </div>
+  </div>
+
+  <!-- Tabla -->
+  <p-table
+    #dt
+    [value]="clients.value()"
+    [loading]="clients.isLoading()"
+    [tableStyle]="{ 'min-width': '56rem' }"
+    paginator
+    [globalFilterFields]="['idCliente', 'cliente']"
+    dataKey="idCliente"
+    paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
+    [rows]="10"
+    [reorderableColumns]="true"
+    [rowsPerPageOptions]="[10, 20, 50, 100]"
+    [showCurrentPageReport]="true"
+    currentPageReportTemplate="Mostrando del {first} al {last} de {totalRecords} clientes"
+    styleClass="cech-client-table"
+  >
+    <!-- Header -->
+    <ng-template #header>
+      <tr>
+        <th
+          pSortableColumn="idCliente"
+          class="w-32 bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            ID
+            <p-sort-icon field="idCliente" />
+          </div>
         </th>
-      <th></th>
-    </tr>
-  </ng-template>
 
-  <ng-template #empty>
-    <tr>
-      <td colspan="3" class="text-center text-gray-500 dark:text-gray-400">
-        No se encontraron clientes.
-      </td>
-    </tr>
+        <th
+          pSortableColumn="cliente"
+          class="bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          <div class="flex items-center gap-2">
+            Nombre
+            <p-sort-icon field="cliente" />
+          </div>
+        </th>
+
+        <th
+          class="w-48 bg-white px-4 py-3 text-right text-xs font-bold uppercase tracking-wide text-slate-500"
+        >
+          Acción
+        </th>
+      </tr>
     </ng-template>
 
+    <!-- Empty -->
+    <ng-template #emptymessage>
+      <tr>
+        <td colspan="3">
+          <div
+            class="flex flex-col items-center justify-center px-6 py-12 text-center"
+          >
+            <div
+              class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-400"
+            >
+              <svg data-p-icon="search" class="h-5 w-5"></svg>
+            </div>
 
-  <ng-template #body let-client>
-    <tr>
-      <td>
-        <span class="font-medium">{{ client.idCliente }}</span>
-      </td>
-      <td>
-        <div class="flex items-center gap-2">
-         
-          <span>{{ client.cliente }}</span>
-        </div>
-      </td>
-        <td>
-            <button
+            <p class="text-sm font-semibold text-slate-700">
+              No se encontraron clientes
+            </p>
+
+            <p class="mt-1 text-sm text-slate-500">
+              Intenta buscar por otro nombre o ID.
+            </p>
+          </div>
+        </td>
+      </tr>
+    </ng-template>
+
+    <!-- Body -->
+    <ng-template #body let-client>
+      <tr class="transition-colors hover:bg-slate-50">
+        <td class="px-4 py-3">
+          <span
+            class="inline-flex rounded-lg bg-slate-100 px-2.5 py-1 text-xs font-bold text-slate-700"
+          >
+            #{{ client.idCliente }}
+          </span>
+        </td>
+
+        <td class="px-4 py-3">
+          <div class="flex min-w-0 items-center gap-3">
+            <div
+              class="flex size-9 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-500"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
+                <path
+                  d="M20 6h-4V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v17c0 .55.45 1 1 1h18c.55 0 1-.45 1-1V8c0-1.1-.9-2-2-2m0 14H4V4h10v3c0 .55.45 1 1 1h5z"
+                ></path>
+                <path
+                  d="M10 6h2v2h-2zM6 6h2v2H6zm0 4h2v2H6zm4 0h2v2h-2zm6 0h2v2h-2zm-6 4h2v2h-2zm-4 0h2v2H6zm10 0h2v2h-2z"
+                ></path>
+              </svg>
+            </div>
+
+            <div class="min-w-0">
+              <p class="truncate text-sm font-semibold text-slate-800">
+                {{ client.cliente }}
+              </p>
+              <p class="text-xs text-slate-400">Cliente registrado</p>
+            </div>
+          </div>
+        </td>
+
+        <td class="px-4 py-3 text-right">
+          <button
             pButton
             type="button"
-            /* severity="secondary" */
             [outlined]="true"
-            class="h-10"
-            /* (click)="selectClient(client)" */
-            >
-            <svg data-p-icon="building-columns" class="h-4 w-4"></svg>
-            ver Agencias
-            </button>
+            class="inline-flex h-9 items-center gap-2 rounded-xl border-blue-200 px-3 text-sm font-semibold text-blue-600 transition hover:bg-blue-50"
+          >
+            <svg xmlns="http://w3.org" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M21.921 5.317A1 1 0 0 0 21 5H3a1 1 0 0 0-.921.683l-2 5A1 1 0 0 0 1 12h1v8a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-8h1a1 1 0 0 0 .921-1.317l-2-5zM4.379 7h15.242l1.2 3H3.179l1.2-3zM16 19H4v-7h12v7zm2 0h-2v-7h2v7z"></path>
+</svg>
+            <span>Ver agencias</span>
+          </button>
         </td>
-     
-    </tr>
-  </ng-template>
-</p-table>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

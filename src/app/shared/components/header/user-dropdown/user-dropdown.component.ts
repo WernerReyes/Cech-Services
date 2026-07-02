@@ -22,7 +22,7 @@ import { AvatarModule } from "primeng/avatar";
     CommonModule,
     RouterModule,
     DropdownComponent,
-    DropdownItemTwoComponent,
+   
   ],
 })
 export class UserDropdownComponent {

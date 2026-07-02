@@ -11,8 +11,7 @@ import { UserDropdownComponent } from '../../components/header/user-dropdown/use
   imports: [
     CommonModule,
     RouterModule,
-    ThemeToggleButtonComponent,
-    NotificationDropdownComponent,
+  
     UserDropdownComponent,
   ],
   changeDetection: ChangeDetectionStrategy.Eager,

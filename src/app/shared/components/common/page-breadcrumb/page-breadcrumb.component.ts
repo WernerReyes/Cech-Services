@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -7,9 +7,8 @@ import { RouterModule } from '@angular/router';
     RouterModule,
   ],
   templateUrl: './page-breadcrumb.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
-  styles: ``
 })
 export class PageBreadcrumbComponent {
   pageTitle = input('');
+  icon = input('');
 }

@@ -43,10 +43,23 @@ export class AppSidebarComponent {
 <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
 fill="currentColor" viewBox="0 0 24 24" >
 <!--Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free-->
-<path d="m21.49 7.13-9-5a.99.99 0 0 0-.97 0l-9.01 5C2.19 7.31 2 7.64 2 8v3c0 .55.45 1 1 1h2v4H3c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1h18c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1h-2v-4h2c.55 0 1-.45 1-1V8a1 1 0 0 0-.51-.87M7 12h2v4H7zm6 0v4h-2v-4zm7 6v2H4v-2zm-3-2h-2v-4h2zm3-6H4V8.59l8-4.44 8 4.44z"></path><path d="M12 6a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3"></path>
+<path d="M20 6h-4V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v17c0 .55.45 1 1 1h18c.55 0 1-.45 1-1V8c0-1.1-.9-2-2-2m0 14H4V4h10v3c0 .55.45 1 1 1h5z"></path><path d="M10 6h2v2h-2zM6 6h2v2H6zm0 4h2v2H6zm4 0h2v2h-2zm6 0h2v2h-2zm-6 4h2v2h-2zm-4 0h2v2H6zm10 0h2v2h-2z"></path>
 </svg>
       `,
       path: "/clients",
+      new: true,
+    },
+
+    {
+      name: "Agencias",
+      icon: `
+<svg xmlns="http://w3.org" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+  <path d="M21.921 5.317A1 1 0 0 0 21 5H3a1 1 0 0 0-.921.683l-2 5A1 1 0 0 0 1 12h1v8a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-8h1a1 1 0 0 0 .921-1.317l-2-5zM4.379 7h15.242l1.2 3H3.179l1.2-3zM16 19H4v-7h12v7zm2 0h-2v-7h2v7z"></path>
+</svg>
+
+
+`,
+      path: "/agencies",
       new: true,
     },
 

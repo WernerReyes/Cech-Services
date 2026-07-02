@@ -8,15 +8,18 @@ import { IconFieldModule } from "primeng/iconfield";
 import { InputIconModule } from "primeng/inputicon";
 import { InputTextModule } from "primeng/inputtext";
 import { TableModule } from "primeng/table";
+import { AgencyService } from "@features/agency/agency.service";
+import { JsonPipe } from "@angular/common";
 
 @Component({
-  selector: "client-list-table",
-  imports: [TableModule, ButtonModule, Search, BuildingColumns, InputTextModule, MapMarker, IconFieldModule, InputIconModule],
-  templateUrl: "./client-list-table.component.html",
+  selector: "agency-list-table",
+  imports: [TableModule, ButtonModule, Search, BuildingColumns, JsonPipe, InputTextModule, MapMarker, IconFieldModule, InputIconModule],
+  templateUrl: "./agency-list-table.component.html",
+  styleUrl: "./agency-list-table.component.css",
 })
-export class ClientListTableComponent {
-  private readonly clientService = inject(ClientService);
-  protected readonly clients = this.clientService.clients;
+export class AgencyListTableComponent {
+  private readonly agencyService = inject(AgencyService);
+  protected readonly agencies = this.agencyService.agencies;
 
   
 }
