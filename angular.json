@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-tailadmin": {
+    "cech-services": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/ng-tailadmin",
+            "outputPath": "dist/cech-services",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -87,10 +87,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ng-tailadmin:build:production"
+              "buildTarget": "cech-services:build:production"
             },
             "development": {
-              "buildTarget": "ng-tailadmin:build:development"
+              "buildTarget": "cech-services:build:development"
             }
           },
           "defaultConfiguration": "development"
