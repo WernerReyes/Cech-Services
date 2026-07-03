@@ -279,7 +279,7 @@ export class EcommerceComponent {
         },
       },
       tooltip: {
-        theme: "dark",
+        theme: "",
         y: {
           formatter: (value: number) => `${value} tickets`,
         },
