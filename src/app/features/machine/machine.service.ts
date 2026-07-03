@@ -11,6 +11,8 @@ export class MachineService {
   private readonly config = inject(APP_CONFIG);
   private readonly agencyService = inject(AgencyService);
 
+  public machineId = signal<number | null>(null);
+
   readonly machines = httpResource<Machine[]>(
     () => {
       const selectedAgency = this.agencyService.selectedAgency();
@@ -20,7 +22,6 @@ export class MachineService {
       }
 
       return `${this.config.apiUrl}/equipos/agencia/${selectedAgency.id}`;
-
     },
 
     {
@@ -28,33 +29,48 @@ export class MachineService {
       parse: (response) => (response as ApiResponse<Machine[]>).data,
     },
   );
+  // https://mesadeayuda.cechriza.com/api/equipos/307
+  // public readonly machineSelect = signal<Machine | null>(null);
 
-  public readonly machineSelect = signal<Machine | null>(null);
+  public readonly machineSelect = httpResource<Machine | null>(
+    () => {
+      const machineId = this.machineId();
+      if (!machineId) {
+        return undefined;
+      }
+      return `${this.config.apiUrl}/equipos/${machineId}`;
+    },
+    {
+      defaultValue: null,
+      parse: (response) => {
+        const payload = response as ApiResponse<Machine> | Machine | null;
+        return payload && "data" in payload ? payload.data : payload;
+      },
+    },
+  );
 
   // https://mesadeayuda.cechriza.com/api/equipos/307/tickets
 
   public readonly machineTickets = httpResource<MachineTicketHistory[]>(
     () => {
-      const selectedMachine = this.machineSelect();
-      if (!selectedMachine) {
+      const machineId = this.machineId();
+      if (!machineId) {
         return undefined;
       }
 
-      return `${this.config.apiUrl}/equipos/${selectedMachine.idEquipo}/tickets`;
+      return `${this.config.apiUrl}/equipos/${machineId}/tickets`;
     },
     {
       defaultValue: [],
       parse: (response) => {
-        const payload =
-          response as ApiResponse<MachineTicketHistory[]> | MachineTicketHistory[];
+        const payload = response as
+          | ApiResponse<MachineTicketHistory[]>
+          | MachineTicketHistory[];
 
-        return Array.isArray(payload) ? payload : payload.data ?? [];
+        return Array.isArray(payload) ? payload : (payload.data ?? []);
       },
     },
   );
-
-
 }
-
 
 // https://mesadeayuda.cechriza.com/api/equipos/agencia/1428

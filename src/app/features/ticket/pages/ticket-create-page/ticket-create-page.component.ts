@@ -62,7 +62,7 @@ export default class TicketCreatePageComponent {
   protected readonly createdTicket = signal<CreateTicketResult | null>(null);
   protected readonly agencies = this.agencyService.agencies;
   protected readonly machines = this.machineService.machines;
-  protected readonly machine = computed(() => this.machineService.machineSelect());
+  protected readonly machine = computed(() => this.machineService.machineSelect.value());
   protected readonly selectedAgency = signal<Agency | null>(null);
   protected readonly selectedMachine = signal<Machine | null>(null);
 

@@ -31,7 +31,7 @@ export default class MachineDetailsPageComponent {
 
   id = input<string | null>(null);
 
-  protected readonly machine = computed(() => this.machineService.machineSelect());
+  protected readonly machine = computed(() => this.machineService.machineSelect.value());
 
   protected readonly title = computed<string>(
     () => this.machine()?.equipo || "Detalles del Equipo",
@@ -53,22 +53,23 @@ export default class MachineDetailsPageComponent {
 
   private readonly setMachineById = effect(() => {
     const machineId = this.id();
-    const currentMachine = this.machineService.machineSelect();
-    console.log("Machine ID from route:", machineId, currentMachine);
-    if (!machineId || currentMachine?.idEquipo.toString() === machineId) {
-      return;
-    }
+    this.machineService.machineId.set(machineId ? parseInt(machineId) : null);
+    // const currentMachine = this.machineService.machineSelect();
+    // console.log("Machine ID from route:", machineId, currentMachine);
+    // if (!machineId || currentMachine?.idEquipo.toString() === machineId) {
+    //   return;
+    // }
 
-    const selectedMachine = this.machines
-      .value()
-      .find((machine) => machine.idEquipo.toString() === machineId);
+    // const selectedMachine = this.machines
+    //   .value()
+    //   .find((machine) => machine.idEquipo.toString() === machineId);
 
-      console.log("Selected Machine:", this.machines
-      .value());
+    //   console.log("Selected Machine:", this.machines
+    //   .value());
 
-    if (selectedMachine || !this.machines.isLoading()) {
-      this.machineService.machineSelect.set(selectedMachine || null);
-    }
+    // if (selectedMachine || !this.machines.isLoading()) {
+    //   this.machineService.machineSelect.set(selectedMachine || null);
+    // }
   });
 
   protected statusClass(ticket: MachineTicketHistory): string {
