@@ -1,9 +1,7 @@
-import { httpResource } from "@angular/common/http";
 import { Service, computed, inject, signal } from "@angular/core";
-import { APP_CONFIG } from "@core/config/app.config.tokens";
-import type { ApiResponse } from "@core/models/api.model";
-import type { Agency } from "./agency.model";
 import { AuthService } from "@app/core/services/auth.service";
+import { APP_CONFIG } from "@core/config/app.config.tokens";
+import type { Agency } from "./agency.model";
 
 @Service()
 export class AgencyService {
@@ -16,4 +14,7 @@ export class AgencyService {
   });
 
   public readonly selectedAgency = signal<Agency | null>(null);
+
+
+  
 }

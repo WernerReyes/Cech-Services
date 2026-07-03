@@ -1,8 +1,6 @@
 import { Component, inject } from "@angular/core";
 import { ClientService } from "@features/client/client.service";
-import { BuildingColumns } from "@primeicons/angular/building-columns";
-import { MapMarker } from "@primeicons/angular/map-marker";
-import { Search } from "@primeicons/angular/search";
+
 import { ButtonModule } from "primeng/button";
 import { IconFieldModule } from "primeng/iconfield";
 import { InputIconModule } from "primeng/inputicon";
@@ -18,7 +16,7 @@ import { Machine } from "@app/features/machine/machine.model";
 
 @Component({
   selector: "machine-list-table",
-  imports: [TableModule, ButtonModule, DatePipe, Search, BuildingColumns, InputTextModule, MapMarker, IconFieldModule, InputIconModule],
+  imports: [TableModule, ButtonModule, DatePipe,  InputTextModule, IconFieldModule, InputIconModule],
   templateUrl: "./machine-list-table.component.html",
 })
 export class MachineListTableComponent {
@@ -32,10 +30,6 @@ export class MachineListTableComponent {
     this.router.navigate([`/machines/${machine.idEquipo}`]);  
   }
 
-  // onSelectClient(client: Machine) {
-  //   this.machineService.machineSelect.set(client);
-  //   this.router.navigate(["/agencies"]);
-  // }
 
   
 }

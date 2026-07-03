@@ -1,6 +1,12 @@
-<app-blank title="Equipos">
+<app-blank [title]="title()">
+        <ng-template #header>
+            <app-page-breadcrumb [pageTitle]="title()" icon="pi-warehouse" />
+        </ng-template>
+
     <div class="flex flex-col gap-4">
-        <select-agency></select-agency>
+        <select-agency>
+
+        </select-agency>
 
         <machine-list-table></machine-list-table>
     </div>

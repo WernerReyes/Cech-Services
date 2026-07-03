@@ -1,7 +1,7 @@
 import {
-  APP_INITIALIZER,
   ApplicationConfig,
   inject,
+  LOCALE_ID,
   provideAppInitializer,
 } from "@angular/core";
 import { provideRouter, withComponentInputBinding } from "@angular/router";
@@ -18,6 +18,13 @@ import { provideHttpClient, withInterceptors } from "@angular/common/http";
 import { authInterceptor } from "@core/interceptors/auth.interceptor";
 import { errorInterceptor } from "@core/interceptors/error.interceptor";
 import { AuthService } from "./core/services/auth.service";
+
+// 1. Importa las funciones y el idioma
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+
+// 2. Registra los datos del idioma
+registerLocaleData(localeEs);
 
 const customPreset = definePreset(Aura, {
   semantic: {
@@ -46,6 +53,7 @@ function initializeApp() {
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, withComponentInputBinding()),
+    { provide: LOCALE_ID, useValue: 'es' },
     MessageService,
     {
       provide: APP_CONFIG,

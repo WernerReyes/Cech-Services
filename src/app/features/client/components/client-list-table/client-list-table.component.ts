@@ -1,8 +1,6 @@
 import { Component, inject } from "@angular/core";
 import { ClientService } from "@features/client/client.service";
-import { BuildingColumns } from "@primeicons/angular/building-columns";
-import { MapMarker } from "@primeicons/angular/map-marker";
-import { Search } from "@primeicons/angular/search";
+
 import { ButtonModule } from "primeng/button";
 import { IconFieldModule } from "primeng/iconfield";
 import { InputIconModule } from "primeng/inputicon";
@@ -13,7 +11,7 @@ import { Router } from "@angular/router";
 
 @Component({
   selector: "client-list-table",
-  imports: [TableModule, ButtonModule, Search, BuildingColumns, InputTextModule, MapMarker, IconFieldModule, InputIconModule],
+  imports: [TableModule, ButtonModule, InputTextModule,  IconFieldModule, InputIconModule],
   templateUrl: "./client-list-table.component.html",
 })
 export class ClientListTableComponent {

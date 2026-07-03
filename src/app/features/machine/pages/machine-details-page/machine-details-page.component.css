@@ -1,0 +1,29 @@
+@media (max-width: 768px) {
+  :host ::ng-deep .cech-ticket-timeline .p-timeline-event-opposite {
+    display: none !important;
+  }
+
+  :host ::ng-deep .cech-ticket-timeline .p-timeline-event-content {
+    width: 100%;
+    min-width: 0;
+    padding-left: 0.75rem;
+  }
+}
+
+
+:host ::ng-deep .cech-ticket-timeline .p-timeline-event-opposite {
+  flex: 0 0 7rem !important;
+  max-width: 7rem !important;
+  padding: 0 0.75rem 1.5rem 0 !important;
+  text-align: right;
+}
+
+:host ::ng-deep .cech-ticket-timeline .p-timeline-event-content {
+  flex: 1 1 auto !important;
+  min-width: 0;
+  padding: 0 0 0 1rem !important;
+}
+
+:host ::ng-deep .cech-ticket-timeline .p-timeline-event-separator {
+  flex: 0 0 2.25rem !important;
+}

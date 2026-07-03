@@ -2,19 +2,14 @@ import { DatePipe, NgClass } from "@angular/common";
 import { Component, computed, effect, inject, input } from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { AppBlankComponent } from "@shared/layout/app-blank/app-blank.component";
-import { ArrowLeft } from "@primeicons/angular/arrow-left";
-import { Box } from "@primeicons/angular/box";
-import { Calendar } from "@primeicons/angular/calendar";
-import { Hashtag } from "@primeicons/angular/hashtag";
-import { MapMarker } from "@primeicons/angular/map-marker";
-import { Microchip } from "@primeicons/angular/microchip";
-import { Plus } from "@primeicons/angular/plus";
-import { Shield } from "@primeicons/angular/shield";
-import { Ticket } from "@primeicons/angular/ticket";
+
 import { ButtonModule } from "primeng/button";
+import { TimelineModule } from "primeng/timeline";
 
 import type { MachineTicketHistory } from "../../machine.model";
 import { MachineService } from "../../machine.service";
+import { PageBreadcrumbComponent } from "@app/shared/components/common/page-breadcrumb/page-breadcrumb.component";
+import { GenericTableCellDirective } from "@app/shared/components/tables/generic-table/generic-table-cell.directive";
 
 @Component({
   selector: "app-machine-details-page",
@@ -24,15 +19,9 @@ import { MachineService } from "../../machine.service";
     ButtonModule,
     DatePipe,
     NgClass,
-    ArrowLeft,
-    Box,
-    Calendar,
-    Hashtag,
-    MapMarker,
-    Microchip,
-    Plus,
-    Shield,
-    Ticket,
+    TimelineModule,
+    PageBreadcrumbComponent,
+    GenericTableCellDirective,
   ],
   templateUrl: "./machine-details-page.component.html",
   styleUrl: "./machine-details-page.component.css",
@@ -51,10 +40,21 @@ export default class MachineDetailsPageComponent {
   protected readonly machines = this.machineService.machines;
   protected readonly tickets = this.machineService.machineTickets;
 
+  protected readonly ticketEvents = computed(() => {
+    return this.tickets.value().map((ticket) => ({
+      ticket,
+      date: ticket.fechaSolicitud,
+      status: ticket.status?.valor ?? "Sin estado",
+      number: ticket.number,
+      subject: ticket.subject,
+      author: this.ticketAuthor(ticket),
+    }));
+  });
+
   private readonly setMachineById = effect(() => {
     const machineId = this.id();
     const currentMachine = this.machineService.machineSelect();
-
+    console.log("Machine ID from route:", machineId, currentMachine);
     if (!machineId || currentMachine?.idEquipo.toString() === machineId) {
       return;
     }
@@ -62,6 +62,9 @@ export default class MachineDetailsPageComponent {
     const selectedMachine = this.machines
       .value()
       .find((machine) => machine.idEquipo.toString() === machineId);
+
+      console.log("Selected Machine:", this.machines
+      .value());
 
     if (selectedMachine || !this.machines.isLoading()) {
       this.machineService.machineSelect.set(selectedMachine || null);
@@ -102,6 +105,24 @@ export default class MachineDetailsPageComponent {
     }
 
     return "bg-slate-400";
+  }
+
+  protected statusMarkerClass(ticket: MachineTicketHistory): string {
+    const status = ticket.status?.valor?.toLowerCase() ?? "";
+
+    if (status.includes("cerr") || status.includes("closed")) {
+      return "bg-emerald-50 ring-emerald-100";
+    }
+
+    if (status.includes("abiert") || status.includes("open")) {
+      return "bg-sky-50 ring-sky-100";
+    }
+
+    if (status.includes("pend") || status.includes("proceso")) {
+      return "bg-amber-50 ring-amber-100";
+    }
+
+    return "bg-slate-100 ring-slate-200";
   }
 
   protected ticketAuthor(ticket: MachineTicketHistory): string {

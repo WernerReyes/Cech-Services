@@ -5,18 +5,13 @@
   <div
     class="flex flex-col gap-4 border-b border-slate-200 bg-slate-50/70 px-4 py-4 sm:flex-row sm:items-center sm:justify-between"
   >
-    <div>
-      <h2 class="text-base font-bold text-slate-800">Equipos</h2>
-      <p class="mt-1 text-sm text-slate-500">
-        Gestiona los equipos registrados, su agencia, modelo y garantía.
-      </p>
-    </div>
+   
 
     <!-- Buscador -->
-    <div class="w-full sm:w-96">
+    <div class="w-full sm:w-96 ml-auto">
       <p-iconfield iconPosition="left" class="w-full">
         <p-inputicon>
-          <svg data-p-icon="search" class="h-4 w-4 text-slate-400"></svg>
+          <i class="pi pi-search text-slate-400"></i>
         </p-inputicon>
 
         <input
@@ -88,7 +83,7 @@
           </div>
         </th>
 
-        <th
+        <!-- <th
           pSortableColumn="agencia.valor"
           class="bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
         >
@@ -96,7 +91,7 @@
             Agencia
             <p-sort-icon field="agencia.valor" />
           </div>
-        </th>
+        </th> -->
 
         <th
           pSortableColumn="fechaInstalacion"
@@ -139,14 +134,14 @@
     <!-- Empty -->
     <ng-template #emptymessage>
       <tr>
-        <td colspan="8">
+        <td colspan="7">
           <div
             class="flex flex-col items-center justify-center px-6 py-12 text-center"
           >
             <div
               class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-400"
             >
-              <svg data-p-icon="search" class="h-5 w-5"></svg>
+              <i class="pi pi-warehouse text-2xl!"></i>
             </div>
 
             <p class="text-sm font-semibold text-slate-700">
@@ -177,24 +172,7 @@
         <!-- Equipo -->
         <td class="px-4 py-3">
           <div class="flex min-w-0 items-center gap-3">
-            <div
-              class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-500"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  d="M20 6h-4V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v17c0 .55.45 1 1 1h18c.55 0 1-.45 1-1V8c0-1.1-.9-2-2-2m0 14H4V4h10v3c0 .55.45 1 1 1h5z"
-                ></path>
-                <path
-                  d="M10 6h2v2h-2zM6 6h2v2H6zm0 4h2v2H6zm4 0h2v2h-2zm6 0h2v2h-2zm-6 4h2v2h-2zm-4 0h2v2H6zm10 0h2v2h-2z"
-                ></path>
-              </svg>
-            </div>
+            
 
             <div class="min-w-0">
               <p class="truncate text-sm font-semibold text-slate-800">
@@ -218,13 +196,13 @@
         </td>
 
         <!-- Agencia -->
-        <td class="px-4 py-3">
+        <!-- <td class="px-4 py-3">
           <div class="flex min-w-0 items-center gap-2">
-            <!-- <div
+            <div
               class="flex size-8 shrink-0 items-center justify-center rounded-lg bg-blue-50 text-blue-600"
             >
               <i class="pi pi-map-marker text-xs"></i>
-            </div> -->
+            </div>
 
             <div class="min-w-0">
               <p class="truncate text-sm font-semibold text-slate-700">
@@ -232,7 +210,7 @@
               </p>
             </div>
           </div>
-        </td>
+        </td> -->
 
         <!-- Fecha instalación -->
         <td class="px-4 py-3">

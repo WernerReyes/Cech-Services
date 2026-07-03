@@ -1,40 +1,12 @@
-<div class="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+<div class=" rounded-2xl border border-slate-200 bg-white">
   <!-- Header superior -->
   <div
     class="flex flex-col gap-4 border-b border-slate-200 bg-slate-50/80 px-4 py-4 sm:flex-row sm:items-center sm:justify-between"
   >
-    <div class="flex items-start gap-3">
-      <div
-        class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-600"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="size-5"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            d="M20 6h-4V4c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v17c0 .55.45 1 1 1h18c.55 0 1-.45 1-1V8c0-1.1-.9-2-2-2m0 14H4V4h10v3c0 .55.45 1 1 1h5z"
-          ></path>
-          <path
-            d="M10 6h2v2h-2zM6 6h2v2H6zm0 4h2v2H6zm4 0h2v2h-2zm6 0h2v2h-2zm-6 4h2v2h-2zm-4 0h2v2H6zm10 0h2v2h-2z"
-          ></path>
-        </svg>
-      </div>
-
-      <div>
-        <h2 class="text-base font-bold text-slate-800">
-          Agencias
-        </h2>
-
-        <p class="mt-1 text-sm text-slate-500">
-          Consulta las agencias registradas, su ubicación y banco asociado.
-        </p>
-      </div>
-    </div>
+    
 
     <!-- Buscador -->
-    <div class="w-full sm:w-96">
+    <div class="w-full sm:w-96 ml-auto">
       <p-iconfield iconPosition="left" class="w-full">
         <p-inputicon>
           <i class="pi pi-search text-slate-400"></i>
@@ -45,7 +17,7 @@
           type="text"
           pSize="large"
           class="w-full rounded-xl border-slate-200 bg-white text-sm shadow-sm placeholder:text-slate-400 focus:border-primary-400 focus:ring-primary-400"
-          placeholder="Buscar agencia, banco, dirección..."
+          placeholder="Buscar agencia..."
           (input)="dt.filterGlobal($any($event.target).value, 'contains')"
         />
       </p-iconfield>
@@ -63,16 +35,8 @@
     }"
     paginator
     [globalFilterFields]="[
-      'idAgencia',
-      'agencia',
-      'direccion',
-      'cliente.valor',
-      'departamento.valor',
-      'provincia.valor',
-      'distrito.valor',
-      'zona.valor',
-      'ubicacion.valor',
-      'empresa.valor'
+      'id',
+      'valor',
     ]"
     dataKey="idAgencia"
     paginatorTemplate="CurrentPageReport FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink RowsPerPageDropdown"
@@ -88,7 +52,7 @@
       <tr>
         <th
           pSortableColumn="idAgencia"
-          class="w-[5.5rem] bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+          class="w-22 bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
         >
           <div class="flex items-center gap-2">
             ID
@@ -98,7 +62,7 @@
 
         <th
           pSortableColumn="agencia"
-          class="w-[28rem] bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
+          class="w-md bg-white px-4 py-3 text-xs font-bold uppercase tracking-wide text-slate-500"
         >
           <div class="flex items-center gap-2">
             Agencia
@@ -119,14 +83,14 @@
     <!-- Empty -->
     <ng-template #emptymessage>
       <tr>
-        <td colspan="8">
+        <td colspan="3">
           <div
             class="flex flex-col items-center justify-center px-6 py-14 text-center"
           >
             <div
               class="mb-3 flex size-14 items-center justify-center rounded-full bg-slate-100 text-slate-400"
             >
-              <i class="pi pi-building text-xl"></i>
+             <i class="pi pi-building text-2xl!"></i>
             </div>
 
             <p class="text-sm font-semibold text-slate-700">
@@ -134,7 +98,7 @@
             </p>
 
             <p class="mt-1 text-sm text-slate-500">
-              Intenta buscar por otro nombre, cliente, dirección o ubicación.
+              Intenta buscar por otro nombre
             </p>
           </div>
         </td>
@@ -180,30 +144,7 @@
             [outlined]="true"
             class="inline-flex h-9 items-center gap-2 rounded-xl border-primary-200 px-3 text-sm font-semibold text-primary-600 transition hover:bg-primary-50"
           >
-           <svg xmlns="http://w3.org" viewBox="0 0 24 24" width="100%" height="100%">
-  <!-- Cuerpo principal de la máquina -->
-  <path d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  
-  <!-- Pantalla digital de conteo -->
-  <rect x="6" y="7" width="6" height="4" rx="1" fill="none" stroke="currentColor" stroke-width="2"/>
-  <line x1="8" y1="9" x2="10" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-  
-  <!-- Botones de control de la máquina -->
-  <circle cx="15.5" cy="8" r="1" fill="currentColor"/>
-  <circle cx="18" cy="8" r="1" fill="currentColor"/>
-  <circle cx="15.5" cy="10" r="1" fill="currentColor"/>
-  <circle cx="18" cy="10" r="1" fill="currentColor"/>
-  
-  <!-- Ranura de salida y rodillo interno -->
-  <path d="M6 14h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="7.5" cy="14" r="1" fill="currentColor"/>
-  <circle cx="16.5" cy="14" r="1" fill="currentColor"/>
-  
-  <!-- Billetes saliendo / apilados en la tolva -->
-  <path d="M5 17h14v2H5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M7 17v-1.5a0.5 0 0 1 0.5-.5h9a0.5 0 0 1 0.5 0.5V17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-</svg>
-
+           <i class="pi pi-eye text-lg"></i>
             <span>Ver Equipos</span>
           </button>
         </td>

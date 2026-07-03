@@ -18,12 +18,7 @@ import { InputPasswordModule } from "primeng/inputpassword";
 import { InputTextModule } from "primeng/inputtext";
 import { MessageModule } from "primeng/message";
 
-import { Envelope } from "@primeicons/angular/envelope";
-import { Eye } from "@primeicons/angular/eye";
-import { EyeSlash } from "@primeicons/angular/eye-slash";
-import { Lock } from "@primeicons/angular/lock";
-import { Spinner } from "@primeicons/angular/spinner";
-import { User } from "@primeicons/angular/user";
+
 
 import { AuthCredentials } from "@core/models/auth.model";
 import { AuthService } from "@core/services/auth.service";
@@ -46,12 +41,9 @@ const baseFormData: AuthCredentials = {
     InputIconModule,
     MessageModule,
    
-    Eye,
-    EyeSlash,
-    Lock,
+   
     FormField,
-    Spinner,
-    User,
+    
   ],
   templateUrl: "./login.page.html",
 })

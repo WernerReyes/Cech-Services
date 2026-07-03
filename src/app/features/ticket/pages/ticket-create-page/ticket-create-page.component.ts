@@ -15,14 +15,7 @@ import { AgencyService } from "@features/agency/agency.service";
 import type { Agency } from "@features/agency/agency.model";
 import type { Machine } from "@features/machine/machine.model";
 import { MachineService } from "@features/machine/machine.service";
-import { ArrowLeft } from "@primeicons/angular/arrow-left";
-import { CheckCircle } from "@primeicons/angular/check-circle";
-import { FilePlus } from "@primeicons/angular/file-plus";
-import { MapMarker } from "@primeicons/angular/map-marker";
-import { Microchip } from "@primeicons/angular/microchip";
-import { Send } from "@primeicons/angular/send";
-import { Spinner } from "@primeicons/angular/spinner";
-import { Ticket } from "@primeicons/angular/ticket";
+
 import { ButtonModule } from "primeng/button";
 import { MessageModule } from "primeng/message";
 import { MessageService } from "primeng/api";
@@ -30,6 +23,7 @@ import { SelectModule } from "primeng/select";
 
 import type { CreateTicketResult, TicketCreateForm } from "../../ticket.model";
 import { TicketService } from "../../ticket.service";
+import { PageBreadcrumbComponent } from "@app/shared/components/common/page-breadcrumb/page-breadcrumb.component";
 
 const baseFormData: TicketCreateForm = {
   idAgencia: "",
@@ -46,15 +40,10 @@ const baseFormData: TicketCreateForm = {
     FormsModule,
     MessageModule,
     SelectModule,
-    ArrowLeft,
-    CheckCircle,
-    FilePlus,
+    PageBreadcrumbComponent,
+   
     FormField,
-    MapMarker,
-    Microchip,
-    Send,
-    Spinner,
-    Ticket,
+   
   ],
   templateUrl: "./ticket-create-page.component.html",
   styleUrl: "./ticket-create-page.component.css",

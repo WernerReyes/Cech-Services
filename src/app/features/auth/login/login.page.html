@@ -12,28 +12,14 @@
   <!-- Overlay para mejorar contraste -->
   <div class="absolute inset-0 bg-slate-950/55 dark:bg-slate-950/65"></div>
 
-  <!-- Degradado rojo corporativo suave -->
-  <!-- <div
-    class="absolute inset-0 bg-gradient-to-br from-red-700/35 via-slate-950/20 to-slate-950/70"
-  ></div> -->
-
-  <!-- Luz roja detrás del formulario -->
-  <!-- <div
-    class="pointer-events-none absolute left-1/2 top-1/2 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-red-600/25 blur-3xl"
-  ></div> -->
+ 
 
   <!-- Contenido -->
   <div class="relative z-10 py-4 max-w-md w-full">
     <div
       class="relative overflow-hidden rounded-3xl border border-white/80 bg-white/95 p-6 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-xl md:p-8 dark:border-neutral-700 dark:bg-neutral-900/95"
     >
-      <!-- Línea superior roja -->
-      <!-- <div class="absolute left-0 top-0 h-1.5 w-full bg-red-600"></div> -->
-
-      <!-- Brillo interno suave -->
-      <!-- <div
-        class="pointer-events-none absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/60 dark:ring-white/10"
-      ></div> -->
+     
 
       <div class="relative p-4">
         <div class="mb-6 flex justify-center">
@@ -66,7 +52,7 @@
 
             <p-iconfield>
               <p-inputicon>
-                <svg data-p-icon="user"></svg>
+                 <i class="pi pi-user"></i>
               </p-inputicon>
 
               <input
@@ -94,7 +80,8 @@
 
             <p-iconfield>
               <p-inputicon>
-                <svg data-p-icon="lock"></svg>
+                <!-- <svg data-p-icon="lock"></svg> -->
+                 <i class="pi pi-lock"></i>
               </p-inputicon>
 
               <input
@@ -113,11 +100,8 @@
                 (click)="mask.update((v) => !v)"
                 style="cursor: pointer"
               >
-                @if (mask()) {
-                  <svg data-p-icon="eye" [size]="16"></svg>
-                } @else {
-                  <svg data-p-icon="eye-slash" [size]="16"></svg>
-                }
+              
+                  <i class="pi" [class]="mask() ? 'pi-eye' : 'pi-eye-slash'"></i>
               </p-inputicon>
             </p-iconfield>
 
@@ -147,7 +131,3 @@
     </div>
   </div>
 </main>
-<!-- 
-<div class="fixed bottom-5 right-5 z-50 hidden sm:block">
-  <app-theme-toggle-two />
-</div> -->

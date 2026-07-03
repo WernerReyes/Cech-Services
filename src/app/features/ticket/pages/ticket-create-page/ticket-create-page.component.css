@@ -1,1 +1,18 @@
 
+:host ::ng-deep .p-select {
+  width: 100%;
+}
+
+:host ::ng-deep .p-select-label {
+  min-width: 0;
+}
+
+:host ::ng-deep .agency-select-panel .p-select-option {
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  :host ::ng-deep .p-select-overlay {
+    max-width: calc(100vw - 2rem);
+  }
+}

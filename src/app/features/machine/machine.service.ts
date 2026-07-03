@@ -15,6 +15,7 @@ export class MachineService {
     () => {
       const selectedAgency = this.agencyService.selectedAgency();
       if (!selectedAgency) {
+        // return `${this.config.apiUrl}/equipos`;
         return undefined;
       }
 
