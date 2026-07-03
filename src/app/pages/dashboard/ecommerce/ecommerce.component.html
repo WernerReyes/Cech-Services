@@ -57,14 +57,14 @@
             [options]="agencies()"
             [ngModel]="selectedAgency()"
             (ngModelChange)="onAgencyChange($event)"
-            [ngModelOptions]="{ standalone: true }"
+            /* [ngModelOptions]="{ standalone: true }" */
             optionLabel="valor"
             placeholder="Selecciona una agencia"
             fluid
             appendTo="body"
-            scrollHeight="320px"
-            styleClass="w-full"
-            panelStyleClass="dashboard-select-panel"
+            /* scrollHeight="320px" */
+            /* styleClass="w-full"
+            panelStyleClass="dashboard-select-panel" */
             [filter]="true"
             filterBy="valor,id"
             filterPlaceholder="Buscar agencia..."
@@ -111,15 +111,15 @@
             [options]="machines.value()"
             [ngModel]="selectedMachine()"
             (ngModelChange)="onMachineChange($event)"
-            [ngModelOptions]="{ standalone: true }"
+            /* [ngModelOptions]="{ standalone: true }" */
             [disabled]="!selectedAgency() || machines.isLoading()"
             optionLabel="equipo"
             placeholder="Selecciona un equipo"
             fluid
             appendTo="body"
-            scrollHeight="320px"
-            styleClass="w-full"
-            panelStyleClass="dashboard-select-panel"
+            /* scrollHeight="320px" */
+            /* styleClass="w-full" */
+            /* panelStyleClass="dashboard-select-panel" */
             [filter]="true"
             filterBy="equipo,serie,codigoInventario,modelo.descripcion"
             filterPlaceholder="Buscar equipo..."
