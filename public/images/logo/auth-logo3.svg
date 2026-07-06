@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="360" viewBox="0 0 1400 360" role="img" aria-labelledby="title desc">
+  <title id="title">CECHSERVICES logo</title>
+  <desc id="desc">Logo vectorial sin fondo con icono SaaS tipo dashboard y texto CECHSERVICES.</desc>
+  <defs>
+    <style>
+      .brand{fill:#2c2478}
+      .accent{fill:#f28c13}
+      .accent-stroke{stroke:#f28c13;stroke-width:8;stroke-linecap:round}
+      .brand-stroke{stroke:#2c2478;stroke-width:8;stroke-linecap:round;stroke-linejoin:round;fill:none}
+      .white{fill:#ffffff}
+      .word{font-family:Arial Black, Impact, Montserrat, Arial, sans-serif;font-size:116px;font-weight:900;letter-spacing:3px;fill:#2c2478}
+    </style>
+  </defs>
+
+  <!-- Icono -->
+  <g id="cechservices-icon" transform="translate(55 58)">
+    <!-- Marco cuadrado como la esencia original -->
+    <rect x="0" y="0" width="245" height="245" class="brand"/>
+    <rect x="22" y="22" width="201" height="201" class="white"/>
+
+    <!-- C envolvente -->
+    <path class="brand" fill-rule="evenodd" d="
+      M151 42
+      C122 28 86 31 61 53
+      C34 77 26 118 41 152
+      C55 185 86 207 123 208
+      C133 208 143 207 152 204
+      L152 169
+      C142 174 131 177 119 176
+      C90 175 67 152 66 123
+      C65 94 87 70 116 68
+      C129 67 141 70 152 76
+      Z"/>
+
+    <!-- Panel SaaS / dashboard -->
+    <rect x="78" y="80" width="122" height="90" rx="10" class="white"/>
+    <path d="M78 106H200" class="brand-stroke"/>
+    <circle cx="96" cy="93" r="5" class="brand"/>
+    <circle cx="113" cy="93" r="5" class="brand"/>
+    <circle cx="130" cy="93" r="5" class="brand"/>
+
+    <!-- Barras de analítica -->
+    <rect x="94" y="141" width="11" height="22" class="brand"/>
+    <rect x="112" y="126" width="11" height="37" class="brand"/>
+    <rect x="130" y="113" width="11" height="50" class="brand"/>
+
+    <!-- Líneas de servicio/listado -->
+    <rect x="157" y="122" width="34" height="7" rx="3.5" class="brand"/>
+    <rect x="157" y="142" width="34" height="7" rx="3.5" class="brand"/>
+    <rect x="157" y="161" width="27" height="7" rx="3.5" class="brand"/>
+
+    <!-- Nodo naranja de servicio conectado -->
+    <circle cx="211" cy="126" r="18" class="accent"/>
+    <circle cx="211" cy="126" r="22" fill="none" stroke="#ffffff" stroke-width="6"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="350" y="185" class="word">CECHSERVICES</text>
+  <rect x="350" y="235" width="970" height="8" rx="4" class="accent"/>
+</svg>

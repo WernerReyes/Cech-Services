@@ -4,56 +4,73 @@ import {
   LOCALE_ID,
   provideAppInitializer,
 } from "@angular/core";
-import { provideRouter, withComponentInputBinding, withViewTransitions } from "@angular/router";
+import {
+  provideRouter,
+  withComponentInputBinding,
+  withViewTransitions,
+} from "@angular/router";
 import { providePrimeNG } from "primeng/config";
 
 import { definePreset } from "@primeuix/themes";
 import { routes } from "./app.routes";
 
-import Aura from "@primeuix/themes/aura";
-import { MessageService } from "primeng/api";
-import { APP_CONFIG } from "@core/config/app.config.tokens";
-import { environment } from "@environments/environment";
 import { provideHttpClient, withInterceptors } from "@angular/common/http";
+import { APP_CONFIG } from "@core/config/app.config.tokens";
 import { authInterceptor } from "@core/interceptors/auth.interceptor";
 import { errorInterceptor } from "@core/interceptors/error.interceptor";
-import { AuthService } from "./core/services/auth.service";
+import { AuthService } from "@core/services/auth.service";
+import { environment } from "@environments/environment";
+import Aura from "@primeuix/themes/aura";
+import { MessageService } from "primeng/api";
 
 // 1. Importa las funciones y el idioma
-import { registerLocaleData } from '@angular/common';
-import localeEs from '@angular/common/locales/es';
+import { registerLocaleData } from "@angular/common";
+import localeEs from "@angular/common/locales/es";
+import { BrandingService } from "@core/services/branding.service";
 
 // 2. Registra los datos del idioma
 registerLocaleData(localeEs);
 
-const customPreset = definePreset(Aura, {
-  semantic: {
-    primary: {
-      50: "#fff1f0",
-      100: "#ffe1df",
-      200: "#ffc8c4",
-      300: "#ffa19a",
-      400: "#ff6d63",
-      500: "#EC111A", // <- Tu color base principal
-      600: "#cc140d",
-      700: "#ab0d07",
-      800: "#8e0e0a",
-      900: "#75120f",
-      950: "#410503",
-    },
-  },
-});
+// const customPreset = definePreset(Aura, {
+//   semantic: {
+//     primary: {
+//       50: "#fff1f0",
+//       100: "#ffe1df",
+//       200: "#ffc8c4",
+//       300: "#ffa19a",
+//       400: "#ff6d63",
+//       500: "#EC111A", // <- Tu color base principal
+//       600: "#cc140d",
+//       700: "#ab0d07",
+//       800: "#8e0e0a",
+//       900: "#75120f",
+//       950: "#410503",
+//     },
+//   },
+// });
 
 function initializeApp() {
   const authService = inject(AuthService);
-  return authService.verifyAuthentication();
-  // return Promise.resolve(true);
+  const brandingService = inject(BrandingService);
+  return authService.verifyAuthentication().then((user) => {
+    console.log("User authenticated:", user);
+    const primaryColor = user ? "#EC111A" : undefined; // Color por defecto si no hay usuario
+
+    console.log(
+      "Applying primary color based on authentication:",
+      primaryColor,
+    );
+
+    brandingService.applyTenantColor(primaryColor);
+
+    return !!user;
+  });
 }
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes, withComponentInputBinding(), withViewTransitions()),
-    { provide: LOCALE_ID, useValue: 'es' },
+    { provide: LOCALE_ID, useValue: "es" },
     MessageService,
     {
       provide: APP_CONFIG,
@@ -64,7 +81,7 @@ export const appConfig: ApplicationConfig = {
       license:
         "eyJpZCI6ImEwOTVlYzIwLWVlZTgtNGQ4Zi05MGQwLWNkMjMxN2EzNjIwMSIsInByb2R1Y3QiOiJwcmltZXVpIiwidGllciI6ImNvbW11bml0eSIsInR5cGUiOiJkZXYiLCJpYXQiOjE3ODI3ODkxMDQsImV4cCI6MTgxNDMyNTEwNH0.SV5OMdhUyqanU0h82Wu_niJ3eIjaOu5Y4YvgWab1tkLvBh5DcDBQmEBwAGv_caRkbytvS68yqs1lKv9zQ0w2CQ",
       theme: {
-        preset: customPreset,
+        preset: Aura,
         options: {
           darkModeSelector: ".custom-dark",
         },

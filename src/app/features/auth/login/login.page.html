@@ -5,19 +5,19 @@
   <div
     class="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
     style="
-      background-image: url('https://canadaperu.org/sites/default/files/store/noticias/img/2021-10/Foto%20Scotiabank.jpg');
+      background-image: url('images/backgrounds/login-bg.png');
     "
   ></div>
 
   <!-- Overlay para mejorar contraste -->
-  <div class="absolute inset-0 bg-slate-950/55 dark:bg-slate-950/65"></div>
+  <!-- <div class="absolute inset-0 bg-slate-950/55 dark:bg-slate-950/65"></div> -->
 
  
 
   <!-- Contenido -->
   <div class="relative z-10 py-4 max-w-md w-full">
     <div
-      class="relative overflow-hidden rounded-3xl border border-white/80 bg-white/95 p-6 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-xl md:p-8 dark:border-neutral-700 dark:bg-neutral-900/95"
+      class="relative overflow-hidden rounded-3xl border border-white/80 bg-white/95 p-6 shadow-[0_30px_90px_rgba(0,0,0,0.45)] backdrop-blur-xl md:p-8"
     >
      
 
@@ -25,21 +25,21 @@
         <div class="mb-6 flex justify-center">
           <a href="#">
             <img
-              src="images/logo/logo.svg"
+              src="images/logo/auth-logo.svg"
               alt="logo"
-              class="h-12 object-contain drop-shadow-sm"
+              class="h-20 object-contain drop-shadow-sm"
             />
           </a>
         </div>
 
         <div class="text-center">
           <h3
-            class="text-slate-900 text-center text-2xl font-bold mb-2 dark:text-slate-50"
+            class="text-slate-900 text-center text-2xl font-bold mb-2"
           >
             Iniciar Sesión
           </h3>
 
-          <p class="text-sm text-slate-600 dark:text-slate-400">
+          <p class="text-sm text-slate-600">
             Ingresa tus credenciales para acceder a tu cuenta.
           </p>
         </div>
@@ -62,7 +62,7 @@
                 pInputText
                 id="username"
                 placeholder="john.doe"
-                class="bg-white! dark:bg-neutral-800!"
+                class="bg-white!"
               />
             </p-iconfield>
 
@@ -93,7 +93,7 @@
                 placeholder="••••••••"
                 [(mask)]="mask"
                 [fluid]="true"
-                class="bg-white! dark:!bg-neutral-800!"
+                class="bg-white!"
               />
 
               <p-inputicon

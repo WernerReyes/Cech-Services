@@ -14,28 +14,10 @@ const authGuard: CanActivateFn = () => {
 };
 
 export const authRoutes: Routes = [
-  // auth pages
-
-  
-
   {
     canActivate: [authGuard],
     path: "login",
     component: LoginPage,
-    title:
-      "Angular Sign In Dashboard | TailAdmin - Angular Admin Dashboard Template",
+    title: "Cech Services | Login",
   },
-  //   {
-  //     path: "signup",
-  //     component: SignUpComponent,
-  //     title:
-  //       "Angular Sign Up Dashboard | TailAdmin - Angular Admin Dashboard Template",
-  //   },
-  // error pages
-  //   {
-  //     path: "**",
-  //     component: NotFoundComponent,
-  //     title:
-  //       "Angular NotFound Dashboard | TailAdmin - Angular Admin Dashboard Template",
-  //   },
 ];

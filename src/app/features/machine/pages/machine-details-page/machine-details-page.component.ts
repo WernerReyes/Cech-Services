@@ -109,6 +109,6 @@ export default class MachineDetailsPageComponent {
   }
 
   protected ticketAuthor(ticket: MachineTicketHistory): string {
-    return ticket.creadoPor ? `Por ${ticket.creadoPor}` : "Origen: sistema";
+    return ticket.creadoPor ? `Por ${ticket.creadoPor.valor}` : "Origen: sistema";
   }
 }

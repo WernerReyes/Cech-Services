@@ -6,7 +6,7 @@
       <button
         class="items-center justify-center  w-10 h-10 text-gray-500 border-gray-200 rounded-lg z-99999 dark:border-gray-800 flex dark:text-gray-400 lg:h-11 lg:w-11 xl:border"
         [ngClass]="{
-          'bg-gray-100 dark:bg-white/[0.03]': isMobileOpen()
+          'bg-gray-100': isMobileOpen()
         }"
         (click)="handleToggle()" aria-label="Toggle Sidebar">
         @if (isMobileOpen()) {
@@ -27,7 +27,7 @@
       </button>
       <!-- Logo (placeholder) -->
       <a routerLink="/" class="xl:hidden">
-        <img class="dark:hidden" src="images/logo/logo.svg" alt="Logo" />
+        <img class="max-sm:h-5"  src="images/logo/logo.svg" alt="Logo" />
         <!-- <img class="hidden dark:block" src="/images/logo/logo-dark.svg" alt="Logo" /> -->
       </a>
       <button (click)="toggleApplicationMenu()"
@@ -50,7 +50,43 @@
         <!-- <app-notification-dropdown /> -->
       </div>
       <!-- UserDropdown placeholder -->
+
+      <div class="flex items-center gap-5">
+      <div
+        class=" items-center gap-3 rounded-2xl border px-4 py-2.5 text-sm font-semibold transition-all duration-300 flex"
+        [ngClass]="
+          sessionService.sessionExpiring()
+            ? 'border-amber-300 bg-amber-50 text-amber-900 shadow-[0_0_0_1px_rgba(251,191,36,0.18)] dark:border-amber-500/40 dark:bg-amber-500/10 dark:text-amber-200'
+            : 'border-slate-200 bg-slate-50 text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200'
+        "
+        role="status"
+        aria-live="polite"
+      >
+        <span
+          class="relative flex h-3 w-3 shrink-0"
+          [ngClass]="sessionService.sessionExpiring() ? 'text-amber-500' : 'text-emerald-500'"
+        >
+          <span
+            class="absolute inline-flex h-full w-full rounded-full opacity-70"
+            [ngClass]="sessionService.sessionExpiring() ? 'animate-ping bg-amber-400' : 'bg-emerald-400'"
+          ></span>
+          <span
+            class="relative inline-flex h-3 w-3 rounded-full"
+            [ngClass]="sessionService.sessionExpiring() ? 'bg-amber-500' : 'bg-emerald-500'"
+          ></span>
+        </span>
+
+        <div class="flex flex-col leading-tight">
+          <span class="text-[8px] font-medium uppercase tracking-[0.22em] opacity-70">
+            {{ sessionService.sessionExpiring() ? 'Sesión por expirar' : 'Sesión activa' }}
+          </span>
+          <span class="text-sm">
+            {{ sessionService.timeLeft() }}
+          </span>
+        </div>
+      </div>
       <app-user-dropdown />
+      </div>
     </div>
   </div>
 </header>

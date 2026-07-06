@@ -20,6 +20,6 @@ export interface MachineTicketHistory {
   number: string;
   subject: string;
   fechaSolicitud: string;
-  creadoPor: string | null;
+  creadoPor: CatalogValue | null;
   status: CatalogValue;
 }
