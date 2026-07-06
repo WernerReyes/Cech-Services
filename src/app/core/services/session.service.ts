@@ -11,7 +11,9 @@ export class SessionService {
   public sessionExpiring = signal<boolean>(false); // <- NUEVA VARIABLE: Avisa si el tiempo límite se alcanzó
 
   // CONFIGURACIÓN: Define a los cuántos minutos de anticipación quieres avisar (ej: 5 minutos)
-  private readonly WARNING_THRESHOLD_MINUTES = 5; 
+  private readonly WARNING_THRESHOLD_MINUTES = 5;
+  
+  
 
   private timeoutId: any;
 

@@ -296,30 +296,69 @@
                   </ng-template>
 
                   <ng-template #content let-event>
+                  
                     <article
                       class="mb-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-slate-300"
                     >
                       <div
-                        class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between"
+                        class=""
                       >
                         <div class="min-w-0">
-                          <div class="flex flex-wrap items-center gap-2">
-                            <span
-                              class="font-mono text-sm font-extrabold text-blue-700"
-                            >
-                              {{ event.number }}
-                            </span>
-
-                            <span
-                              class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold ring-1"
-                              [ngClass]="statusClass(event.ticket)"
-                            >
+                          <div class="flex flex-wrap items-center w-full justify-between gap-2 sm:gap-3">
+                            <div class="flex flex-wrap items-center gap-2">
                               <span
-                                class="size-2 rounded-full"
-                                [ngClass]="statusDotClass(event.ticket)"
-                              ></span>
-                              {{ event.status }}
-                            </span>
+                                class="font-mono text-sm font-extrabold text-blue-700"
+                              >
+                                {{ event.number }}
+                              </span>
+
+                              <span
+                                class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold ring-1"
+                                [ngClass]="statusClass(event.ticket)"
+                              >
+                                <span
+                                  class="size-2 rounded-full"
+                                  [ngClass]="statusDotClass(event.ticket)"
+                                ></span>
+                                {{ event.status }}
+                              </span>
+                            </div>
+
+                            <div class="flex items-center gap-1">
+                                <button
+                                  pButton
+                                  type="button"
+                                  pTooltip="Ver contadores"
+                                  class="h-8 w-8 rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition hover:bg-slate-50 hover:text-slate-700"
+                                  
+                                  aria-label="Ver contadores"
+                                >
+                                  <i class="pi pi-eye text-sm"></i>
+                                </button>
+
+                                <button
+                                  pButton
+                                  type="button"
+                                  pTooltip="Ver versión del software"
+                                  class="h-8 w-8 rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition hover:bg-slate-50 hover:text-slate-700"
+                                  
+                                  aria-label="Ver versión del software"
+                                >
+                                  <i class="pi pi-eye text-sm"></i>
+                                </button>
+
+                                <button
+                                  pButton
+                                  type="button"
+                                  pTooltip="Ver informe técnico"
+                                  class="h-8 w-8 rounded-full border border-slate-200 bg-white text-slate-500 shadow-sm transition hover:bg-slate-50 hover:text-slate-700"
+                                  
+                                  aria-label="Ver informe técnico"
+                                >
+                                  <i class="pi pi-eye text-sm"></i>
+                                </button>
+                            </div>
+
                           </div>
 
                           <h3

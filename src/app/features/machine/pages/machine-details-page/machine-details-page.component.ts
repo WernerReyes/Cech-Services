@@ -1,4 +1,4 @@
-import { DatePipe, NgClass } from "@angular/common";
+import { DatePipe, JsonPipe, NgClass } from "@angular/common";
 import { Component, computed, effect, inject, input } from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { AppBlankComponent } from "@shared/layout/app-blank/app-blank.component";
@@ -17,6 +17,7 @@ import { MachineService } from "../../machine.service";
     RouterLink,
     ButtonModule,
     DatePipe,
+    JsonPipe,
     NgClass,
     TimelineModule,
     PageBreadcrumbComponent,

@@ -14,7 +14,6 @@ import { SidebarService } from "../../services/sidebar.service";
 @Component({
   selector: "app-header",
   imports: [CommonModule, RouterModule, UserDropdownComponent],
-  changeDetection: ChangeDetectionStrategy.Eager,
   templateUrl: "./app-header.component.html",
 })
 export class AppHeaderComponent {
@@ -23,10 +22,6 @@ export class AppHeaderComponent {
 
   isApplicationMenuOpen = false;
   readonly isMobileOpen = this.sidebarService.isMobileOpen;
-
-  constructor() {
-    this.sessionService.startTracking();
-  }
 
   readonly searchInput = viewChild<ElementRef<HTMLInputElement>>("searchInput");
 
