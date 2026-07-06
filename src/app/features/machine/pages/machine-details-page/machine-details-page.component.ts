@@ -6,10 +6,9 @@ import { AppBlankComponent } from "@shared/layout/app-blank/app-blank.component"
 import { ButtonModule } from "primeng/button";
 import { TimelineModule } from "primeng/timeline";
 
+import { PageBreadcrumbComponent } from "@app/shared/components/common/page-breadcrumb/page-breadcrumb.component";
 import type { MachineTicketHistory } from "../../machine.model";
 import { MachineService } from "../../machine.service";
-import { PageBreadcrumbComponent } from "@app/shared/components/common/page-breadcrumb/page-breadcrumb.component";
-import { GenericTableCellDirective } from "@app/shared/components/tables/generic-table/generic-table-cell.directive";
 
 @Component({
   selector: "app-machine-details-page",
@@ -21,7 +20,6 @@ import { GenericTableCellDirective } from "@app/shared/components/tables/generic
     NgClass,
     TimelineModule,
     PageBreadcrumbComponent,
-    GenericTableCellDirective,
   ],
   templateUrl: "./machine-details-page.component.html",
   styleUrl: "./machine-details-page.component.css",
@@ -31,10 +29,10 @@ export default class MachineDetailsPageComponent {
 
   id = input<string | null>(null);
 
-  protected readonly machine = computed(() => this.machineService.machineSelect.value());
+  protected readonly machine = computed(() => this.machineService.machineSelect);
 
   protected readonly title = computed<string>(
-    () => this.machine()?.equipo || "Detalles del Equipo",
+    () => this.machine().value()?.equipo || "Detalles del Equipo",
   );
 
   protected readonly machines = this.machineService.machines;
@@ -54,22 +52,6 @@ export default class MachineDetailsPageComponent {
   private readonly setMachineById = effect(() => {
     const machineId = this.id();
     this.machineService.machineId.set(machineId ? parseInt(machineId) : null);
-    // const currentMachine = this.machineService.machineSelect();
-    // console.log("Machine ID from route:", machineId, currentMachine);
-    // if (!machineId || currentMachine?.idEquipo.toString() === machineId) {
-    //   return;
-    // }
-
-    // const selectedMachine = this.machines
-    //   .value()
-    //   .find((machine) => machine.idEquipo.toString() === machineId);
-
-    //   console.log("Selected Machine:", this.machines
-    //   .value());
-
-    // if (selectedMachine || !this.machines.isLoading()) {
-    //   this.machineService.machineSelect.set(selectedMachine || null);
-    // }
   });
 
   protected statusClass(ticket: MachineTicketHistory): string {

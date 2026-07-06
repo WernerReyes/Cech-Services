@@ -2,11 +2,30 @@
   @if (iconTemplate()) {
     <ng-container [ngTemplateOutlet]="iconTemplate()"></ng-container>
   } @else {
-    <div class="flex flex-wrap items-center gap-2">
-      <i [class]="'text-xl! pi ' + icon()"></i>
-      <h2 class="text-xl font-semibold text-gray-800 dark:text-white/90">
-        {{ pageTitle() }}
-      </h2>
+    <div class="flex flex-wrap items-center gap-3">
+      @if (back()) {
+        <button
+        pButton
+        link
+        tooltipPosition="bottom"
+        [pTooltip]="tooltipContent"
+          class="inline-flex items-center gap-2 text-sm text-primary"
+         (click)="onBackClick()"
+        >
+          <i class="pi pi-arrow-left text-xs!"></i>
+       
+        </button>
+         <ng-template #tooltipContent>
+          <span class="text-sm">Volver</span>
+            </ng-template>
+      }
+
+      <div class="flex flex-wrap items-center gap-2">
+        <i [class]="'text-xl! pi ' + icon()"></i>
+        <h2 class="text-xl font-semibold text-gray-800 dark:text-white/90">
+          {{ pageTitle() }}
+        </h2>
+      </div>
     </div>
     <nav>
       <ol class="flex items-center gap-1.5">
@@ -31,5 +50,4 @@
       </ol>
     </nav>
   }
-  
 </div>

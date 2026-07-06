@@ -1,2 +1,14 @@
 /* @import "tailwindcss";
-@import "tailwindcss-primeui"; */
+@import "tailwindcss-primeui"; *//* Transición cuando la nueva página entra */
+/* Suaviza la transición de los elementos que se transforman */
+/* Asegura que el contenedor de destino mantenga proporciones fluidas */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.2s; /* Desvanecimiento rápido del fondo */
+}
+
+/* Suaviza el cambio de tamaño entre la fila de la tabla y la vista de detalles */
+::view-transition-group(*) {
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

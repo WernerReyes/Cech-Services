@@ -102,9 +102,9 @@ export class LoginPage {
         life: 3000,
       });
 
-      setTimeout(() => {
+      
       this.router.navigate(["/"]);
-      }, 1000);
+    
     })
       .then(() => {
         this.form().reset();

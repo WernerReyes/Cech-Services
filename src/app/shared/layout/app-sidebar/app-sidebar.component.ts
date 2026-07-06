@@ -1,16 +1,10 @@
 import { CommonModule } from "@angular/common";
-import {
-  ChangeDetectorRef,
-  Component,
-  effect,
-  inject
-} from "@angular/core";
+import { ChangeDetectorRef, Component, effect, inject } from "@angular/core";
 import { NavigationEnd, Router, RouterModule } from "@angular/router";
 import { SidebarService } from "../../services/sidebar.service";
 
 import { toSignal } from "@angular/core/rxjs-interop";
-import { filter } from "rxjs";
-
+import { filter, map, startWith } from "rxjs";
 
 type NavItem = {
   name: string;
@@ -32,7 +26,6 @@ export class AppSidebarComponent {
 
   // Main nav items
   navItems: NavItem[] = [
-    
     {
       icon: "pi-th-large",
       name: "Dashboard",
@@ -42,28 +35,32 @@ export class AppSidebarComponent {
 
     {
       name: "Agencias",
-      icon: 'pi-building',
+      icon: "pi-building",
       path: "/agencies",
       new: true,
     },
 
     {
       name: "Equipos",
-      icon: 'pi-warehouse',
+      icon: "pi-warehouse",
       path: "/machines",
     },
 
     {
       name: "Tickets",
       icon: `pi-ticket`,
-      subItems: [{ 
-        
-        name: "Crear Ticket", path: "/tickets/create" }],
+      subItems: [
+        {
+          name: "Lista de Tickets",
+          path: "/tickets",
+        },
+        {
+          name: "Crear Ticket",
+          path: "/tickets/create",
+        },
+      ],
     },
-
-   
   ];
- 
 
   openSubmenu: string | null | number = null;
   subMenuHeights: { [key: string]: number } = {};
@@ -71,6 +68,15 @@ export class AppSidebarComponent {
   readonly isExpanded = this.sidebarService.isExpanded;
   readonly isMobileOpen = this.sidebarService.isMobileOpen;
   readonly isHovered = this.sidebarService.isHovered;
+
+  readonly currentUrl = toSignal(
+    this.router.events.pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+      map((event) => event.urlAfterRedirects.split("?")[0].split("#")[0]),
+      startWith(this.router.url.split("?")[0].split("#")[0]),
+    ),
+    { initialValue: this.router.url.split("?")[0].split("#")[0] },
+  );
 
   private readonly navigationEnd = toSignal(
     this.router.events.pipe(
@@ -95,11 +101,29 @@ export class AppSidebarComponent {
   }
 
   ngOnInit() {
-    this.setActiveMenuFromRoute(this.router.url);
+    this.setActiveMenuFromRoute(this.currentUrl());
   }
 
   isActive(path: string): boolean {
-    return this.router.url === path;
+    const currentUrl = this.currentUrl();
+
+    if (!path) {
+      return false;
+    }
+
+    // Dashboard: solo activo cuando la ruta es exactamente "/"
+    if (path === "/") {
+      return currentUrl === "/";
+    }
+
+    // Otras rutas: activo si coincide exactamente o si está dentro de una ruta hija
+    return currentUrl === path || currentUrl.startsWith(path + "/");
+  }
+
+  isExactActive(path: string): boolean {
+    const currentUrl = this.currentUrl();
+
+    return !!path && currentUrl === path;
   }
 
   toggleSubmenu(section: string, index: number) {
@@ -128,10 +152,7 @@ export class AppSidebarComponent {
   }
 
   private setActiveMenuFromRoute(currentUrl: string) {
-    const menuGroups = [
-      { items: this.navItems, prefix: "main" },
-     
-    ];
+    const menuGroups = [{ items: this.navItems, prefix: "main" }];
 
     menuGroups.forEach((group) => {
       group.items.forEach((nav, i) => {
@@ -155,13 +176,21 @@ export class AppSidebarComponent {
     });
   }
 
+  isSubmenuOpened(section: string, index: number): boolean {
+    return this.openSubmenu === `${section}-${index}`;
+  }
+
+  isSubmenuActive(nav: any): boolean {
+    if (!nav?.subItems?.length) {
+      return false;
+    }
+
+    return nav.subItems.some((subItem: any) => this.isExactActive(subItem.path));
+  }
+
   onSubmenuClick() {
-    console.log("click submenu");
     if (this.isMobileOpen()) {
       this.sidebarService.setMobileOpen(false);
     }
   }
 }
-
-export { AppSidebarComponent as SidebarVariantsDemo };
-

@@ -1,41 +1,11 @@
 <app-blank title="Crear ticket">
   <ng-template #header>
-    <app-page-breadcrumb>
-      <ng-template #icon>
-        <div class="flex min-w-0 flex-col gap-3">
-          <!-- Volver -->
-          <a
-            [routerLink]="backRoute()"
-            class="inline-flex w-fit items-center gap-2 text-sm font-semibold text-slate-500 transition hover:text-blue-700"
-          >
-            <i class="pi pi-arrow-left text-base"></i>
-            <span>Volver al equipo</span>
-          </a>
-
-          <!-- Título -->
-          <div class="flex min-w-0 items-start gap-3">
-            <div
-              class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700"
-            >
-              <i class="pi pi-ticket text-lg"></i>
-            </div>
-
-            <div class="min-w-0">
-              <h1
-                class="break-words text-2xl font-extrabold leading-tight text-slate-950 sm:text-3xl"
-              >
-                Crear ticket
-              </h1>
-
-              <p class="mt-1 max-w-3xl break-words text-sm font-semibold text-slate-500">
-                Registra la falla reportada. El sistema resolverá automáticamente
-                el resto de la información.
-              </p>
-            </div>
-          </div>
-        </div>
-      </ng-template>
-    </app-page-breadcrumb>
+    <app-page-breadcrumb 
+      pageTitle="Crear ticket"
+      icon="pi-ticket"
+      [back]="true"
+      [allowBackRoutes]="ticketRoutes()" />
+    
   </ng-template>
 
   <div class="mx-auto flex w-full flex-col gap-5">
@@ -49,7 +19,7 @@
         <div class="border-b border-slate-200 px-5 py-4">
           <div class="flex items-center gap-3">
             <div
-              class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700"
+              class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-700"
             >
               <i class="pi pi-info-circle text-lg"></i>
             </div>
@@ -81,12 +51,12 @@
                     Equipo
                   </p>
 
-                  <p class="mt-1 break-words text-sm font-extrabold text-slate-950">
+                  <p class="mt-1 wrap-break-word text-sm font-extrabold text-slate-950">
                     {{ machineOption.equipo }}
                   </p>
 
-                  <p class="mt-1 break-words text-sm font-semibold text-slate-500">
-                    {{ machineOption.modelo?.descripcion || "Modelo no registrado" }}
+                  <p class="mt-1 wrap-break-word text-sm font-semibold text-slate-500">
+                    {{ machineOption.modelo.descripcion || "Modelo no registrado" }}
                   </p>
                 </div>
               </div>
@@ -100,7 +70,7 @@
                 Agencia
               </dt>
 
-              <dd class="mt-1 break-words text-sm font-extrabold text-slate-950">
+              <dd class="mt-1 wrap-break-word text-sm font-extrabold text-slate-950">
                 {{ selectedAgency()?.valor || "Pendiente" }}
               </dd>
 
@@ -117,7 +87,7 @@
                 Equipo
               </dt>
 
-              <dd class="mt-1 break-words text-sm font-extrabold text-slate-950">
+              <dd class="mt-1 wrap-break-word text-sm font-extrabold text-slate-950">
                 {{ selectedMachine()?.equipo || "Pendiente" }}
               </dd>
 
@@ -136,7 +106,7 @@
         <div class="border-b border-slate-200 px-5 py-4">
           <div class="flex items-center gap-3">
             <div
-              class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-700"
+              class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-700"
             >
               <i class="pi pi-pencil text-lg"></i>
             </div>

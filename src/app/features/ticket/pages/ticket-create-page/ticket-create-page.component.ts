@@ -66,6 +66,11 @@ export default class TicketCreatePageComponent {
   protected readonly selectedAgency = signal<Agency | null>(null);
   protected readonly selectedMachine = signal<Machine | null>(null);
 
+  protected readonly ticketRoutes = computed(() => {
+    const machineId = this.model().idEquipo || this.idEquipo();
+    return machineId ? [`/machines/${machineId}`] : ["/tickets"];
+  });
+
   protected readonly form = form(this.model, (path) => {
     required(path.idAgencia, {
       when: ({ state }) => state.touched(),
@@ -123,7 +128,7 @@ export default class TicketCreatePageComponent {
 
         if (selectedAgency) {
           this.selectedAgency.set(selectedAgency);
-          this.agencyService.selectedAgency.set(selectedAgency);
+          this.machineService.selectedAgency.set(selectedAgency);
         }
       }
 
@@ -150,7 +155,7 @@ export default class TicketCreatePageComponent {
   protected onAgencyChange(agency: Agency | null) {
     this.selectedAgency.set(agency);
     this.selectedMachine.set(null);
-    this.agencyService.selectedAgency.set(agency);
+    this.machineService.selectedAgency.set(agency);
     this.machineService.machineSelect.set(null);
 
     this.model.update((current) => ({

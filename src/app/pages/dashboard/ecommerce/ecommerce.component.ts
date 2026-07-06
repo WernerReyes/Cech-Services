@@ -1,14 +1,15 @@
-import { DatePipe, NgClass } from "@angular/common";
+import { NgClass } from "@angular/common";
 import {
   ChangeDetectionStrategy,
   Component,
   computed,
   effect,
   inject,
+  signal,
   untracked,
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { RouterLink } from "@angular/router";
+import { Router, RouterLink } from "@angular/router";
 
 import type { Agency } from "@features/agency/agency.model";
 import type {
@@ -16,30 +17,31 @@ import type {
   MachineTicketHistory,
 } from "@features/machine/machine.model";
 
-import { AppBlankComponent } from "@shared/layout/app-blank/app-blank.component";
-import { PageBreadcrumbComponent } from "@app/shared/components/common/page-breadcrumb/page-breadcrumb.component";
-
 import { ButtonModule } from "primeng/button";
+import { DatePickerModule } from "primeng/datepicker";
 import { SelectModule } from "primeng/select";
 
 import {
-  NgApexchartsModule,
   ApexAxisChartSeries,
   ApexChart,
-  ApexXAxis,
-  ApexYAxis,
-  ApexStroke,
   ApexDataLabels,
   ApexFill,
-  ApexTooltip,
   ApexGrid,
-  ApexNonAxisChartSeries,
   ApexLegend,
+  ApexNonAxisChartSeries,
   ApexPlotOptions,
   ApexResponsive,
+  ApexStroke,
+  ApexTooltip,
+  ApexXAxis,
+  ApexYAxis,
+  NgApexchartsModule,
 } from "ng-apexcharts";
 
 import { DashboardService } from "./dashboard.service";
+import { AgencyService } from "../../../features/agency/agency.service";
+import { MachineService } from "@app/features/machine/machine.service";
+import { TicketService } from "@app/features/ticket/ticket.service";
 
 interface SummaryCard {
   title: string;
@@ -47,7 +49,8 @@ interface SummaryCard {
   caption: string;
   icon: string;
   iconClass: string;
-  route: string;
+  // route: string;
+  onClick?: () => void;
 }
 
 type TicketTrendChartOptions = {
@@ -78,14 +81,12 @@ type TicketStatusChartOptions = {
 @Component({
   selector: "app-ecommerce",
   imports: [
-    AppBlankComponent,
-    PageBreadcrumbComponent,
     RouterLink,
     FormsModule,
     ButtonModule,
     SelectModule,
+    DatePickerModule,
     NgApexchartsModule,
-    DatePipe,
     NgClass,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -93,13 +94,26 @@ type TicketStatusChartOptions = {
   // styleUrl: "./ecommerce.component.css",
 })
 export class EcommerceComponent {
+  private readonly router = inject(Router);
   protected readonly dashboard = inject(DashboardService);
+  protected readonly machineService = inject(MachineService);
+  protected readonly ticketService = inject(TicketService);
+  protected readonly agencyService = inject(AgencyService);
 
   protected readonly agencies = this.dashboard.agencies;
   protected readonly selectedAgency = this.dashboard.selectedAgency;
   protected readonly selectedMachine = this.dashboard.selectedMachine;
   protected readonly machines = this.dashboard.machines;
   protected readonly tickets = this.dashboard.tickets;
+
+  protected readonly ticketMonthRange = signal<Date[] | null>(null);
+
+  private readonly chartPrimaryColor = "#2563eb";
+  private readonly chartSuccessColor = "#10b981";
+  private readonly chartMutedColor = "#64748b";
+  private readonly chartGridColor = "#e5e7eb";
+  private readonly chartLabelColor = "#64748b";
+  private readonly chartTitleColor = "#0f172a";
 
   private readonly monthNames = [
     "Ene",
@@ -150,7 +164,9 @@ export class EcommerceComponent {
       caption: "Agencias asignadas",
       icon: "pi-building-columns",
       iconClass: "bg-blue-50 text-blue-700",
-      route: "/agencies",
+      onClick: () => {
+        this.router.navigate(["/agencies"]);
+      },
     },
     {
       title: "Equipos",
@@ -160,17 +176,28 @@ export class EcommerceComponent {
         : "Selecciona una agencia",
       icon: "pi-microchip",
       iconClass: "bg-emerald-50 text-emerald-700",
-      route: "/machines",
+      // route: "/machines",
+      onClick: () => {
+        if (this.selectedAgency()) {
+          this.machineService.selectedAgency.set(this.selectedAgency());
+          this.router.navigate(["/machines"]);
+        }
+      },
     },
     {
       title: "Tickets",
       value: this.tickets.value().length,
       caption: this.selectedMachine()
-        ? `Historial del equipo seleccionado`
+        ? "Historial del equipo seleccionado"
         : "Selecciona un equipo",
       icon: "pi-ticket",
       iconClass: "bg-amber-50 text-amber-700",
-      route: "/tickets/create",
+      onClick: () => {
+        if (this.selectedAgency()) {
+          this.ticketService.selectedAgency.set(this.selectedAgency());
+          this.router.navigate(["/tickets"]);
+        }
+      },
     },
     {
       title: "Abiertos",
@@ -178,190 +205,264 @@ export class EcommerceComponent {
       caption: "Tickets pendientes",
       icon: "pi-chart-line",
       iconClass: "bg-sky-50 text-sky-700",
-      route: "/tickets/create",
+      onClick: () => {
+        if (this.selectedMachine()) {
+          this.router.navigate(["/tickets"]);
+        }
+      },
     },
   ]);
 
-  protected readonly ticketTrendChart = computed<TicketTrendChartOptions>(() => {
-    const baseDate = new Date();
-    const labels: string[] = [];
-    const counts = new Array(6).fill(0);
+  protected readonly ticketTrendRangeLabel = computed(() => {
+    const range = this.ticketMonthRange();
 
-    for (let i = 5; i >= 0; i--) {
-      const date = new Date(baseDate.getFullYear(), baseDate.getMonth() - i, 1);
-      labels.push(this.monthNames[date.getMonth()]);
+    if (!range || !range[0] || !range[1]) {
+      return "Últimos 6 meses";
     }
 
-    for (const ticket of this.tickets.value()) {
-      const ticketDate = new Date(ticket.fechaSolicitud);
+    return `${this.formatMonthYear(range[0])} - ${this.formatMonthYear(
+      range[1],
+    )}`;
+  });
 
-      if (Number.isNaN(ticketDate.getTime())) {
-        continue;
+  protected readonly ticketTrendChart = computed<TicketTrendChartOptions>(
+    () => {
+      const selectedRange = this.ticketMonthRange();
+
+      let startDate: Date;
+      let endDate: Date;
+
+      if (
+        selectedRange &&
+        selectedRange.length === 2 &&
+        selectedRange[0] &&
+        selectedRange[1]
+      ) {
+        startDate = new Date(
+          selectedRange[0].getFullYear(),
+          selectedRange[0].getMonth(),
+          1,
+        );
+
+        endDate = new Date(
+          selectedRange[1].getFullYear(),
+          selectedRange[1].getMonth() + 1,
+          0,
+          23,
+          59,
+          59,
+          999,
+        );
+      } else {
+        const baseDate = new Date();
+
+        startDate = new Date(
+          baseDate.getFullYear(),
+          baseDate.getMonth() - 5,
+          1,
+        );
+
+        endDate = new Date(
+          baseDate.getFullYear(),
+          baseDate.getMonth() + 1,
+          0,
+          23,
+          59,
+          59,
+          999,
+        );
       }
 
-      const diffMonths =
-        (baseDate.getFullYear() - ticketDate.getFullYear()) * 12 +
-        (baseDate.getMonth() - ticketDate.getMonth());
+      const labels: string[] = [];
+      const counts: number[] = [];
 
-      if (diffMonths >= 0 && diffMonths < 6) {
-        counts[5 - diffMonths]++;
+      const cursor = new Date(startDate.getFullYear(), startDate.getMonth(), 1);
+
+      while (cursor <= endDate) {
+        labels.push(
+          `${this.monthNames[cursor.getMonth()]} ${cursor.getFullYear()}`,
+        );
+
+        counts.push(0);
+        cursor.setMonth(cursor.getMonth() + 1);
       }
-    }
 
-    return {
-      series: [
-        {
-          name: "Tickets",
-          data: counts,
+      for (const ticket of this.tickets.value()) {
+        const ticketDate = new Date(ticket.fechaSolicitud);
+
+        if (Number.isNaN(ticketDate.getTime())) {
+          continue;
+        }
+
+        if (ticketDate < startDate || ticketDate > endDate) {
+          continue;
+        }
+
+        const diffMonths =
+          (ticketDate.getFullYear() - startDate.getFullYear()) * 12 +
+          (ticketDate.getMonth() - startDate.getMonth());
+
+        if (diffMonths >= 0 && diffMonths < counts.length) {
+          counts[diffMonths]++;
+        }
+      }
+
+      return {
+        series: [
+          {
+            name: "Tickets",
+            data: counts,
+          },
+        ],
+        chart: {
+          type: "area",
+          height: 320,
+          toolbar: {
+            show: false,
+          },
+          zoom: {
+            enabled: false,
+          },
+          fontFamily: "inherit",
+          foreColor: this.chartLabelColor,
         },
-      ],
-      chart: {
-        type: "area",
-        height: 320,
-        toolbar: {
-          show: false,
-        },
-        zoom: {
+        colors: [this.chartPrimaryColor],
+        dataLabels: {
           enabled: false,
         },
-        fontFamily: "inherit",
-      },
-      colors: ["#2563eb"],
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        curve: "smooth",
-        width: 3,
-      },
-      fill: {
-        type: "gradient",
-        gradient: {
-          shadeIntensity: 1,
-          opacityFrom: 0.28,
-          opacityTo: 0.04,
-          stops: [0, 90, 100],
+        stroke: {
+          curve: "smooth",
+          width: 3,
+          colors: [this.chartPrimaryColor],
         },
-      },
-      grid: {
-        borderColor: "#e5e7eb",
-        strokeDashArray: 4,
-        padding: {
-          left: 8,
-          right: 8,
+        fill: {
+          type: "solid",
+          opacity: 0.16,
+          colors: [this.chartPrimaryColor],
         },
-      },
-      xaxis: {
-        categories: labels,
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-        labels: {
-          style: {
-            colors: "#64748b",
-            fontSize: "12px",
-            fontWeight: 600,
+        grid: {
+          borderColor: this.chartGridColor,
+          strokeDashArray: 4,
+          padding: {
+            left: 8,
+            right: 8,
           },
         },
-      },
-      yaxis: {
-        min: 0,
-        forceNiceScale: true,
-        labels: {
-          style: {
-            colors: "#64748b",
-            fontSize: "12px",
-            fontWeight: 600,
+        xaxis: {
+          categories: labels,
+          axisBorder: {
+            show: false,
+          },
+          axisTicks: {
+            show: false,
+          },
+          labels: {
+            style: {
+              colors: this.chartLabelColor,
+              fontSize: "12px",
+              fontWeight: 600,
+            },
           },
         },
-      },
-      tooltip: {
-        theme: "",
-        y: {
-          formatter: (value: number) => `${value} tickets`,
+        yaxis: {
+          min: 0,
+          forceNiceScale: true,
+          labels: {
+            style: {
+              colors: this.chartLabelColor,
+              fontSize: "12px",
+              fontWeight: 600,
+            },
+          },
         },
-      },
-    };
-  });
+        tooltip: {
+          theme: "light",
+          y: {
+            formatter: (value: number) => `${value} tickets`,
+          },
+        },
+      };
+    },
+  );
 
-  protected readonly ticketStatusChart = computed<TicketStatusChartOptions>(() => {
-    return {
-      series: [this.closedTickets(), this.openTickets()],
-      chart: {
-        type: "donut",
-        height: 260,
-        fontFamily: "inherit",
-      },
-      labels: ["Cerrados", "Abiertos"],
-      colors: ["#10b981", "#3b82f6"],
-      dataLabels: {
-        enabled: false,
-      },
-      legend: {
-        position: "bottom",
-        fontSize: "13px",
-        fontWeight: 600,
-        labels: {
-          colors: "#475569",
+  protected readonly ticketStatusChart = computed<TicketStatusChartOptions>(
+    () => {
+      return {
+        series: [this.closedTickets(), this.openTickets()],
+        chart: {
+          type: "donut",
+          height: 260,
+          fontFamily: "inherit",
+          foreColor: this.chartLabelColor,
         },
-        markers: {
-          size: 8,
+        labels: ["Cerrados", "Abiertos"],
+        colors: [this.chartSuccessColor, this.chartPrimaryColor],
+        dataLabels: {
+          enabled: false,
         },
-      },
-      plotOptions: {
-        pie: {
-          donut: {
-            size: "72%",
-            labels: {
-              show: true,
-              name: {
+        legend: {
+          position: "bottom",
+          fontSize: "13px",
+          fontWeight: 600,
+          labels: {
+            colors: this.chartLabelColor,
+          },
+          markers: {
+            size: 8,
+          },
+        },
+        plotOptions: {
+          pie: {
+            donut: {
+              size: "72%",
+              labels: {
                 show: true,
-                color: "#64748b",
-                fontSize: "13px",
-                fontWeight: 700,
-              },
-              value: {
-                show: true,
-                color: "#0f172a",
-                fontSize: "24px",
-                fontWeight: 800,
-              },
-              total: {
-                show: true,
-                label: "Total",
-                color: "#64748b",
-                fontSize: "13px",
-                fontWeight: 700,
-                formatter: () => `${this.tickets.value().length}`,
+                name: {
+                  show: true,
+                  color: this.chartLabelColor,
+                  fontSize: "13px",
+                  fontWeight: 700,
+                },
+                value: {
+                  show: true,
+                  color: this.chartTitleColor,
+                  fontSize: "24px",
+                  fontWeight: 800,
+                },
+                total: {
+                  show: true,
+                  label: "Total",
+                  color: this.chartLabelColor,
+                  fontSize: "13px",
+                  fontWeight: 700,
+                  formatter: () => `${this.tickets.value().length}`,
+                },
               },
             },
           },
         },
-      },
-      tooltip: {
-        theme: "dark",
-        y: {
-          formatter: (value: number) => `${value} tickets`,
-        },
-      },
-      responsive: [
-        {
-          breakpoint: 640,
-          options: {
-            chart: {
-              height: 240,
-            },
-            legend: {
-              position: "bottom",
-            },
+        tooltip: {
+          theme: "light",
+          y: {
+            formatter: (value: number) => `${value} tickets`,
           },
         },
-      ],
-    };
-  });
+        responsive: [
+          {
+            breakpoint: 640,
+            options: {
+              chart: {
+                height: 240,
+              },
+              legend: {
+                position: "bottom",
+              },
+            },
+          },
+        ],
+      };
+    },
+  );
 
   private readonly setInitialAgency = effect(() => {
     const agencies = this.agencies();
@@ -393,6 +494,17 @@ export class EcommerceComponent {
 
   protected onMachineChange(machine: Machine | null) {
     this.dashboard.selectedMachine.set(machine);
+  }
+
+  protected viewAllMachines() {
+    if (this.selectedAgency()) {
+      this.machineService.selectedAgency.set(this.selectedAgency());
+      this.router.navigate(["/machines"]);
+    }
+  }
+
+  protected clearTicketMonthRange() {
+    this.ticketMonthRange.set(null);
   }
 
   protected ticketStatusClass(ticket: MachineTicketHistory): string {
@@ -435,5 +547,9 @@ export class EcommerceComponent {
 
   protected trackByCard(card: SummaryCard): string {
     return card.title;
+  }
+
+  private formatMonthYear(date: Date): string {
+    return `${this.monthNames[date.getMonth()]} ${date.getFullYear()}`;
   }
 }

@@ -1,0 +1,9 @@
+<app-blank [title]="title()">
+  <ng-template #header>
+    <app-page-breadcrumb [pageTitle]="title()" icon="pi-ticket" />
+  </ng-template>
+
+  <div class="flex flex-col gap-4">
+    <app-ticket-list-table></app-ticket-list-table>
+  </div>
+</app-blank>

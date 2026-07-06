@@ -8,6 +8,7 @@ import { InputIconModule } from "primeng/inputicon";
 import { InputTextModule } from "primeng/inputtext";
 import { TableModule } from "primeng/table";
 import { Agency } from "../../agency.model";
+import { MachineService } from "@app/features/machine/machine.service";
 
 @Component({
   selector: "agency-list-table",
@@ -24,11 +25,13 @@ import { Agency } from "../../agency.model";
 })
 export class AgencyListTableComponent {
   private readonly agencyService = inject(AgencyService);
+  private readonly machineService = inject(MachineService);
   private readonly router = inject(Router);
   protected readonly agencies = this.agencyService.agencies;
 
   viewMachines(agency: Agency) {
-    this.agencyService.selectedAgency.set(agency);
+    // this.agencyService.selectedAgency.set(agency);
+    this.machineService.selectedAgency.set(agency);
     this.router.navigate(["/machines"]);
   }
 }

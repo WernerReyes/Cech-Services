@@ -159,7 +159,7 @@
 
     <!-- Body -->
     <ng-template #body let-machine>
-      <tr class="transition-colors hover:bg-slate-50">
+      <tr class="transition-colors hover:bg-slate-50" [style.view-transition-name]="'machine-' + machine.idEquipo">
         <!-- ID -->
         <td class="px-4 py-3">
           <span
@@ -255,11 +255,12 @@
         </td>
 
         <!-- Acción -->
-        <td class="px-4 py-3 text-right">
+        <td class="px-4 py-3 text-right" >
           <button
             pButton
             type="button"
             (click)="viewMachineDetails(machine)"
+           
             [outlined]="true"
             class="inline-flex h-9 items-center gap-2 rounded-xl border-blue-200 px-3 text-sm font-semibold text-blue-600 transition hover:bg-blue-50"
           >
