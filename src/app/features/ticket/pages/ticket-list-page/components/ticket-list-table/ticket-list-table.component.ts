@@ -18,6 +18,7 @@ import { SelectModule } from "primeng/select";
 import { TableModule } from "primeng/table";
 
 import { TicketService } from "@app/features/ticket/ticket.service";
+import { ErrorBoundaryComponent } from "@app/shared/components/error/error-boundary.component";
 
 @Component({
   selector: "app-ticket-list-table",
@@ -32,6 +33,7 @@ import { TicketService } from "@app/features/ticket/ticket.service";
     FloatLabelModule,
     SelectModule,
     DatePipe,
+    ErrorBoundaryComponent,
   ],
   templateUrl: "./ticket-list-table.component.html",
   styleUrl: "./ticket-list-table.component.css",

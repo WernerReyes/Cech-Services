@@ -1,0 +1,725 @@
+<div class="flex w-full flex-col gap-6">
+  <!-- Filtros -->
+  <section
+    class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6"
+  >
+    <div class="grid gap-5 lg:grid-cols-[1fr_20rem_20rem] lg:items-end">
+      <div class="min-w-0 flex gap-2">
+        <div
+          class="mb-3 flex size-10 items-center justify-center rounded-2xl bg-primary/10 text-primary"
+        >
+          <i class="pi pi-filter text-sm"></i>
+        </div>
+
+        <div>
+          <h2 class="text-lg font-semibold text-slate-950">Panel de filtros</h2>
+
+          <p class="max-w-xl text-sm font-medium leading-6 text-slate-500">
+            Usa la agencia y el equipo para actualizar métricas, gráficos e
+            historial del dashboard.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex min-w-0 flex-col gap-2">
+        <label class="text-sm font-medium text-slate-700">Agencia</label>
+
+        <p-select
+          [options]="agencies()"
+          [ngModel]="selectedAgency()"
+          (ngModelChange)="onAgencyChange($event)"
+          optionLabel="valor"
+          placeholder="Selecciona una agencia"
+          fluid
+          appendTo="body"
+          [filter]="true"
+          filterBy="valor,id"
+          filterPlaceholder="Buscar agencia..."
+          emptyMessage="No hay agencias disponibles"
+          emptyFilterMessage="No se encontraron agencias"
+        >
+          <ng-template #selectedItem let-agency>
+            @if (agency) {
+              <div class="flex min-w-0 items-center gap-2">
+                <span
+                  class="flex size-7 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"
+                >
+                  <i class="pi pi-map-marker text-xs"></i>
+                </span>
+
+                <span
+                  class="truncate wrap-break-word text-sm font-bold text-slate-800"
+                >
+                  {{ agency.valor }}
+                </span>
+              </div>
+            }
+          </ng-template>
+
+          <ng-template #item let-agency>
+            <div class="flex min-w-0 items-center gap-3 py-1.5">
+              <span
+                class="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary"
+              >
+                #{{ agency.id }}
+              </span>
+
+              <span
+                class="truncate wrap-break-word text-sm font-bold text-slate-800"
+              >
+                {{ agency.valor }}
+              </span>
+            </div>
+          </ng-template>
+        </p-select>
+      </div>
+
+      <div class="flex min-w-0 flex-col gap-2">
+        <label class="text-sm font-medium text-slate-700">
+          Equipo destacado
+        </label>
+
+        <ng-template
+          #machineSelect
+          let-options="options"
+          let-disabled="disabled"
+          let-placeholder="placeholder"
+        >
+          <p-select
+            [options]="options"
+            [ngModel]="selectedMachine()"
+            (ngModelChange)="onMachineChange($event)"
+            [disabled]="disabled"
+            optionLabel="equipo"
+            [placeholder]="placeholder || 'Selecciona un equipo'"
+            fluid
+            appendTo="body"
+            styleClass="w-full rounded-2xl border-slate-200 bg-slate-50 hover:border-primary/50 disabled:opacity-60"
+            panelStyleClass="rounded-2xl border border-slate-200 shadow-xl"
+            [filter]="true"
+            filterBy="equipo,serie,codigoInventario,modelo.descripcion"
+            filterPlaceholder="Buscar equipo..."
+            emptyMessage="No hay equipos para esta agencia"
+            emptyFilterMessage="No se encontraron equipos"
+          >
+            <ng-template #selectedItem let-machine>
+              @if (machine) {
+                <div class="flex min-w-0 items-center gap-2">
+                  <span
+                    class="flex size-7 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"
+                  >
+                    <i class="pi pi-microchip text-xs"></i>
+                  </span>
+
+                  <span class="truncate text-sm font-bold text-slate-800">
+                    {{ machine.equipo }}
+                  </span>
+                </div>
+              }
+            </ng-template>
+
+            <ng-template #item let-machine>
+              <div class="flex min-w-0 flex-col gap-1 py-1.5">
+                <div class="flex min-w-0 items-center gap-2">
+                  <span
+                    class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700"
+                  >
+                    #{{ machine.idEquipo }}
+                  </span>
+
+                  <span class="truncate text-sm font-bold text-slate-800">
+                    {{ machine.equipo }}
+                  </span>
+                </div>
+
+                <span class="truncate text-xs font-semibold text-slate-500">
+                  {{ machine.modelo?.descripcion || "Sin modelo" }}
+                </span>
+              </div>
+            </ng-template>
+          </p-select>
+        </ng-template>
+
+        @if (selectedAgency()) {
+          <app-error-boundary [resource]="dashboard.machines" [showEmptyMessage]="false" fallbackType="card" (successData)="machines.set($event || [])">
+            <ng-template #loading>
+              <ng-container
+                [ngTemplateOutlet]="machineSelect"
+                [ngTemplateOutletContext]="{
+                  options: [],
+                  disabled: true,
+                  placeholder: 'Cargando equipos...'
+                }"
+              ></ng-container>
+            </ng-template>
+
+            <ng-template #empty>
+              <ng-container
+                [ngTemplateOutlet]="machineSelect"
+                [ngTemplateOutletContext]="{
+                  options: [],
+                  disabled: true,
+                  placeholder: 'No hay equipos para esta agencia'
+                }"
+              ></ng-container>
+            </ng-template>
+
+            <ng-template #content let-machineOptions>
+              <ng-container
+                [ngTemplateOutlet]="machineSelect"
+                [ngTemplateOutletContext]="{
+                  options: machineOptions,
+                  disabled: false,
+                  placeholder: 'Selecciona un equipo'
+                }"
+              ></ng-container>
+            </ng-template>
+          </app-error-boundary>
+        } @else {
+          <ng-container
+            [ngTemplateOutlet]="machineSelect"
+            [ngTemplateOutletContext]="{
+              options: [],
+              disabled: true,
+              placeholder: 'Selecciona una agencia primero'
+            }"
+          ></ng-container>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Métricas -->
+  <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
+    @for (card of cards(); track trackByCard(card)) {
+      <div
+        /* [routerLink]="card.route" */
+        (click)="card.onClick?.()"
+        class="group rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-slate-200/70 hover:cursor-pointer"
+      >
+        <div class="flex items-center justify-between gap-3">
+          <div
+            class="flex size-12 shrink-0 items-center justify-center rounded-2xl shadow-sm ring-1 ring-black/5"
+            [ngClass]="card.iconClass"
+          >
+            <i class="pi text-lg" [ngClass]="card.icon"></i>
+          </div>
+
+          <span
+            class="flex size-9 items-center justify-center rounded-full bg-slate-50 text-slate-300 ring-1 ring-slate-200 transition group-hover:bg-primary/10 group-hover:text-primary group-hover:ring-primary/20"
+          >
+            <i class="pi pi-arrow-up-right text-sm"></i>
+          </span>
+        </div>
+
+        <p class="mt-5 text-sm font-medium text-slate-500">
+          {{ card.title }}
+        </p>
+
+        <p class="mt-2 text-3xl font-semibold tracking-tight text-slate-950">
+          {{ card.value }}
+        </p>
+
+        <p
+          class="mt-2 line-clamp-2 text-sm font-medium leading-6 text-slate-500"
+        >
+          {{ card.caption }}
+        </p>
+      </div>
+    }
+  </section>
+
+  <!-- Dashboard -->
+  <div class="grid grid-cols-12 gap-4 md:gap-6">
+    <!-- Columna izquierda -->
+    <div class="col-span-12 space-y-6 xl:col-span-8">
+      <!-- Gráfico principal -->
+      <section
+        class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6"
+      >
+        <div
+          class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"
+        >
+          <div class="min-w-0">
+            <div
+              class="mb-3 flex size-10 items-center justify-center rounded-2xl bg-primary/10 text-primary"
+            >
+              <i class="pi pi-chart-line text-sm"></i>
+            </div>
+
+            <h2 class="text-lg font-semibold text-slate-950">
+              Tendencia de tickets
+            </h2>
+
+            <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
+              Comportamiento de tickets según el rango de meses seleccionado.
+            </p>
+          </div>
+
+          <div class="flex w-full flex-col gap-2 sm:w-auto sm:min-w-80">
+            <label
+              for="ticket-month-range"
+              class="text-sm font-medium text-slate-700"
+            >
+              Rango de meses
+            </label>
+
+            <p-datepicker
+              inputId="ticket-month-range"
+              [ngModel]="ticketMonthRange()"
+              (ngModelChange)="ticketMonthRange.set($event)"
+              selectionMode="range"
+              view="month"
+              dateFormat="mm/yy"
+              [readonlyInput]="true"
+              [showIcon]="true"
+              appendTo="body"
+              placeholder="Selecciona rango"
+              styleClass="w-full"
+              inputStyleClass="w-full rounded-2xl border-slate-200 bg-slate-50 text-sm font-semibold text-slate-700"
+              panelStyleClass="rounded-2xl border border-slate-200 shadow-xl"
+            ></p-datepicker>
+
+            <div class="flex flex-wrap items-center gap-2">
+              <span
+                class="inline-flex w-fit items-center gap-2 rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-600 ring-1 ring-slate-200"
+              >
+                <i class="pi pi-calendar text-xs text-primary"></i>
+                {{ ticketTrendRangeLabel() }}
+              </span>
+
+              @if (ticketMonthRange()) {
+                <button
+                  type="button"
+                  class="inline-flex w-fit items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary transition hover:bg-primary/15"
+                  (click)="clearTicketMonthRange()"
+                >
+                  <i class="pi pi-times text-xs"></i>
+                  Limpiar
+                </button>
+              }
+            </div>
+          </div>
+        </div>
+
+        <app-error-boundary [resource]="dashboard.tickets" fallbackType="card" (successData)="tickets.set($event || [])">
+          <ng-template #loading>
+            <div
+              class="mt-6 h-80 animate-pulse rounded-2xl bg-slate-100 ring-1 ring-slate-100"
+            ></div>
+          </ng-template>
+
+          <ng-template #empty>
+            <div
+              class="mt-6 rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-6 py-12 text-center"
+            >
+              <div
+                class="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl bg-white text-slate-500 ring-1 ring-slate-200"
+              >
+                <i class="pi pi-chart-line text-lg"></i>
+              </div>
+
+              <p class="text-sm font-semibold text-slate-800">
+                @if (selectedMachine()) {
+                  Sin tickets para graficar
+                } @else {
+                  Selecciona un equipo
+                }
+              </p>
+
+              <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
+                @if (selectedMachine()) {
+                  Este equipo todavÃ­a no tiene tickets registrados.
+                } @else {
+                  La tendencia se actualizarÃ¡ al elegir un equipo.
+                }
+              </p>
+            </div>
+          </ng-template>
+
+          <ng-template #content>
+            <div
+              class="mt-6 overflow-hidden rounded-2xl bg-slate-50 p-3 ring-1 ring-slate-100"
+            >
+              <apx-chart
+                [series]="ticketTrendChart().series"
+                [chart]="ticketTrendChart().chart"
+                [xaxis]="ticketTrendChart().xaxis"
+                [yaxis]="ticketTrendChart().yaxis"
+                [stroke]="ticketTrendChart().stroke"
+                [dataLabels]="ticketTrendChart().dataLabels"
+                [fill]="ticketTrendChart().fill"
+                [tooltip]="ticketTrendChart().tooltip"
+                [grid]="ticketTrendChart().grid"
+                [colors]="ticketTrendChart().colors"
+              ></apx-chart>
+            </div>
+          </ng-template>
+        </app-error-boundary>
+      </section>
+
+      <!-- Equipos -->
+      <section
+        class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6"
+      >
+        <div
+          class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"
+        >
+          <div class="min-w-0">
+            <div
+              class="mb-3 flex size-10 items-center justify-center rounded-2xl bg-primary/10 text-primary"
+            >
+              <i class="pi pi-desktop text-sm"></i>
+            </div>
+
+            <h2 class="text-lg font-semibold text-slate-950">
+              Equipos destacados
+            </h2>
+
+            <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
+              Primeros equipos disponibles en la agencia seleccionada.
+            </p>
+          </div>
+
+          <button
+            /* routerLink="/machines" */
+            (click)="viewAllMachines()"
+            class="inline-flex h-10 w-fit items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 transition hover:border-primary/40 hover:bg-primary/5 hover:text-primary"
+          >
+            <i class="pi pi-desktop text-sm"></i>
+            <span>Ver equipos</span>
+          </button>
+        </div>
+
+        <app-error-boundary [resource]="dashboard.machines" fallbackType="card" (successData)="machines.set($event || [])">
+          <ng-template #loading>
+            <div class="mt-6 space-y-3">
+              @for (item of [1, 2, 3, 4, 5]; track item) {
+                <div class="h-16 animate-pulse rounded-2xl bg-slate-100"></div>
+              }
+            </div>
+          </ng-template>
+
+          <ng-template #empty>
+            <div
+              class="mt-6 rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-6 py-12 text-center"
+            >
+              <div
+                class="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl bg-white text-slate-500 ring-1 ring-slate-200"
+              >
+                <i class="pi pi-inbox text-lg"></i>
+              </div>
+
+              <p class="text-sm font-semibold text-slate-800">
+                No hay equipos para mostrar
+              </p>
+
+              <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
+                Selecciona otra agencia para cargar su inventario.
+              </p>
+            </div>
+          </ng-template>
+
+          <ng-template #content>
+            <div class="mt-6 grid gap-3">
+              @for (machine of recentMachines(); track machine.idEquipo) {
+                <a
+                  [routerLink]="['/machines', machine.idEquipo]"
+                  [style.view-transition-name]="'machine-' + machine.idEquipo"
+                  class="group grid gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-white hover:shadow-md sm:grid-cols-[1fr_auto]"
+                >
+                  <div class="min-w-0">
+                    <div class="flex min-w-0 items-center gap-3">
+                      <div
+                        class="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-white text-primary ring-1 ring-slate-200 transition group-hover:ring-primary/30"
+                      >
+                        <i class="pi pi-microchip text-sm"></i>
+                      </div>
+
+                      <div class="min-w-0">
+                        <p class="truncate text-sm font-semibold text-slate-950">
+                          {{ machine.equipo }}
+                        </p>
+
+                        <p class="truncate text-sm font-medium text-slate-500">
+                          {{ machine.modelo.descripcion || "Sin modelo" }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-wrap items-center gap-2 sm:justify-end">
+                    <span
+                      class="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200"
+                    >
+                      #{{ machine.idEquipo }}
+                    </span>
+
+                    <span
+                      class="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary ring-1 ring-primary/20"
+                    >
+                      {{ machine.mesGarantia || 0 }} meses
+                    </span>
+                  </div>
+                </a>
+              }
+            </div>
+          </ng-template>
+        </app-error-boundary>
+      </section>
+    </div>
+
+    <!-- Columna derecha -->
+    <div class="col-span-12 space-y-6 xl:col-span-4">
+      <!-- Equipo destacado -->
+      <section
+        class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6"
+      >
+        <div class="flex items-start gap-4">
+          <div
+            class="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/20"
+          >
+            <i class="pi pi-microchip text-lg"></i>
+          </div>
+
+          <div class="min-w-0">
+            <h2 class="text-lg font-semibold text-slate-950">
+              Equipo destacado
+            </h2>
+
+            <p class="mt-1 text-sm font-medium text-slate-500">
+              Resumen actual
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-4">
+          <p
+            class="text-xs font-semibold uppercase tracking-wide text-slate-500"
+          >
+            Equipo
+          </p>
+
+          <p class="mt-1 wrap-break-word text-sm font-semibold text-slate-950">
+            {{ selectedMachine()?.equipo || "Sin selección" }}
+          </p>
+
+          <p
+            class="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500"
+          >
+            Modelo
+          </p>
+
+          <p
+            class="mt-1 wrap-break-word text-sm font-semibold leading-6 text-slate-700"
+          >
+            {{ selectedMachine()?.modelo?.descripcion || "Sin modelo" }}
+          </p>
+
+          <div class="mt-4 flex flex-wrap gap-2">
+            @if (selectedMachine()?.idEquipo) {
+              <span
+                class="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200"
+              >
+                #{{ selectedMachine()?.idEquipo }}
+              </span>
+            }
+
+            <span
+              class="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary ring-1 ring-primary/20"
+            >
+              {{ selectedMachine()?.mesGarantia || 0 }} meses
+            </span>
+          </div>
+        </div>
+
+        <a pButton routerLink="/tickets/create"
+         [queryParams]="{ idAgencia: selectedAgency()?.id || '', idEquipo: selectedMachine()?.idEquipo || '' }"
+         class="mt-5 w-full">
+          <i class="pi pi-plus text-sm"></i>
+          Crear ticket
+        </a>
+      </section>
+
+      <!-- Estado de tickets -->
+      <section
+        class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6"
+      >
+        <div class="flex items-center gap-4">
+          <div
+            class="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-amber-50 text-amber-700 ring-1 ring-amber-100"
+          >
+            <i class="pi pi-chart-pie text-lg"></i>
+          </div>
+
+          <div class="min-w-0">
+            <h2 class="text-lg font-semibold text-slate-950">
+              Estado de tickets
+            </h2>
+
+            <p class="mt-1 text-sm font-medium text-slate-500">
+              Distribución actual
+            </p>
+          </div>
+        </div>
+
+        <app-error-boundary [resource]="dashboard.tickets" fallbackType="card" (successData)="tickets.set($event || [])">
+          <ng-template #loading>
+            <div
+              class="mt-5 h-64 animate-pulse rounded-2xl bg-slate-100 ring-1 ring-slate-100"
+            ></div>
+
+            <div class="mt-4 grid grid-cols-2 gap-3">
+              <div class="h-24 animate-pulse rounded-2xl bg-slate-100"></div>
+              <div class="h-24 animate-pulse rounded-2xl bg-slate-100"></div>
+            </div>
+          </ng-template>
+
+          <ng-template #empty>
+            <div
+              class="mt-5 rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-5 py-8 text-center"
+            >
+              <div
+                class="mx-auto mb-3 flex size-11 items-center justify-center rounded-2xl bg-white text-slate-500 ring-1 ring-slate-200"
+              >
+                <i class="pi pi-chart-pie text-base"></i>
+              </div>
+
+              <p class="text-sm font-semibold text-slate-800">
+                Sin distribuciÃ³n disponible
+              </p>
+
+              <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
+                Selecciona un equipo con tickets registrados.
+              </p>
+            </div>
+          </ng-template>
+
+          <ng-template #content>
+            <div
+              class="mt-5 overflow-hidden rounded-2xl bg-slate-50 p-3 ring-1 ring-slate-100"
+            >
+              <apx-chart
+                [series]="ticketStatusChart().series"
+                [chart]="ticketStatusChart().chart"
+                [labels]="ticketStatusChart().labels"
+                [legend]="ticketStatusChart().legend"
+                [dataLabels]="ticketStatusChart().dataLabels"
+                [plotOptions]="ticketStatusChart().plotOptions"
+                [tooltip]="ticketStatusChart().tooltip"
+                [colors]="ticketStatusChart().colors"
+                [responsive]="ticketStatusChart().responsive"
+              ></apx-chart>
+            </div>
+
+            <div class="mt-4 grid grid-cols-2 gap-3">
+              <div class="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+                <p
+                  class="text-xs font-semibold uppercase tracking-wide text-slate-500"
+                >
+                  Cerrados
+                </p>
+
+                <p class="mt-2 text-2xl font-semibold text-slate-950">
+                  {{ closedTickets() }}
+                </p>
+              </div>
+
+              <div class="rounded-2xl bg-primary/10 p-4 ring-1 ring-primary/20">
+                <p
+                  class="text-xs font-semibold uppercase tracking-wide text-primary"
+                >
+                  Abiertos
+                </p>
+
+                <p class="mt-2 text-2xl font-semibold text-slate-950">
+                  {{ openTickets() }}
+                </p>
+              </div>
+            </div>
+          </ng-template>
+        </app-error-boundary>
+      </section>
+
+      <!-- Historial reciente -->
+      <section
+        class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="flex size-10 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/20"
+          >
+            <i class="pi pi-clock text-sm"></i>
+          </div>
+
+          <h2 class="text-lg font-semibold text-slate-950">
+            Historial reciente
+          </h2>
+        </div>
+
+        <app-error-boundary [resource]="dashboard.tickets" fallbackType="card" (successData)="tickets.set($event || [])">
+          <ng-template #loading>
+            <div class="mt-5 space-y-3">
+              @for (item of [1, 2, 3, 4]; track item) {
+                <div class="h-16 animate-pulse rounded-2xl bg-slate-100"></div>
+              }
+            </div>
+          </ng-template>
+
+          <ng-template #empty>
+            <div
+              class="mt-5 rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-5 py-8 text-center"
+            >
+              <div
+                class="mx-auto mb-3 flex size-11 items-center justify-center rounded-2xl bg-white text-slate-500 ring-1 ring-slate-200"
+              >
+                <i class="pi pi-inbox text-base"></i>
+              </div>
+
+              <p class="text-sm font-semibold text-slate-800">
+                Sin historial reciente
+              </p>
+
+              <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
+                Selecciona un equipo con tickets registrados.
+              </p>
+            </div>
+          </ng-template>
+
+          <ng-template #content>
+            <div class="mt-5 divide-y divide-slate-200">
+              @for (ticket of recentTickets(); track ticket.ticketId) {
+                <article class="py-4 first:pt-0 last:pb-0">
+                  <div class="flex items-start justify-between gap-3">
+                    <span
+                      class="rounded-full bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary ring-1 ring-primary/20"
+                    >
+                      {{ ticket.number }}
+                    </span>
+
+                    <span
+                      class="max-w-40 rounded-full px-2.5 py-1 text-xs font-semibold ring-1"
+                      [ngClass]="ticketStatusClass(ticket)"
+                    >
+                      {{ ticket.status.valor }}
+                    </span>
+                  </div>
+
+                  <p
+                    class="mt-2 line-clamp-2 text-sm font-semibold leading-6 text-slate-950"
+                  >
+                    {{ ticket.subject }}
+                  </p>
+
+                  <p class="mt-1 text-xs font-semibold text-slate-500">
+                    {{ formatDateEs(ticket.fechaSolicitud) }}
+                  </p>
+                </article>
+              }
+            </div>
+          </ng-template>
+        </app-error-boundary>
+      </section>
+    </div>
+  </div>
+</div>

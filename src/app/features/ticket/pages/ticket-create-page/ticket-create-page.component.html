@@ -199,59 +199,114 @@
                 Equipo
               </label>
 
-              <p-select
-                inputId="machine"
-                [options]="machines.value()"
-                [ngModel]="selectedMachine()"
-                (ngModelChange)="onMachineChange($event)"
-                [ngModelOptions]="{ standalone: true }"
-                [disabled]="!selectedAgency() || machines.isLoading()"
-                optionLabel="equipo"
-                placeholder="Selecciona un equipo"
-                fluid
-                appendTo="body"
-                scrollHeight="320px"
-                styleClass="w-full"
-                panelStyleClass="agency-select-panel"
-                [filter]="true"
-                filterBy="equipo,serie,codigoInventario,modelo.descripcion"
-                filterPlaceholder="Buscar equipo..."
-             
-                emptyMessage="No hay equipos para esta agencia"
-                emptyFilterMessage="No se encontraron equipos"
+              <ng-template
+                #machineSelect
+                let-options="options"
+                let-disabled="disabled"
+                let-placeholder="placeholder"
               >
-                <ng-template #selectedItem let-machine>
-                  @if (machine) {
-                    <div class="flex min-w-0 items-center gap-2">
-                      <i class="pi pi-microchip shrink-0 text-sm text-slate-400"></i>
+                <p-select
+                  inputId="machine"
+                  [options]="options"
+                  [ngModel]="selectedMachine()"
+                  (ngModelChange)="onMachineChange($event)"
+                  [ngModelOptions]="{ standalone: true }"
+                  [disabled]="disabled"
+                  optionLabel="equipo"
+                  [placeholder]="placeholder || 'Selecciona un equipo'"
+                  fluid
+                  appendTo="body"
+                  scrollHeight="320px"
+                  styleClass="w-full"
+                  panelStyleClass="agency-select-panel"
+                  [filter]="true"
+                  filterBy="equipo,serie,codigoInventario,modelo.descripcion"
+                  filterPlaceholder="Buscar equipo..."
+                  emptyMessage="No hay equipos para esta agencia"
+                  emptyFilterMessage="No se encontraron equipos"
+                >
+                  <ng-template #selectedItem let-machine>
+                    @if (machine) {
+                      <div class="flex min-w-0 items-center gap-2">
+                        <i class="pi pi-microchip shrink-0 text-sm text-slate-400"></i>
 
-                      <span class="truncate text-sm font-semibold text-slate-800">
-                        {{ machine.equipo }}
+                        <span class="truncate text-sm font-semibold text-slate-800">
+                          {{ machine.equipo }}
+                        </span>
+                      </div>
+                    }
+                  </ng-template>
+
+                  <ng-template #item let-machine>
+                    <div class="flex min-w-0 flex-col gap-1 py-1">
+                      <div class="flex min-w-0 items-center gap-2">
+                        <span
+                          class="rounded-full bg-slate-100 px-2 py-1 text-xs font-bold text-slate-700"
+                        >
+                          #{{ machine.idEquipo }}
+                        </span>
+
+                        <span class="truncate text-sm font-semibold text-slate-800">
+                          {{ machine.equipo }}
+                        </span>
+                      </div>
+
+                      <span class="truncate text-xs font-medium text-slate-500">
+                        {{ machine.modelo?.descripcion || "Sin modelo" }}
                       </span>
                     </div>
-                  }
-                </ng-template>
+                  </ng-template>
+                </p-select>
+              </ng-template>
 
-                <ng-template #item let-machine>
-                  <div class="flex min-w-0 flex-col gap-1 py-1">
-                    <div class="flex min-w-0 items-center gap-2">
-                      <span
-                        class="rounded-full bg-slate-100 px-2 py-1 text-xs font-bold text-slate-700"
-                      >
-                        #{{ machine.idEquipo }}
-                      </span>
+              @if (selectedAgency()) {
+                <app-error-boundary
+                  [resource]="machines"
+                  [showEmptyMessage]="false"
+                >
+                  <ng-template #loading>
+                    <ng-container
+                      [ngTemplateOutlet]="machineSelect"
+                      [ngTemplateOutletContext]="{
+                        options: [],
+                        disabled: true,
+                        placeholder: 'Cargando equipos...'
+                      }"
+                    ></ng-container>
+                  </ng-template>
 
-                      <span class="truncate text-sm font-semibold text-slate-800">
-                        {{ machine.equipo }}
-                      </span>
-                    </div>
+                  <ng-template #empty>
+                    <ng-container
+                      [ngTemplateOutlet]="machineSelect"
+                      [ngTemplateOutletContext]="{
+                        options: [],
+                        disabled: true,
+                        placeholder: 'No hay equipos para esta agencia'
+                      }"
+                    ></ng-container>
+                  </ng-template>
 
-                    <span class="truncate text-xs font-medium text-slate-500">
-                      {{ machine.modelo?.descripcion || "Sin modelo" }}
-                    </span>
-                  </div>
-                </ng-template>
-              </p-select>
+                  <ng-template #content let-machineOptions>
+                    <ng-container
+                      [ngTemplateOutlet]="machineSelect"
+                      [ngTemplateOutletContext]="{
+                        options: machineOptions,
+                        disabled: false,
+                        placeholder: 'Selecciona un equipo'
+                      }"
+                    ></ng-container>
+                  </ng-template>
+                </app-error-boundary>
+              } @else {
+                <ng-container
+                  [ngTemplateOutlet]="machineSelect"
+                  [ngTemplateOutletContext]="{
+                    options: [],
+                    disabled: true,
+                    placeholder: 'Selecciona una agencia primero'
+                  }"
+                ></ng-container>
+              }
 
               @if (form.idEquipo().touched() && form.idEquipo().invalid()) {
                 <p-message severity="error" size="small" variant="simple">

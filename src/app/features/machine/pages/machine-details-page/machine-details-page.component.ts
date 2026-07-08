@@ -1,5 +1,12 @@
-import { DatePipe, JsonPipe, NgClass } from "@angular/common";
-import { Component, computed, effect, inject, input } from "@angular/core";
+import { DatePipe, NgClass } from "@angular/common";
+import {
+  Component,
+  computed,
+  effect,
+  inject,
+  input,
+  signal,
+} from "@angular/core";
 import { RouterLink } from "@angular/router";
 import { AppBlankComponent } from "@shared/layout/app-blank/app-blank.component";
 
@@ -7,40 +14,54 @@ import { ButtonModule } from "primeng/button";
 import { TimelineModule } from "primeng/timeline";
 
 import { PageBreadcrumbComponent } from "@app/shared/components/common/page-breadcrumb/page-breadcrumb.component";
-import type { MachineTicketHistory } from "../../machine.model";
+import { ErrorBoundaryComponent } from "@app/shared/components/error/error-boundary.component";
+import { TooltipModule } from "primeng/tooltip";
+import type { Machine, MachineTicketHistory } from "../../machine.model";
 import { MachineService } from "../../machine.service";
+import { DocumentDetailsDialogComponent } from "./components/document-details-dialog/document-details-dialog.component";
 
 @Component({
   selector: "app-machine-details-page",
   imports: [
     AppBlankComponent,
+    DocumentDetailsDialogComponent,
     RouterLink,
     ButtonModule,
+    ErrorBoundaryComponent,
     DatePipe,
-    JsonPipe,
     NgClass,
+    TooltipModule,
     TimelineModule,
     PageBreadcrumbComponent,
+  
   ],
   templateUrl: "./machine-details-page.component.html",
   styleUrl: "./machine-details-page.component.css",
 })
 export default class MachineDetailsPageComponent {
-  private readonly machineService = inject(MachineService);
+  readonly machineService = inject(MachineService);
 
   id = input<string | null>(null);
 
-  protected readonly machine = computed(() => this.machineService.machineSelect);
+  url = signal<string | null>(null);
 
-  protected readonly title = computed<string>(
-    () => this.machine().value()?.equipo || "Detalles del Equipo",
+  tickets = signal<MachineTicketHistory[]>([]);
+  selectedMachine = signal<Machine | null>(null);
+
+  protected readonly title = computed<string>(() =>
+    this.selectedMachine()
+      ? this.selectedMachine()?.equipo || "Detalles del Equipo"
+      : "Detalles del Equipo",
   );
 
-  protected readonly machines = this.machineService.machines;
-  protected readonly tickets = this.machineService.machineTickets;
 
-  protected readonly ticketEvents = computed(() => {
-    return this.tickets.value().map((ticket) => ({
+  private readonly setMachineById = effect(() => {
+    const machineId = this.id();
+    this.machineService.machineId.set(machineId ? parseInt(machineId) : null);
+  });
+
+  formatTickets(tickets: MachineTicketHistory[]) {
+    return tickets.map((ticket) => ({
       ticket,
       date: ticket.fechaSolicitud,
       status: ticket.status?.valor ?? "Sin estado",
@@ -48,12 +69,7 @@ export default class MachineDetailsPageComponent {
       subject: ticket.subject,
       author: this.ticketAuthor(ticket),
     }));
-  });
-
-  private readonly setMachineById = effect(() => {
-    const machineId = this.id();
-    this.machineService.machineId.set(machineId ? parseInt(machineId) : null);
-  });
+  }
 
   protected statusClass(ticket: MachineTicketHistory): string {
     const status = ticket.status?.valor?.toLowerCase() ?? "";
@@ -110,6 +126,8 @@ export default class MachineDetailsPageComponent {
   }
 
   protected ticketAuthor(ticket: MachineTicketHistory): string {
-    return ticket.creadoPor ? `Por ${ticket.creadoPor.valor}` : "Origen: sistema";
+    return ticket.creadoPor
+      ? `Por ${ticket.creadoPor.valor}`
+      : "Origen: sistema";
   }
 }

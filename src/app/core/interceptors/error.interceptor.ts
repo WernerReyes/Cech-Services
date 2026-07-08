@@ -29,6 +29,8 @@ function getBackendMessage(error: HttpErrorResponse): string | null {
 export const errorInterceptor: HttpInterceptorFn = (req, next) => {
   const authService = inject(AuthService);
 
+  
+
 
   // Pasamos la petición al siguiente paso y escuchamos el flujo de respuesta
   return next(req).pipe(
@@ -69,11 +71,10 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
         }
       }
 
-      // Puedes integrar aquí tu servicio global de alertas (Toastr, MatSnackBar, etc.)
-      console.error('HTTP Error Logged:', errorMessage);
+     
 
       // Reenviamos el error encapsulado para que el componente/servicio que hizo la llamada pueda manejarlo si quiere
-      return throwError(() => new Error(errorMessage));
+      return throwError(() => errorMessage);
     })
   );
 };

@@ -25,17 +25,45 @@
           pSize="large"
           class="w-full rounded-xl border-slate-200 bg-white text-sm shadow-sm placeholder:text-slate-400 focus:border-blue-400 focus:ring-blue-400"
           placeholder="Buscar cliente..."
-          (input)="dt.filterGlobal($any($event.target).value, 'contains')"
+          (input)="searchQuery.set($any($event.target).value)"
         />
       </p-iconfield>
     </div>
   </div>
 
+  <app-error-boundary [resource]="clients" fallbackType="card">
+    <ng-template #loading>
+      <div class="space-y-3 p-4">
+        @for (item of [1, 2, 3, 4, 5]; track item) {
+          <div class="grid gap-4 rounded-xl border border-slate-100 p-4 sm:grid-cols-[8rem_1fr_10rem]">
+            <div class="h-4 rounded bg-slate-100"></div>
+            <div class="h-4 rounded bg-slate-100"></div>
+            <div class="h-9 rounded-xl bg-slate-100"></div>
+          </div>
+        }
+      </div>
+    </ng-template>
+
+    <ng-template #empty>
+      <div class="flex flex-col items-center justify-center px-6 py-12 text-center">
+        <div class="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-slate-100 text-slate-400">
+          <svg data-p-icon="search" class="h-5 w-5"></svg>
+        </div>
+
+        <p class="text-sm font-semibold text-slate-700">
+          No hay clientes disponibles
+        </p>
+
+        <p class="mt-1 text-sm text-slate-500">
+          Intenta recargar la lista o vuelve a intentarlo mÃ¡s tarde.
+        </p>
+      </div>
+    </ng-template>
+
+    <ng-template #content>
   <!-- Tabla -->
   <p-table
-    #dt
-    [value]="clients.value()"
-    [loading]="clients.isLoading()"
+    [value]="filteredClients()"
     [tableStyle]="{ 'min-width': '56rem' }"
     paginator
     [globalFilterFields]="['idCliente', 'cliente']"
@@ -162,4 +190,6 @@
       </tr>
     </ng-template>
   </p-table>
+    </ng-template>
+  </app-error-boundary>
 </div>

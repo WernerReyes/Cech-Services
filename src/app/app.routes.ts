@@ -25,6 +25,7 @@ import { authGuard } from "./core/guards/auth.guard";
 import { agencyRoutes } from "./features/agency/client.routes";
 import { machineRoutes } from "./features/machine/machine.routes";
 import { ticketRoutes } from "./features/ticket/ticket.routes";
+import { dashboardRoutes } from "./features/dashboard/dashboard.routes";
 
 export const routes: Routes = [
   {
@@ -32,13 +33,14 @@ export const routes: Routes = [
     component: AppLayoutComponent,
     canActivate: [authGuard],
     children: [
-      {
-        path: "",
-        component: EcommerceComponent,
-        pathMatch: "full",
-        title: "Dashboard",
-      },
+      // {
+      //   path: "",
+      //   component: EcommerceComponent,
+      //   pathMatch: "full",
+      //   title: "Dashboard",
+      // },
       // ...clientRoutes,
+      ...dashboardRoutes,
       ...agencyRoutes,
       ...machineRoutes,
       ...ticketRoutes,

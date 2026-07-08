@@ -1,3 +1,4 @@
+import { NgTemplateOutlet } from "@angular/common";
 import { Component, computed, effect, inject, input, signal, untracked } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import {
@@ -24,6 +25,7 @@ import { SelectModule } from "primeng/select";
 import type { CreateTicketResult, TicketCreateForm } from "../../ticket.model";
 import { TicketService } from "../../ticket.service";
 import { PageBreadcrumbComponent } from "@app/shared/components/common/page-breadcrumb/page-breadcrumb.component";
+import { ErrorBoundaryComponent } from "@app/shared/components/error/error-boundary.component";
 
 const baseFormData: TicketCreateForm = {
   idAgencia: "",
@@ -41,6 +43,8 @@ const baseFormData: TicketCreateForm = {
     MessageModule,
     SelectModule,
     PageBreadcrumbComponent,
+    ErrorBoundaryComponent,
+    NgTemplateOutlet,
    
     FormField,
    
@@ -62,7 +66,7 @@ export default class TicketCreatePageComponent {
   protected readonly createdTicket = signal<CreateTicketResult | null>(null);
   protected readonly agencies = this.agencyService.agencies;
   protected readonly machines = this.machineService.machines;
-  protected readonly machine = computed(() => this.machineService.machineSelect.value());
+  protected readonly machine = computed(() => this.machineService.machineSelect.hasValue() ? this.machineService.machineSelect.value() : null);
   protected readonly selectedAgency = signal<Agency | null>(null);
   protected readonly selectedMachine = signal<Machine | null>(null);
 

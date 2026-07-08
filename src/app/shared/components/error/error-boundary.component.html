@@ -1,0 +1,84 @@
+@if (isTable()) {
+  <ng-container
+    [ngTemplateOutlet]="contentTemplate()"
+    [ngTemplateOutletContext]="{
+      $implicit: resource().hasValue() ? resource().value() : [],
+      isLoading: resource().isLoading(),
+      error: resource().error(),
+      reload: resource().reload,
+    }"
+  ></ng-container>
+} @else {
+  @if (resource().isLoading()) {
+    @if (loadingTemplate()) {
+      <ng-container [ngTemplateOutlet]="loadingTemplate()"></ng-container>
+    } @else {
+      <p-skeleton
+        [width]="skeletonWidth()"
+        [height]="skeletonHeight()"
+        [shape]="skeletonShape()"
+      >
+      </p-skeleton>
+    }
+  } @else if (resource().error()) {
+    @if (errorTemplate()) {
+      <ng-container
+        [ngTemplateOutlet]="errorTemplate()"
+        [ngTemplateOutletContext]="{
+          error: resource().error(),
+          retry: resource().reload,
+        }"
+      ></ng-container>
+    } @else {
+      @if (fallbackType() === "card") {
+        <div class="card mb-0 flex justify-center items-center h-full">
+          <app-fallback
+            [loading]="resource().isLoading()"
+            [message]="errorMessage() || resource().error()"
+            (retry)="resource().reload()"
+          >
+          </app-fallback>
+        </div>
+      } @else if (fallbackType() === "simple") {
+        <app-fallback
+          [loading]="resource().isLoading()"
+          [message]="errorMessage() || resource().error()"
+          (retry)="resource().reload()"
+        >
+        </app-fallback>
+      }
+    }
+  } @else {
+    @if (resource().hasValue()) {
+      @if (isEmpty()) {
+        @if (emptyTemplate()) {
+          <ng-container [ngTemplateOutlet]="emptyTemplate()"></ng-container>
+        } @else if (showEmptyMessage()) {
+          <div class="text-center py-4 text-surface-500">
+            {{ emptyMessage() }}
+          </div>
+        }
+      } @else {
+        @if (contentTemplate()) {
+          <ng-container
+            [ngTemplateOutlet]="contentTemplate()"
+            [ngTemplateOutletContext]="{
+              $implicit: resource().value(),
+              isLoading: resource().isLoading(),
+              error: resource().error(),
+              reload: resource().reload,
+            }"
+          ></ng-container>
+        } @else {
+          <ng-content></ng-content>
+        }
+      }
+    } @else if (emptyTemplate()) {
+      <ng-container [ngTemplateOutlet]="emptyTemplate()"></ng-container>
+    } @else if (showEmptyMessage()) {
+      <div class="text-center py-4 text-surface-500">
+        {{ emptyMessage() }}
+      </div>
+    }
+  }
+}
