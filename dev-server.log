@@ -1,0 +1,3689 @@
+
+> cech-services@1.1.0 start
+> ng serve --host 127.0.0.1 --port 4200
+
+> Building...
+√ Building...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 234.77 kB | 
+main.js             | main                           | 119.83 kB | 
+chunk-ULT52WMA.js   | -                              |   6.12 kB | 
+chunk-6UIPVKFA.js   | -                              |   3.13 kB | 
+chunk-DCR6WYMZ.js   | -                              |   2.76 kB | 
+chunk-TV76KRAH.js   | -                              |   1.84 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-2JCPVVYR.js   | -                              |   1.42 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-XKFOYYQ6.js   | dashboard-page-component       |  86.20 kB | 
+chunk-ZFBMD7LY.js   | machine-details-page-component |  54.53 kB | 
+chunk-7FPRGQV7.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-E4IT4PD4.js   | machine-list-page-component    |  49.96 kB | 
+chunk-2DM7LB2P.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-GFNFN4HQ.js   | agency-page-component          |  18.51 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [15.874 seconds] - 2026-07-08T19:19:34.360Z
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://127.0.0.1:[1m4200[22m/[39m
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-IRAKI5PK.js   | -                              |   6.10 kB | 
+chunk-XBIN5RYX.js   | -                              |   3.13 kB | 
+chunk-KVFRVVBB.js   | -                              |   2.76 kB | 
+chunk-EONBCVNN.js   | -                              |   1.84 kB | 
+chunk-ORXNB5FJ.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-RGIGB5V7.js   | dashboard-page-component       |  86.20 kB | 
+chunk-ON7A5VID.js   | machine-details-page-component |  54.53 kB | 
+chunk-2FX2327G.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-W5KM2373.js   | machine-list-page-component    |  49.96 kB | 
+chunk-WUP2NKOG.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-2KYZVF4S.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [6.011 seconds] - 2026-07-08T19:20:25.285Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-NB3X6WA2.js   | -                              |   6.16 kB | 
+chunk-CW5AHYG5.js   | -                              |   3.13 kB | 
+chunk-IU2PXBPY.js   | -                              |   2.76 kB | 
+chunk-HL4EIL6J.js   | -                              |   1.84 kB | 
+chunk-DVTZPES2.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-KY6FL72K.js   | dashboard-page-component       |  86.20 kB | 
+chunk-5R2GPTFO.js   | machine-details-page-component |  54.53 kB | 
+chunk-QRJWQBYK.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-RCL7PT5X.js   | machine-list-page-component    |  49.96 kB | 
+chunk-I3LDWVUA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-DAWJ6KJU.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [2.128 seconds] - 2026-07-08T19:20:32.820Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-MX3POQLV.js   | -                              |   6.13 kB | 
+chunk-A6KLFIDX.js   | -                              |   3.13 kB | 
+chunk-OCGKVE32.js   | -                              |   2.76 kB | 
+chunk-IIX7APZK.js   | -                              |   1.84 kB | 
+chunk-DPRZ3Y2Q.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-MPZZFFGM.js   | dashboard-page-component       |  86.20 kB | 
+chunk-UDXQ54FP.js   | machine-details-page-component |  54.53 kB | 
+chunk-OSSTYCB5.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-R5EPK75Y.js   | machine-list-page-component    |  49.96 kB | 
+chunk-V2RO2KBH.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-SKZECIOT.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [1.553 seconds] - 2026-07-08T19:20:39.729Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-DWDQCSCZ.js   | -                              |   6.07 kB | 
+chunk-WCX4ZGCR.js   | -                              |   3.13 kB | 
+chunk-4655QPQM.js   | -                              |   2.76 kB | 
+chunk-MAHM4ISG.js   | -                              |   1.84 kB | 
+chunk-ASTSUJ6S.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-FKOAAGYT.js   | dashboard-page-component       |  86.20 kB | 
+chunk-PZNR44NV.js   | machine-details-page-component |  54.53 kB | 
+chunk-XRAOATDB.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-KUMM7Z7Z.js   | machine-list-page-component    |  49.96 kB | 
+chunk-OREC3OM4.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-YQKRCOLT.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [2.015 seconds] - 2026-07-08T19:21:21.597Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-XLOCTN3N.js   | -                              |   6.07 kB | 
+chunk-ACCAPK7L.js   | -                              |   3.13 kB | 
+chunk-6ZCLMWE6.js   | -                              |   2.76 kB | 
+chunk-F3IE4YVB.js   | -                              |   1.84 kB | 
+chunk-FILERADV.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-PYPMVSWI.js   | dashboard-page-component       |  86.20 kB | 
+chunk-GWGR2MHO.js   | machine-details-page-component |  54.53 kB | 
+chunk-2VZ4CUCL.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-ENZUVSN4.js   | machine-list-page-component    |  49.96 kB | 
+chunk-JDU5D7YX.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-VTFZV3Y5.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [1.993 seconds] - 2026-07-08T19:21:24.123Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-DOU5QUUT.js   | -                              |   6.05 kB | 
+chunk-AOIL24ZZ.js   | -                              |   3.13 kB | 
+chunk-OKPLJFO2.js   | -                              |   2.76 kB | 
+chunk-UN27WDSW.js   | -                              |   1.84 kB | 
+chunk-BDWWZYFO.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-RNCNHJFI.js   | dashboard-page-component       |  86.20 kB | 
+chunk-2KKIJMD6.js   | machine-details-page-component |  54.53 kB | 
+chunk-VNE6V5O5.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-MG4CFRQO.js   | machine-list-page-component    |  49.96 kB | 
+chunk-X4WRZBYR.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-QL7IZUV2.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [1.554 seconds] - 2026-07-08T19:21:29.577Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-RG323LYC.js   | -                              |   6.05 kB | 
+chunk-DF66UKHN.js   | -                              |   3.13 kB | 
+chunk-VLVF5G2N.js   | -                              |   2.76 kB | 
+chunk-L5RYOS6K.js   | -                              |   1.84 kB | 
+chunk-Z5AQSKFS.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-RKYZ2B5A.js   | dashboard-page-component       |  86.20 kB | 
+chunk-SXAC7CVU.js   | machine-details-page-component |  54.53 kB | 
+chunk-MVCIGIXS.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-ZTHLGJSX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-HECQQRFS.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-KFPBMFQ3.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [1.925 seconds] - 2026-07-08T19:21:32.422Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.224 seconds] - 2026-07-08T19:22:12.935Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 234.77 kB | 
+main.js             | main                           | 119.88 kB | 
+chunk-RG323LYC.js   | -                              |   6.05 kB | 
+chunk-DF66UKHN.js   | -                              |   3.13 kB | 
+chunk-VLVF5G2N.js   | -                              |   2.76 kB | 
+chunk-L5RYOS6K.js   | -                              |   1.84 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-Z5AQSKFS.js   | -                              |   1.42 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-RKYZ2B5A.js   | dashboard-page-component       |  86.20 kB | 
+chunk-SXAC7CVU.js   | machine-details-page-component |  54.53 kB | 
+chunk-MVCIGIXS.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-ZTHLGJSX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-HECQQRFS.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-KFPBMFQ3.js   | agency-page-component          |  18.51 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.248 seconds] - 2026-07-08T19:22:14.670Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.207 seconds] - 2026-07-08T19:22:17.271Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.114 seconds] - 2026-07-08T19:22:20.437Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 234.77 kB | 
+main.js             | main                           | 119.91 kB | 
+chunk-RG323LYC.js   | -                              |   6.05 kB | 
+chunk-DF66UKHN.js   | -                              |   3.13 kB | 
+chunk-VLVF5G2N.js   | -                              |   2.76 kB | 
+chunk-L5RYOS6K.js   | -                              |   1.84 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-Z5AQSKFS.js   | -                              |   1.42 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-RKYZ2B5A.js   | dashboard-page-component       |  86.20 kB | 
+chunk-SXAC7CVU.js   | machine-details-page-component |  54.53 kB | 
+chunk-MVCIGIXS.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-ZTHLGJSX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-HECQQRFS.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-KFPBMFQ3.js   | agency-page-component          |  18.51 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.206 seconds] - 2026-07-08T19:22:24.458Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 119.89 kB | 
+
+Application bundle generation complete. [1.019 seconds] - 2026-07-08T19:22:29.919Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.344 seconds] - 2026-07-08T19:23:05.784Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.514 seconds] - 2026-07-08T19:23:08.682Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 234.77 kB | 
+main.js             | main                           | 119.83 kB | 
+chunk-RG323LYC.js   | -                              |   6.05 kB | 
+chunk-DF66UKHN.js   | -                              |   3.13 kB | 
+chunk-VLVF5G2N.js   | -                              |   2.76 kB | 
+chunk-L5RYOS6K.js   | -                              |   1.84 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-Z5AQSKFS.js   | -                              |   1.42 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-RKYZ2B5A.js   | dashboard-page-component       |  86.20 kB | 
+chunk-SXAC7CVU.js   | machine-details-page-component |  54.53 kB | 
+chunk-MVCIGIXS.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-ZTHLGJSX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-HECQQRFS.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-KFPBMFQ3.js   | agency-page-component          |  18.51 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.518 seconds] - 2026-07-08T19:23:11.305Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.076 seconds] - 2026-07-08T19:23:16.204Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 234.77 kB | 
+main.js             | main                           | 119.83 kB | 
+chunk-FSWCAPPM.js   | -                              |   6.05 kB | 
+chunk-ULK762EG.js   | -                              |   3.13 kB | 
+chunk-UTE242ZX.js   | -                              |   2.76 kB | 
+chunk-B5LKNGYT.js   | -                              |   1.84 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-COWYJDXO.js   | -                              |   1.42 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-KGOBIW33.js   | dashboard-page-component       |  86.20 kB | 
+chunk-66H37CCX.js   | machine-details-page-component |  54.53 kB | 
+chunk-5BATFSVQ.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-E746TYZC.js   | machine-list-page-component    |  49.96 kB | 
+chunk-H5THTFNQ.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-P7ZHBTC5.js   | agency-page-component          |  18.51 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.913 seconds] - 2026-07-08T19:23:18.131Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-QK5WLPE7.js   | -                              |   6.05 kB | 
+chunk-D6FOYIYS.js   | -                              |   3.13 kB | 
+chunk-UJKDMDY7.js   | -                              |   2.76 kB | 
+chunk-KZ7FITWG.js   | -                              |   1.84 kB | 
+chunk-EKUMZSI6.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-OJ6FO5R2.js   | dashboard-page-component       |  86.20 kB | 
+chunk-ZFKI6JTW.js   | machine-details-page-component |  54.53 kB | 
+chunk-SRRDFZH7.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-ZRCF4Y7D.js   | machine-list-page-component    |  49.96 kB | 
+chunk-TJVAONZ7.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-P56MRZR6.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [2.033 seconds] - 2026-07-08T19:23:30.935Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 234.77 kB | 
+main.js             | main                           | 119.83 kB | 
+chunk-QK5WLPE7.js   | -                              |   6.05 kB | 
+chunk-D6FOYIYS.js   | -                              |   3.13 kB | 
+chunk-UJKDMDY7.js   | -                              |   2.76 kB | 
+chunk-KZ7FITWG.js   | -                              |   1.84 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-EKUMZSI6.js   | -                              |   1.42 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-OJ6FO5R2.js   | dashboard-page-component       |  86.20 kB | 
+chunk-ZFKI6JTW.js   | machine-details-page-component |  54.53 kB | 
+chunk-SRRDFZH7.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-ZRCF4Y7D.js   | machine-list-page-component    |  49.96 kB | 
+chunk-TJVAONZ7.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-P56MRZR6.js   | agency-page-component          |  18.51 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.718 seconds] - 2026-07-08T19:23:32.673Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-FJ5VFFOI.js   | -                              |   6.11 kB | 
+chunk-QCIZUERF.js   | -                              |   3.13 kB | 
+chunk-JIT37ETB.js   | -                              |   2.76 kB | 
+chunk-6K7NLST2.js   | -                              |   1.84 kB | 
+chunk-2Y6AEXRR.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-7PMMQWU5.js   | dashboard-page-component       |  86.20 kB | 
+chunk-BNCJ2Q5W.js   | machine-details-page-component |  54.53 kB | 
+chunk-E4HXV4VG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-P3QSGPYX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-LZ332MDE.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-OYCC7YGV.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [1.121 seconds] - 2026-07-08T19:24:07.557Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 119.80 kB | 
+
+Application bundle generation complete. [1.261 seconds] - 2026-07-08T19:24:38.539Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 119.83 kB | 
+
+Application bundle generation complete. [1.050 seconds] - 2026-07-08T19:24:51.823Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-VDRVXV7E.js   | -                              |   6.07 kB | 
+chunk-TSNLYKNX.js   | -                              |   3.13 kB | 
+chunk-FEO7IXCB.js   | -                              |   2.76 kB | 
+chunk-2BQTF2PL.js   | -                              |   1.84 kB | 
+chunk-SUIA5R6S.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-ERRGOPZQ.js   | dashboard-page-component       |  86.20 kB | 
+chunk-JKYX2XKA.js   | machine-details-page-component |  54.53 kB | 
+chunk-QDLHKZUL.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-RIDS5LW5.js   | machine-list-page-component    |  49.96 kB | 
+chunk-VOBNBHNW.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-OSUYLQ7P.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [1.793 seconds] - 2026-07-08T19:25:08.142Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-FJ5VFFOI.js   | -                              |   6.11 kB | 
+chunk-QCIZUERF.js   | -                              |   3.13 kB | 
+chunk-JIT37ETB.js   | -                              |   2.76 kB | 
+chunk-6K7NLST2.js   | -                              |   1.84 kB | 
+chunk-2Y6AEXRR.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-7PMMQWU5.js   | dashboard-page-component       |  86.20 kB | 
+chunk-BNCJ2Q5W.js   | machine-details-page-component |  54.53 kB | 
+chunk-E4HXV4VG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-P3QSGPYX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-LZ332MDE.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-OYCC7YGV.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [0.912 seconds] - 2026-07-08T19:25:26.364Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-YBT3DO4O.js   | -                              |   6.15 kB | 
+chunk-NB7XWXBD.js   | -                              |   3.13 kB | 
+chunk-Z4OR4CYY.js   | -                              |   2.76 kB | 
+chunk-ALEOUGAX.js   | -                              |   1.84 kB | 
+chunk-UXZKEUUW.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-ES5F3UED.js   | dashboard-page-component       |  86.20 kB | 
+chunk-6LCHWXHY.js   | machine-details-page-component |  54.53 kB | 
+chunk-3WAEXFN5.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-S6JNOURX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-5TBBRATK.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-2PZ72VFP.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [1.050 seconds] - 2026-07-08T19:25:41.884Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-FJ5VFFOI.js   | -                              |   6.11 kB | 
+chunk-QCIZUERF.js   | -                              |   3.13 kB | 
+chunk-JIT37ETB.js   | -                              |   2.76 kB | 
+chunk-6K7NLST2.js   | -                              |   1.84 kB | 
+chunk-2Y6AEXRR.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-7PMMQWU5.js   | dashboard-page-component       |  86.20 kB | 
+chunk-BNCJ2Q5W.js   | machine-details-page-component |  54.53 kB | 
+chunk-E4HXV4VG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-P3QSGPYX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-LZ332MDE.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-OYCC7YGV.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [1.408 seconds] - 2026-07-08T19:25:50.884Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-YBT3DO4O.js   | -                              |   6.15 kB | 
+chunk-NB7XWXBD.js   | -                              |   3.13 kB | 
+chunk-Z4OR4CYY.js   | -                              |   2.76 kB | 
+chunk-ALEOUGAX.js   | -                              |   1.84 kB | 
+chunk-UXZKEUUW.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-ES5F3UED.js   | dashboard-page-component       |  86.20 kB | 
+chunk-6LCHWXHY.js   | machine-details-page-component |  54.53 kB | 
+chunk-3WAEXFN5.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-S6JNOURX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-5TBBRATK.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-2PZ72VFP.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [1.300 seconds] - 2026-07-08T19:25:52.198Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.83 kB | 
+chunk-FJ5VFFOI.js   | -                              |   6.11 kB | 
+chunk-QCIZUERF.js   | -                              |   3.13 kB | 
+chunk-JIT37ETB.js   | -                              |   2.76 kB | 
+chunk-6K7NLST2.js   | -                              |   1.84 kB | 
+chunk-2Y6AEXRR.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-7PMMQWU5.js   | dashboard-page-component       |  86.20 kB | 
+chunk-BNCJ2Q5W.js   | machine-details-page-component |  54.53 kB | 
+chunk-E4HXV4VG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-P3QSGPYX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-LZ332MDE.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-OYCC7YGV.js   | agency-page-component          |  18.51 kB | 
+
+Application bundle generation complete. [1.441 seconds] - 2026-07-08T19:25:56.327Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.414 seconds] - 2026-07-08T19:27:38.563Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.175 seconds] - 2026-07-08T19:27:39.751Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.297 seconds] - 2026-07-08T19:27:41.056Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.182 seconds] - 2026-07-08T19:27:47.325Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.966 seconds] - 2026-07-08T19:27:51.723Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.139 seconds] - 2026-07-08T19:27:53.915Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 234.77 kB | 
+main.js             | main                           | 119.83 kB | 
+chunk-FJ5VFFOI.js   | -                              |   6.11 kB | 
+chunk-QCIZUERF.js   | -                              |   3.13 kB | 
+chunk-SYDRBTPL.js   | -                              |   2.85 kB | 
+chunk-6K7NLST2.js   | -                              |   1.84 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-2Y6AEXRR.js   | -                              |   1.42 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-OUBV4SOD.js   | dashboard-page-component       |  86.20 kB | 
+chunk-BNCJ2Q5W.js   | machine-details-page-component |  54.53 kB | 
+chunk-E4HXV4VG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-P3QSGPYX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-LZ332MDE.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-OYCC7YGV.js   | agency-page-component          |  18.51 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.015 seconds] - 2026-07-08T19:27:57.405Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.61 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-SKUTPCZD.js   | dashboard-page-component |  89.42 kB | 
+
+Application bundle generation complete. [1.002 seconds] - 2026-07-08T19:32:43.744Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.83 kB | 
+chunk-SYDRBTPL.js   | -                        |   2.85 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-OUBV4SOD.js   | dashboard-page-component |  86.20 kB | 
+
+Application bundle generation complete. [1.023 seconds] - 2026-07-08T19:33:03.903Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.83 kB | 
+chunk-UYS3GENA.js   | -                        |   2.89 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-LUE2R3KA.js   | dashboard-page-component |  86.20 kB | 
+
+Application bundle generation complete. [1.413 seconds] - 2026-07-08T19:34:14.038Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.611 seconds] - 2026-07-08T19:35:17.707Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.285 seconds] - 2026-07-08T19:35:20.563Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.220 seconds] - 2026-07-08T19:35:26.123Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.341 seconds] - 2026-07-08T19:35:29.351Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.332 seconds] - 2026-07-08T19:35:31.611Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 234.77 kB | 
+main.js             | main                           | 119.83 kB | 
+chunk-FJ5VFFOI.js   | -                              |   6.11 kB | 
+chunk-QCIZUERF.js   | -                              |   3.13 kB | 
+chunk-VCTFKTVX.js   | -                              |   3.00 kB | 
+chunk-6K7NLST2.js   | -                              |   1.84 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-2Y6AEXRR.js   | -                              |   1.42 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-YGQPBVB7.js   | dashboard-page-component       |  86.20 kB | 
+chunk-BNCJ2Q5W.js   | machine-details-page-component |  54.53 kB | 
+chunk-E4HXV4VG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-P3QSGPYX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-LZ332MDE.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-OYCC7YGV.js   | agency-page-component          |  18.51 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.417 seconds] - 2026-07-08T19:35:34.324Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.348 seconds] - 2026-07-08T19:35:40.745Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 234.77 kB | 
+main.js             | main                           | 119.83 kB | 
+chunk-FJ5VFFOI.js   | -                              |   6.11 kB | 
+chunk-QCIZUERF.js   | -                              |   3.13 kB | 
+chunk-HU3O6ZHJ.js   | -                              |   2.96 kB | 
+chunk-6K7NLST2.js   | -                              |   1.84 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-2Y6AEXRR.js   | -                              |   1.42 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-25L2CHET.js   | dashboard-page-component       |  86.20 kB | 
+chunk-BNCJ2Q5W.js   | machine-details-page-component |  54.53 kB | 
+chunk-E4HXV4VG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-P3QSGPYX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-LZ332MDE.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-OYCC7YGV.js   | agency-page-component          |  18.51 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.424 seconds] - 2026-07-08T19:35:42.454Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.83 kB | 
+chunk-X57JHGIW.js   | -                        |   2.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-5BMSL4GH.js   | dashboard-page-component |  86.20 kB | 
+
+Application bundle generation complete. [1.317 seconds] - 2026-07-08T19:35:47.029Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 234.77 kB | 
+main.js             | main                           | 119.83 kB | 
+chunk-FJ5VFFOI.js   | -                              |   6.11 kB | 
+chunk-QCIZUERF.js   | -                              |   3.13 kB | 
+chunk-X57JHGIW.js   | -                              |   2.92 kB | 
+chunk-6K7NLST2.js   | -                              |   1.84 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-2Y6AEXRR.js   | -                              |   1.42 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-5BMSL4GH.js   | dashboard-page-component       |  86.20 kB | 
+chunk-BNCJ2Q5W.js   | machine-details-page-component |  54.53 kB | 
+chunk-E4HXV4VG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-P3QSGPYX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-LZ332MDE.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-OYCC7YGV.js   | agency-page-component          |  18.51 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [0.713 seconds] - 2026-07-08T19:36:47.950Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 234.77 kB | 
+main.js             | main                           | 119.83 kB | 
+chunk-FJ5VFFOI.js   | -                              |   6.11 kB | 
+chunk-QCIZUERF.js   | -                              |   3.13 kB | 
+chunk-X57JHGIW.js   | -                              |   2.92 kB | 
+chunk-6K7NLST2.js   | -                              |   1.84 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-2Y6AEXRR.js   | -                              |   1.42 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-5BMSL4GH.js   | dashboard-page-component       |  86.20 kB | 
+chunk-BNCJ2Q5W.js   | machine-details-page-component |  54.53 kB | 
+chunk-E4HXV4VG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-P3QSGPYX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-LZ332MDE.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-OYCC7YGV.js   | agency-page-component          |  18.51 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [0.578 seconds] - 2026-07-08T19:36:49.432Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.83 kB | 
+chunk-U4QJ3OON.js   | -                        |   2.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-NHAFFSZ2.js   | dashboard-page-component |  86.20 kB | 
+
+Application bundle generation complete. [0.692 seconds] - 2026-07-08T19:42:32.978Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.83 kB | 
+chunk-276HJVWK.js   | -                        |   2.85 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-OYFQVSQS.js   | dashboard-page-component |  86.20 kB | 
+
+Application bundle generation complete. [0.797 seconds] - 2026-07-08T19:42:35.182Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.83 kB | 
+chunk-X2VBXCDV.js   | -                        |   2.84 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-M32HGSAV.js   | dashboard-page-component |  86.20 kB | 
+
+Application bundle generation complete. [0.899 seconds] - 2026-07-08T19:42:37.572Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.83 kB | 
+chunk-JHTTKYVB.js   | -                        |   2.80 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-563O4PMM.js   | dashboard-page-component |  86.20 kB | 
+
+Application bundle generation complete. [1.458 seconds] - 2026-07-08T19:42:41.915Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.61 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-UIZ4NFDG.js   | dashboard-page-component |  89.37 kB | 
+
+Application bundle generation complete. [1.114 seconds] - 2026-07-08T19:45:47.540Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.157 seconds] - 2026-07-08T19:46:05.985Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.261 seconds] - 2026-07-08T19:46:07.487Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.077 seconds] - 2026-07-08T19:46:08.572Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.070 seconds] - 2026-07-08T19:46:10.145Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.885 seconds] - 2026-07-08T19:46:12.443Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.979 seconds] - 2026-07-08T19:46:15.015Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 234.77 kB | 
+main.js             | main                           | 120.03 kB | 
+chunk-FJ5VFFOI.js   | -                              |   6.11 kB | 
+chunk-QCIZUERF.js   | -                              |   3.13 kB | 
+chunk-JHTTKYVB.js   | -                              |   2.80 kB | 
+chunk-6K7NLST2.js   | -                              |   1.84 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-2Y6AEXRR.js   | -                              |   1.42 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-563O4PMM.js   | dashboard-page-component       |  86.20 kB | 
+chunk-BNCJ2Q5W.js   | machine-details-page-component |  54.53 kB | 
+chunk-E4HXV4VG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-P3QSGPYX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-LZ332MDE.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-OYCC7YGV.js   | agency-page-component          |  18.51 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.292 seconds] - 2026-07-08T19:46:17.690Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 119.97 kB | 
+
+Application bundle generation complete. [1.638 seconds] - 2026-07-08T19:49:14.353Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.97 kB | 
+chunk-BRGW7ZP3.js   | -                        |   2.75 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-ZMCEEZXD.js   | dashboard-page-component |  86.20 kB | 
+
+Application bundle generation complete. [1.928 seconds] - 2026-07-08T19:49:22.376Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.847 seconds] - 2026-07-08T19:49:24.314Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 234.77 kB | 
+main.js             | main                           | 119.97 kB | 
+chunk-FJ5VFFOI.js   | -                              |   6.11 kB | 
+chunk-QCIZUERF.js   | -                              |   3.13 kB | 
+chunk-463D3TFB.js   | -                              |   2.58 kB | 
+chunk-6K7NLST2.js   | -                              |   1.84 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-2Y6AEXRR.js   | -                              |   1.42 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-7NB77WUT.js   | dashboard-page-component       |  86.20 kB | 
+chunk-BNCJ2Q5W.js   | machine-details-page-component |  54.53 kB | 
+chunk-E4HXV4VG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-P3QSGPYX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-LZ332MDE.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-OYCC7YGV.js   | agency-page-component          |  18.51 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.646 seconds] - 2026-07-08T19:49:27.842Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.97 kB | 
+chunk-N6WBNDFF.js   | -                        |   2.43 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-2K4K5OHV.js   | dashboard-page-component |  86.20 kB | 
+
+Application bundle generation complete. [1.480 seconds] - 2026-07-08T19:49:32.186Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                        |  Raw size
+main.js             | main                         | 119.97 kB | 
+chunk-JMYTXV6T.js   | -                            |   1.61 kB | 
+
+Lazy chunk files    | Names                        |  Raw size
+chunk-7TJ4JWMN.js   | dashboard-page-component     |  86.20 kB | 
+chunk-BEO6UN5T.js   | ticket-create-page-component |  52.99 kB | 
+chunk-5LSVGZAS.js   | ticket-list-page-component   |  34.00 kB | 
+
+Application bundle generation complete. [1.019 seconds] - 2026-07-08T19:50:01.603Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.97 kB | 
+chunk-ZHWZ4ACQ.js   | -                              |   7.58 kB | 
+chunk-2OGI777W.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-UKPQRYUV.js   | -                              |   1.56 kB | 
+chunk-MZXFGSIG.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-TIR6IRM5.js   | dashboard-page-component       |  86.20 kB | 
+chunk-UXCWFZ64.js   | machine-details-page-component |  54.53 kB | 
+chunk-GXXXUXPV.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-ZZKSCTT4.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MDTV45IX.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6U35FGFI.js   | agency-page-component          |  18.50 kB | 
+
+Application bundle generation complete. [2.005 seconds] - 2026-07-08T19:50:04.107Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                        |  Raw size
+main.js             | main                         | 119.97 kB | 
+chunk-NVMXEJBE.js   | -                            |   1.56 kB | 
+
+Lazy chunk files    | Names                        |  Raw size
+chunk-ORG22XT4.js   | dashboard-page-component     |  86.20 kB | 
+chunk-M772JCRT.js   | ticket-create-page-component |  52.99 kB | 
+chunk-IN2VQUHC.js   | ticket-list-page-component   |  34.00 kB | 
+
+Application bundle generation complete. [1.597 seconds] - 2026-07-08T19:50:05.923Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                        |  Raw size
+main.js             | main                         | 119.97 kB | 
+chunk-3QV3BUYY.js   | -                            |   1.56 kB | 
+
+Lazy chunk files    | Names                        |  Raw size
+chunk-FL4F5KTT.js   | dashboard-page-component     |  86.20 kB | 
+chunk-2UOGWYEI.js   | ticket-create-page-component |  52.99 kB | 
+chunk-EW4ZZRDR.js   | ticket-list-page-component   |  34.00 kB | 
+
+Application bundle generation complete. [1.655 seconds] - 2026-07-08T19:50:08.553Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                        |  Raw size
+main.js             | main                         | 119.97 kB | 
+chunk-4EA5W6HT.js   | -                            |   1.47 kB | 
+
+Lazy chunk files    | Names                        |  Raw size
+chunk-EYNMHJ6L.js   | dashboard-page-component     |  86.20 kB | 
+chunk-TI2U3CRN.js   | ticket-create-page-component |  52.99 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component   |  34.00 kB | 
+
+Application bundle generation complete. [1.561 seconds] - 2026-07-08T19:50:12.623Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.97 kB | 
+chunk-WPH3JJSV.js   | -                              |   7.46 kB | 
+chunk-DMPSES6D.js   | -                              |   2.43 kB | 
+chunk-SPQBPZHJ.js   | -                              |   1.42 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-SZ4CUHWO.js   | dashboard-page-component       |  86.20 kB | 
+chunk-NEPFZYQF.js   | machine-details-page-component |  54.53 kB | 
+chunk-OHSMGR3L.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-AUCBZSRA.js   | machine-list-page-component    |  49.96 kB | 
+chunk-7CKHEZWG.js   | agency-page-component          |  18.50 kB | 
+
+Application bundle generation complete. [1.077 seconds] - 2026-07-08T19:50:21.794Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.97 kB | 
+chunk-4453AU2N.js   | -                              |   5.89 kB | 
+chunk-YBW43ZNZ.js   | -                              |   2.95 kB | 
+chunk-KHRNCJPH.js   | -                              |   2.43 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-4AFUSOCX.js   | dashboard-page-component       |  86.20 kB | 
+chunk-YNOHACHG.js   | machine-details-page-component |  54.53 kB | 
+chunk-WP7PEC73.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-Q2YFU7JN.js   | machine-list-page-component    |  49.96 kB | 
+chunk-A6LLAG74.js   | agency-page-component          |  18.50 kB | 
+
+Application bundle generation complete. [1.978 seconds] - 2026-07-08T19:50:25.249Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.97 kB | 
+chunk-IQPY5B4Y.js   | -                              |   2.95 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-SZRTKO7B.js   | dashboard-page-component       |  86.20 kB | 
+chunk-WR4PTFEU.js   | machine-details-page-component |  54.53 kB | 
+chunk-5HXGUB2Q.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-COZMIQFX.js   | machine-list-page-component    |  49.96 kB | 
+chunk-Y635FLI5.js   | agency-page-component          |  18.50 kB | 
+
+Application bundle generation complete. [2.018 seconds] - 2026-07-08T19:50:27.296Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.97 kB | 
+chunk-U23NANXZ.js   | -                              |   2.79 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-6JQORP64.js   | dashboard-page-component       |  86.20 kB | 
+chunk-LZUQP7XL.js   | machine-details-page-component |  54.53 kB | 
+chunk-BYZS7R5E.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-7O42EYDE.js   | machine-list-page-component    |  49.96 kB | 
+chunk-TGVQKK4T.js   | agency-page-component          |  18.50 kB | 
+
+Application bundle generation complete. [1.900 seconds] - 2026-07-08T19:50:30.492Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 119.97 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-OC3H33DV.js   | dashboard-page-component       |  86.20 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-6QXQ7N5B.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-4WNVGRN7.js   | machine-list-page-component    |  49.96 kB | 
+chunk-QM2UQDKR.js   | agency-page-component          |  18.50 kB | 
+
+Application bundle generation complete. [1.652 seconds] - 2026-07-08T19:50:32.157Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                        |  Raw size
+main.js             | main                         | 119.97 kB | 
+chunk-3UL5VTYS.js   | -                            |   5.76 kB | 
+chunk-IUVSCEK3.js   | -                            |   2.43 kB | 
+
+Lazy chunk files    | Names                        |  Raw size
+chunk-3J6MBAGR.js   | dashboard-page-component     |  86.20 kB | 
+chunk-G6DWQ26Y.js   | ticket-create-page-component |  52.99 kB | 
+chunk-CO5SUMOL.js   | machine-list-page-component  |  49.96 kB | 
+chunk-GINTDJO5.js   | agency-page-component        |  18.50 kB | 
+
+Application bundle generation complete. [1.640 seconds] - 2026-07-08T19:50:56.254Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                        |  Raw size
+main.js             | main                         | 119.97 kB | 
+chunk-NB7JYEV2.js   | -                            |   5.70 kB | 
+chunk-66THGFCL.js   | -                            |   2.43 kB | 
+
+Lazy chunk files    | Names                        |  Raw size
+chunk-TAFK2MIX.js   | dashboard-page-component     |  86.20 kB | 
+chunk-FJZMPSL4.js   | ticket-create-page-component |  52.99 kB | 
+chunk-DJUUCZ5A.js   | machine-list-page-component  |  49.96 kB | 
+chunk-IS65TLI3.js   | agency-page-component        |  18.50 kB | 
+
+Application bundle generation complete. [2.804 seconds] - 2026-07-08T19:50:59.451Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 119.91 kB | 
+
+Application bundle generation complete. [1.426 seconds] - 2026-07-08T19:51:35.266Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 119.82 kB | 
+
+Application bundle generation complete. [1.392 seconds] - 2026-07-08T19:51:37.421Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 119.92 kB | 
+
+Application bundle generation complete. [1.867 seconds] - 2026-07-08T19:51:41.329Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 245.70 kB | 
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-C7S3I2ZU.js   | dashboard-page-component | 103.84 kB | 
+
+Application bundle generation complete. [6.292 seconds] - 2026-07-08T20:10:24.725Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-TAFK2MIX.js   | dashboard-page-component |  86.20 kB | 
+
+Application bundle generation complete. [2.039 seconds] - 2026-07-08T20:10:42.577Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-C7S3I2ZU.js   | dashboard-page-component | 103.84 kB | 
+
+Application bundle generation complete. [2.210 seconds] - 2026-07-08T20:10:52.777Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-XNZNY6GP.js   | dashboard-page-component | 104.03 kB | 
+
+Application bundle generation complete. [2.268 seconds] - 2026-07-08T20:11:03.643Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 246.56 kB | 
+
+Application bundle generation complete. [1.589 seconds] - 2026-07-08T20:12:16.410Z
+
+Stylesheet update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 246.52 kB | 
+
+Application bundle generation complete. [0.816 seconds] - 2026-07-08T20:12:33.162Z
+
+Stylesheet update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 246.56 kB | 
+
+Application bundle generation complete. [0.837 seconds] - 2026-07-08T20:12:41.497Z
+
+Stylesheet update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 246.56 kB | 
+
+Application bundle generation complete. [0.819 seconds] - 2026-07-08T20:12:44.116Z
+
+Stylesheet update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-3QAFGEVO.js   | dashboard-page-component |  96.44 kB | 
+
+Application bundle generation complete. [2.741 seconds] - 2026-07-08T20:13:22.103Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-JIVGESVS.js   | dashboard-page-component |  96.44 kB | 
+
+Application bundle generation complete. [2.118 seconds] - 2026-07-08T20:13:34.735Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-V7ZWZUG6.js   | dashboard-page-component |  86.27 kB | 
+
+Application bundle generation complete. [1.383 seconds] - 2026-07-08T20:14:24.060Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-34VLHOU3.js   | dashboard-page-component |  82.23 kB | 
+
+Application bundle generation complete. [2.040 seconds] - 2026-07-08T20:17:55.433Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 246.68 kB | 
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-OA3VDXLL.js   | dashboard-page-component |  82.23 kB | 
+
+Application bundle generation complete. [2.880 seconds] - 2026-07-08T20:18:15.510Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-34VLHOU3.js   | dashboard-page-component |  82.23 kB | 
+
+Application bundle generation complete. [2.127 seconds] - 2026-07-08T20:18:18.024Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-JIVGESVS.js   | dashboard-page-component |  96.44 kB | 
+
+Application bundle generation complete. [1.737 seconds] - 2026-07-08T20:18:30.431Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-V7ZWZUG6.js   | dashboard-page-component |  86.27 kB | 
+
+Application bundle generation complete. [1.648 seconds] - 2026-07-08T20:18:36.011Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 246.86 kB | 
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-LCUNQIG4.js   | dashboard-page-component |  85.74 kB | 
+
+Application bundle generation complete. [2.242 seconds] - 2026-07-08T20:21:48.406Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 249.60 kB | 
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-DTJJKQPB.js   | dashboard-page-component |  87.06 kB | 
+
+Application bundle generation complete. [2.626 seconds] - 2026-07-08T20:29:08.637Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-MYTZAH53.js   | dashboard-page-component |  87.08 kB | 
+
+Application bundle generation complete. [1.999 seconds] - 2026-07-08T20:30:37.662Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-HCWOVIHB.js   | dashboard-page-component |  87.06 kB | 
+
+Application bundle generation complete. [1.691 seconds] - 2026-07-08T20:31:29.840Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 249.60 kB | 
+main.js             | main                           | 119.92 kB | 
+chunk-NB7JYEV2.js   | -                              |   5.70 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-66THGFCL.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-HCWOVIHB.js   | dashboard-page-component       |  87.06 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-FJZMPSL4.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-DJUUCZ5A.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-IS65TLI3.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [0.011 seconds] - 2026-07-08T20:32:16.482Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 249.60 kB | 
+main.js             | main                           | 119.92 kB | 
+chunk-NB7JYEV2.js   | -                              |   5.70 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-66THGFCL.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-HCWOVIHB.js   | dashboard-page-component       |  87.06 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-FJZMPSL4.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-DJUUCZ5A.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-IS65TLI3.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [0.011 seconds] - 2026-07-08T20:32:20.104Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 249.66 kB | 
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-KL52D3SG.js   | dashboard-page-component |  87.05 kB | 
+
+Application bundle generation complete. [2.306 seconds] - 2026-07-08T20:35:40.212Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 249.72 kB | 
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-I6VX335P.js   | dashboard-page-component |  87.04 kB | 
+
+Application bundle generation complete. [2.120 seconds] - 2026-07-08T20:35:54.506Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-7CEEYP4M.js   | dashboard-page-component |  87.61 kB | 
+
+Application bundle generation complete. [2.105 seconds] - 2026-07-08T20:36:49.914Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-DBWX52JL.js   | dashboard-page-component |  87.71 kB | 
+
+Application bundle generation complete. [1.458 seconds] - 2026-07-08T20:37:23.471Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-34UPQG6T.js   | dashboard-page-component |  87.64 kB | 
+
+Application bundle generation complete. [1.572 seconds] - 2026-07-08T20:37:27.136Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-QV4GHBLV.js   | dashboard-page-component |  87.66 kB | 
+
+Application bundle generation complete. [1.861 seconds] - 2026-07-08T20:37:29.527Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-LCIIDSAS.js   | dashboard-page-component |  87.68 kB | 
+
+Application bundle generation complete. [2.131 seconds] - 2026-07-08T20:37:40.184Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 249.76 kB | 
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-DV2QHTRW.js   | dashboard-page-component |  87.72 kB | 
+
+Application bundle generation complete. [2.358 seconds] - 2026-07-08T20:37:42.553Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-MO5O7LYP.js   | dashboard-page-component |  87.68 kB | 
+
+Application bundle generation complete. [1.845 seconds] - 2026-07-08T20:37:44.414Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-DDH7SHB2.js   | dashboard-page-component |  87.69 kB | 
+
+Application bundle generation complete. [2.087 seconds] - 2026-07-08T20:37:47.858Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-PKNTOCTB.js   | dashboard-page-component |  87.69 kB | 
+
+Application bundle generation complete. [2.180 seconds] - 2026-07-08T20:37:50.056Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-Y7CHTEOP.js   | dashboard-page-component |  87.70 kB | 
+
+Application bundle generation complete. [2.050 seconds] - 2026-07-08T20:37:52.118Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 249.76 kB | 
+main.js             | main                           | 119.92 kB | 
+chunk-NB7JYEV2.js   | -                              |   5.70 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-66THGFCL.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-Y7CHTEOP.js   | dashboard-page-component       |  87.70 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-FJZMPSL4.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-DJUUCZ5A.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-IS65TLI3.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [2.095 seconds] - 2026-07-08T20:37:54.228Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-BYU45J73.js   | dashboard-page-component |  87.70 kB | 
+
+Application bundle generation complete. [1.925 seconds] - 2026-07-08T20:37:56.819Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-6A6PKQDF.js   | dashboard-page-component |  87.71 kB | 
+
+Application bundle generation complete. [2.885 seconds] - 2026-07-08T20:37:59.717Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-SFKRBCZ6.js   | dashboard-page-component |  87.72 kB | 
+
+Application bundle generation complete. [2.156 seconds] - 2026-07-08T20:38:01.894Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-RYEA2L4E.js   | dashboard-page-component |  87.72 kB | 
+
+Application bundle generation complete. [2.569 seconds] - 2026-07-08T20:38:12.967Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-7FANW3S2.js   | dashboard-page-component |  87.74 kB | 
+
+Application bundle generation complete. [2.115 seconds] - 2026-07-08T20:38:15.201Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-WHNLAW7N.js   | dashboard-page-component |  87.73 kB | 
+
+Application bundle generation complete. [2.902 seconds] - 2026-07-08T20:38:19.446Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 249.88 kB | 
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-QE6TJAY3.js   | dashboard-page-component |  87.75 kB | 
+
+Application bundle generation complete. [2.512 seconds] - 2026-07-08T20:38:21.984Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-EHZT74J7.js   | dashboard-page-component |  87.72 kB | 
+
+Application bundle generation complete. [2.042 seconds] - 2026-07-08T20:38:30.905Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-QE6TJAY3.js   | dashboard-page-component |  87.75 kB | 
+
+Application bundle generation complete. [2.103 seconds] - 2026-07-08T20:38:34.300Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-3ZSDKKB6.js   | dashboard-page-component |  87.75 kB | 
+
+Application bundle generation complete. [2.779 seconds] - 2026-07-08T20:39:01.633Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-T2SQ7ZSR.js   | dashboard-page-component |  87.75 kB | 
+
+Application bundle generation complete. [1.630 seconds] - 2026-07-08T20:39:17.505Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-N3KTMZFX.js   | dashboard-page-component |  87.77 kB | 
+
+Application bundle generation complete. [1.459 seconds] - 2026-07-08T20:39:35.074Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 119.92 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-ZQRD6YAN.js   | dashboard-page-component |  87.77 kB | 
+
+Application bundle generation complete. [1.158 seconds] - 2026-07-08T20:39:41.584Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [6.461 seconds] - 2026-07-08T20:53:48.351Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.097 seconds] - 2026-07-08T20:53:50.471Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.622 seconds] - 2026-07-08T20:53:56.031Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.499 seconds] - 2026-07-08T20:53:59.751Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.593 seconds] - 2026-07-08T20:54:04.485Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.546 seconds] - 2026-07-08T20:54:06.273Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.362 seconds] - 2026-07-08T20:54:11.966Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.516 seconds] - 2026-07-08T20:54:13.493Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.263 seconds] - 2026-07-08T20:54:15.482Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.179 seconds] - 2026-07-08T20:54:22.559Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.766 seconds] - 2026-07-08T20:54:32.471Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.146 seconds] - 2026-07-08T20:54:35.402Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.176 seconds] - 2026-07-08T20:54:39.672Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.443 seconds] - 2026-07-08T20:54:47.074Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.428 seconds] - 2026-07-08T20:54:51.213Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.235 seconds] - 2026-07-08T20:54:52.459Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.050 seconds] - 2026-07-08T20:55:04.502Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 249.88 kB | 
+main.js             | main                           | 119.92 kB | 
+chunk-HTXZTLB2.js   | -                              |   5.73 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-2TSUEEIU.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-DHXFRDF7.js   | dashboard-page-component       |  87.77 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-EAGXUPWB.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-X4WMHALG.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6GHUIX2J.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.770 seconds] - 2026-07-08T20:55:06.285Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.360 seconds] - 2026-07-08T20:55:13.946Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 249.88 kB | 
+main.js             | main                           | 119.92 kB | 
+chunk-HVEJJERZ.js   | -                              |   5.76 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-DCHPXXM6.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-2HFQ7IR7.js   | dashboard-page-component       |  87.77 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-WJDDKNDZ.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-2FM4TSQH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-S6REQC7O.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.314 seconds] - 2026-07-08T20:55:15.267Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                        |  Raw size
+main.js             | main                         | 119.92 kB | 
+chunk-ONNBE7P7.js   | -                            |   5.75 kB | 
+chunk-RAQC6BZ6.js   | -                            |   2.43 kB | 
+
+Lazy chunk files    | Names                        |  Raw size
+chunk-OTCVERAG.js   | dashboard-page-component     |  87.77 kB | 
+chunk-QG2HKAEN.js   | ticket-create-page-component |  52.99 kB | 
+chunk-XP5MOV7Y.js   | machine-list-page-component  |  49.96 kB | 
+chunk-NHZLL5CJ.js   | agency-page-component        |  18.50 kB | 
+
+Application bundle generation complete. [1.177 seconds] - 2026-07-08T20:55:19.093Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                        |  Raw size
+main.js             | main                         | 119.92 kB | 
+chunk-ZJF2N6ZC.js   | -                            |   5.92 kB | 
+chunk-YAA2MYYI.js   | -                            |   2.43 kB | 
+
+Lazy chunk files    | Names                        |  Raw size
+chunk-BRQUJDGO.js   | dashboard-page-component     |  87.77 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component  |  49.96 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component        |  18.50 kB | 
+
+Application bundle generation complete. [1.072 seconds] - 2026-07-08T20:55:34.649Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.071 seconds] - 2026-07-08T20:57:10.635Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 249.88 kB | 
+main.js             | main                           | 119.94 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-BRQUJDGO.js   | dashboard-page-component       |  87.77 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.164 seconds] - 2026-07-08T20:57:12.126Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 119.93 kB | 
+
+Application bundle generation complete. [1.633 seconds] - 2026-07-08T20:57:15.093Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 119.88 kB | 
+
+Application bundle generation complete. [2.506 seconds] - 2026-07-08T20:57:18.126Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 119.80 kB | 
+
+Application bundle generation complete. [2.201 seconds] - 2026-07-08T20:57:20.346Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+
+No output file changes.
+
+Application bundle generation complete. [1.540 seconds] - 2026-07-08T20:58:29.646Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 119.84 kB | 
+
+Application bundle generation complete. [1.334 seconds] - 2026-07-08T20:58:36.552Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 119.84 kB | 
+
+Application bundle generation complete. [2.562 seconds] - 2026-07-08T20:58:42.157Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+
+No output file changes.
+
+Application bundle generation complete. [2.212 seconds] - 2026-07-08T20:58:44.385Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.385 seconds] - 2026-07-08T20:58:46.842Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.263 seconds] - 2026-07-08T20:58:49.118Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.435 seconds] - 2026-07-08T20:58:50.564Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 249.88 kB | 
+main.js             | main                           | 119.88 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-BRQUJDGO.js   | dashboard-page-component       |  87.77 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.686 seconds] - 2026-07-08T20:58:55.482Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.394 seconds] - 2026-07-08T20:59:01.617Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.386 seconds] - 2026-07-08T20:59:04.335Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.206 seconds] - 2026-07-08T20:59:06.361Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.213 seconds] - 2026-07-08T20:59:07.581Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 249.88 kB | 
+main.js             | main                           | 120.06 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-BRQUJDGO.js   | dashboard-page-component       |  87.77 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.276 seconds] - 2026-07-08T20:59:09.382Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 120.02 kB | 
+
+Application bundle generation complete. [0.742 seconds] - 2026-07-08T20:59:18.049Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 120.03 kB | 
+
+Application bundle generation complete. [0.957 seconds] - 2026-07-08T20:59:21.115Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.907 seconds] - 2026-07-08T20:59:22.274Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.702 seconds] - 2026-07-08T20:59:24.696Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 249.88 kB | 
+main.js             | main                           | 120.22 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-BRQUJDGO.js   | dashboard-page-component       |  87.77 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [0.850 seconds] - 2026-07-08T20:59:27.814Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.610 seconds] - 2026-07-08T21:00:50.430Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.339 seconds] - 2026-07-08T21:00:58.231Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.276 seconds] - 2026-07-08T21:01:01.158Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.555 seconds] - 2026-07-08T21:01:03.054Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.653 seconds] - 2026-07-08T21:01:05.615Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 249.88 kB | 
+main.js             | main                           | 120.25 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-BRQUJDGO.js   | dashboard-page-component       |  87.77 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [2.552 seconds] - 2026-07-08T21:01:08.737Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.386 seconds] - 2026-07-08T21:01:15.956Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 249.88 kB | 
+main.js             | main                           | 120.44 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-BRQUJDGO.js   | dashboard-page-component       |  87.77 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [2.752 seconds] - 2026-07-08T21:01:19.056Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 120.41 kB | 
+
+Application bundle generation complete. [1.487 seconds] - 2026-07-08T21:01:33.660Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 120.37 kB | 
+
+Application bundle generation complete. [1.423 seconds] - 2026-07-08T21:01:35.619Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 120.59 kB | 
+
+Application bundle generation complete. [1.181 seconds] - 2026-07-08T21:01:37.175Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.196 seconds] - 2026-07-08T21:01:40.481Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.012 seconds] - 2026-07-08T21:01:42.074Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.966 seconds] - 2026-07-08T21:01:44.283Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 249.88 kB | 
+main.js             | main                           | 120.56 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-BRQUJDGO.js   | dashboard-page-component       |  87.77 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.171 seconds] - 2026-07-08T21:01:45.931Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.584 seconds] - 2026-07-08T21:01:51.515Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.819 seconds] - 2026-07-08T21:01:54.435Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 249.88 kB | 
+main.js             | main                           | 120.71 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-BRQUJDGO.js   | dashboard-page-component       |  87.77 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.175 seconds] - 2026-07-08T21:01:58.121Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 250.26 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-JXZIVWQF.js   | dashboard-page-component |  87.78 kB | 
+
+Application bundle generation complete. [1.730 seconds] - 2026-07-08T21:04:58.724Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 250.52 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-R2TBPVAY.js   | dashboard-page-component |  87.78 kB | 
+
+Application bundle generation complete. [1.794 seconds] - 2026-07-08T21:05:05.882Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 250.80 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-5EJWSLCV.js   | dashboard-page-component |  87.78 kB | 
+
+Application bundle generation complete. [2.175 seconds] - 2026-07-08T21:05:27.554Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-J3MLGIKN.js   | dashboard-page-component |  87.75 kB | 
+
+Application bundle generation complete. [1.690 seconds] - 2026-07-08T21:05:37.719Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-PEBWYN7W.js   | dashboard-page-component |  87.74 kB | 
+
+Application bundle generation complete. [1.732 seconds] - 2026-07-08T21:05:56.432Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-5HGKBTGW.js   | dashboard-page-component |  87.71 kB | 
+
+Application bundle generation complete. [1.646 seconds] - 2026-07-08T21:05:58.461Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-PEBWYN7W.js   | dashboard-page-component |  87.74 kB | 
+
+Application bundle generation complete. [1.539 seconds] - 2026-07-08T21:06:00.244Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-HSBIDAX3.js   | dashboard-page-component |  87.74 kB | 
+
+Application bundle generation complete. [0.952 seconds] - 2026-07-08T21:06:35.172Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-PEBWYN7W.js   | dashboard-page-component |  87.74 kB | 
+
+Application bundle generation complete. [1.356 seconds] - 2026-07-08T21:06:43.827Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.624 seconds] - 2026-07-08T21:06:46.986Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.507 seconds] - 2026-07-08T21:06:48.503Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 250.80 kB | 
+main.js             | main                           | 120.71 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-2HIKRFUJ.js   | dashboard-page-component       |  87.74 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.711 seconds] - 2026-07-08T21:06:51.189Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-3DMNQYE7.js   | dashboard-page-component |  87.64 kB | 
+
+Application bundle generation complete. [3.231 seconds] - 2026-07-08T21:08:12.389Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-WNFV3RAU.js   | dashboard-page-component |  87.60 kB | 
+
+Application bundle generation complete. [2.370 seconds] - 2026-07-08T21:09:17.891Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 245.02 kB | 
+
+Application bundle generation complete. [1.614 seconds] - 2026-07-08T21:16:52.538Z
+
+Stylesheet update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-UJ7PNFXN.js   | dashboard-page-component |  87.58 kB | 
+
+Application bundle generation complete. [1.559 seconds] - 2026-07-08T21:19:26.729Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 245.16 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-NX4NLCT6.js   | dashboard-page-component |  87.58 kB | 
+
+Application bundle generation complete. [1.266 seconds] - 2026-07-08T21:19:47.693Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-P3MGQ4SN.js   | dashboard-page-component |  87.58 kB | 
+
+Application bundle generation complete. [1.627 seconds] - 2026-07-08T21:19:55.546Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-AZJAW3SM.js   | dashboard-page-component |  87.70 kB | 
+
+Application bundle generation complete. [0.902 seconds] - 2026-07-08T21:20:20.446Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-P3MGQ4SN.js   | dashboard-page-component |  87.58 kB | 
+
+Application bundle generation complete. [1.505 seconds] - 2026-07-08T21:20:27.162Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 245.25 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-VXNWBFH6.js   | dashboard-page-component |  87.70 kB | 
+
+Application bundle generation complete. [1.988 seconds] - 2026-07-08T21:21:01.315Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-AZJAW3SM.js   | dashboard-page-component |  87.70 kB | 
+
+Application bundle generation complete. [1.337 seconds] - 2026-07-08T21:21:10.022Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-P3MGQ4SN.js   | dashboard-page-component |  87.58 kB | 
+
+Application bundle generation complete. [0.856 seconds] - 2026-07-08T21:22:24.050Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-FGFYT7QD.js   | dashboard-page-component |  87.58 kB | 
+
+Application bundle generation complete. [0.763 seconds] - 2026-07-08T21:22:30.066Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 245.39 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-GWAUZTUK.js   | dashboard-page-component |  87.58 kB | 
+
+Application bundle generation complete. [0.929 seconds] - 2026-07-08T21:22:35.462Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-WH5BLDPN.js   | dashboard-page-component |  87.58 kB | 
+
+Application bundle generation complete. [1.121 seconds] - 2026-07-08T21:22:42.371Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-L576VM2L.js   | dashboard-page-component |  87.58 kB | 
+
+Application bundle generation complete. [0.889 seconds] - 2026-07-08T21:22:57.146Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-KGKAWCKY.js   | dashboard-page-component |  87.58 kB | 
+
+Application bundle generation complete. [1.376 seconds] - 2026-07-08T21:23:01.676Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-ZEDIZZ7E.js   | dashboard-page-component |  87.59 kB | 
+
+Application bundle generation complete. [0.884 seconds] - 2026-07-08T21:24:24.627Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-KJ67D77I.js   | dashboard-page-component |  87.59 kB | 
+
+Application bundle generation complete. [0.755 seconds] - 2026-07-08T21:24:33.575Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-G7BEYMIO.js   | dashboard-page-component |  87.63 kB | 
+
+Application bundle generation complete. [0.748 seconds] - 2026-07-08T21:24:47.869Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-HUAJYNOE.js   | dashboard-page-component |  87.59 kB | 
+
+Application bundle generation complete. [2.054 seconds] - 2026-07-08T21:26:18.733Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-P7PTOJ5W.js   | dashboard-page-component |  87.59 kB | 
+
+Application bundle generation complete. [1.709 seconds] - 2026-07-08T21:26:31.427Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-3S5GOF6P.js   | dashboard-page-component |  87.56 kB | 
+
+Application bundle generation complete. [1.755 seconds] - 2026-07-08T21:26:34.947Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-ISBDWYUP.js   | dashboard-page-component |  87.52 kB | 
+
+Application bundle generation complete. [1.731 seconds] - 2026-07-08T21:27:04.999Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-TBWM6DHF.js   | dashboard-page-component |  87.56 kB | 
+
+Application bundle generation complete. [2.083 seconds] - 2026-07-08T21:27:12.405Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-BGR7PG6U.js   | dashboard-page-component |  87.56 kB | 
+
+Application bundle generation complete. [1.830 seconds] - 2026-07-08T21:27:14.250Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.947 seconds] - 2026-07-08T21:36:36.986Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.068 seconds] - 2026-07-08T21:36:39.064Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 245.39 kB | 
+main.js             | main                           | 120.71 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-PI5ZBCNX.js   | dashboard-page-component       |  87.61 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [2.164 seconds] - 2026-07-08T21:36:41.235Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.695 seconds] - 2026-07-08T21:36:44.423Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.024 seconds] - 2026-07-08T21:36:46.454Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.294 seconds] - 2026-07-08T21:36:47.758Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.793 seconds] - 2026-07-08T21:36:52.245Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.335 seconds] - 2026-07-08T21:37:05.719Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.422 seconds] - 2026-07-08T21:37:07.862Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 245.39 kB | 
+main.js             | main                           | 120.71 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-IHQQH267.js   | dashboard-page-component       |  87.80 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.599 seconds] - 2026-07-08T21:37:17.281Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 245.44 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-QUW753OZ.js   | dashboard-page-component |  87.79 kB | 
+
+Application bundle generation complete. [2.312 seconds] - 2026-07-08T21:38:18.315Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 245.49 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-NJMKRYRS.js   | dashboard-page-component |  87.78 kB | 
+
+Application bundle generation complete. [1.607 seconds] - 2026-07-08T21:38:24.182Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 245.59 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-BNYVVXOK.js   | dashboard-page-component |  87.78 kB | 
+
+Application bundle generation complete. [1.188 seconds] - 2026-07-08T21:38:37.127Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 245.69 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-OVH5EOGM.js   | dashboard-page-component |  87.77 kB | 
+
+Application bundle generation complete. [1.394 seconds] - 2026-07-08T21:38:43.729Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 245.78 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-6CSIDDYL.js   | dashboard-page-component |  87.75 kB | 
+
+Application bundle generation complete. [1.635 seconds] - 2026-07-08T21:38:50.799Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-JWGGEY67.js   | dashboard-page-component |  87.73 kB | 
+
+Application bundle generation complete. [1.481 seconds] - 2026-07-08T21:38:58.618Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-PGLSVVS3.js   | dashboard-page-component |  87.74 kB | 
+
+Application bundle generation complete. [1.852 seconds] - 2026-07-08T21:39:02.062Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-4DQREYWI.js   | dashboard-page-component |  87.75 kB | 
+
+Application bundle generation complete. [1.646 seconds] - 2026-07-08T21:39:03.718Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 245.78 kB | 
+main.js             | main                           | 120.71 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.19 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-4DQREYWI.js   | dashboard-page-component       |  87.75 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [2.163 seconds] - 2026-07-08T21:39:05.893Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-G4XAFYTG.js   | dashboard-page-component |  87.75 kB | 
+
+Application bundle generation complete. [1.882 seconds] - 2026-07-08T21:39:07.900Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-6CSIDDYL.js   | dashboard-page-component |  87.75 kB | 
+
+Application bundle generation complete. [1.732 seconds] - 2026-07-08T21:39:09.647Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 245.88 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-FB6ZCZDG.js   | dashboard-page-component |  87.74 kB | 
+
+Application bundle generation complete. [1.706 seconds] - 2026-07-08T21:39:15.451Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 245.97 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-AVNTSJF4.js   | dashboard-page-component |  87.72 kB | 
+
+Application bundle generation complete. [1.690 seconds] - 2026-07-08T21:39:19.927Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 246.07 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-FPWZITT3.js   | dashboard-page-component |  87.71 kB | 
+
+Application bundle generation complete. [2.019 seconds] - 2026-07-08T21:39:27.696Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 246.35 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-WRE257M4.js   | dashboard-page-component |  87.70 kB | 
+
+Application bundle generation complete. [1.934 seconds] - 2026-07-08T21:39:36.001Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-5ZSIPMWV.js   | dashboard-page-component |  87.70 kB | 
+
+Application bundle generation complete. [1.906 seconds] - 2026-07-08T21:39:39.428Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 246.41 kB | 
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-VI4E7Z72.js   | dashboard-page-component |  87.69 kB | 
+
+Application bundle generation complete. [1.679 seconds] - 2026-07-08T21:39:56.026Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-YS425AVR.js   | dashboard-page-component |  87.77 kB | 
+
+Application bundle generation complete. [1.673 seconds] - 2026-07-08T21:40:04.470Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.71 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-3Y43E362.js   | dashboard-page-component |  87.70 kB | 
+
+Application bundle generation complete. [1.624 seconds] - 2026-07-08T21:40:06.685Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 246.51 kB | 
+main.js             | main   | 120.70 kB | 
+
+Application bundle generation complete. [1.580 seconds] - 2026-07-08T21:40:18.594Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 246.62 kB | 
+main.js             | main   | 120.70 kB | 
+
+Application bundle generation complete. [1.353 seconds] - 2026-07-08T21:40:24.567Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-FFKKYAB3.js   | dashboard-page-component |  87.22 kB | 
+
+Application bundle generation complete. [1.765 seconds] - 2026-07-08T21:41:34.426Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-3Y43E362.js   | dashboard-page-component |  87.70 kB | 
+
+Application bundle generation complete. [1.677 seconds] - 2026-07-08T21:41:39.695Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-6IDAMI32.js   | dashboard-page-component |  87.44 kB | 
+
+Application bundle generation complete. [1.675 seconds] - 2026-07-08T21:41:48.300Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-3Y43E362.js   | dashboard-page-component |  87.70 kB | 
+
+Application bundle generation complete. [1.621 seconds] - 2026-07-08T21:41:53.085Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 247.00 kB | 
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-BF2XZAFX.js   | dashboard-page-component |  87.70 kB | 
+
+Application bundle generation complete. [1.933 seconds] - 2026-07-08T21:41:57.295Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-3Y43E362.js   | dashboard-page-component |  87.70 kB | 
+
+Application bundle generation complete. [1.305 seconds] - 2026-07-08T21:42:03.244Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 247.34 kB | 
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-SQ6DVMHL.js   | dashboard-page-component |  87.66 kB | 
+
+Application bundle generation complete. [2.277 seconds] - 2026-07-08T21:54:09.868Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 247.69 kB | 
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-QEDFIYCM.js   | dashboard-page-component |  87.67 kB | 
+
+Application bundle generation complete. [2.908 seconds] - 2026-07-08T21:54:12.789Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 248.02 kB | 
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-ZZPWO6VI.js   | dashboard-page-component |  87.66 kB | 
+
+Application bundle generation complete. [1.710 seconds] - 2026-07-08T21:54:14.510Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 248.36 kB | 
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-DXQZPWEF.js   | dashboard-page-component |  87.70 kB | 
+
+Application bundle generation complete. [1.514 seconds] - 2026-07-08T21:54:22.936Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 248.73 kB | 
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-65B2UHX3.js   | dashboard-page-component |  87.69 kB | 
+
+Application bundle generation complete. [1.724 seconds] - 2026-07-08T21:54:27.155Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 249.11 kB | 
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-GJTXC5IZ.js   | dashboard-page-component |  87.71 kB | 
+
+Application bundle generation complete. [1.662 seconds] - 2026-07-08T21:54:56.367Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+styles.css          | styles                   | 249.50 kB | 
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-EYYXCWSG.js   | dashboard-page-component |  87.71 kB | 
+
+Application bundle generation complete. [1.300 seconds] - 2026-07-08T21:55:16.696Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-GJTXC5IZ.js   | dashboard-page-component |  87.71 kB | 
+
+Application bundle generation complete. [0.963 seconds] - 2026-07-08T21:55:22.119Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-Z3DMFLGR.js   | dashboard-page-component |  87.71 kB | 
+
+Application bundle generation complete. [1.054 seconds] - 2026-07-08T21:56:42.900Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                    |  Raw size
+main.js             | main                     | 120.70 kB | 
+
+Lazy chunk files    | Names                    |  Raw size
+chunk-JVLXAKSZ.js   | dashboard-page-component |  87.71 kB | 
+
+Application bundle generation complete. [2.635 seconds] - 2026-07-08T21:56:47.106Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 244.93 kB | 
+
+Application bundle generation complete. [0.587 seconds] - 2026-07-08T21:58:26.316Z
+
+Stylesheet update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 244.92 kB | 
+
+Application bundle generation complete. [0.451 seconds] - 2026-07-08T21:58:31.688Z
+
+Stylesheet update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 113.02 kB | 
+
+Application bundle generation complete. [1.449 seconds] - 2026-07-08T22:03:33.391Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 111.56 kB | 
+
+Application bundle generation complete. [1.376 seconds] - 2026-07-08T22:03:41.322Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 111.57 kB | 
+
+Application bundle generation complete. [1.238 seconds] - 2026-07-08T22:03:43.342Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.326 seconds] - 2026-07-08T22:03:44.735Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 245.21 kB | 
+main.js             | main                           | 111.85 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-JVLXAKSZ.js   | dashboard-page-component       |  87.71 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.754 seconds] - 2026-07-08T22:03:46.497Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.112 seconds] - 2026-07-08T22:04:04.203Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.326 seconds] - 2026-07-08T22:04:06.225Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.450 seconds] - 2026-07-08T22:04:07.685Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.875 seconds] - 2026-07-08T22:04:10.319Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.120 seconds] - 2026-07-08T22:04:13.053Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.816 seconds] - 2026-07-08T22:04:15.921Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [0.908 seconds] - 2026-07-08T22:04:18.556Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 245.21 kB | 
+main.js             | main                           | 112.12 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-JVLXAKSZ.js   | dashboard-page-component       |  87.71 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.110 seconds] - 2026-07-08T22:04:22.580Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 111.05 kB | 
+
+Application bundle generation complete. [0.618 seconds] - 2026-07-08T22:04:48.179Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 110.86 kB | 
+
+Application bundle generation complete. [0.749 seconds] - 2026-07-08T22:04:54.331Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 245.27 kB | 
+main.js             | main   | 110.86 kB | 
+
+Application bundle generation complete. [0.929 seconds] - 2026-07-08T22:05:00.276Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names  |  Raw size
+styles.css          | styles | 245.32 kB | 
+main.js             | main   | 110.85 kB | 
+
+Application bundle generation complete. [1.363 seconds] - 2026-07-08T22:05:06.430Z
+
+Stylesheet update sent to client(s).
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 110.71 kB | 
+
+Application bundle generation complete. [0.702 seconds] - 2026-07-08T22:05:13.554Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 110.43 kB | 
+
+Application bundle generation complete. [1.156 seconds] - 2026-07-08T22:05:30.437Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [2.324 seconds] - 2026-07-08T22:05:37.817Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.439 seconds] - 2026-07-08T22:05:41.032Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.370 seconds] - 2026-07-08T22:05:50.398Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 245.32 kB | 
+main.js             | main                           | 110.43 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-JVLXAKSZ.js   | dashboard-page-component       |  87.71 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.393 seconds] - 2026-07-08T22:05:52.294Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.621 seconds] - 2026-07-08T22:05:57.111Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Application bundle generation failed. [1.632 seconds] - 2026-07-08T22:05:58.759Z
+
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+scripts.js          | scripts                        | 804.04 kB | 
+styles.css          | styles                         | 245.32 kB | 
+main.js             | main                           | 110.43 kB | 
+chunk-ZJF2N6ZC.js   | -                              |   5.92 kB | 
+chunk-ALBC2W4F.js   | -                              |   2.79 kB | 
+chunk-YAA2MYYI.js   | -                              |   2.43 kB | 
+chunk-4WV2C4VY.js   | -                              |   1.66 kB | 
+chunk-TFMZDWDA.js   | -                              |   1.63 kB | 
+chunk-4EA5W6HT.js   | -                              |   1.47 kB | 
+polyfills.js        | polyfills                      |  95 bytes | 
+
+                    | Initial total                  |   1.18 MB
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-JVLXAKSZ.js   | dashboard-page-component       |  87.71 kB | 
+chunk-5Y5QEHA3.js   | machine-details-page-component |  54.53 kB | 
+chunk-Q3EUJ5OG.js   | ticket-create-page-component   |  52.99 kB | 
+chunk-O43FXOOH.js   | machine-list-page-component    |  49.96 kB | 
+chunk-MHINOIIA.js   | ticket-list-page-component     |  34.00 kB | 
+chunk-6Q43HBPB.js   | -                              |  25.02 kB | 
+chunk-6ZXQRF7I.js   | agency-page-component          |  18.50 kB | 
+chunk-T7CFUZNV.js   | -                              |  16.61 kB | 
+
+Application bundle generation complete. [1.098 seconds] - 2026-07-08T22:06:03.995Z
+
+Page reload sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 110.45 kB | 
+
+Application bundle generation complete. [0.968 seconds] - 2026-07-08T22:06:48.701Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 110.54 kB | 
+
+Application bundle generation complete. [1.221 seconds] - 2026-07-08T22:07:04.531Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 110.57 kB | 
+
+Application bundle generation complete. [1.467 seconds] - 2026-07-08T22:07:10.699Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 110.58 kB | 
+
+Application bundle generation complete. [1.492 seconds] - 2026-07-08T22:07:21.942Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names |  Raw size
+main.js             | main  | 110.59 kB | 
+
+Application bundle generation complete. [1.499 seconds] - 2026-07-08T22:07:23.841Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 110.59 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-WAYIL6PV.js   | machine-details-page-component |  54.54 kB | 
+
+Application bundle generation complete. [1.488 seconds] - 2026-07-08T22:18:17.661Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 110.59 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-ALP6USMS.js   | machine-details-page-component |  54.62 kB | 
+
+Application bundle generation complete. [1.022 seconds] - 2026-07-08T22:18:20.566Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 110.59 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-OPUIHJES.js   | machine-details-page-component |  54.62 kB | 
+
+Application bundle generation complete. [0.842 seconds] - 2026-07-08T22:18:24.400Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 110.59 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-5ODFFU5T.js   | machine-details-page-component |  54.63 kB | 
+
+Application bundle generation complete. [1.035 seconds] - 2026-07-08T22:18:27.673Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 110.59 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-HK4TJKEN.js   | machine-details-page-component |  54.60 kB | 
+
+Application bundle generation complete. [0.862 seconds] - 2026-07-08T22:18:29.538Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 110.59 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-Y3NAVVT5.js   | machine-details-page-component |  54.43 kB | 
+
+Application bundle generation complete. [1.024 seconds] - 2026-07-08T22:18:34.434Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 110.59 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-IXC7UOO7.js   | machine-details-page-component |  54.56 kB | 
+
+Application bundle generation complete. [1.226 seconds] - 2026-07-08T22:18:36.913Z
+
+Component update sent to client(s).
+> Changes detected. Rebuilding...
+√ Changes detected. Rebuilding...
+Initial chunk files | Names                          |  Raw size
+main.js             | main                           | 110.59 kB | 
+
+Lazy chunk files    | Names                          |  Raw size
+chunk-2FUKGEME.js   | machine-details-page-component |  55.25 kB | 
+
+Application bundle generation complete. [1.277 seconds] - 2026-07-08T22:18:38.704Z
+
+Component update sent to client(s).

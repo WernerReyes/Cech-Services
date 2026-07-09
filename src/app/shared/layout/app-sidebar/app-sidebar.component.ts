@@ -1,10 +1,11 @@
 import { CommonModule } from "@angular/common";
-import { ChangeDetectorRef, Component, effect, inject } from "@angular/core";
+import { ChangeDetectorRef, Component, computed, effect, inject } from "@angular/core";
 import { NavigationEnd, Router, RouterModule } from "@angular/router";
 import { SidebarService } from "../../services/sidebar.service";
 
 import { toSignal } from "@angular/core/rxjs-interop";
 import { filter, map, startWith } from "rxjs";
+import { AuthService } from "@app/core/services/auth.service";
 
 type NavItem = {
   name: string;
@@ -23,6 +24,9 @@ export class AppSidebarComponent {
   private readonly router = inject(Router);
   private readonly cdr = inject(ChangeDetectorRef);
   readonly sidebarService = inject(SidebarService);
+  private readonly authService = inject(AuthService);
+
+  protected readonly branding = computed(() => this.authService.branding());
 
   // Main nav items
   navItems: NavItem[] = [

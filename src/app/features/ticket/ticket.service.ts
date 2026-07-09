@@ -2,7 +2,7 @@ import { HttpClient, httpResource } from "@angular/common/http";
 import { Service, inject, signal } from "@angular/core";
 import { APP_CONFIG } from "@core/config/app.config.tokens";
 import type { ApiResponse } from "@core/models/api.model";
-import type { Agency } from '../agency/agency.model';
+import type { Agency } from "../agency/agency.model";
 
 import type {
   CreateTicketRequest,
@@ -10,16 +10,18 @@ import type {
   Ticket,
 } from "./ticket.model";
 
-@Service()
+@Service({
+  autoProvided: false,
+})
 export class TicketService {
   private readonly http = inject(HttpClient);
   private readonly config = inject(APP_CONFIG);
-
   public selectedAgency = signal<Agency | null>(null);
 
   public getAllTickets = httpResource<Ticket[]>(
     () => `${this.config.apiUrl}/tickets`,
     {
+      defaultValue: [],
       parse: (response) => (response as ApiResponse<Ticket[]>).data ?? [],
     },
   );

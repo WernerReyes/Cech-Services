@@ -10,6 +10,8 @@ import { RouterModule } from "@angular/router";
 import { SessionService } from "@core/services/session.service";
 import { UserDropdownComponent } from "../../components/header/user-dropdown/user-dropdown.component";
 import { SidebarService } from "../../services/sidebar.service";
+import { AuthService } from "@app/core/services/auth.service";
+import { computed } from '@angular/core';
 
 @Component({
   selector: "app-header",
@@ -18,7 +20,10 @@ import { SidebarService } from "../../services/sidebar.service";
 })
 export class AppHeaderComponent {
   private readonly sidebarService = inject(SidebarService);
+  private readonly authService = inject(AuthService);
   readonly sessionService = inject(SessionService);
+
+  protected readonly branding = computed(() => this.authService.branding());
 
   isApplicationMenuOpen = false;
   readonly isMobileOpen = this.sidebarService.isMobileOpen;

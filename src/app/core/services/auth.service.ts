@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { computed, inject, Service, signal } from "@angular/core";
 import { Router } from "@angular/router";
-import { jwtDecode, type JwtPayload } from 'jwt-decode';
+import { jwtDecode, type JwtPayload } from "jwt-decode";
 import { APP_CONFIG } from "@core/config/app.config.tokens";
 import { ApiResponse } from "@core/models/api.model";
 import type {
@@ -9,7 +9,7 @@ import type {
   AuthResponse,
   AuthState,
 } from "@core/models/auth.model";
-import { tap } from "rxjs";
+import { Subject, tap } from "rxjs";
 import { BrandingService } from "./branding.service";
 
 @Service()
@@ -22,10 +22,14 @@ export class AuthService {
   public readonly TOKEN_KEY = "auth_token";
   private readonly baseUrl = `${this.config.apiUrl}/auth`;
 
-  
   private _token = signal<string | null>(localStorage.getItem(this.TOKEN_KEY));
   private _authState = signal<AuthState | null>(null);
 
+  private logout$ = new Subject<void>();
+  onLogout$ = this.logout$.asObservable();
+
+  private login$ = new Subject<void>();
+  onLogin$ = this.login$.asObservable();
 
   public readonly currentToken = this._token.asReadonly();
   public readonly isAuthenticated = computed(() => !!this._token());
@@ -35,17 +39,21 @@ export class AuthService {
     return token ? jwtDecode(token) : null;
   });
 
- 
+  public readonly branding = computed(() => this._authState()?.branding || null);
+
   login(credentials: AuthCredentials) {
     return this.http
       .post<ApiResponse<AuthResponse>>(`${this.baseUrl}/login`, credentials)
       .pipe(
         tap(({ data }) => {
-          const primaryColor = "#EC111A"; // Color por defecto si no hay usuario
+          const primaryColor = data.branding?.colorPrimario;
           this.brandingService.applyTenantColor(primaryColor);
-       
+
           this.setSession(data.token);
-          
+
+          // Emitir evento de login
+          this.login$.next();
+
           this._authState.set({
             token: data.token,
             username: data.username,
@@ -54,25 +62,29 @@ export class AuthService {
             tenant: data.tenant,
             client: data.client,
             agencias: data.agencias,
+            branding: data.branding,
           });
         }),
       );
   }
 
-  
   logout(): void {
     localStorage.removeItem(this.TOKEN_KEY);
     this._authState.set(null);
     this._token.set(null);
-    this.router.navigate(["/login"]);
+
+    this.logout$.next();
+
     this.brandingService.applyTenantColor(); // Color por defecto si no hay usuario
+    console.log("Usuario deslogueado, redirigiendo a login...");
+
+    this.router.navigate(["/login"]);
+    // window.location.href = "/login"; // Redirigir a la página de login
   }
 
- 
   getToken(): string | null {
     return this._token();
   }
-
 
   private setSession(token: string): void {
     localStorage.setItem(this.TOKEN_KEY, token);
@@ -94,7 +106,6 @@ export class AuthService {
           resolve(data);
         },
         error: () => {
-       
           this.logout();
           resolve(null);
         },

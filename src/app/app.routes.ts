@@ -26,10 +26,15 @@ import { agencyRoutes } from "./features/agency/client.routes";
 import { machineRoutes } from "./features/machine/machine.routes";
 import { ticketRoutes } from "./features/ticket/ticket.routes";
 import { dashboardRoutes } from "./features/dashboard/dashboard.routes";
+import { DashboardService } from "./features/dashboard/dashboard.service";
+import { TicketService } from "./features/ticket/ticket.service";
+import { AgencyService } from "./features/agency/agency.service";
+import { MachineService } from "./features/machine/machine.service";
 
 export const routes: Routes = [
   {
     path: "",
+    // providers: [DashboardService, TicketService, AgencyService, MachineService],
     component: AppLayoutComponent,
     canActivate: [authGuard],
     children: [

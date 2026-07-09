@@ -6,10 +6,12 @@ import type { ApiResponse } from "@core/models/api.model";
 import { Agency } from "../agency/agency.model";
 import type { Machine, MachineTicketHistory } from "./machine.model";
 
-@Service()
+@Service({
+  autoProvided: false,
+})
 export class MachineService {
   private readonly config = inject(APP_CONFIG);
-
+ 
   public readonly selectedAgency = signal<Agency | null>(null);
 
   public machineId = signal<number | null>(null);
@@ -30,7 +32,7 @@ export class MachineService {
       parse: (response) => (response as ApiResponse<Machine[]>).data,
     },
   );
- 
+
   public readonly machineSelect = httpResource<Machine | null>(
     () => {
       const machineId = this.machineId();
@@ -73,6 +75,7 @@ export class MachineService {
   public readonly tickets = computed(() =>
     this.machineTickets.hasValue() ? this.machineTickets.value() : [],
   );
+
+ 
 }
 
-// https://mesadeayuda.cechriza.com/api/equipos/agencia/1428

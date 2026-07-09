@@ -53,14 +53,7 @@ function initializeApp() {
   const authService = inject(AuthService);
   const brandingService = inject(BrandingService);
   return authService.verifyAuthentication().then((user) => {
-    console.log("User authenticated:", user);
-    const primaryColor = user ? "#EC111A" : undefined; // Color por defecto si no hay usuario
-
-    console.log(
-      "Applying primary color based on authentication:",
-      primaryColor,
-    );
-
+    const primaryColor = user?.branding?.colorPrimario
     brandingService.applyTenantColor(primaryColor);
 
     return !!user;

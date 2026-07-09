@@ -1,11 +1,15 @@
-import { Component, effect, inject } from "@angular/core";
-import { SidebarService } from "@shared/services/sidebar.service";
 import { CommonModule } from "@angular/common";
+import { Component, HostListener, OnInit, effect, inject } from "@angular/core";
+import { RouterModule } from "@angular/router";
+import { SessionService } from "@app/core/services/session.service";
+import { AgencyService } from "@app/features/agency/agency.service";
+import { DashboardService } from "@app/features/dashboard/dashboard.service";
+import { MachineService } from "@app/features/machine/machine.service";
+import { TicketService } from "@app/features/ticket/ticket.service";
+import { AppHeaderComponent } from "@shared/layout/app-header/app-header.component";
 import { AppSidebarComponent } from "@shared/layout/app-sidebar/app-sidebar.component";
 import { BackdropComponent } from "@shared/layout/backdrop/backdrop.component";
-import { RouterModule } from "@angular/router";
-import { AppHeaderComponent } from "@shared/layout/app-header/app-header.component";
-import { SessionService } from "@app/core/services/session.service";
+import { SidebarService } from "@shared/services/sidebar.service";
 import { ConfirmationService } from "primeng/api";
 import { ConfirmDialogModule } from "primeng/confirmdialog";
 
@@ -16,17 +20,17 @@ import { ConfirmDialogModule } from "primeng/confirmdialog";
     RouterModule,
     AppHeaderComponent,
     AppSidebarComponent,
-    // SidebarVariantsDemo,
     BackdropComponent,
     ConfirmDialogModule,
   ],
   templateUrl: "./app-layout.component.html",
-  providers: [ConfirmationService],
+  providers: [ConfirmationService, DashboardService, TicketService, AgencyService, MachineService],
 })
-export class AppLayoutComponent {
+export class AppLayoutComponent implements OnInit {
   private readonly sidebarService = inject(SidebarService);
   private readonly sessionService = inject(SessionService);
   private readonly confirmationService = inject(ConfirmationService);
+  private readonly desktopBreakpoint = 1280;
 
   constructor() {
     this.sessionService.startTracking();
@@ -35,6 +39,15 @@ export class AppLayoutComponent {
   readonly isExpanded = this.sidebarService.isExpanded;
   readonly isHovered = this.sidebarService.isHovered;
   readonly isMobileOpen = this.sidebarService.isMobileOpen;
+
+  ngOnInit() {
+    this.closeMobileSidebarOnDesktop();
+  }
+
+  @HostListener("window:resize")
+  onWindowResize() {
+    this.closeMobileSidebarOnDesktop();
+  }
 
   get containerClasses() {
     return [
@@ -63,10 +76,14 @@ export class AppLayoutComponent {
   }
 
   private showSessionExpiringAlert = effect(() => {
-    console.log("Session expiring signal changed:", this.sessionService.sessionExpiring());
     if (this.sessionService.sessionExpiring()) {
-      console.log("Session is expiring. Showing alert.");
       this.sessionExpiringAlert();
     }
   });
+
+  private closeMobileSidebarOnDesktop() {
+    if (window.innerWidth >= this.desktopBreakpoint && this.isMobileOpen()) {
+      this.sidebarService.setMobileOpen(false);
+    }
+  }
 }

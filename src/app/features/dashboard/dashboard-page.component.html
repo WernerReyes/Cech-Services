@@ -1,28 +1,29 @@
-<div class="flex w-full flex-col gap-6">
-  <!-- Filtros -->
+<div class="mx-auto flex w-full flex-col gap-6">
+  <!-- Panel de filtros -->
   <section
-    class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6"
+    class="overflow-hidden rounded-3xl bg-primary p-5 text-white  md:p-6"
   >
     <div class="grid gap-5 lg:grid-cols-[1fr_20rem_20rem] lg:items-end">
-      <div class="min-w-0 flex gap-2">
+      <div class="flex min-w-0 gap-4">
         <div
-          class="mb-3 flex size-10 items-center justify-center rounded-2xl bg-primary/10 text-primary"
+          class="flex size-14 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-lg"
         >
-          <i class="pi pi-filter text-sm"></i>
+          <i class="pi pi-filter text-xl!"></i>
         </div>
 
-        <div>
-          <h2 class="text-lg font-semibold text-slate-950">Panel de filtros</h2>
+        <div class="min-w-0">
+          <h2 class="text-xl font-extrabold">Panel de filtros</h2>
 
-          <p class="max-w-xl text-sm font-medium leading-6 text-slate-500">
+          <p class="mt-2 max-w-xl text-sm font-medium leading-6 text-white/85">
             Usa la agencia y el equipo para actualizar métricas, gráficos e
             historial del dashboard.
           </p>
         </div>
       </div>
 
+      <!-- Agencia -->
       <div class="flex min-w-0 flex-col gap-2">
-        <label class="text-sm font-medium text-slate-700">Agencia</label>
+        <label class="text-sm font-bold text-white">Agencia</label>
 
         <p-select
           [options]="agencies()"
@@ -32,6 +33,8 @@
           placeholder="Selecciona una agencia"
           fluid
           appendTo="body"
+          styleClass="w-full rounded-2xl border-white/20 bg-white text-slate-950 shadow-lg"
+          panelStyleClass="rounded-2xl border border-slate-200 shadow-xl"
           [filter]="true"
           filterBy="valor,id"
           filterPlaceholder="Buscar agencia..."
@@ -42,14 +45,12 @@
             @if (agency) {
               <div class="flex min-w-0 items-center gap-2">
                 <span
-                  class="flex size-7 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"
+                  class="flex size-8 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"
                 >
-                  <i class="pi pi-map-marker text-xs"></i>
+                  <i class="pi pi-map-marker text-lg!"></i>
                 </span>
 
-                <span
-                  class="truncate wrap-break-word text-sm font-bold text-slate-800"
-                >
+                <span class="truncate text-sm font-extrabold text-slate-900">
                   {{ agency.valor }}
                 </span>
               </div>
@@ -59,14 +60,12 @@
           <ng-template #item let-agency>
             <div class="flex min-w-0 items-center gap-3 py-1.5">
               <span
-                class="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary"
+                class="rounded-full bg-primary/10 px-2.5 py-1 text-xs font-bold text-primary"
               >
                 #{{ agency.id }}
               </span>
 
-              <span
-                class="truncate wrap-break-word text-sm font-bold text-slate-800"
-              >
+              <span class="truncate text-sm font-bold text-slate-800">
                 {{ agency.valor }}
               </span>
             </div>
@@ -74,10 +73,9 @@
         </p-select>
       </div>
 
+      <!-- Equipo destacado -->
       <div class="flex min-w-0 flex-col gap-2">
-        <label class="text-sm font-medium text-slate-700">
-          Equipo destacado
-        </label>
+        <label class="text-sm font-bold text-white">Equipo destacado</label>
 
         <ng-template
           #machineSelect
@@ -94,7 +92,7 @@
             [placeholder]="placeholder || 'Selecciona un equipo'"
             fluid
             appendTo="body"
-            styleClass="w-full rounded-2xl border-slate-200 bg-slate-50 hover:border-primary/50 disabled:opacity-60"
+            styleClass="w-full rounded-2xl border-white/20 bg-white text-slate-950 shadow-lg disabled:opacity-70"
             panelStyleClass="rounded-2xl border border-slate-200 shadow-xl"
             [filter]="true"
             filterBy="equipo,serie,codigoInventario,modelo.descripcion"
@@ -106,12 +104,12 @@
               @if (machine) {
                 <div class="flex min-w-0 items-center gap-2">
                   <span
-                    class="flex size-7 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"
+                    class="flex size-8 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary"
                   >
-                    <i class="pi pi-microchip text-xs"></i>
+                    <i class="pi pi-microchip text-xl!"></i>
                   </span>
 
-                  <span class="truncate text-sm font-bold text-slate-800">
+                  <span class="truncate text-sm font-extrabold text-slate-900">
                     {{ machine.equipo }}
                   </span>
                 </div>
@@ -122,7 +120,7 @@
               <div class="flex min-w-0 flex-col gap-1 py-1.5">
                 <div class="flex min-w-0 items-center gap-2">
                   <span
-                    class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-semibold text-slate-700"
+                    class="rounded-full bg-slate-100 px-2.5 py-1 text-xs font-bold text-slate-700"
                   >
                     #{{ machine.idEquipo }}
                   </span>
@@ -141,14 +139,19 @@
         </ng-template>
 
         @if (selectedAgency()) {
-          <app-error-boundary [resource]="dashboard.machines" [showEmptyMessage]="false" fallbackType="card" (successData)="machines.set($event || [])">
+          <app-error-boundary
+            [resource]="dashboard.machines"
+            [showEmptyMessage]="false"
+            fallbackType="card"
+            (successData)="machines.set($event || [])"
+          >
             <ng-template #loading>
               <ng-container
                 [ngTemplateOutlet]="machineSelect"
                 [ngTemplateOutletContext]="{
                   options: [],
                   disabled: true,
-                  placeholder: 'Cargando equipos...'
+                  placeholder: 'Cargando equipos...',
                 }"
               ></ng-container>
             </ng-template>
@@ -159,7 +162,7 @@
                 [ngTemplateOutletContext]="{
                   options: [],
                   disabled: true,
-                  placeholder: 'No hay equipos para esta agencia'
+                  placeholder: 'No hay equipos para esta agencia',
                 }"
               ></ng-container>
             </ng-template>
@@ -170,7 +173,7 @@
                 [ngTemplateOutletContext]="{
                   options: machineOptions,
                   disabled: false,
-                  placeholder: 'Selecciona un equipo'
+                  placeholder: 'Selecciona un equipo',
                 }"
               ></ng-container>
             </ng-template>
@@ -181,7 +184,7 @@
             [ngTemplateOutletContext]="{
               options: [],
               disabled: true,
-              placeholder: 'Selecciona una agencia primero'
+              placeholder: 'Selecciona una agencia primero',
             }"
           ></ng-container>
         }
@@ -189,137 +192,140 @@
     </div>
   </section>
 
-  <!-- Métricas -->
-  <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
-    @for (card of cards(); track trackByCard(card)) {
-      <div
-        /* [routerLink]="card.route" */
-        (click)="card.onClick?.()"
-        class="group rounded-3xl border border-slate-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-slate-200/70 hover:cursor-pointer"
-      >
-        <div class="flex items-center justify-between gap-3">
-          <div
-            class="flex size-12 shrink-0 items-center justify-center rounded-2xl shadow-sm ring-1 ring-black/5"
-            [ngClass]="card.iconClass"
+  <!-- Layout principal -->
+  <div class="grid grid-cols-12 gap-6">
+    <!-- IZQUIERDA -->
+    <div class="col-span-12 space-y-6 xl:col-span-9">
+      <!-- Stats -->
+      <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 2xl:grid-cols-4">
+        @for (card of cards(); track trackByCard(card)) {
+          <button
+            type="button"
+            (click)="card.onClick?.()"
+            class="group min-h-44 rounded-3xl border border-slate-200 bg-white p-5 text-left shadow-sm transition duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-slate-200/80"
           >
-            <i class="pi text-lg" [ngClass]="card.icon"></i>
-          </div>
+            <div class="flex items-start justify-between gap-3">
+              <div
+                class="flex size-14 shrink-0 items-center justify-center rounded-2xl shadow-sm ring-1 ring-black/5"
+                [ngClass]="card.iconClass"
+              >
+                <i class="pi text-2xl!" [ngClass]="card.icon"></i>
+              </div>
 
-          <span
-            class="flex size-9 items-center justify-center rounded-full bg-slate-50 text-slate-300 ring-1 ring-slate-200 transition group-hover:bg-primary/10 group-hover:text-primary group-hover:ring-primary/20"
-          >
-            <i class="pi pi-arrow-up-right text-sm"></i>
-          </span>
-        </div>
+              <span
+                class="flex size-10 items-center justify-center rounded-full bg-white text-slate-400 ring-1 ring-slate-200 transition group-hover:bg-primary/10 group-hover:text-primary group-hover:ring-primary/20"
+              >
+                <i class="pi pi-arrow-up-right text-sm"></i>
+              </span>
+            </div>
 
-        <p class="mt-5 text-sm font-medium text-slate-500">
-          {{ card.title }}
-        </p>
+            <p class="mt-6 text-sm font-semibold text-slate-500">
+              {{ card.title }}
+            </p>
 
-        <p class="mt-2 text-3xl font-semibold tracking-tight text-slate-950">
-          {{ card.value }}
-        </p>
+            <p
+              class="mt-2 text-4xl font-extrabold tracking-tight text-slate-950"
+            >
+              {{ card.value }}
+            </p>
 
-        <p
-          class="mt-2 line-clamp-2 text-sm font-medium leading-6 text-slate-500"
-        >
-          {{ card.caption }}
-        </p>
-      </div>
-    }
-  </section>
+            <p
+              class="mt-2 line-clamp-2 text-sm font-medium leading-6 text-slate-500"
+            >
+              {{ card.caption }}
+            </p>
+          </button>
+        }
+      </section>
 
-  <!-- Dashboard -->
-  <div class="grid grid-cols-12 gap-4 md:gap-6">
-    <!-- Columna izquierda -->
-    <div class="col-span-12 space-y-6 xl:col-span-8">
-      <!-- Gráfico principal -->
+      <!-- Tendencia -->
       <section
         class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6"
       >
         <div
           class="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between"
         >
-          <div class="min-w-0">
+          <div class="flex min-w-0 items-start gap-4">
             <div
-              class="mb-3 flex size-10 items-center justify-center rounded-2xl bg-primary/10 text-primary"
+              class="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/15"
             >
-              <i class="pi pi-chart-line text-sm"></i>
+              <i class="pi pi-chart-line text-lg!"></i>
             </div>
 
-            <h2 class="text-lg font-semibold text-slate-950">
-              Tendencia de tickets
-            </h2>
+            <div>
+              <h2 class="text-lg font-extrabold text-slate-950">
+                Tendencia de tickets
+              </h2>
 
-            <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
-              Comportamiento de tickets según el rango de meses seleccionado.
-            </p>
+              <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
+                Comportamiento de tickets según el rango de meses seleccionado.
+              </p>
+            </div>
           </div>
 
           <div class="flex w-full flex-col gap-2 sm:w-auto sm:min-w-80">
             <label
               for="ticket-month-range"
-              class="text-sm font-medium text-slate-700"
+              class="text-sm font-bold text-slate-700"
             >
               Rango de meses
             </label>
 
-            <p-datepicker
-              inputId="ticket-month-range"
-              [ngModel]="ticketMonthRange()"
-              (ngModelChange)="ticketMonthRange.set($event)"
-              selectionMode="range"
-              view="month"
-              dateFormat="mm/yy"
-              [readonlyInput]="true"
-              [showIcon]="true"
-              appendTo="body"
-              placeholder="Selecciona rango"
-              styleClass="w-full"
-              inputStyleClass="w-full rounded-2xl border-slate-200 bg-slate-50 text-sm font-semibold text-slate-700"
-              panelStyleClass="rounded-2xl border border-slate-200 shadow-xl"
-            ></p-datepicker>
+            <div class="flex gap-2">
+              <p-datepicker
+                inputId="ticket-month-range"
+                [ngModel]="ticketMonthRange()"
+                (ngModelChange)="ticketMonthRange.set($event)"
+                selectionMode="range"
+                view="month"
+                dateFormat="mm/yy"
+                [readonlyInput]="true"
+                [showIcon]="true"
+                appendTo="body"
+                placeholder="Selección rango"
+                styleClass="w-full"
+                inputStyleClass="w-full rounded-2xl border-slate-200 bg-white text-sm font-semibold text-slate-700"
+                panelStyleClass="rounded-2xl border border-slate-200 shadow-xl"
+              ></p-datepicker>
 
-            <div class="flex flex-wrap items-center gap-2">
-              <span
-                class="inline-flex w-fit items-center gap-2 rounded-full bg-slate-100 px-3 py-1.5 text-xs font-semibold text-slate-600 ring-1 ring-slate-200"
+              <button
+                type="button"
+                class="hidden shrink-0 items-center gap-2 rounded-2xl border border-primary/30 bg-primary/10 px-4 text-sm font-bold text-primary transition hover:bg-primary hover:text-white sm:flex"
+                (click)="clearTicketMonthRange()"
               >
-                <i class="pi pi-calendar text-xs text-primary"></i>
+                <i class="pi pi-calendar text-xs"></i>
                 {{ ticketTrendRangeLabel() }}
-              </span>
-
-              @if (ticketMonthRange()) {
-                <button
-                  type="button"
-                  class="inline-flex w-fit items-center gap-2 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary transition hover:bg-primary/15"
-                  (click)="clearTicketMonthRange()"
-                >
-                  <i class="pi pi-times text-xs"></i>
-                  Limpiar
-                </button>
-              }
+              </button>
             </div>
           </div>
         </div>
 
-        <app-error-boundary [resource]="dashboard.tickets" fallbackType="card" (successData)="tickets.set($event || [])">
+        <app-error-boundary
+          [resource]="dashboard.tickets"
+          fallbackType="card"
+          (successData)="tickets.set($event || [])"
+        >
           <ng-template #loading>
             <div
-              class="mt-6 h-80 animate-pulse rounded-2xl bg-slate-100 ring-1 ring-slate-100"
+              class="mt-6 h-80 animate-pulse rounded-3xl bg-slate-100 ring-1 ring-slate-100"
             ></div>
           </ng-template>
 
           <ng-template #empty>
             <div
-              class="mt-6 rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-6 py-12 text-center"
+              class="relative mt-6 overflow-hidden rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-6 py-14 text-center"
             >
               <div
-                class="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl bg-white text-slate-500 ring-1 ring-slate-200"
+                class="pointer-events-none absolute inset-x-8 top-12 h-28 rounded-full bg-primary/5 blur-3xl"
+              ></div>
+
+              <div
+                class="relative mx-auto mb-4 flex size-14 items-center justify-center rounded-full bg-white text-slate-600 shadow-sm ring-1 ring-slate-200"
               >
-                <i class="pi pi-chart-line text-lg"></i>
+                <i class="pi pi-chart-line text-lg!"></i>
               </div>
 
-              <p class="text-sm font-semibold text-slate-800">
+              <p class="relative text-sm font-extrabold text-slate-900">
                 @if (selectedMachine()) {
                   Sin tickets para graficar
                 } @else {
@@ -327,11 +333,13 @@
                 }
               </p>
 
-              <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
+              <p
+                class="relative mt-1 text-sm font-medium leading-6 text-slate-500"
+              >
                 @if (selectedMachine()) {
-                  Este equipo todavÃ­a no tiene tickets registrados.
+                  Este equipo todavía no tiene tickets registrados.
                 } @else {
-                  La tendencia se actualizarÃ¡ al elegir un equipo.
+                  La tendencia se actualizará al elegir un equipo.
                 }
               </p>
             </div>
@@ -339,7 +347,7 @@
 
           <ng-template #content>
             <div
-              class="mt-6 overflow-hidden rounded-2xl bg-slate-50 p-3 ring-1 ring-slate-100"
+              class="mt-6 overflow-hidden rounded-3xl bg-slate-50 p-3 ring-1 ring-slate-100"
             >
               <apx-chart
                 [series]="ticketTrendChart().series"
@@ -358,44 +366,50 @@
         </app-error-boundary>
       </section>
 
-      <!-- Equipos -->
+      <!-- Equipos destacados -->
       <section
         class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6"
       >
         <div
           class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between"
         >
-          <div class="min-w-0">
+          <div class="flex min-w-0 items-start gap-4">
             <div
-              class="mb-3 flex size-10 items-center justify-center rounded-2xl bg-primary/10 text-primary"
+              class="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/15"
             >
-              <i class="pi pi-desktop text-sm"></i>
+              <i class="pi pi-desktop text-lg!"></i>
             </div>
 
-            <h2 class="text-lg font-semibold text-slate-950">
-              Equipos destacados
-            </h2>
+            <div class="min-w-0">
+              <h2 class="text-lg font-extrabold text-slate-950">
+                Equipos destacados
+              </h2>
 
-            <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
-              Primeros equipos disponibles en la agencia seleccionada.
-            </p>
+              <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
+                Primeros equipos disponibles en la agencia seleccionada.
+              </p>
+            </div>
           </div>
 
           <button
-            /* routerLink="/machines" */
+            type="button"
             (click)="viewAllMachines()"
-            class="inline-flex h-10 w-fit items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-700 transition hover:border-primary/40 hover:bg-primary/5 hover:text-primary"
+            class="inline-flex h-11 w-fit items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 text-sm font-bold text-slate-700 shadow-sm transition hover:border-primary/40 hover:bg-primary/5 hover:text-primary"
           >
-            <i class="pi pi-desktop text-sm"></i>
-            <span>Ver equipos</span>
+            <i class="pi pi-desktop text-lg!"></i>
+            Ver equipos
           </button>
         </div>
 
-        <app-error-boundary [resource]="dashboard.machines" fallbackType="card" (successData)="machines.set($event || [])">
+        <app-error-boundary
+          [resource]="dashboard.machines"
+          fallbackType="card"
+          (successData)="machines.set($event || [])"
+        >
           <ng-template #loading>
-            <div class="mt-6 space-y-3">
-              @for (item of [1, 2, 3, 4, 5]; track item) {
-                <div class="h-16 animate-pulse rounded-2xl bg-slate-100"></div>
+            <div class="mt-6 grid gap-3 md:grid-cols-2">
+              @for (item of [1, 2, 3, 4, 5, 6]; track item) {
+                <div class="h-20 animate-pulse rounded-2xl bg-slate-100"></div>
               }
             </div>
           </ng-template>
@@ -410,7 +424,7 @@
                 <i class="pi pi-inbox text-lg"></i>
               </div>
 
-              <p class="text-sm font-semibold text-slate-800">
+              <p class="text-sm font-bold text-slate-800">
                 No hay equipos para mostrar
               </p>
 
@@ -421,42 +435,47 @@
           </ng-template>
 
           <ng-template #content>
-            <div class="mt-6 grid gap-3">
+            <div class="mt-6 grid gap-3 md:grid-cols-2">
               @for (machine of recentMachines(); track machine.idEquipo) {
                 <a
                   [routerLink]="['/machines', machine.idEquipo]"
                   [style.view-transition-name]="'machine-' + machine.idEquipo"
-                  class="group grid gap-3 rounded-2xl border border-slate-200 bg-slate-50 p-4 transition duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:bg-white hover:shadow-md sm:grid-cols-[1fr_auto]"
+                  class="group grid gap-3 rounded-2xl border bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                  [ngClass]="
+                    selectedMachine()?.idEquipo === machine.idEquipo
+                      ? 'border-primary/50 bg-primary/5'
+                      : 'border-slate-200'
+                  "
                 >
-                  <div class="min-w-0">
-                    <div class="flex min-w-0 items-center gap-3">
-                      <div
-                        class="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-white text-primary ring-1 ring-slate-200 transition group-hover:ring-primary/30"
+                  <div class="flex min-w-0 items-center gap-3">
+                    <div
+                      class="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-white text-primary ring-1 ring-slate-200 transition group-hover:ring-primary/30"
+                    >
+                      <i class="pi pi-microchip text-sm"></i>
+                    </div>
+
+                    <div class="min-w-0">
+                      <p class="truncate text-sm font-extrabold text-slate-950">
+                        {{ machine.equipo }}
+                      </p>
+
+                      <p
+                        class="truncate text-xs font-bold uppercase tracking-wide text-slate-500"
                       >
-                        <i class="pi pi-microchip text-sm"></i>
-                      </div>
-
-                      <div class="min-w-0">
-                        <p class="truncate text-sm font-semibold text-slate-950">
-                          {{ machine.equipo }}
-                        </p>
-
-                        <p class="truncate text-sm font-medium text-slate-500">
-                          {{ machine.modelo.descripcion || "Sin modelo" }}
-                        </p>
-                      </div>
+                        {{ machine.modelo.descripcion || "Sin modelo" }}
+                      </p>
                     </div>
                   </div>
 
-                  <div class="flex flex-wrap items-center gap-2 sm:justify-end">
+                  <div class="flex flex-wrap items-center gap-2 pl-14">
                     <span
-                      class="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200"
+                      class="rounded-full bg-white px-3 py-1 text-xs font-bold text-slate-700 ring-1 ring-slate-200"
                     >
                       #{{ machine.idEquipo }}
                     </span>
 
                     <span
-                      class="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary ring-1 ring-primary/20"
+                      class="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary ring-1 ring-primary/20"
                     >
                       {{ machine.mesGarantia || 0 }} meses
                     </span>
@@ -469,73 +488,91 @@
       </section>
     </div>
 
-    <!-- Columna derecha -->
-    <div class="col-span-12 space-y-6 xl:col-span-4">
+    <!-- DERECHA -->
+    <div class="col-span-12 space-y-6 xl:col-span-3">
       <!-- Equipo destacado -->
+       <div class="grid sm:grid-cols-2 gap-4 xl:grid-cols-1">
       <section
-        class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6"
+        class="relative min-h-88 overflow-hidden rounded-3xl bg-[radial-gradient(circle_at_78%_35%,var(--color-brand-500),transparent_34%),linear-gradient(135deg,#141722,#27202a_50%,#171923)] p-5 text-white shadow-xl shadow-slate-300/60 md:p-6"
       >
-        <div class="flex items-start gap-4">
+        <!-- Glow decorativo -->
+        <div
+          class="pointer-events-none absolute -right-16 top-10 size-56 rounded-full bg-primary/25 blur-3xl"
+        ></div>
+
+        <!-- Imagen referencial -->
+        <img
+          src="images/dashboard/cash-counter.png"
+          alt="Máquina contadora de billetes y monedas"
+          class="pointer-events-none absolute -right-6 top-22 z-0 w-52 select-none object-contain opacity-95 drop-shadow-2xl sm:-right-4 sm:w-58 xl:-right-9 xl:top-21 xl:w-62"
+        />
+
+        <!-- Capa suave para que el texto siempre se lea -->
+        <div
+          class="pointer-events-none absolute inset-y-0 left-0 z-1 w-[72%] bg-linear-to-r from-[#171923] via-[#171923]/95 to-transparent"
+        ></div>
+
+        <div class="relative z-10 flex items-start gap-4">
           <div
-            class="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/20"
+            class="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-primary text-white shadow-lg shadow-primary/30"
           >
-            <i class="pi pi-microchip text-lg"></i>
+            <i class="pi pi-microchip text-2xl!"></i>
           </div>
 
           <div class="min-w-0">
-            <h2 class="text-lg font-semibold text-slate-950">
-              Equipo destacado
-            </h2>
+            <h2 class="text-lg font-extrabold">Equipo destacado</h2>
 
-            <p class="mt-1 text-sm font-medium text-slate-500">
-              Resumen actual
-            </p>
+            <p class="mt-1 text-sm font-medium text-white/70">Resumen actual</p>
           </div>
         </div>
 
-        <div class="mt-6 rounded-3xl border border-slate-200 bg-slate-50 p-4">
+        <div class="relative z-10 mt-8 max-w-52">
           <p
-            class="text-xs font-semibold uppercase tracking-wide text-slate-500"
+            class="text-xs font-extrabold uppercase tracking-wide text-white/50"
           >
             Equipo
           </p>
 
-          <p class="mt-1 wrap-break-word text-sm font-semibold text-slate-950">
+          <p class="mt-1 wrap-break-word text-base font-extrabold text-white">
             {{ selectedMachine()?.equipo || "Sin selección" }}
           </p>
 
           <p
-            class="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500"
+            class="mt-5 text-xs font-extrabold uppercase tracking-wide text-white/50"
           >
             Modelo
           </p>
 
-          <p
-            class="mt-1 wrap-break-word text-sm font-semibold leading-6 text-slate-700"
-          >
+          <p class="mt-1 wrap-break-word text-base font-extrabold text-white">
             {{ selectedMachine()?.modelo?.descripcion || "Sin modelo" }}
           </p>
 
-          <div class="mt-4 flex flex-wrap gap-2">
+          <div class="mt-5 flex flex-wrap gap-2">
             @if (selectedMachine()?.idEquipo) {
               <span
-                class="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 ring-1 ring-slate-200"
+                class="rounded-full bg-white/10 px-3 py-1 text-xs font-bold text-white ring-1 ring-white/15"
               >
                 #{{ selectedMachine()?.idEquipo }}
               </span>
             }
 
             <span
-              class="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary ring-1 ring-primary/20"
+              class="rounded-full bg-primary/25 px-3 py-1 text-xs font-bold text-red-100 ring-1 ring-primary/30"
             >
               {{ selectedMachine()?.mesGarantia || 0 }} meses
             </span>
           </div>
         </div>
 
-        <a pButton routerLink="/tickets/create"
-         [queryParams]="{ idAgencia: selectedAgency()?.id || '', idEquipo: selectedMachine()?.idEquipo || '' }"
-         class="mt-5 w-full">
+        <a
+          pButton
+          routerLink="/tickets/create"
+          [queryParams]="{
+            idAgencia: selectedAgency()?.id || '',
+            idEquipo: selectedMachine()?.idEquipo || '',
+          }"
+          class="relative z-10 mt-8 flex h-12 w-full items-center justify-center gap-2 rounded-2xl border-none bg-primary text-sm font-extrabold text-white shadow-lg shadow-primary/30 transition hover:bg-red-700"
+        >
           <i class="pi pi-plus text-sm"></i>
           Crear ticket
         </a>
@@ -553,7 +590,7 @@
           </div>
 
           <div class="min-w-0">
-            <h2 class="text-lg font-semibold text-slate-950">
+            <h2 class="text-lg font-extrabold text-slate-950">
               Estado de tickets
             </h2>
 
@@ -563,16 +600,15 @@
           </div>
         </div>
 
-        <app-error-boundary [resource]="dashboard.tickets" fallbackType="card" (successData)="tickets.set($event || [])">
+        <app-error-boundary
+          [resource]="dashboard.tickets"
+          fallbackType="card"
+          (successData)="tickets.set($event || [])"
+        >
           <ng-template #loading>
             <div
-              class="mt-5 h-64 animate-pulse rounded-2xl bg-slate-100 ring-1 ring-slate-100"
+              class="mt-5 h-48 animate-pulse rounded-3xl bg-slate-100 ring-1 ring-slate-100"
             ></div>
-
-            <div class="mt-4 grid grid-cols-2 gap-3">
-              <div class="h-24 animate-pulse rounded-2xl bg-slate-100"></div>
-              <div class="h-24 animate-pulse rounded-2xl bg-slate-100"></div>
-            </div>
           </ng-template>
 
           <ng-template #empty>
@@ -580,13 +616,13 @@
               class="mt-5 rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-5 py-8 text-center"
             >
               <div
-                class="mx-auto mb-3 flex size-11 items-center justify-center rounded-2xl bg-white text-slate-500 ring-1 ring-slate-200"
+                class="mx-auto mb-3 flex size-14 items-center justify-center rounded-full bg-white text-slate-500 ring-1 ring-slate-200"
               >
-                <i class="pi pi-chart-pie text-base"></i>
+                <i class="pi pi-chart-pie text-lg"></i>
               </div>
 
-              <p class="text-sm font-semibold text-slate-800">
-                Sin distribuciÃ³n disponible
+              <p class="text-sm font-bold text-slate-800">
+                Sin distribución disponible
               </p>
 
               <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
@@ -597,7 +633,7 @@
 
           <ng-template #content>
             <div
-              class="mt-5 overflow-hidden rounded-2xl bg-slate-50 p-3 ring-1 ring-slate-100"
+              class="mt-5 overflow-hidden rounded-3xl bg-slate-50 p-3 ring-1 ring-slate-100"
             >
               <apx-chart
                 [series]="ticketStatusChart().series"
@@ -611,53 +647,38 @@
                 [responsive]="ticketStatusChart().responsive"
               ></apx-chart>
             </div>
-
-            <div class="mt-4 grid grid-cols-2 gap-3">
-              <div class="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
-                <p
-                  class="text-xs font-semibold uppercase tracking-wide text-slate-500"
-                >
-                  Cerrados
-                </p>
-
-                <p class="mt-2 text-2xl font-semibold text-slate-950">
-                  {{ closedTickets() }}
-                </p>
-              </div>
-
-              <div class="rounded-2xl bg-primary/10 p-4 ring-1 ring-primary/20">
-                <p
-                  class="text-xs font-semibold uppercase tracking-wide text-primary"
-                >
-                  Abiertos
-                </p>
-
-                <p class="mt-2 text-2xl font-semibold text-slate-950">
-                  {{ openTickets() }}
-                </p>
-              </div>
-            </div>
           </ng-template>
         </app-error-boundary>
       </section>
+      </div>
 
       <!-- Historial reciente -->
       <section
         class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm md:p-6"
       >
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-4">
           <div
-            class="flex size-10 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/20"
+            class="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/15"
           >
-            <i class="pi pi-clock text-sm"></i>
+            <i class="pi pi-clock text-lg"></i>
           </div>
 
-          <h2 class="text-lg font-semibold text-slate-950">
-            Historial reciente
-          </h2>
+          <div>
+            <h2 class="text-lg font-extrabold text-slate-950">
+              Historial reciente
+            </h2>
+
+            <p class="mt-1 text-sm font-medium text-slate-500">
+              Actividad reciente del equipo
+            </p>
+          </div>
         </div>
 
-        <app-error-boundary [resource]="dashboard.tickets" fallbackType="card" (successData)="tickets.set($event || [])">
+        <app-error-boundary
+          [resource]="dashboard.tickets"
+          fallbackType="card"
+          (successData)="tickets.set($event || [])"
+        >
           <ng-template #loading>
             <div class="mt-5 space-y-3">
               @for (item of [1, 2, 3, 4]; track item) {
@@ -671,12 +692,12 @@
               class="mt-5 rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-5 py-8 text-center"
             >
               <div
-                class="mx-auto mb-3 flex size-11 items-center justify-center rounded-2xl bg-white text-slate-500 ring-1 ring-slate-200"
+                class="mx-auto mb-3 flex size-14 items-center justify-center rounded-full bg-white text-slate-500 ring-1 ring-slate-200"
               >
-                <i class="pi pi-inbox text-base"></i>
+                <i class="pi pi-inbox text-lg"></i>
               </div>
 
-              <p class="text-sm font-semibold text-slate-800">
+              <p class="text-sm font-bold text-slate-800">
                 Sin historial reciente
               </p>
 
@@ -692,13 +713,13 @@
                 <article class="py-4 first:pt-0 last:pb-0">
                   <div class="flex items-start justify-between gap-3">
                     <span
-                      class="rounded-full bg-primary/10 px-2.5 py-1 font-mono text-xs font-semibold text-primary ring-1 ring-primary/20"
+                      class="rounded-full bg-primary/10 px-2.5 py-1 font-mono text-xs font-bold text-primary ring-1 ring-primary/20"
                     >
                       {{ ticket.number }}
                     </span>
 
                     <span
-                      class="max-w-40 rounded-full px-2.5 py-1 text-xs font-semibold ring-1"
+                      class="max-w-40 rounded-full px-2.5 py-1 text-xs font-bold ring-1"
                       [ngClass]="ticketStatusClass(ticket)"
                     >
                       {{ ticket.status.valor }}
@@ -706,12 +727,12 @@
                   </div>
 
                   <p
-                    class="mt-2 line-clamp-2 text-sm font-semibold leading-6 text-slate-950"
+                    class="mt-2 line-clamp-2 text-sm font-bold leading-6 text-slate-950"
                   >
                     {{ ticket.subject }}
                   </p>
 
-                  <p class="mt-1 text-xs font-semibold text-slate-500">
+                  <p class="mt-1 text-xs font-bold text-slate-500">
                     {{ formatDateEs(ticket.fechaSolicitud) }}
                   </p>
                 </article>

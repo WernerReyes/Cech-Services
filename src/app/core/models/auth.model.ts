@@ -8,6 +8,14 @@ export interface CatalogValue {
   valor: string;
 }
 
+export interface Branding {
+  idTenantConfig: number;
+  idTenant: number;
+  logoGrandeUrl: string;
+  logoPequenoUrl: string;
+  colorPrimario: string;
+}
+
 export interface AuthResponse {
   token: string;
   username: string;
@@ -15,6 +23,7 @@ export interface AuthResponse {
   nombreCompleto: string;
   tenant: CatalogValue;
   client: CatalogValue;
+  branding: Branding;
   agencias: CatalogValue[];
 }
 

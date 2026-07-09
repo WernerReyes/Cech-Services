@@ -223,7 +223,7 @@ layer(base);
     cursor: pointer;
   }
   body {
-    @apply relative font-normal font-outfit z-1 bg-gray-50;
+    @apply relative font-normal font-outfit z-1 ;
   }
 }
 
@@ -232,7 +232,7 @@ layer(base);
 }
 
 @utility menu-item-active {
-  @apply bg-brand-500 text-white;
+  @apply flex h-10 items-center gap-3 rounded-sm bg-primary px-4 text-sm font-bold text-white;
 }
 
 @utility menu-item-inactive {

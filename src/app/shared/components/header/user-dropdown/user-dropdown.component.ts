@@ -1,17 +1,15 @@
+import { CommonModule } from "@angular/common";
 import {
   Component,
-  ChangeDetectionStrategy,
-  signal,
-  inject,
   computed,
+  inject,
+  signal
 } from "@angular/core";
-import { DropdownComponent } from "../../ui/dropdown/dropdown.component";
-import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
-import { DropdownItemTwoComponent } from "../../ui/dropdown/dropdown-item/dropdown-item.component-two";
 import { AuthService } from "@app/core/services/auth.service";
-import { ButtonModule } from "primeng/button";
 import { AvatarModule } from "primeng/avatar";
+import { ButtonModule } from "primeng/button";
+import { DropdownComponent } from "@shared/components/ui/dropdown/dropdown.component";
 
 @Component({
   selector: "app-user-dropdown",
@@ -22,8 +20,8 @@ import { AvatarModule } from "primeng/avatar";
     CommonModule,
     RouterModule,
     DropdownComponent,
-   
-  ],
+    
+],
 })
 export class UserDropdownComponent {
   protected readonly authService = inject(AuthService);
@@ -59,4 +57,6 @@ export class UserDropdownComponent {
   closeDropdown() {
     this.isOpen.update(() => false);
   }
+
+  
 }

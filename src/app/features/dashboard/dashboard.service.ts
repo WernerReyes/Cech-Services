@@ -1,12 +1,17 @@
 import { httpResource } from "@angular/common/http";
-import { computed, inject, Service, signal } from "@angular/core";
-import { AgencyService } from "@features/agency/agency.service";
-import type { Agency } from "@features/agency/agency.model";
-import type { Machine, MachineTicketHistory } from "@features/machine/machine.model";
+import { computed, inject, Service, signal } from '@angular/core';
 import { APP_CONFIG } from "@core/config/app.config.tokens";
 import type { ApiResponse } from "@core/models/api.model";
+import type { Agency } from "@features/agency/agency.model";
+import { AgencyService } from "@features/agency/agency.service";
+import type {
+  Machine,
+  MachineTicketHistory,
+} from "@features/machine/machine.model";
 
-@Service()
+@Service({
+  autoProvided: false,
+})
 export class DashboardService {
   private readonly agencyService = inject(AgencyService);
   private readonly config = inject(APP_CONFIG);
@@ -18,7 +23,7 @@ export class DashboardService {
   readonly machines = httpResource<Machine[]>(
     () => {
       const agency = this.selectedAgency();
-
+      
       if (!agency) {
         return undefined;
       }
@@ -44,10 +49,11 @@ export class DashboardService {
     {
       defaultValue: [],
       parse: (response) => {
-        const payload =
-          response as ApiResponse<MachineTicketHistory[]> | MachineTicketHistory[];
+        const payload = response as
+          | ApiResponse<MachineTicketHistory[]>
+          | MachineTicketHistory[];
 
-        return Array.isArray(payload) ? payload : payload.data ?? [];
+        return Array.isArray(payload) ? payload : (payload.data ?? []);
       },
     },
   );

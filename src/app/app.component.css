@@ -12,3 +12,18 @@
   animation-duration: 0.4s;
   animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.p-datatable-thead > tr > th {
+  background-color: var(--color-primary-500) !important;
+  color: white !important; 
+}
+
+.p-datatable-sort-icon {
+  color: white !important;
+}
+
+
+.p-datatable-sortable-column:not(.p-datatable-column-sorted):hover {
+    background-color: var(--color-primary-600) !important;
+    color: white !important;
+}

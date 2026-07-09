@@ -6,7 +6,9 @@ import type { Machine, MachineTicketHistory } from "@features/machine/machine.mo
 import { APP_CONFIG } from "@core/config/app.config.tokens";
 import type { ApiResponse } from "@core/models/api.model";
 
-@Service()
+@Service({
+  autoProvided: false,
+})
 export class DashboardService {
   private readonly agencyService = inject(AgencyService);
   private readonly config = inject(APP_CONFIG);

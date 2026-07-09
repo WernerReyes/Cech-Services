@@ -3,7 +3,8 @@ import {
   Component,
   computed,
   inject,
-  linkedSignal
+  linkedSignal,
+  signal
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterLink } from "@angular/router";
@@ -19,9 +20,11 @@ import { TableModule } from "primeng/table";
 
 import { TicketService } from "@app/features/ticket/ticket.service";
 import { ErrorBoundaryComponent } from "@app/shared/components/error/error-boundary.component";
+import { MachineTicketHistory } from "@app/features/machine/machine.model";
+import { Ticket } from "@app/features/ticket/ticket.model";
 
 @Component({
-  selector: "app-ticket-list-table",
+  selector: "ticket-list-table",
   imports: [
     FormsModule,
     RouterLink,
@@ -39,16 +42,16 @@ import { ErrorBoundaryComponent } from "@app/shared/components/error/error-bound
   styleUrl: "./ticket-list-table.component.css",
 })
 export class TicketListTableComponent {
-  private readonly ticketService = inject(TicketService);
+  protected readonly ticketService = inject(TicketService);
 
-  protected readonly tickets = this.ticketService.getAllTickets;
+  protected readonly tickets = signal<Ticket[]>([]);
 
   protected readonly searchQuery = linkedSignal(() => {
     return this.ticketService.selectedAgency()?.valor ?? "";
   });
 
   protected readonly filteredTickets = computed(() => {
-    const tickets = this.tickets.value() ?? [];
+    const tickets = this.tickets() ?? [];
 
     const query = this.searchQuery()?.toLowerCase() ?? "";
     if (!query) {
