@@ -20,6 +20,9 @@ import { ErrorBoundaryComponent } from "@shared/components/error/error-boundary.
 import { MachineService } from "@features/machine/machine.service";
 import { DocumentDetailsDialogComponent } from "./components/document-details-dialog/document-details-dialog.component";
 import { TicketService } from "@features/ticket/ticket.service";
+import { HttpStatusCode } from "@angular/common/http";
+import { ErrorPageComponent } from "@shared/components/error/pages/error-page.component";
+import { linkedSignal } from '@angular/core';
 
 @Component({
   selector: "app-machine-details-page",
@@ -34,6 +37,7 @@ import { TicketService } from "@features/ticket/ticket.service";
     TooltipModule,
     TimelineModule,
     PageBreadcrumbComponent,
+    ErrorPageComponent
   ],
   templateUrl: "./machine-details-page.component.html",
   styleUrl: "./machine-details-page.component.css",
@@ -48,6 +52,14 @@ export default class MachineDetailsPageComponent {
 
   tickets = signal<MachineTicketHistory[]>([]);
   selectedMachine = signal<Machine | null>(null);
+
+  statusCode = linkedSignal(() => {
+       const code = this.machineService.machineSelect.statusCode();
+       return code;
+  })
+  //  signal<HttpStatusCode | null>(null);
+
+  HttpStatusCode = HttpStatusCode;
 
   protected readonly title = computed<string>(() =>
     this.selectedMachine()

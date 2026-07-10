@@ -4,4 +4,5 @@ export interface ResourceState<T> {
     error(): any;
     reload(): void;
     hasValue(): boolean;
+    status(): number | undefined;
 }

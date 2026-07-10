@@ -1,11 +1,16 @@
 import { CommonModule } from "@angular/common";
-import { ChangeDetectorRef, Component, computed, effect, inject } from "@angular/core";
-import { NavigationEnd, Router, RouterModule } from "@angular/router";
-import { SidebarService } from "../../services/sidebar.service";
-
+import {
+  ChangeDetectorRef,
+  Component,
+  computed,
+  effect,
+  inject,
+} from "@angular/core";
 import { toSignal } from "@angular/core/rxjs-interop";
-import { filter, map, startWith } from "rxjs";
+import { NavigationEnd, Router, RouterModule } from "@angular/router";
 import { AuthService } from "@app/core/services/auth.service";
+import { filter, map, startWith } from "rxjs";
+import { SidebarService } from "../../services/sidebar.service";
 
 type NavItem = {
   name: string;
@@ -28,31 +33,26 @@ export class AppSidebarComponent {
 
   protected readonly branding = computed(() => this.authService.branding());
 
-  // Main nav items
   navItems: NavItem[] = [
     {
       icon: "pi-th-large",
       name: "Dashboard",
       path: "/",
-      // subItems: [{ name: "Ecommerce", path: "/" }],
     },
-
     {
       name: "Agencias",
       icon: "pi-building",
       path: "/agencies",
       new: true,
     },
-
     {
       name: "Equipos",
       icon: "pi-warehouse",
       path: "/machines",
     },
-
     {
       name: "Tickets",
-      icon: `pi-ticket`,
+      icon: "pi-ticket",
       subItems: [
         {
           name: "Lista de Tickets",
@@ -66,7 +66,7 @@ export class AppSidebarComponent {
     },
   ];
 
-  openSubmenu: string | null | number = null;
+  openSubmenu: string | null = null;
   subMenuHeights: { [key: string]: number } = {};
 
   readonly isExpanded = this.sidebarService.isExpanded;
@@ -76,10 +76,10 @@ export class AppSidebarComponent {
   readonly currentUrl = toSignal(
     this.router.events.pipe(
       filter((event): event is NavigationEnd => event instanceof NavigationEnd),
-      map((event) => event.urlAfterRedirects.split("?")[0].split("#")[0]),
-      startWith(this.router.url.split("?")[0].split("#")[0]),
+      map((event) => this.normalizeUrl(event.urlAfterRedirects)),
+      startWith(this.normalizeUrl(this.router.url)),
     ),
-    { initialValue: this.router.url.split("?")[0].split("#")[0] },
+    { initialValue: this.normalizeUrl(this.router.url) },
   );
 
   private readonly navigationEnd = toSignal(
@@ -109,44 +109,38 @@ export class AppSidebarComponent {
   }
 
   isActive(path: string): boolean {
-    const currentUrl = this.currentUrl();
-
-    if (!path) {
-      return false;
-    }
-
-    // Dashboard: solo activo cuando la ruta es exactamente "/"
-    if (path === "/") {
-      return currentUrl === "/";
-    }
-
-    // Otras rutas: activo si coincide exactamente o si está dentro de una ruta hija
-    return currentUrl === path || currentUrl.startsWith(path + "/");
+    return this.isRouteMatch(this.currentUrl(), path);
   }
 
   isExactActive(path: string): boolean {
-    const currentUrl = this.currentUrl();
-
-    return !!path && currentUrl === path;
+    return !!path && this.currentUrl() === path;
   }
 
-  toggleSubmenu(section: string, index: number) {
+  toggleSubmenu(section: string, index: number): void {
     const key = `${section}-${index}`;
 
     if (this.openSubmenu === key) {
       this.openSubmenu = null;
       this.subMenuHeights[key] = 0;
-    } else {
-      this.openSubmenu = key;
-
-      setTimeout(() => {
-        const el = document.getElementById(key);
-        if (el) {
-          this.subMenuHeights[key] = el.scrollHeight;
-          this.cdr.detectChanges(); // Ensure UI updates
-        }
-      });
+      return;
     }
+
+    this.openSubmenuByKey(key);
+  }
+
+  onMenuItemClick(nav: NavItem, section: string, index: number): void {
+    if (nav.subItems?.length) {
+      this.openSubmenuByKey(`${section}-${index}`);
+    }
+
+    if (nav.path) {
+      void this.router.navigateByUrl(nav.path);
+      this.closeMobileSidebar();
+    }
+  }
+
+  onMenuLinkClick(): void {
+    this.closeMobileSidebar();
   }
 
   onSidebarMouseEnter() {
@@ -155,46 +149,81 @@ export class AppSidebarComponent {
     }
   }
 
-  private setActiveMenuFromRoute(currentUrl: string) {
+  isSubmenuOpened(section: string, index: number): boolean {
+    return this.openSubmenu === `${section}-${index}`;
+  }
+
+  isSubmenuActive(nav: NavItem): boolean {
+    if (!nav?.subItems?.length) {
+      return false;
+    }
+
+    return (
+      (nav.path ? this.isActive(nav.path) : false) ||
+      nav.subItems.some((subItem) => this.isActive(subItem.path))
+    );
+  }
+
+  onSubmenuClick() {
+    this.closeMobileSidebar();
+  }
+
+  private setActiveMenuFromRoute(currentUrl: string): void {
+    const normalizedUrl = this.normalizeUrl(currentUrl);
     const menuGroups = [{ items: this.navItems, prefix: "main" }];
 
     menuGroups.forEach((group) => {
       group.items.forEach((nav, i) => {
-        if (nav.subItems) {
-          nav.subItems.forEach((subItem) => {
-            if (currentUrl === subItem.path) {
-              const key = `${group.prefix}-${i}`;
-              this.openSubmenu = key;
+        if (!nav.subItems?.length) {
+          return;
+        }
 
-              setTimeout(() => {
-                const el = document.getElementById(key);
-                if (el) {
-                  this.subMenuHeights[key] = el.scrollHeight;
-                  this.cdr.detectChanges(); // Ensure UI updates
-                }
-              });
-            }
-          });
+        const shouldOpen =
+          (nav.path && this.isRouteMatch(normalizedUrl, nav.path)) ||
+          nav.subItems.some((subItem) =>
+            this.isRouteMatch(normalizedUrl, subItem.path),
+          );
+
+        if (shouldOpen) {
+          this.openSubmenuByKey(`${group.prefix}-${i}`);
         }
       });
     });
   }
 
-  isSubmenuOpened(section: string, index: number): boolean {
-    return this.openSubmenu === `${section}-${index}`;
-  }
-
-  isSubmenuActive(nav: any): boolean {
-    if (!nav?.subItems?.length) {
-      return false;
-    }
-
-    return nav.subItems.some((subItem: any) => this.isExactActive(subItem.path));
-  }
-
-  onSubmenuClick() {
+  private closeMobileSidebar(): void {
     if (this.isMobileOpen()) {
       this.sidebarService.setMobileOpen(false);
     }
+  }
+
+  private openSubmenuByKey(key: string): void {
+    this.openSubmenu = key;
+
+    setTimeout(() => {
+      const el = document.getElementById(key);
+      if (el) {
+        this.subMenuHeights[key] = el.scrollHeight;
+        this.cdr.detectChanges();
+      }
+    });
+  }
+
+  private normalizeUrl(url: string): string {
+    return url.split("?")[0].split("#")[0];
+  }
+
+  private isRouteMatch(currentUrl: string, path: string): boolean {
+    if (!path) {
+      return false;
+    }
+
+    const normalizedUrl = this.normalizeUrl(currentUrl);
+
+    if (path === "/") {
+      return normalizedUrl === "/";
+    }
+
+    return normalizedUrl === path || normalizedUrl.startsWith(path + "/");
   }
 }

@@ -1,15 +1,10 @@
-
-import { Component, contentChild, inject, input, TemplateRef } from '@angular/core';
-import { SidebarService } from '@shared/services/sidebar.service';
-import { PageBreadcrumbComponent } from '@shared/components/common/page-breadcrumb/page-breadcrumb.component';
 import { NgTemplateOutlet } from '@angular/common';
+import { Component, TemplateRef, contentChild, inject, input } from '@angular/core';
+import { SidebarService } from '@shared/services/sidebar.service';
 
 @Component({
   selector: 'app-blank',
-  imports: [
-    NgTemplateOutlet,
-    PageBreadcrumbComponent
-],
+  imports: [NgTemplateOutlet],
   templateUrl: './app-blank.component.html',
 })
 export class AppBlankComponent {
@@ -18,6 +13,4 @@ export class AppBlankComponent {
   headerTemplate = contentChild<TemplateRef<any>>('header');
 
   title = input.required<string>();
-  
-
 }

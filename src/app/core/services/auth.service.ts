@@ -49,7 +49,10 @@ export class AuthService {
 
           this._authState.set({
             token: data.token,
+            fechaExpiracionSesion: data.fechaExpiracionSesion,
             username: data.username,
+            duracionSesionSegundos: data.duracionSesionSegundos,
+            segundosRestantesSesion: data.segundosRestantesSesion,
             rol: data.rol,
             nombreCompleto: data.nombreCompleto,
             tenant: data.tenant,

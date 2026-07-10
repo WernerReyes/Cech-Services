@@ -34,7 +34,7 @@
         <div class="card mb-0 flex justify-center items-center h-full">
           <app-fallback
             [loading]="resource().isLoading()"
-            [message]="errorMessage() || resource().error()"
+            [message]="errorMessageDisplay()"
             (retry)="resource().reload()"
           >
           </app-fallback>
@@ -42,7 +42,7 @@
       } @else if (fallbackType() === "simple") {
         <app-fallback
           [loading]="resource().isLoading()"
-          [message]="errorMessage() || resource().error()"
+          [message]="errorMessageDisplay()"
           (retry)="resource().reload()"
         >
         </app-fallback>

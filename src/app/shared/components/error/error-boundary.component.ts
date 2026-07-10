@@ -1,13 +1,14 @@
 import { NgTemplateOutlet } from "@angular/common";
+import { HttpErrorResponse, HttpResourceRef } from "@angular/common/http";
 import {
   Component,
+  computed,
   contentChild,
   effect,
   input,
   output,
   TemplateRef
 } from "@angular/core";
-import type { ResourceState } from "@shared/interfaces/resource.interface";
 import { SkeletonModule } from "primeng/skeleton";
 import { FallBackComponent } from "./fallback/fallback.component";
 
@@ -21,7 +22,7 @@ import { FallBackComponent } from "./fallback/fallback.component";
 
 
 export class ErrorBoundaryComponent<T> {
-  resource = input.required<ResourceState<T>>();
+  resource = input.required<HttpResourceRef<T>>();
   errorMessage = input<string>();
   emptyMessage = input<string>("No hay datos disponibles");
   showEmptyMessage = input<boolean>(true);
@@ -36,6 +37,8 @@ export class ErrorBoundaryComponent<T> {
   skeletonShape = input<"rectangle" | "circle">("rectangle");
 
   successData = output<T | undefined>();
+  error = output<any>();
+  statusCode = output<number | null>();
 
   loadingTemplate = contentChild<TemplateRef<any>>("loading");
   errorTemplate = contentChild<TemplateRef<any>>("error");
@@ -47,6 +50,22 @@ export class ErrorBoundaryComponent<T> {
     const value = this.resource().value();
     return !value || (Array.isArray(value) && value.length === 0);
   }
+
+  errorMessageDisplay = computed(() => {
+    const resourceError = this.resource().error();
+
+    if (typeof resourceError === "string") {
+      return resourceError;
+    }
+
+    if (resourceError && typeof resourceError === "object") {
+      const httpErrorRespose = resourceError as HttpErrorResponse;
+      return httpErrorRespose.error || JSON.stringify(httpErrorRespose);
+    }
+
+    return this.errorMessage() || "Ha ocurrido un error inesperado.";
+
+  })
 
   private emitData = effect(() => {
     const resourceState = this.resource();
@@ -65,7 +84,16 @@ export class ErrorBoundaryComponent<T> {
         this.successData.emit(undefined);
       }
     }
+
+    
+    
+    this.statusCode.emit(resourceState.statusCode() || null);
+    
+    if (resourceState.error()) {
+      this.error.emit(resourceState.error());
+    }
   });
+  
 
   
 

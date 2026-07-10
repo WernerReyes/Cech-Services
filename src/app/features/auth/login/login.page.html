@@ -113,14 +113,15 @@
           </div>
 
           <button
-            [disabled]="form().invalid() || form().pending()"
+            [disabled]="form().invalid() || form().pending() || form().submitting()"
             pButton
             size="large"
             fluid
             class="mt-4"
           >
-            @if (form().pending()) {
-              <svg data-p-icon="spinner" class="animate-spin"></svg>
+            @if (form().pending() || form().submitting()) {
+              <!-- <svg data-p-icon="spinner" class="animate-spin"></svg> -->
+               <i class="pi pi-spin pi-spinner"></i>
               Cargando...
             } @else {
               Ingresar

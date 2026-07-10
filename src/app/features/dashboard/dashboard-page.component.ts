@@ -1,4 +1,5 @@
 import { NgClass, NgTemplateOutlet } from "@angular/common";
+import type { HttpResourceRef } from "@angular/common/http";
 import {
   Component,
   computed,
@@ -78,6 +79,10 @@ type TicketStatusChartOptions = {
   responsive: ApexResponsive[];
 };
 
+type DashboardTicket = MachineTicketHistory & {
+  agencia?: Agency;
+};
+
 @Component({
   selector: "app-dashboard",
   standalone: true,
@@ -102,14 +107,46 @@ export default class DashboardComponent {
   protected readonly ticketService = inject(TicketService);
   protected readonly agencyService = inject(AgencyService);
   private readonly authService = inject(AuthService);
-  
 
   protected readonly agencies = this.dashboard.agencies;
   protected readonly selectedAgency = this.dashboard.selectedAgency;
   protected readonly selectedMachine = this.dashboard.selectedMachine;
+  private readonly selectedMachineTicketsResource =
+    this.dashboard.tickets as unknown as HttpResourceRef<DashboardTicket[]>;
+  private readonly allTicketsResource =
+    this.ticketService.getAllTickets as unknown as HttpResourceRef<
+      DashboardTicket[]
+    >;
 
   public readonly machines = signal<Machine[]>([]);
-  public readonly tickets = signal<MachineTicketHistory[]>([]);
+  protected readonly ticketResource = computed<
+    HttpResourceRef<DashboardTicket[]>
+  >(() =>
+    this.selectedMachine()
+      ? this.selectedMachineTicketsResource
+      : this.allTicketsResource,
+  );
+
+  public readonly tickets = computed<DashboardTicket[]>(() => {
+    if (this.selectedMachine()) {
+      return this.selectedMachineTicketsResource.hasValue()
+        ? this.selectedMachineTicketsResource.value()
+        : [];
+    }
+
+    const selectedAgency = this.selectedAgency();
+    const allTickets = this.allTicketsResource.hasValue()
+      ? this.allTicketsResource.value()
+      : [];
+
+    if (!selectedAgency) {
+      return [];
+    }
+
+    return allTickets.filter(
+      (ticket) => ticket.agencia?.id === selectedAgency.id,
+    );
+  });
 
   protected readonly ticketMonthRange = signal<Date[] | null>(null);
 
@@ -193,7 +230,9 @@ export default class DashboardComponent {
       value: this.tickets().length,
       caption: this.selectedMachine()
         ? "Historial del equipo seleccionado"
-        : "Selecciona un equipo",
+        : this.selectedAgency()
+          ? "Todos los equipos de la agencia"
+          : "Selecciona una agencia",
       icon: "pi-ticket",
       iconClass: "bg-amber-50 text-amber-700",
       onClick: () => {
@@ -212,10 +251,11 @@ export default class DashboardComponent {
       icon: "pi-chart-line",
       iconClass: "bg-sky-50 text-sky-700",
       onClick: () => {
-        if (!this.selectedMachine()) {
+        if (!this.selectedAgency()) {
           return;
         }
 
+        this.ticketService.selectedAgency.set(this.selectedAgency());
         this.router.navigate(["/tickets"]);
       },
     },
@@ -486,31 +526,29 @@ export default class DashboardComponent {
     }
   });
 
-  private readonly setInitialMachine = effect(() => {
-    const machines = this.machines();
-    const selectedMachine = this.selectedMachine();
+  // private readonly setInitialMachine = effect(() => {
+  //   const machines = this.machines();
+  //   const selectedMachine = this.selectedMachine();
 
-    if (
-      machines.length &&
-      (!selectedMachine ||
-        !machines.some(
-          (machine) => machine.idEquipo === selectedMachine.idEquipo,
-        ))
-    ) {
-      untracked(() => this.dashboard.selectedMachine.set(machines[0]));
-    }
-  });
+  //   if (
+  //     machines.length &&
+  //     (!selectedMachine ||
+  //       !machines.some(
+  //         (machine) => machine.idEquipo === selectedMachine.idEquipo,
+  //       ))
+  //   ) {
+  //     untracked(() => this.dashboard.selectedMachine.set(machines[0]));
+  //   }
+  // });
 
   protected onAgencyChange(agency: Agency | null) {
     this.dashboard.selectedAgency.set(agency);
     this.dashboard.selectedMachine.set(null);
     this.machines.set([]);
-    this.tickets.set([]);
   }
 
   protected onMachineChange(machine: Machine | null) {
     this.dashboard.selectedMachine.set(machine);
-    this.tickets.set([]);
   }
 
   protected viewAllMachines() {

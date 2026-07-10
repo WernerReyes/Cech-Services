@@ -115,7 +115,7 @@ export class LoginPage {
           severity: "error",
           summary: "Error de autenticación",
           detail:
-            error.message || "Ocurrió un error al intentar iniciar sesión.",
+            error.error || "Ocurrió un error al intentar iniciar sesión.",
           life: 5000,
         });
       });

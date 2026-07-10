@@ -17,7 +17,7 @@
       'justify-start': isExpanded() || isHovered()
     }"
   >
-    <a routerLink="/">
+    <a routerLink="/" (click)="onMenuLinkClick()">
       @if (isExpanded() || isHovered() || isMobileOpen()) {
         <img
          
@@ -75,7 +75,7 @@
                 @if (nav.subItems) {
                   <button
                     type="button"
-                    (click)="toggleSubmenu('main', i)"
+                    (click)="onMenuItemClick(nav, 'main', i)"
                     class="menu-item group cursor-pointer"
                     [class.menu-item-active]="isSubmenuActive(nav)"
                     [class.menu-item-inactive]="!isSubmenuActive(nav)"
@@ -196,6 +196,7 @@
                   @if (nav.path) {
                     <a
                       [routerLink]="nav.path"
+                      (click)="onMenuLinkClick()"
                       class="menu-item group"
                       [ngClass]="{
                         'menu-item-active': isActive(nav.path),

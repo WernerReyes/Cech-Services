@@ -74,7 +74,14 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
      
 
       // Reenviamos el error encapsulado para que el componente/servicio que hizo la llamada pueda manejarlo si quiere
-      return throwError(() => errorMessage);
+      return throwError(() => {
+        return new HttpErrorResponse({
+          error: errorMessage,
+          headers: error.headers,
+          status: error.status,
+          statusText: error.statusText
+        });
+      });
     })
   );
 };

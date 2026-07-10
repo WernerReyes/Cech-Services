@@ -1,4 +1,4 @@
-import { DestroyRef, inject, Service, signal } from '@angular/core';
+import { DestroyRef, inject, linkedSignal, Service, signal } from '@angular/core';
 import { AuthService } from './auth.service';
 
 @Service()
@@ -13,7 +13,8 @@ export class SessionService {
   // CONFIGURACIÓN: Define a los cuántos minutos de anticipación quieres avisar (ej: 5 minutos)
   private readonly WARNING_THRESHOLD_MINUTES = 5;
   
-  
+
+  private remainingMs = linkedSignal(() => (this.authService.authState()?.segundosRestantesSesion || 0) * 1000);
 
   private timeoutId: any;
 
@@ -41,30 +42,25 @@ export class SessionService {
   }
 
   private updateTime(): number {
-    const decoded = this.authService.decodeToken();
-    
-    if (!decoded || !decoded.exp) {
-      this.timeLeft.set('Sin sesión activa');
-      this.sessionExpiring.set(false);
-      return 0;
-    }
+  
+    this.remainingMs.update((prev) => {
+      return prev > 0 ? prev - 1000 : 0; // Decrementa en 1 segundo
+    });
 
-    const expirationMs = decoded.exp * 1000;
-    const remainingMs = expirationMs - Date.now();
 
-    if (remainingMs <= 0) {
+    if (this.remainingMs() <= 0) {
       this.timeLeft.set('Sesión expirada');
       this.sessionExpiring.set(false);
       this.handleLogout();
       return 0;
     }
 
-    this.timeLeft.set(this.formatRemainingTime(remainingMs));
+    this.timeLeft.set(this.formatRemainingTime(this.remainingMs()));
 
     // --- NUEVA LÓGICA: Alerta de expiración inminente ---
     const thresholdMs = this.WARNING_THRESHOLD_MINUTES * 60 * 1000;
     
-    if (remainingMs <= thresholdMs) {
+    if (this.remainingMs() <= thresholdMs) {
       this.sessionExpiring.set(true); // Cambia a true si queda menos tiempo del configurado
     } else {
       this.sessionExpiring.set(false); // Por seguridad (si el token se llega a renovar)
@@ -75,7 +71,7 @@ export class SessionService {
     
     // ATENCIÓN: Si estamos dentro del tiempo de alerta (ej: 5 min), 
     // forzamos el conteo a 1 segundo para que el diálogo sea preciso.
-    const desiredInterval = (remainingMs > HOUR && !this.sessionExpiring()) ? 60000 : 1000;
+    const desiredInterval = (this.remainingMs() > HOUR && !this.sessionExpiring()) ? 60000 : 1000;
 
     return desiredInterval;
   }

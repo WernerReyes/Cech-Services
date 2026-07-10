@@ -19,7 +19,10 @@ export interface Branding {
 export interface AuthResponse {
   token: string;
   username: string;
+  duracionSesionSegundos: number;
+  segundosRestantesSesion: number;
   rol: CatalogValue;
+  fechaExpiracionSesion: string;
   nombreCompleto: string;
   tenant: CatalogValue;
   client: CatalogValue;
