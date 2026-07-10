@@ -1,9 +1,9 @@
 import { Component, computed, inject } from '@angular/core';
-import { AppBlankComponent } from '@app/shared/layout/app-blank/app-blank.component';
+import { AppBlankComponent } from '@shared/layout/app-blank/app-blank.component';
 import { MachineListTableComponent } from './components/machine-list-table/machine-list-table.component';
 import { SelectAgencyComponent } from './components/select-agency/select-agency.component';
 import { PageBreadcrumbComponent } from '@shared/components/common/page-breadcrumb/page-breadcrumb.component';
-import { AgencyService } from '@app/features/agency/agency.service';
+import { AgencyService } from '@features/agency/agency.service';
 
 @Component({
   selector: 'app-machine-list-page',

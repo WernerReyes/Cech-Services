@@ -59,6 +59,7 @@
             <div class="h-6 rounded-full bg-slate-100"></div>
             <div class="h-6 rounded-full bg-slate-100"></div>
             <div class="h-4 rounded bg-slate-100"></div>
+            <div class="h-9 rounded-xl bg-slate-100"></div>
           </div>
         }
       </div>
@@ -174,12 +175,18 @@
             >
               Creado por
             </th>
+
+            <th
+              class="w-28 bg-white px-4 py-3 text-right text-xs font-bold uppercase tracking-wide text-slate-500"
+            >
+              Acciones
+            </th>
           </tr>
         </ng-template>
 
         <ng-template #emptymessage>
           <tr>
-            <td colspan="7">
+            <td colspan="8">
               <div
                 class="flex flex-col items-center justify-center px-6 py-12 text-center"
               >
@@ -265,6 +272,22 @@
               <span class="text-sm font-medium text-slate-600">
                 {{ ticket.creadoPor?.valor || "Sistema" }}
               </span>
+            </td>
+
+            <td class="px-4 py-3 align-top text-right">
+              <a
+                pButton
+                [routerLink]="['/tickets', ticket.ticketId]"
+                type="button"
+                variant="outlined"
+                iconOnly
+                pTooltip="Ver detalle"
+                tooltipPosition="left"
+                aria-label="Ver detalle del ticket"
+                class="inline-flex size-9 items-center justify-center rounded-xl border-slate-200 text-primary-700 transition hover:bg-primary-50"
+              >
+                <i class="pi pi-eye text-sm"></i>
+              </a>
             </td>
           </tr>
         </ng-template>

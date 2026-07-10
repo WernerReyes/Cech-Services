@@ -13,4 +13,10 @@ export const ticketRoutes: Routes = [
       import("./pages/ticket-create-page/ticket-create-page.component"),
     title: "Crear ticket",
   },
+  {
+    path: "tickets/:id",
+    loadComponent: () =>
+      import("./pages/ticket-details-page/ticket-details-page.component"),
+    title: "Detalle de ticket",
+  },
 ];

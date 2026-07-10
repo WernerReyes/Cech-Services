@@ -1,7 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { computed, inject, Service, signal } from "@angular/core";
 import { Router } from "@angular/router";
-import { jwtDecode, type JwtPayload } from "jwt-decode";
 import { APP_CONFIG } from "@core/config/app.config.tokens";
 import { ApiResponse } from "@core/models/api.model";
 import type {
@@ -9,7 +8,8 @@ import type {
   AuthResponse,
   AuthState,
 } from "@core/models/auth.model";
-import { Subject, tap } from "rxjs";
+import { jwtDecode, type JwtPayload } from "jwt-decode";
+import { finalize, tap } from "rxjs";
 import { BrandingService } from "./branding.service";
 
 @Service()
@@ -25,12 +25,6 @@ export class AuthService {
   private _token = signal<string | null>(localStorage.getItem(this.TOKEN_KEY));
   private _authState = signal<AuthState | null>(null);
 
-  private logout$ = new Subject<void>();
-  onLogout$ = this.logout$.asObservable();
-
-  private login$ = new Subject<void>();
-  onLogin$ = this.login$.asObservable();
-
   public readonly currentToken = this._token.asReadonly();
   public readonly isAuthenticated = computed(() => !!this._token());
   public readonly authState = this._authState.asReadonly();
@@ -39,7 +33,9 @@ export class AuthService {
     return token ? jwtDecode(token) : null;
   });
 
-  public readonly branding = computed(() => this._authState()?.branding || null);
+  public readonly branding = computed(
+    () => this._authState()?.branding || null,
+  );
 
   login(credentials: AuthCredentials) {
     return this.http
@@ -50,9 +46,6 @@ export class AuthService {
           this.brandingService.applyTenantColor(primaryColor);
 
           this.setSession(data.token);
-
-          // Emitir evento de login
-          this.login$.next();
 
           this._authState.set({
             token: data.token,
@@ -68,18 +61,28 @@ export class AuthService {
       );
   }
 
-  logout(): void {
-    localStorage.removeItem(this.TOKEN_KEY);
-    this._authState.set(null);
-    this._token.set(null);
+  logout(forced = false): void {
+    const clearSession = () => {
+      localStorage.removeItem(this.TOKEN_KEY);
+      this._authState.set(null);
+      this._token.set(null);
 
-    this.logout$.next();
+      this.brandingService.applyTenantColor();
+      this.router.navigate(["/login"]);
+    };
 
-    this.brandingService.applyTenantColor(); // Color por defecto si no hay usuario
-    console.log("Usuario deslogueado, redirigiendo a login...");
+    if (!forced) {
+      return clearSession();
+    }
 
-    this.router.navigate(["/login"]);
-    // window.location.href = "/login"; // Redirigir a la página de login
+    this.http
+      .post(`${this.baseUrl}/logout`, {})
+      .pipe(
+        finalize(() => {
+          clearSession();
+        }),
+      )
+      .subscribe();
   }
 
   getToken(): string | null {

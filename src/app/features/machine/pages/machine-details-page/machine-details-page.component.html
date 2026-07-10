@@ -5,370 +5,336 @@
         [pageTitle]="title()"
         icon="pi-microchip"
         [back]="true"
-        [allowBackRoutes]="['/machines', '/']"
+        [allowBackRoutes]="allowBackRoutes()"
       />
     </ng-template>
 
+    <!-- <div class="mx-auto flex w-full flex-col gap-6"> -->
     <div class="mx-auto flex w-full flex-col gap-6">
-      <div class="mx-auto flex w-full flex-col gap-6">
-        <a
-          pButton
-          routerLink="/tickets/create"
-          [queryParams]="
-            selectedMachine()
-              ? {
-                  idAgencia: selectedMachine()?.agencia?.id,
-                  idEquipo: selectedMachine()?.idEquipo,
-                }
-              : null
-          "
-          class="inline-flex h-11 w-fit ml-auto items-center justify-center gap-2 rounded-xl bg-primary-700 px-5 text-sm font-bold text-white shadow-sm transition hover:bg-primary-800 sm:w-auto"
-        >
-          <i class="pi pi-plus text-sm"></i>
-          <span>Crear ticket</span>
-        </a>
+      <a
+        pButton
+        routerLink="/tickets/create"
+        [queryParams]="
+          selectedMachine()
+            ? {
+                idAgencia: selectedMachine()?.agencia?.id,
+                idEquipo: selectedMachine()?.idEquipo,
+              }
+            : null
+        "
+        class="inline-flex h-11 w-fit ml-auto items-center justify-center gap-2 rounded-xl bg-primary-700 px-5 text-sm font-bold text-white shadow-sm transition hover:bg-primary-800 sm:w-auto"
+      >
+        <i class="pi pi-plus text-sm"></i>
+        <span>Crear ticket</span>
+      </a>
 
-        <section
-          class="grid items-start gap-5 xl:grid-cols-[minmax(18rem,23rem)_1fr]"
-        >
-          <aside class="rounded-2xl border border-slate-200 bg-white shadow-sm">
-            <div class="border-b border-slate-200 px-5 py-4">
-              <div class="flex items-center gap-3">
-                <div
-                  class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-700"
-                >
-                  <i class="pi pi-info-circle text-lg"></i>
-                </div>
-
-                <div class="min-w-0">
-                  <h2 class="text-lg font-extrabold text-slate-950">
-                    Información
-                  </h2>
-                  <p class="text-sm font-medium text-slate-500">
-                    Equipo #{{ id() }}
-                  </p>
-                </div>
+      <section
+        class="grid items-start gap-5 xl:grid-cols-[minmax(18rem,23rem)_1fr]"
+      >
+        <aside class="rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <div class="border-b border-slate-200 px-5 py-4">
+            <div class="flex items-center gap-3">
+              <div
+                class="flex size-11 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-700"
+              >
+                <i class="pi pi-info-circle text-lg"></i>
               </div>
-            </div>
 
-            <app-error-boundary
-              [resource]="machineService.machineSelect"
-              (successData)="selectedMachine.set($event || null)"
-            >
-              <ng-template #loading>
-                <div class="p-5">
-                  <div class="h-4 w-32 rounded bg-slate-100"></div>
-                  <div class="mt-2 h-3 w-24 rounded bg-slate-100"></div>
-                </div>
-              </ng-template>
-
-              <ng-template #content let-machine>
-                <div class="p-5">
-                  <div class="space-y-4">
-                    <div
-                      class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
-                    >
-                      <div
-                        class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
-                      >
-                        <i class="pi pi-hashtag text-xs"></i>
-                        Serie
-                      </div>
-                      <div
-                        class="mt-1 wrap-break-word text-sm font-extrabold text-slate-900"
-                      >
-                        {{ machine.serie || "Sin serie" }}
-                      </div>
-                    </div>
-
-                    <div
-                      class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
-                    >
-                      <div
-                        class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
-                      >
-                        <i class="pi pi-box text-xs"></i>
-                        Código de inventario
-                      </div>
-                      <div
-                        class="mt-1 wrap-break-word text-sm font-extrabold text-slate-900"
-                      >
-                        {{ machine.codigoInventario || "Sin código" }}
-                      </div>
-                    </div>
-
-                    <div
-                      class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
-                    >
-                      <div
-                        class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
-                      >
-                        <i class="pi pi-calendar text-xs"></i>
-                        Fecha instalación
-                      </div>
-                      <div class="mt-1 text-sm font-extrabold text-slate-900">
-                        @if (machine.fechaInstalacion) {
-                          {{ machine.fechaInstalacion | date: "dd/MM/yyyy" }}
-                        } @else {
-                          Sin fecha
-                        }
-                      </div>
-                    </div>
-
-                    <div
-                      class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
-                    >
-                      <div
-                        class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
-                      >
-                        <i class="pi pi-shield text-xs"></i>
-                        Garantía
-                      </div>
-                      <div class="mt-1 text-sm font-extrabold text-slate-900">
-                        {{ machine.mesGarantia || 0 }} meses
-                      </div>
-                    </div>
-
-                    <div
-                      class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
-                    >
-                      <div
-                        class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
-                      >
-                        <i class="pi pi-map-marker text-xs"></i>
-                        Agencia
-                      </div>
-                      <div
-                        class="mt-1 wrap-break-word text-sm font-extrabold text-slate-900"
-                      >
-                        {{ machine.agencia.valor || "Sin agencia" }}
-                      </div>
-                    </div>
-
-                    <div
-                      class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
-                    >
-                      <div
-                        class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
-                      >
-                        <i class="pi pi-microchip text-xs"></i>
-                        Modelo
-                      </div>
-                      <div
-                        class="mt-1 wrap-break-word text-sm font-extrabold text-slate-900"
-                      >
-                        {{ machine.modelo.descripcion || "Sin modelo" }}
-                        @if (machine.modelo.tipoMoneda) {
-                          <span class="font-bold text-slate-500">
-                            ({{ machine.modelo.tipoMoneda }})
-                          </span>
-                        }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </ng-template>
-            </app-error-boundary>
-          </aside>
-
-          <section
-            class="rounded-2xl border border-slate-200 bg-white shadow-sm"
-          >
-            <div
-              class="flex flex-col gap-3 border-b border-slate-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"
-            >
-              <div>
+              <div class="min-w-0">
                 <h2 class="text-lg font-extrabold text-slate-950">
-                  Historial de tickets
+                  Información
                 </h2>
-                <p class="mt-1 text-sm font-medium text-slate-500">
-                  Preventivos y correctivos registrados para este equipo.
+                <p class="text-sm font-medium text-slate-500">
+                  Equipo #{{ id() }}
                 </p>
               </div>
-
-              <span
-                class="inline-flex w-fit items-center gap-2 rounded-full bg-slate-100 px-3 py-1.5 text-sm font-bold text-slate-700"
-              >
-                <i class="pi pi-ticket text-xs"></i>
-                {{ tickets().length }} tickets
-              </span>
             </div>
+          </div>
 
-            <app-error-boundary
-              [resource]="machineService.machineTickets"
-              (successData)="tickets.set($event || [])"
-            >
-              <ng-template #loading>
-                <div class="space-y-4 p-5">
-                  @for (item of [1, 2, 3]; track item) {
-                    <div
-                      class="animate-pulse rounded-2xl border border-slate-200 p-5"
-                    >
-                      <div class="flex items-center justify-between gap-4">
-                        <div class="h-4 w-36 rounded bg-slate-100"></div>
-                        <div class="h-4 w-24 rounded bg-slate-100"></div>
-                      </div>
-                      <div class="mt-4 h-5 w-3/4 rounded bg-slate-100"></div>
-                      <div class="mt-3 h-4 w-32 rounded bg-slate-100"></div>
-                    </div>
-                  }
-                </div>
-              </ng-template>
+          <app-error-boundary
+            [resource]="machineService.machineSelect"
+            (successData)="selectedMachine.set($event || null)"
+          >
+            <ng-template #loading>
+              <div class="p-5">
+                <div class="h-4 w-32 rounded bg-slate-100"></div>
+                <div class="mt-2 h-3 w-24 rounded bg-slate-100"></div>
+              </div>
+            </ng-template>
 
-              <ng-template #empty>
-                <div
-                  class="flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 px-6 py-12 text-center"
-                >
+            <ng-template #content let-machine>
+              <div class="p-5">
+                <div class="space-y-4">
                   <div
-                    class="mb-4 flex size-12 items-center justify-center rounded-2xl bg-slate-100 text-slate-500"
+                    class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
                   >
-                    <i class="pi pi-ticket text-xl"></i>
+                    <div
+                      class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
+                    >
+                      <i class="pi pi-hashtag text-xs"></i>
+                      Serie
+                    </div>
+                    <div
+                      class="mt-1 wrap-break-word text-sm font-extrabold text-slate-900"
+                    >
+                      {{ machine.serie || "Sin serie" }}
+                    </div>
                   </div>
 
-                  <p class="text-sm font-bold text-slate-800">
-                    Sin tickets registrados
-                  </p>
+                  <div
+                    class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
+                  >
+                    <div
+                      class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
+                    >
+                      <i class="pi pi-box text-xs"></i>
+                      Código de inventario
+                    </div>
+                    <div
+                      class="mt-1 wrap-break-word text-sm font-extrabold text-slate-900"
+                    >
+                      {{ machine.codigoInventario || "Sin código" }}
+                    </div>
+                  </div>
 
-                  <p class="mt-1 text-sm text-slate-500">
-                    Este equipo todavía no tiene preventivos ni correctivos
-                    asociados.
-                  </p>
+                  <div
+                    class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
+                  >
+                    <div
+                      class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
+                    >
+                      <i class="pi pi-calendar text-xs"></i>
+                      Fecha instalación
+                    </div>
+                    <div class="mt-1 text-sm font-extrabold text-slate-900">
+                      @if (machine.fechaInstalacion) {
+                        {{ machine.fechaInstalacion | date: "dd/MM/yyyy" }}
+                      } @else {
+                        Sin fecha
+                      }
+                    </div>
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
+                  >
+                    <div
+                      class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
+                    >
+                      <i class="pi pi-shield text-xs"></i>
+                      Garantía
+                    </div>
+                    <div class="mt-1 text-sm font-extrabold text-slate-900">
+                      {{ machine.mesGarantia || 0 }} meses
+                    </div>
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
+                  >
+                    <div
+                      class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
+                    >
+                      <i class="pi pi-map-marker text-xs"></i>
+                      Agencia
+                    </div>
+                    <div
+                      class="mt-1 wrap-break-word text-sm font-extrabold text-slate-900"
+                    >
+                      {{ machine.agencia.valor || "Sin agencia" }}
+                    </div>
+                  </div>
+
+                  <div
+                    class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3"
+                  >
+                    <div
+                      class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
+                    >
+                      <i class="pi pi-microchip text-xs"></i>
+                      Modelo
+                    </div>
+                    <div
+                      class="mt-1 wrap-break-word text-sm font-extrabold text-slate-900"
+                    >
+                      {{ machine.modelo.descripcion || "Sin modelo" }}
+                      @if (machine.modelo.tipoMoneda) {
+                        <span class="font-bold text-slate-500">
+                          ({{ machine.modelo.tipoMoneda }})
+                        </span>
+                      }
+                    </div>
+                  </div>
                 </div>
-              </ng-template>
+              </div>
+            </ng-template>
+          </app-error-boundary>
+        </aside>
 
-              <ng-template #content let-tickets>
-                <p-timeline
-                  [value]="formatTickets(tickets)"
-                  [align]="'left'"
-                  class="cech-ticket-timeline p-5! pl-0!"
+        <section class="rounded-2xl border border-slate-200 bg-white shadow-sm">
+          <div
+            class="flex flex-col gap-3 border-b border-slate-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"
+          >
+            <div>
+              <h2 class="text-lg font-extrabold text-slate-950">
+                Historial de tickets
+              </h2>
+              <p class="mt-1 text-sm font-medium text-slate-500">
+                Preventivos y correctivos registrados para este equipo.
+              </p>
+            </div>
+
+            <span
+              class="inline-flex w-fit items-center gap-2 rounded-full bg-slate-100 px-3 py-1.5 text-sm font-bold text-slate-700"
+            >
+              <i class="pi pi-ticket text-xs"></i>
+              {{ tickets().length }} tickets
+            </span>
+          </div>
+
+          <app-error-boundary
+            [resource]="machineService.machineTickets"
+            (successData)="tickets.set($event || [])"
+          >
+            <ng-template #loading>
+              <div class="space-y-4 p-5">
+                @for (item of [1, 2, 3]; track item) {
+                  <div
+                    class="animate-pulse rounded-2xl border border-slate-200 p-5"
+                  >
+                    <div class="flex items-center justify-between gap-4">
+                      <div class="h-4 w-36 rounded bg-slate-100"></div>
+                      <div class="h-4 w-24 rounded bg-slate-100"></div>
+                    </div>
+                    <div class="mt-4 h-5 w-3/4 rounded bg-slate-100"></div>
+                    <div class="mt-3 h-4 w-32 rounded bg-slate-100"></div>
+                  </div>
+                }
+              </div>
+            </ng-template>
+
+            <ng-template #empty>
+              <div
+                class="flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 px-6 py-12 text-center"
+              >
+                <div
+                  class="mb-4 flex size-12 items-center justify-center rounded-2xl bg-slate-100 text-slate-500"
                 >
-                  <ng-template #opposite let-event>
-                    <time
-                      class="hidden text-sm font-semibold text-slate-500 md:block"
-                    >
-                      {{ event.date | date: "dd MMM yyyy" }}
-                    </time>
-                  </ng-template>
+                  <i class="pi pi-ticket text-xl"></i>
+                </div>
 
-                  <ng-template #marker let-event>
+                <p class="text-sm font-bold text-slate-800">
+                  Sin tickets registrados
+                </p>
+
+                <p class="mt-1 text-sm text-slate-500">
+                  Este equipo todavía no tiene preventivos ni correctivos
+                  asociados.
+                </p>
+              </div>
+            </ng-template>
+
+            <ng-template #content let-tickets>
+              <p-timeline
+                [value]="formatTickets(tickets)"
+                [align]="'left'"
+                class="cech-ticket-timeline p-5! pl-0!"
+              >
+                <ng-template #opposite let-event>
+                  <time
+                    class="hidden text-sm font-semibold text-slate-500 md:block"
+                  >
+                    {{ event.date | date: "dd MMM yyyy" }}
+                  </time>
+                </ng-template>
+
+                <ng-template #marker let-event>
+                  <span
+                    class="flex size-9 items-center justify-center rounded-full ring-4"
+                    [ngClass]="statusMarkerClass(event.ticket)"
+                  >
                     <span
-                      class="flex size-9 items-center justify-center rounded-full ring-4"
-                      [ngClass]="statusMarkerClass(event.ticket)"
-                    >
-                      <span
-                        class="size-3 rounded-full"
-                        [ngClass]="statusDotClass(event.ticket)"
-                      ></span>
-                    </span>
-                  </ng-template>
+                      class="size-3 rounded-full"
+                      [ngClass]="statusDotClass(event.ticket)"
+                    ></span>
+                  </span>
+                </ng-template>
 
-                  <ng-template #content let-event>
-                    <article
-                      class="mb-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-slate-300"
-                    >
-                      <div class="">
-                        <div class="min-w-0">
-                          <div
-                            class="flex flex-wrap items-center w-full justify-between gap-2 sm:gap-3"
-                          >
-                            <div class="flex flex-wrap items-center gap-2">
+                <ng-template #content let-event>
+                  <article
+                    class="mb-5 rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-slate-300"
+                  >
+                    <div class="">
+                      <div class="min-w-0">
+                        <div
+                          class="flex flex-wrap items-center w-full justify-between gap-2 sm:gap-3"
+                        >
+                          <div class="flex flex-wrap items-center gap-2">
+                            <span
+                              class="font-mono text-sm font-extrabold text-primary"
+                            >
+                              {{ event.number }}
+                            </span>
+
+                            <span
+                              class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold ring-1"
+                              [ngClass]="statusClass(event.ticket)"
+                            >
                               <span
-                                class="font-mono text-sm font-extrabold text-blue-700"
-                              >
-                                {{ event.number }}
-                              </span>
-
-                              <span
-                                class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold ring-1"
-                                [ngClass]="statusClass(event.ticket)"
-                              >
-                                <span
-                                  class="size-2 rounded-full"
-                                  [ngClass]="statusDotClass(event.ticket)"
-                                ></span>
-                                {{ event.status }}
-                              </span>
-                            </div>
-
-                            <div class="flex items-center gap-1">
-                              <button
-                                pButton
-                                type="button"
-                                pTooltip="Ver archivos de contadores"
-                                tooltipPosition="top"
-                                iconOnly
-                                (click)="
-                                  url.set(
-                                    `https://osticket.cechriza.com/system/vista/ajax/file_contador/contador_ticket_${event.ticket.ticketId}.pdf`
-                                  )
-                                "
-                                aria-label="Ver archivos de contadores"
-                              >
-                                <i class="pi pi-file-pdf text-sm"></i>
-                              </button>
-
-                              <button
-                                pButton
-                                type="button"
-                                tooltipPosition="top"
-                                iconOnly
-                                pTooltip="Ver versión del software"
-                                aria-label="Ver versión del software"
-                                (click)="
-                                  url.set(
-                                    `https://osticket.cechriza.com/system/vista/ajax/file_version/version_ticket_${event.ticket.ticketId}.pdf`
-                                  )
-                                "
-                              >
-                                <i class="pi pi-microchip text-sm"></i>
-                              </button>
-
-                              <button
-                                pButton
-                                type="button"
-                                pTooltip="Ver informe técnico"
-                                tooltipPosition="top"
-                                iconOnly
-                                aria-label="Ver informe técnico"
-                                (click)="
-                                  url.set(
-                                    `https://osticket.cechriza.com/system/vista/ajax/informe_tecnico/tecnico_ticket_${event.ticket.ticketId}.pdf`
-                                  )
-                                "
-                              >
-                                <i class="pi pi-address-book text-sm"></i>
-                              </button>
-                            </div>
+                                class="size-2 rounded-full"
+                                [ngClass]="statusDotClass(event.ticket)"
+                              ></span>
+                              {{ event.status }}
+                            </span>
                           </div>
 
-                          <h3
-                            class="mt-3 wrap-break-word text-lg font-extrabold leading-6 text-slate-950"
-                          >
-                            {{ event.subject }}
-                          </h3>
-
-                          <p class="mt-2 text-sm font-medium text-slate-500">
-                            {{ event.author }}
-                          </p>
+                          <div class="flex items-center gap-1 ml-auto">
+                            <a
+                              pButton
+                              type="button"
+                              variant="outlined"
+                              class="bg-primary-50"
+                              pTooltip="Ver ticket"
+                              tooltipPosition="top"
+                              iconOnly
+                              raised
+                              [routerLink]="['/tickets', event.ticket.ticketId]"
+                              aria-label="Ver ticket"
+                            >
+                              <i class="pi pi-eye text-sm"></i>
+                            </a>
+                          </div>
                         </div>
 
-                        <time
-                          class="text-sm font-semibold text-slate-500 md:hidden"
+                        <h3
+                          class="mt-3 wrap-break-word text-lg font-extrabold leading-6 text-slate-950"
                         >
-                          {{ event.date | date: "dd MMM yyyy" }}
-                        </time>
+                          {{ event.subject }}
+                        </h3>
+
+                        <p class="mt-2 text-sm font-medium text-slate-500">
+                          {{ event.author }}
+                        </p>
                       </div>
-                    </article>
-                  </ng-template>
-                </p-timeline>
-              </ng-template>
-            </app-error-boundary>
-          </section>
+
+                      <time
+                        class="text-sm font-semibold text-slate-500 md:hidden"
+                      >
+                        {{ event.date | date: "dd MMM yyyy" }}
+                      </time>
+                    </div>
+                  </article>
+                </ng-template>
+              </p-timeline>
+            </ng-template>
+          </app-error-boundary>
         </section>
-      </div>
+      </section>
     </div>
+    <!-- </div> -->
   </app-blank>
 </div>
+
 @defer (when !!url(); prefetch on idle) {
   @if (url()) {
     <app-document-details-dialog [(url)]="url" />

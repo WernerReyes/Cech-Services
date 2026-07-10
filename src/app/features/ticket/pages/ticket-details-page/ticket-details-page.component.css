@@ -1,0 +1,13 @@
+:host {
+  display: block;
+}
+
+:host ::ng-deep .cech-ticket-document-dialog .p-dialog-content {
+  height: calc(90vh - 10rem);
+  padding: 0;
+}
+
+:host ::ng-deep .cech-ticket-document-dialog iframe {
+  display: block;
+  border: 0;
+}

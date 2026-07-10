@@ -12,13 +12,14 @@ import { AppBlankComponent } from "@shared/layout/app-blank/app-blank.component"
 
 import { ButtonModule } from "primeng/button";
 import { TimelineModule } from "primeng/timeline";
-
-import { PageBreadcrumbComponent } from "@app/shared/components/common/page-breadcrumb/page-breadcrumb.component";
-import { ErrorBoundaryComponent } from "@app/shared/components/error/error-boundary.component";
 import { TooltipModule } from "primeng/tooltip";
-import type { Machine, MachineTicketHistory } from "../../machine.model";
-import { MachineService } from "../../machine.service";
+
+import type { Machine, MachineTicketHistory } from "@features/machine/machine.model";
+import { PageBreadcrumbComponent } from "@shared/components/common/page-breadcrumb/page-breadcrumb.component";
+import { ErrorBoundaryComponent } from "@shared/components/error/error-boundary.component";
+import { MachineService } from "@features/machine/machine.service";
 import { DocumentDetailsDialogComponent } from "./components/document-details-dialog/document-details-dialog.component";
+import { TicketService } from "@features/ticket/ticket.service";
 
 @Component({
   selector: "app-machine-details-page",
@@ -33,13 +34,13 @@ import { DocumentDetailsDialogComponent } from "./components/document-details-di
     TooltipModule,
     TimelineModule,
     PageBreadcrumbComponent,
-  
   ],
   templateUrl: "./machine-details-page.component.html",
   styleUrl: "./machine-details-page.component.css",
 })
 export default class MachineDetailsPageComponent {
   readonly machineService = inject(MachineService);
+  readonly ticketService = inject(TicketService);
 
   id = input<string | null>(null);
 
@@ -54,6 +55,14 @@ export default class MachineDetailsPageComponent {
       : "Detalles del Equipo",
   );
 
+  protected readonly allowBackRoutes = computed<string[]>(() => {
+    const ticketId = this.ticketService.selectedTicketId();
+    const base = ["/machines", "/"];
+    if (ticketId) {
+      return [...base, `/tickets/${ticketId}`];
+    }
+    return base;
+  });
 
   private readonly setMachineById = effect(() => {
     const machineId = this.id();

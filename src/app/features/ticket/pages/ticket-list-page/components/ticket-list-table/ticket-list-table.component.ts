@@ -4,11 +4,10 @@ import {
   computed,
   inject,
   linkedSignal,
-  signal
+  signal,
 } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { RouterLink } from "@angular/router";
-
 
 import { ButtonModule } from "primeng/button";
 import { FloatLabelModule } from "primeng/floatlabel";
@@ -17,10 +16,10 @@ import { InputIconModule } from "primeng/inputicon";
 import { InputTextModule } from "primeng/inputtext";
 import { SelectModule } from "primeng/select";
 import { TableModule } from "primeng/table";
+import { TooltipModule } from "primeng/tooltip";
 
 import { TicketService } from "@app/features/ticket/ticket.service";
 import { ErrorBoundaryComponent } from "@app/shared/components/error/error-boundary.component";
-import { MachineTicketHistory } from "@app/features/machine/machine.model";
 import { Ticket } from "@app/features/ticket/ticket.model";
 
 @Component({
@@ -35,6 +34,7 @@ import { Ticket } from "@app/features/ticket/ticket.model";
     InputIconModule,
     FloatLabelModule,
     SelectModule,
+    TooltipModule,
     DatePipe,
     ErrorBoundaryComponent,
   ],

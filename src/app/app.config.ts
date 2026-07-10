@@ -31,24 +31,6 @@ import { BrandingService } from "@core/services/branding.service";
 // 2. Registra los datos del idioma
 registerLocaleData(localeEs);
 
-// const customPreset = definePreset(Aura, {
-//   semantic: {
-//     primary: {
-//       50: "#fff1f0",
-//       100: "#ffe1df",
-//       200: "#ffc8c4",
-//       300: "#ffa19a",
-//       400: "#ff6d63",
-//       500: "#EC111A", // <- Tu color base principal
-//       600: "#cc140d",
-//       700: "#ab0d07",
-//       800: "#8e0e0a",
-//       900: "#75120f",
-//       950: "#410503",
-//     },
-//   },
-// });
-
 function initializeApp() {
   const authService = inject(AuthService);
   const brandingService = inject(BrandingService);
