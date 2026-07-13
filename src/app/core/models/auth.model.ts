@@ -12,7 +12,9 @@ export interface Branding {
   idTenantConfig: number;
   idTenant: number;
   logoGrandeUrl: string;
+  logoGrandeEscala: number;
   logoPequenoUrl: string;
+  logoPequenoEscala: number;
   colorPrimario: string;
 }
 

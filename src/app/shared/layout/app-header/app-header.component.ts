@@ -12,10 +12,11 @@ import { UserDropdownComponent } from "../../components/header/user-dropdown/use
 import { SidebarService } from "../../services/sidebar.service";
 import { AuthService } from "@app/core/services/auth.service";
 import { computed } from '@angular/core';
+import { FormField } from "@angular/forms/signals";
 
 @Component({
   selector: "app-header",
-  imports: [CommonModule, RouterModule, UserDropdownComponent],
+  imports: [CommonModule, RouterModule, UserDropdownComponent, FormField],
   templateUrl: "./app-header.component.html",
 })
 export class AppHeaderComponent {

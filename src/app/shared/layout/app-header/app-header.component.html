@@ -43,12 +43,12 @@
         <img class="hidden dark:block" src="/images/logo/logo-dark.svg" alt="Logo" />
       </a> -->
 
-      <a routerLink="/" class="flex h-24 w-full  items-center px-5 xl:hidden">
+      <a routerLink="/" class="flex h-24 w-full items-center px-5 xl:hidden">
         <img
           [src]="branding()?.logoGrandeUrl"
           alt="Logo"
-          
-          class="block mx-auto scale-[2] md:scale-[4] h-10 object-contain object-left"
+          [style.transform]="`scale(${branding()?.logoGrandeEscala || 1})`"
+          class="block mx-auto h-28 object-contain object-left"
         />
       </a>
       <button

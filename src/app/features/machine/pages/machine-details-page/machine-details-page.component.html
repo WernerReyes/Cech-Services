@@ -9,8 +9,6 @@
       />
     </ng-template>
 
-    <!-- <div class="mx-auto flex w-full flex-col gap-6"> -->
-    {{ statusCode() || 'dsdsdsds' }}
 
     @if (!statusCode() || statusCode() !== HttpStatusCode.Ok) {
       <app-error-page
