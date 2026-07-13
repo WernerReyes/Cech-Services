@@ -10,14 +10,14 @@
     </ng-template>
 
 
-    @if (!statusCode() || statusCode() !== HttpStatusCode.Ok) {
+    <!-- @if (!statusCode() || statusCode() !== HttpStatusCode.Ok) {
       <app-error-page
         [statusCode]="statusCode() || null"
         class="w-full"
         errorMessage="Error al cargar los detalles del equipo."
       />
     } 
-    @else {
+    @else { -->
       <div class="mx-auto flex w-full flex-col gap-6">
         <a
           pButton
@@ -345,7 +345,7 @@
           </section>
         </section>
       </div>
-    }
+    <!-- } -->
     <!-- </div> -->
   </app-blank>
 </div>

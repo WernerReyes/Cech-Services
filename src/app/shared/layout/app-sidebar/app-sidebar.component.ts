@@ -45,11 +45,11 @@ export class AppSidebarComponent {
       path: "/agencies",
       new: true,
     },
-    {
-      name: "Equipos",
-      icon: "pi-warehouse",
-      path: "/machines",
-    },
+    // {
+    //   name: "Equipos",
+    //   icon: "pi-warehouse",
+    //   path: "/machines",
+    // },
     {
       name: "Tickets",
       icon: "pi-ticket",

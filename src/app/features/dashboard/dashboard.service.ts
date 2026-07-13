@@ -8,6 +8,13 @@ import type {
   Machine,
   MachineTicketHistory,
 } from "@features/machine/machine.model";
+import type { CatalogValue } from "@features/client/client.model";
+
+export interface CorrectiveTicketsByMachine {
+  agencia: CatalogValue;
+  equipo: CatalogValue;
+  numeroCorrectivos: number;
+}
 
 @Service({
   autoProvided: false,
@@ -33,6 +40,20 @@ export class DashboardService {
     {
       defaultValue: [],
       parse: (response) => (response as ApiResponse<Machine[]>).data ?? [],
+    },
+  );
+
+  readonly correctivesByMachine = httpResource<CorrectiveTicketsByMachine[]>(
+    () => `${this.config.apiUrl}/tickets/correctivos/por-equipo`,
+    {
+      defaultValue: [],
+      parse: (response) => {
+        const payload = response as
+          | ApiResponse<CorrectiveTicketsByMachine[]>
+          | CorrectiveTicketsByMachine[];
+
+        return Array.isArray(payload) ? payload : (payload.data ?? []);
+      },
     },
   );
 

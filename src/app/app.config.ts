@@ -5,8 +5,10 @@ import {
   provideAppInitializer,
 } from "@angular/core";
 import {
+  PreloadAllModules,
   provideRouter,
   withComponentInputBinding,
+  withPreloading,
   withViewTransitions,
 } from "@angular/router";
 import { providePrimeNG } from "primeng/config";
@@ -44,7 +46,7 @@ function initializeApp() {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withComponentInputBinding(), withViewTransitions()),
+    provideRouter(routes, withComponentInputBinding(), withViewTransitions(), withPreloading(PreloadAllModules)),
     { provide: LOCALE_ID, useValue: "es" },
     MessageService,
     {

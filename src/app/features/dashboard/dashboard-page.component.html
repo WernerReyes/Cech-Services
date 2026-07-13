@@ -402,7 +402,7 @@
               </h2>
 
               <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
-                Primeros equipos disponibles en la agencia seleccionada.
+                Equipos con correctivos registrados en la agencia seleccionada.
               </p>
             </div>
           </div>
@@ -418,9 +418,8 @@
         </div>
 
         <app-error-boundary
-          [resource]="dashboard.machines"
+          [resource]="dashboard.correctivesByMachine"
           fallbackType="card"
-          (successData)="machines.set($event || [])"
         >
           <ng-template #loading>
             <div class="mt-6 grid gap-3 md:grid-cols-2">
@@ -441,64 +440,91 @@
               </div>
 
               <p class="text-sm font-bold text-slate-800">
-                No hay equipos para mostrar
+                No hay correctivos para mostrar
               </p>
 
               <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
-                Selecciona otra agencia para cargar su inventario.
+                Todavia no hay correctivos registrados por equipo.
               </p>
             </div>
           </ng-template>
 
           <ng-template #content>
-            <div class="mt-6 grid gap-3 md:grid-cols-2">
-              @for (machine of recentMachines(); track machine.idEquipo) {
-                <a
-                  [routerLink]="['/machines', machine.idEquipo]"
-                  [style.view-transition-name]="'machine-' + machine.idEquipo"
-                  class="group grid gap-3 rounded-2xl border bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-                  [ngClass]="
-                    selectedMachine()?.idEquipo === machine.idEquipo
-                      ? 'border-primary/50 bg-primary/5'
-                      : 'border-slate-200'
-                  "
-                >
-                  <div class="flex min-w-0 items-center gap-3">
-                    <div
-                      class="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-white text-primary ring-1 ring-slate-200 transition group-hover:ring-primary/30"
-                    >
-                      <i class="pi pi-microchip text-sm"></i>
-                    </div>
-
-                    <div class="min-w-0">
-                      <p class="truncate text-sm font-extrabold text-slate-950">
-                        {{ machine.equipo }}
-                      </p>
-
-                      <p
-                        class="truncate text-xs font-bold uppercase tracking-wide text-slate-500"
+            @if (featuredCorrectiveMachines().length) {
+              <div class="mt-6 grid gap-3 md:grid-cols-2">
+                @for (
+                  machine of featuredCorrectiveMachines();
+                  track machine.equipo.id
+                ) {
+                  <a
+                    [routerLink]="['/machines', machine.equipo.id]"
+                    [style.view-transition-name]="
+                      'machine-' + machine.equipo.id
+                    "
+                    class="group flex justify-between flex-wrap gap-3 rounded-2xl border bg-white p-4 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                    [ngClass]="
+                      selectedMachine()?.idEquipo === machine.equipo.id
+                        ? 'border-primary/50 bg-primary/5'
+                        : 'border-slate-200'
+                    "
+                  >
+                    <div class="flex min-w-0 items-center gap-3">
+                      <div
+                        class="flex size-11 shrink-0 items-center justify-center rounded-2xl bg-white text-primary ring-1 ring-slate-200 transition group-hover:ring-primary/30"
                       >
-                        {{ machine.modelo.descripcion || "Sin modelo" }}
-                      </p>
+                        <i class="pi pi-microchip text-sm"></i>
+                      </div>
+
+                      <div class="min-w-0">
+                        <p
+                          class="truncate text-sm font-extrabold text-slate-950"
+                        >
+                          {{ machine.equipo.valor }}
+                        </p>
+
+                        <p
+                          class="truncate text-xs font-bold uppercase tracking-wide text-slate-500"
+                        >
+                          {{ machine.agencia.valor }}
+                        </p>
+                      </div>
                     </div>
-                  </div>
 
-                  <div class="flex flex-wrap items-center gap-2 pl-14">
-                    <span
-                      class="rounded-full bg-white px-3 py-1 text-xs font-bold text-slate-700 ring-1 ring-slate-200"
-                    >
-                      #{{ machine.idEquipo }}
-                    </span>
+                    <div class="flex flex-wrap items-center gap-2 pl-14">
+                     
+                      <span
+                        class="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary ring-1 ring-primary/20"
+                      >
+                        {{ machine.numeroCorrectivos }}
+                        {{
+                          machine.numeroCorrectivos === 1
+                            ? "correctivo"
+                            : "correctivos"
+                        }}
+                      </span>
+                    </div>
+                  </a>
+                }
+              </div>
+            } @else {
+              <div
+                class="mt-6 rounded-3xl border border-dashed border-slate-300 bg-slate-50 px-6 py-12 text-center"
+              >
+                <div
+                  class="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl bg-white text-slate-500 ring-1 ring-slate-200"
+                >
+                  <i class="pi pi-inbox text-lg"></i>
+                </div>
 
-                    <span
-                      class="rounded-full bg-primary/10 px-3 py-1 text-xs font-bold text-primary ring-1 ring-primary/20"
-                    >
-                      {{ machine.mesGarantia || 0 }} meses
-                    </span>
-                  </div>
-                </a>
-              }
-            </div>
+                <p class="text-sm font-bold text-slate-800">
+                  No hay correctivos para esta agencia
+                </p>
+
+                <p class="mt-1 text-sm font-medium leading-6 text-slate-500">
+                  Selecciona otra agencia para revisar sus equipos destacados.
+                </p>
+              </div>
+            }
           </ng-template>
         </app-error-boundary>
       </section>
@@ -607,7 +633,7 @@
       >
         <div class="flex items-center gap-4">
           <div
-            class="flex size-12 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/15"
+            class="flex size-10 items-center justify-center rounded-2xl bg-primary/10 text-primary ring-1 ring-primary/15"
           >
             <i class="pi pi-clock text-lg"></i>
           </div>
@@ -617,13 +643,7 @@
               Historial reciente
             </h2>
 
-            <p class="mt-1 text-sm font-medium text-slate-500">
-              @if (selectedMachine()) {
-                Actividad reciente del equipo
-              } @else {
-                Actividad reciente de todos los equipos
-              }
-            </p>
+           
           </div>
         </div>
 

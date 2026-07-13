@@ -42,7 +42,10 @@ import { AgencyService } from "@features/agency/agency.service";
 import { MachineService } from "@features/machine/machine.service";
 import { TicketService } from "@features/ticket/ticket.service";
 import { ErrorBoundaryComponent } from "@shared/components/error/error-boundary.component";
-import { DashboardService } from "./dashboard.service";
+import {
+  DashboardService,
+  type CorrectiveTicketsByMachine,
+} from "./dashboard.service";
 import { AuthService } from "@app/core/services/auth.service";
 
 interface SummaryCard {
@@ -172,9 +175,23 @@ export default class DashboardComponent {
     "Dic",
   ];
 
-  protected readonly recentMachines = computed(() =>
-    this.machines().slice(0, 6),
-  );
+  protected readonly featuredCorrectiveMachines = computed<
+    CorrectiveTicketsByMachine[]
+  >(() => {
+    const selectedAgency = this.selectedAgency();
+
+    if (!selectedAgency) {
+      return [];
+    }
+
+    return [...this.dashboard.correctivesByMachine.value()]
+      .filter((item) => item.agencia.id === selectedAgency.id)
+      .sort(
+        (current, next) =>
+          next.numeroCorrectivos - current.numeroCorrectivos,
+      )
+      .slice(0, 6);
+  });
 
   protected readonly recentTickets = computed(() =>
     [...this.tickets()]

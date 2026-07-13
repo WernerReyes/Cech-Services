@@ -1,22 +1,20 @@
 import { CommonModule } from "@angular/common";
 import {
-  ChangeDetectionStrategy,
   Component,
+  computed,
   ElementRef,
   inject,
-  viewChild,
+  viewChild
 } from "@angular/core";
 import { RouterModule } from "@angular/router";
+import { AuthService } from "@app/core/services/auth.service";
 import { SessionService } from "@core/services/session.service";
 import { UserDropdownComponent } from "../../components/header/user-dropdown/user-dropdown.component";
 import { SidebarService } from "../../services/sidebar.service";
-import { AuthService } from "@app/core/services/auth.service";
-import { computed } from '@angular/core';
-import { FormField } from "@angular/forms/signals";
 
 @Component({
   selector: "app-header",
-  imports: [CommonModule, RouterModule, UserDropdownComponent, FormField],
+  imports: [CommonModule, RouterModule, UserDropdownComponent],
   templateUrl: "./app-header.component.html",
 })
 export class AppHeaderComponent {
