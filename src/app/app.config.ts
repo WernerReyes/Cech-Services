@@ -5,15 +5,13 @@ import {
   provideAppInitializer,
 } from "@angular/core";
 import {
-  PreloadAllModules,
   provideRouter,
   withComponentInputBinding,
-  withPreloading,
+  withInMemoryScrolling,
   withViewTransitions,
 } from "@angular/router";
 import { providePrimeNG } from "primeng/config";
 
-import { definePreset } from "@primeuix/themes";
 import { routes } from "./app.routes";
 
 import { provideHttpClient, withInterceptors } from "@angular/common/http";
@@ -29,6 +27,7 @@ import { MessageService } from "primeng/api";
 import { registerLocaleData } from "@angular/common";
 import localeEs from "@angular/common/locales/es";
 import { BrandingService } from "@core/services/branding.service";
+import { definePreset, palette } from "@primeuix/themes";
 
 // 2. Registra los datos del idioma
 registerLocaleData(localeEs);
@@ -37,16 +36,31 @@ function initializeApp() {
   const authService = inject(AuthService);
   const brandingService = inject(BrandingService);
   return authService.verifyAuthentication().then((user) => {
-    const primaryColor = user?.branding?.colorPrimario
+    const primaryColor = user?.branding?.colorPrimario;
     brandingService.applyTenantColor(primaryColor);
-
     return !!user;
+  });
+}
+
+function customDefaultTheme() {
+  return definePreset(Aura, {
+    semantic: {
+      primary: palette(environment.primaryColor),
+    },
   });
 }
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes, withComponentInputBinding(), withViewTransitions(), withPreloading(PreloadAllModules)),
+    provideRouter(
+      routes,
+      withComponentInputBinding(),
+      withViewTransitions(),
+      withInMemoryScrolling({
+        scrollPositionRestoration: "top",
+        anchorScrolling: "enabled",
+      }),
+    ),
     { provide: LOCALE_ID, useValue: "es" },
     MessageService,
     {
@@ -58,14 +72,12 @@ export const appConfig: ApplicationConfig = {
       license:
         "eyJpZCI6ImEwOTVlYzIwLWVlZTgtNGQ4Zi05MGQwLWNkMjMxN2EzNjIwMSIsInByb2R1Y3QiOiJwcmltZXVpIiwidGllciI6ImNvbW11bml0eSIsInR5cGUiOiJkZXYiLCJpYXQiOjE3ODI3ODkxMDQsImV4cCI6MTgxNDMyNTEwNH0.SV5OMdhUyqanU0h82Wu_niJ3eIjaOu5Y4YvgWab1tkLvBh5DcDBQmEBwAGv_caRkbytvS68yqs1lKv9zQ0w2CQ",
       theme: {
-        preset: Aura,
+        preset: customDefaultTheme(),
         options: {
           darkModeSelector: ".custom-dark",
         },
       },
     }),
-
-    // 💥 REGISTRO DEL INICIALIZADOR GLOBAL
     provideAppInitializer(initializeApp),
   ],
 };

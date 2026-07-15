@@ -114,12 +114,10 @@ export default class DashboardComponent {
   protected readonly agencies = this.dashboard.agencies;
   protected readonly selectedAgency = this.dashboard.selectedAgency;
   protected readonly selectedMachine = this.dashboard.selectedMachine;
-  private readonly selectedMachineTicketsResource =
-    this.dashboard.tickets as unknown as HttpResourceRef<DashboardTicket[]>;
-  private readonly allTicketsResource =
-    this.ticketService.getAllTickets as unknown as HttpResourceRef<
-      DashboardTicket[]
-    >;
+  private readonly selectedMachineTicketsResource = this.dashboard
+    .tickets as unknown as HttpResourceRef<DashboardTicket[]>;
+  private readonly allTicketsResource = this.ticketService
+    .getAllTickets as unknown as HttpResourceRef<DashboardTicket[]>;
 
   public readonly machines = signal<Machine[]>([]);
   protected readonly ticketResource = computed<
@@ -153,7 +151,9 @@ export default class DashboardComponent {
 
   protected readonly ticketMonthRange = signal<Date[] | null>(null);
 
-  private readonly chartPrimaryColor = computed(() => this.authService.branding()?.colorPrimario || "#0ea5e9");
+  private readonly chartPrimaryColor = computed(
+    () => this.authService.branding()?.colorPrimario || "#0ea5e9",
+  );
   private readonly chartSuccessColor = "#10b981";
   private readonly chartMutedColor = "#64748b";
   private readonly chartGridColor = "#e5e7eb";
@@ -187,8 +187,7 @@ export default class DashboardComponent {
     return [...this.dashboard.correctivesByMachine.value()]
       .filter((item) => item.agencia.id === selectedAgency.id)
       .sort(
-        (current, next) =>
-          next.numeroCorrectivos - current.numeroCorrectivos,
+        (current, next) => next.numeroCorrectivos - current.numeroCorrectivos,
       )
       .slice(0, 6);
   });
@@ -290,171 +289,173 @@ export default class DashboardComponent {
     )}`;
   });
 
-  protected readonly ticketTrendChart = computed<TicketTrendChartOptions>(() => {
-    const selectedRange = this.ticketMonthRange();
+  protected readonly ticketTrendChart = computed<TicketTrendChartOptions>(
+    () => {
+      const selectedRange = this.ticketMonthRange();
 
-    let startDate: Date;
-    let endDate: Date;
+      let startDate: Date;
+      let endDate: Date;
 
-    if (
-      selectedRange &&
-      selectedRange.length === 2 &&
-      selectedRange[0] &&
-      selectedRange[1]
-    ) {
-      startDate = new Date(
-        selectedRange[0].getFullYear(),
-        selectedRange[0].getMonth(),
-        1,
-      );
+      if (
+        selectedRange &&
+        selectedRange.length === 2 &&
+        selectedRange[0] &&
+        selectedRange[1]
+      ) {
+        startDate = new Date(
+          selectedRange[0].getFullYear(),
+          selectedRange[0].getMonth(),
+          1,
+        );
 
-      endDate = new Date(
-        selectedRange[1].getFullYear(),
-        selectedRange[1].getMonth() + 1,
-        0,
-        23,
-        59,
-        59,
-        999,
-      );
-    } else {
-      const baseDate = new Date();
+        endDate = new Date(
+          selectedRange[1].getFullYear(),
+          selectedRange[1].getMonth() + 1,
+          0,
+          23,
+          59,
+          59,
+          999,
+        );
+      } else {
+        const baseDate = new Date();
 
-      startDate = new Date(
-        baseDate.getFullYear(),
-        baseDate.getMonth() - 5,
-        1,
-      );
+        startDate = new Date(
+          baseDate.getFullYear(),
+          baseDate.getMonth() - 5,
+          1,
+        );
 
-      endDate = new Date(
-        baseDate.getFullYear(),
-        baseDate.getMonth() + 1,
-        0,
-        23,
-        59,
-        59,
-        999,
-      );
-    }
-
-    const labels: string[] = [];
-    const counts: number[] = [];
-
-    const cursor = new Date(startDate.getFullYear(), startDate.getMonth(), 1);
-
-    while (cursor <= endDate) {
-      labels.push(
-        `${this.monthNames[cursor.getMonth()]} ${cursor.getFullYear()}`,
-      );
-
-      counts.push(0);
-      cursor.setMonth(cursor.getMonth() + 1);
-    }
-
-    for (const ticket of this.tickets()) {
-      const ticketDate = new Date(ticket.fechaSolicitud);
-
-      if (Number.isNaN(ticketDate.getTime())) {
-        continue;
+        endDate = new Date(
+          baseDate.getFullYear(),
+          baseDate.getMonth() + 1,
+          0,
+          23,
+          59,
+          59,
+          999,
+        );
       }
 
-      if (ticketDate < startDate || ticketDate > endDate) {
-        continue;
+      const labels: string[] = [];
+      const counts: number[] = [];
+
+      const cursor = new Date(startDate.getFullYear(), startDate.getMonth(), 1);
+
+      while (cursor <= endDate) {
+        labels.push(
+          `${this.monthNames[cursor.getMonth()]} ${cursor.getFullYear()}`,
+        );
+
+        counts.push(0);
+        cursor.setMonth(cursor.getMonth() + 1);
       }
 
-      const diffMonths =
-        (ticketDate.getFullYear() - startDate.getFullYear()) * 12 +
-        (ticketDate.getMonth() - startDate.getMonth());
+      for (const ticket of this.tickets()) {
+        const ticketDate = new Date(ticket.fechaSolicitud);
 
-      if (diffMonths >= 0 && diffMonths < counts.length) {
-        counts[diffMonths]++;
+        if (Number.isNaN(ticketDate.getTime())) {
+          continue;
+        }
+
+        if (ticketDate < startDate || ticketDate > endDate) {
+          continue;
+        }
+
+        const diffMonths =
+          (ticketDate.getFullYear() - startDate.getFullYear()) * 12 +
+          (ticketDate.getMonth() - startDate.getMonth());
+
+        if (diffMonths >= 0 && diffMonths < counts.length) {
+          counts[diffMonths]++;
+        }
       }
-    }
 
-    return {
-      series: [
-        {
-          name: "Tickets creados",
-          data: counts,
+      return {
+        series: [
+          {
+            name: "Tickets creados",
+            data: counts,
+          },
+        ],
+        chart: {
+          type: "area",
+          height: 320,
+          toolbar: {
+            show: false,
+          },
+          zoom: {
+            enabled: false,
+          },
+          fontFamily: "inherit",
+          foreColor: this.chartLabelColor,
+          animations: {
+            enabled: true,
+            speed: 600,
+          },
         },
-      ],
-      chart: {
-        type: "area",
-        height: 320,
-        toolbar: {
-          show: false,
-        },
-        zoom: {
+        colors: [this.chartPrimaryColor()],
+        dataLabels: {
           enabled: false,
         },
-        fontFamily: "inherit",
-        foreColor: this.chartLabelColor,
-        animations: {
-          enabled: true,
-          speed: 600,
+        stroke: {
+          curve: "smooth",
+          width: 3,
+          colors: [this.chartPrimaryColor()],
         },
-      },
-      colors: [this.chartPrimaryColor()],
-      dataLabels: {
-        enabled: false,
-      },
-      stroke: {
-        curve: "smooth",
-        width: 3,
-        colors: [this.chartPrimaryColor()],
-      },
-      fill: {
-        type: "gradient",
-        gradient: {
-          shadeIntensity: 0.5,
-          opacityFrom: 0.24,
-          opacityTo: 0.02,
-          stops: [0, 90, 100],
-        },
-      },
-      grid: {
-        borderColor: this.chartGridColor,
-        strokeDashArray: 4,
-        padding: {
-          left: 8,
-          right: 8,
-        },
-      },
-      xaxis: {
-        categories: labels,
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-        labels: {
-          style: {
-            colors: this.chartLabelColor,
-            fontSize: "12px",
-            fontWeight: 700,
+        fill: {
+          type: "gradient",
+          gradient: {
+            shadeIntensity: 0.5,
+            opacityFrom: 0.24,
+            opacityTo: 0.02,
+            stops: [0, 90, 100],
           },
         },
-      },
-      yaxis: {
-        min: 0,
-        forceNiceScale: true,
-        labels: {
-          style: {
-            colors: this.chartLabelColor,
-            fontSize: "12px",
-            fontWeight: 700,
+        grid: {
+          borderColor: this.chartGridColor,
+          strokeDashArray: 4,
+          padding: {
+            left: 8,
+            right: 8,
           },
         },
-      },
-      tooltip: {
-        theme: "light",
-        y: {
-          formatter: (value: number) => `${value} tickets`,
+        xaxis: {
+          categories: labels,
+          axisBorder: {
+            show: false,
+          },
+          axisTicks: {
+            show: false,
+          },
+          labels: {
+            style: {
+              colors: this.chartLabelColor,
+              fontSize: "12px",
+              fontWeight: 700,
+            },
+          },
         },
-      },
-    };
-  });
+        yaxis: {
+          min: 0,
+          forceNiceScale: true,
+          labels: {
+            style: {
+              colors: this.chartLabelColor,
+              fontSize: "12px",
+              fontWeight: 700,
+            },
+          },
+        },
+        tooltip: {
+          theme: "light",
+          y: {
+            formatter: (value: number) => `${value} tickets`,
+          },
+        },
+      };
+    },
+  );
 
   protected readonly ticketStatusChart = computed<TicketStatusChartOptions>(
     () => {
@@ -537,26 +538,15 @@ export default class DashboardComponent {
 
   private readonly setInitialAgency = effect(() => {
     const agencies = this.agencies();
-
     if (!this.selectedAgency() && agencies.length) {
       untracked(() => this.dashboard.selectedAgency.set(agencies[0]));
     }
   });
 
-  // private readonly setInitialMachine = effect(() => {
-  //   const machines = this.machines();
-  //   const selectedMachine = this.selectedMachine();
-
-  //   if (
-  //     machines.length &&
-  //     (!selectedMachine ||
-  //       !machines.some(
-  //         (machine) => machine.idEquipo === selectedMachine.idEquipo,
-  //       ))
-  //   ) {
-  //     untracked(() => this.dashboard.selectedMachine.set(machines[0]));
-  //   }
-  // });
+  protected viewTicket(ticket: DashboardTicket) {
+    this.ticketService.selectedTicketId.set(ticket.ticketId);
+    this.router.navigate(["/tickets", ticket.ticketId]);
+  }
 
   protected onAgencyChange(agency: Agency | null) {
     this.dashboard.selectedAgency.set(agency);

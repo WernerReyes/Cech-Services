@@ -6,12 +6,18 @@ export const ticketRoutes: Routes = [
     loadComponent: () =>
       import("./pages/ticket-list-page/ticket-list-page.component"),
     title: "Tickets",
+    data: {
+      preload: true,
+    },
   },
   {
     path: "tickets/create",
     loadComponent: () =>
       import("./pages/ticket-create-page/ticket-create-page.component"),
     title: "Crear ticket",
+    data: {
+      preload: true,
+    }
   },
   {
     path: "tickets/:id",

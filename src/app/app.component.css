@@ -27,3 +27,24 @@
     background-color: var(--color-primary-600) !important;
     color: white !important;
 }
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999999999999999999999; /* Asegura que esté por encima de todo */
+}
+
+
+.spinner {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #007bff;
+  /* Aquí puedes reemplazar el texto con un icono de Material o FontAwesome */
+}

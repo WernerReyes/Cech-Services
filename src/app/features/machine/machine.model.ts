@@ -1,4 +1,4 @@
-import type { CatalogValue } from "../client/client.model";
+import type { CatalogValue } from "@core/models/auth.model";
 
 export interface Machine {
   idEquipo: number;

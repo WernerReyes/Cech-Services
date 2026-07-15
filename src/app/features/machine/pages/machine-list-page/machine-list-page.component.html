@@ -1,13 +1,16 @@
 <app-blank [title]="title()">
-        <ng-template #header>
-            <app-page-breadcrumb [pageTitle]="title()" icon="pi-warehouse" />
-        </ng-template>
+  <ng-template #header>
+    <app-page-breadcrumb
+      [pageTitle]="title()"
+      icon="pi-warehouse"
+      [back]="true"
+      [allowBackRoutes]="['/agencies']"
+    />
+  </ng-template>
 
-    <div class="flex flex-col gap-4">
-        <select-agency>
+  <div class="flex flex-col gap-4">
+    <select-agency> </select-agency>
 
-        </select-agency>
-
-        <machine-list-table></machine-list-table>
-    </div>
+    <machine-list-table></machine-list-table>
+  </div>
 </app-blank>

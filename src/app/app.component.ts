@@ -3,11 +3,14 @@
 import {
   AfterViewInit,
   Component,
+  computed,
   DOCUMENT,
-  inject
+  inject,
+  signal
 } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterModule } from "@angular/router";
 import { ToastModule } from "primeng/toast";
+import { AuthService } from "./core/services/auth.service";
 
 @Component({
   selector: "app-root",
@@ -17,8 +20,12 @@ import { ToastModule } from "primeng/toast";
   styleUrl: "./app.component.css",
 })
 export class AppComponent implements AfterViewInit {
-
   private readonly document = inject(DOCUMENT);
+  private readonly router = inject(Router);
+  private readonly authService = inject(AuthService);
+
+  protected isLoading = signal(false);
+  protected loadingLogo = computed(() => this.authService.branding()?.logoPequenoUrl || null);
 
   ngAfterViewInit(): void {
     setTimeout(() => {
@@ -27,5 +34,22 @@ export class AppComponent implements AfterViewInit {
         license.remove();
       }
     }, 0);
+  }
+
+
+   ngOnInit(): void {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        this.isLoading.set(true);
+      } 
+      
+      if (
+        event instanceof NavigationEnd ||
+        event instanceof NavigationCancel ||
+        event instanceof NavigationError
+      ) {
+        this.isLoading.set(false);
+      }
+    });
   }
 }

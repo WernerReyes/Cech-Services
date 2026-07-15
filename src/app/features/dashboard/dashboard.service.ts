@@ -1,5 +1,6 @@
 import { httpResource } from "@angular/common/http";
 import { computed, inject, Service, signal } from '@angular/core';
+import type { CatalogValue } from "@core/models/auth.model";
 import { APP_CONFIG } from "@core/config/app.config.tokens";
 import type { ApiResponse } from "@core/models/api.model";
 import type { Agency } from "@features/agency/agency.model";
@@ -8,7 +9,6 @@ import type {
   Machine,
   MachineTicketHistory,
 } from "@features/machine/machine.model";
-import type { CatalogValue } from "@features/client/client.model";
 
 export interface CorrectiveTicketsByMachine {
   agencia: CatalogValue;

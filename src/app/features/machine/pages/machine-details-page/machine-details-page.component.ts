@@ -14,21 +14,20 @@ import { ButtonModule } from "primeng/button";
 import { TimelineModule } from "primeng/timeline";
 import { TooltipModule } from "primeng/tooltip";
 
+import { HttpStatusCode } from "@angular/common/http";
+import { linkedSignal } from '@angular/core';
 import type { Machine, MachineTicketHistory } from "@features/machine/machine.model";
+import { MachineService } from "@features/machine/machine.service";
+import { TicketService } from "@features/ticket/ticket.service";
 import { PageBreadcrumbComponent } from "@shared/components/common/page-breadcrumb/page-breadcrumb.component";
 import { ErrorBoundaryComponent } from "@shared/components/error/error-boundary.component";
-import { MachineService } from "@features/machine/machine.service";
-import { DocumentDetailsDialogComponent } from "./components/document-details-dialog/document-details-dialog.component";
-import { TicketService } from "@features/ticket/ticket.service";
-import { HttpStatusCode } from "@angular/common/http";
 import { ErrorPageComponent } from "@shared/components/error/pages/error-page.component";
-import { linkedSignal } from '@angular/core';
 
 @Component({
   selector: "app-machine-details-page",
   imports: [
     AppBlankComponent,
-    DocumentDetailsDialogComponent,
+    
     RouterLink,
     ButtonModule,
     ErrorBoundaryComponent,

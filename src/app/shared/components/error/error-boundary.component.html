@@ -27,6 +27,9 @@
         [ngTemplateOutletContext]="{
           error: resource().error(),
           retry: resource().reload,
+          isLoading: resource().isLoading(),
+          code: this.resource().statusCode(),
+          errorMessage: errorMessageDisplay()
         }"
       ></ng-container>
     } @else {

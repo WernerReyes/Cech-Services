@@ -6,6 +6,9 @@ export const machineRoutes: Routes = [
     loadComponent: () =>
       import("./pages/machine-list-page/machine-list-page.component"),
     title: "Equipos",
+    data: {
+      preload: true,
+    }
   },
   {
     path: "machines/:id",

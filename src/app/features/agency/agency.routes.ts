@@ -5,5 +5,8 @@ export const agencyRoutes: Routes = [
     path: "agencies",
     loadComponent: () => import("./agency-page.component"),
     title: "Agencias",
+    data: {
+      preload: true,
+    },
   },
 ];

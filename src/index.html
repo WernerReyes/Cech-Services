@@ -1,14 +1,14 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Angular Ecommerce Dashboard | TailAdmin</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
+  <head>
+    <meta charset="utf-8" />
+    <title>CechServices</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  </head>
 
- <style>
+  <style>
     .first-loading-container {
       display: flex;
       flex-direction: column;
@@ -27,16 +27,55 @@
       animation: spin 1s linear infinite;
     }
     @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
     }
   </style>
-<body>
-  <app-root>
-    <div class="first-loading-container">
-      <div class="spinner"></div>
-      <p style="margin-top: 15px; color: #555;">Cargando aplicación...</p>
-    </div>
-  </app-root>
-</body>
+  <body>
+    <app-root>
+      <div
+        class="fixed inset-0 z-50 flex items-center justify-center bg-white/90 backdrop-blur-[2px]"
+      >
+        <div class="flex w-full items-center justify-center gap-0 px-6">
+          <!-- Línea izquierda -->
+          <div
+            class="h-0.75 flex-1 bg-linear-to-r from-transparent to-slate-300"
+          ></div>
+
+          <!-- Loader circular -->
+          <div
+            class="relative mx-0 flex size-40 shrink-0 items-center justify-center"
+          >
+            <!-- Círculo animado -->
+            <div
+              class="absolute inset-0 animate-spin rounded-full bg-[conic-gradient(var(--color-primary-500)_0deg_42deg,transparent_42deg_46deg,var(--color-primary-400)_46deg_88deg,transparent_88deg_92deg,var(--color-primary-200)_92deg_134deg,transparent_134deg_138deg,var(--color-primary-100)_138deg_180deg,transparent_180deg_184deg,var(--color-primary-300)_184deg_226deg,transparent_226deg_230deg,var(--color-primary-400)_230deg_272deg,transparent_272deg_276deg,var(--color-primary-400)_276deg_318deg,transparent_318deg_322deg,var(--color-primary-500)_322deg_360deg)]"
+            ></div>
+
+            <!-- Centro blanco para formar el aro -->
+            <div class="absolute inset-1.75 rounded-full bg-white"></div>
+
+            <!-- Logo o contenido central -->
+            <div
+              class="relative z-10 flex flex-col items-center justify-center"
+            >
+              <span
+                class="mt-2 text-xs font-medium tracking-wide text-slate-400"
+              >
+                Cargando...
+              </span>
+            </div>
+          </div>
+
+          <!-- Línea derecha -->
+          <div
+            class="h-0.75 flex-1 bg-linear-to-l from-transparent to-slate-300"
+          ></div>
+        </div>
+      </div>
+    </app-root>
+  </body>
 </html>

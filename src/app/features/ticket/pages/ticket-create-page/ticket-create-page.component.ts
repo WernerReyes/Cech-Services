@@ -22,8 +22,9 @@ import { MessageModule } from "primeng/message";
 import { MessageService } from "primeng/api";
 import { SelectModule } from "primeng/select";
 
-import type { CreateTicketResult, TicketCreateForm } from "../../ticket.model";
-import { TicketService } from "../../ticket.service";
+import type { CreateTicketResult, TicketCreateForm } from "@features/ticket/ticket.model";
+import { TicketService } from "@features/ticket/ticket.service";
+
 import { PageBreadcrumbComponent } from "@app/shared/components/common/page-breadcrumb/page-breadcrumb.component";
 import { ErrorBoundaryComponent } from "@app/shared/components/error/error-boundary.component";
 
@@ -213,7 +214,7 @@ export default class TicketCreatePageComponent {
 
       setTimeout(() => {
         this.router.navigate(["/machines", payload.idEquipo]);
-      }, 900);
+      }, 3500);
     }).catch((error) => {
       this.messageService.add({
         severity: "error",

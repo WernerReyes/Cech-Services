@@ -6,5 +6,8 @@ export const dashboardRoutes: Route[] = [
     pathMatch: "full",
     title: "Dashboard",
     loadComponent: () => import("./dashboard-page.component"),
+    data: {
+      preload: true,
+    },
   },
 ];

@@ -1,247 +1,256 @@
-<app-blank [title]="title()">
-  <ng-template #header>
-    <app-page-breadcrumb
-      [pageTitle]="title()"
-      icon="pi-ticket"
-      [back]="true"
-      [allowBackRoutes]="allowBackRoutes()"
-    />
-  </ng-template>
+<div
+  [style.view-transition-name]="'ticket-' + ticketService.selectedTicketId()"
+>
+  <app-blank [title]="title()">
+    <ng-template #header>
+      <app-page-breadcrumb
+        [pageTitle]="title()"
+        icon="pi-ticket"
+        [back]="true"
+        [allowBackRoutes]="allowBackRoutes()"
+      />
+    </ng-template>
 
-  @if (hasInvalidId()) {
-    <section
-      class="rounded-2xl border border-amber-200 bg-amber-50 px-6 py-8 text-amber-900"
-    >
-      <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <div
-          class="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-white text-amber-600 ring-1 ring-amber-200"
-        >
-          <i class="pi pi-exclamation-triangle text-xl"></i>
-        </div>
-
-        <div>
-          <h2 class="text-base font-extrabold">Ticket no válido</h2>
-          <p class="mt-1 text-sm font-medium">
-            Revisa el identificador de la URL o vuelve al listado de tickets.
-          </p>
-        </div>
-
-        <a
-          pButton
-          routerLink="/tickets"
-          class="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-amber-700 px-5 text-sm font-bold text-white shadow-sm transition hover:bg-amber-800 sm:ml-auto"
-        >
-          <i class="pi pi-list text-sm"></i>
-          <span>Ir al listado</span>
-        </a>
-      </div>
-    </section>
-  } @else {
-    <app-error-boundary
-      [resource]="ticketService.ticketDetail"
-      fallbackType="card"
-    >
-      <ng-template #loading>
-        <div class="grid gap-5 xl:grid-cols-[minmax(20rem,24rem)_1fr]">
-          <aside
-            class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
-          >
-            <div class="flex animate-pulse items-center gap-3">
-              <div class="size-12 rounded-2xl bg-slate-100"></div>
-              <div class="min-w-0 flex-1">
-                <div class="h-4 w-32 rounded bg-slate-100"></div>
-                <div class="mt-2 h-3 w-24 rounded bg-slate-100"></div>
-              </div>
-            </div>
-
-            <div class="mt-6 space-y-3">
-              @for (item of [1, 2, 3, 4, 5]; track item) {
-                <div class="h-16 rounded-xl bg-slate-100"></div>
-              }
-            </div>
-          </aside>
-
-          <section class="space-y-5">
-            @for (item of [1, 2, 3]; track item) {
-              <div
-                class="animate-pulse rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
-              >
-                <div class="h-5 w-48 rounded bg-slate-100"></div>
-                <div class="mt-5 grid gap-4 md:grid-cols-3">
-                  <div class="h-20 rounded-xl bg-slate-100"></div>
-                  <div class="h-20 rounded-xl bg-slate-100"></div>
-                  <div class="h-20 rounded-xl bg-slate-100"></div>
-                </div>
-              </div>
-            }
-          </section>
-        </div>
-      </ng-template>
-
-      <ng-template #empty>
-        <section
-          class="flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-white px-6 py-12 text-center shadow-sm"
-        >
+    @if (hasInvalidId()) {
+      <section
+        class="rounded-2xl border border-amber-200 bg-amber-50 px-6 py-8 text-amber-900"
+      >
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
           <div
-            class="mb-4 flex size-14 items-center justify-center rounded-2xl bg-slate-100 text-slate-500"
+            class="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-white text-amber-600 ring-1 ring-amber-200"
           >
-            <i class="pi pi-ticket text-2xl"></i>
+            <i class="pi pi-exclamation-triangle text-xl"></i>
           </div>
 
-          <p class="text-sm font-bold text-slate-800">
-            No se encontró el ticket
-          </p>
+          <div>
+            <h2 class="text-base font-extrabold">Ticket no válido</h2>
+            <p class="mt-1 text-sm font-medium">
+              Revisa el identificador de la URL o vuelve al listado de tickets.
+            </p>
+          </div>
 
-          <p class="mt-1 max-w-md text-sm text-slate-500">
-            La API no devolvió información para este identificador.
-          </p>
-        </section>
-      </ng-template>
-
-      <ng-template #content let-ticket>
-        <div class="grid gap-5 xl:grid-cols-[minmax(20rem,24rem)_1fr]">
-          <aside
-            class="self-start rounded-2xl border border-slate-200 bg-white shadow-sm"
+          <a
+            pButton
+            routerLink="/tickets"
+            class="inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-amber-700 px-5 text-sm font-bold text-white shadow-sm transition hover:bg-amber-800 sm:ml-auto"
           >
-            <div class="border-b border-slate-200 px-5 py-4">
-              <div class="flex items-start gap-3">
+            <i class="pi pi-list text-sm"></i>
+            <span>Ir al listado</span>
+          </a>
+        </div>
+      </section>
+    } @else {
+      <app-error-boundary
+        [resource]="ticketService.ticketDetail"
+        fallbackType="card"
+      >
+        <ng-template #loading>
+          <div class="grid gap-5 xl:grid-cols-[minmax(20rem,24rem)_1fr]">
+            <aside
+              class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
+            >
+              <div class="flex animate-pulse items-center gap-3">
+                <div class="size-12 rounded-2xl bg-slate-100"></div>
+                <div class="min-w-0 flex-1">
+                  <div class="h-4 w-32 rounded bg-slate-100"></div>
+                  <div class="mt-2 h-3 w-24 rounded bg-slate-100"></div>
+                </div>
+              </div>
+
+              <div class="mt-6 space-y-3">
+                @for (item of [1, 2, 3, 4, 5]; track item) {
+                  <div class="h-16 rounded-xl bg-slate-100"></div>
+                }
+              </div>
+            </aside>
+
+            <section class="space-y-5">
+              @for (item of [1, 2, 3]; track item) {
                 <div
-                  class="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary-700"
+                  class="animate-pulse rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
                 >
-                  <i class="pi pi-ticket text-xl"></i>
+                  <div class="h-5 w-48 rounded bg-slate-100"></div>
+                  <div class="mt-5 grid gap-4 md:grid-cols-3">
+                    <div class="h-20 rounded-xl bg-slate-100"></div>
+                    <div class="h-20 rounded-xl bg-slate-100"></div>
+                    <div class="h-20 rounded-xl bg-slate-100"></div>
+                  </div>
                 </div>
+              }
+            </section>
+          </div>
+        </ng-template>
 
-                <div class="min-w-0">
-                  <p class="font-mono text-sm font-extrabold text-primary-700">
-                    {{ ticket.number || "#" + ticket.ticketId }}
-                  </p>
-                  <h2
-                    class="mt-1 wrap-break-word text-xl font-extrabold leading-6 text-slate-950"
-                  >
-                    {{ ticket.subject || "Sin asunto" }}
-                  </h2>
-                </div>
-              </div>
-
-              <div class="mt-4 flex flex-wrap gap-2">
-                <span
-                  class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold ring-1"
-                  [ngClass]="statusClass(ticket.estado)"
-                >
-                  <i class="pi pi-circle-fill text-[7px]"></i>
-                  {{ ticket.estado?.valor || "Sin estado" }}
-                </span>
-
-                <span
-                  class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold ring-1"
-                  [ngClass]="maintenanceClass(ticket.tipoMantenimiento?.valor)"
-                >
-                  <i class="pi pi-wrench text-xs"></i>
-                  {{ ticket.tipoMantenimiento?.valor || "Sin tipo" }}
-                </span>
-              </div>
+        <ng-template #empty>
+          <section
+            class="flex flex-col items-center justify-center rounded-2xl border border-dashed border-slate-200 bg-white px-6 py-12 text-center shadow-sm"
+          >
+            <div
+              class="mb-4 flex size-14 items-center justify-center rounded-2xl bg-slate-100 text-slate-500"
+            >
+              <i class="pi pi-ticket text-2xl"></i>
             </div>
 
-            <dl class="divide-y divide-slate-100 px-5">
-              <div class="py-4">
-                <dt
-                  class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
-                >
-                  <i class="pi pi-hashtag text-xs"></i>
-                  ID interno
-                </dt>
-                <dd class="mt-1 text-sm font-extrabold text-slate-950">
-                  #{{ ticket.ticketId }}
-                </dd>
-              </div>
+            <p class="text-sm font-bold text-slate-800">
+              No se encontró el ticket
+            </p>
 
-              <div class="py-4">
-                <dt
-                  class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
-                >
-                  <i class="pi pi-map-marker text-xs"></i>
-                  Agencia
-                </dt>
-                <dd
-                  class="mt-1 wrap-break-word text-sm font-extrabold text-slate-950"
-                >
-                  {{ ticket.agencia?.valor || "Sin agencia" }}
-                </dd>
-              </div>
+            <p class="mt-1 max-w-md text-sm text-slate-500">
+              La API no devolvió información para este identificador.
+            </p>
+          </section>
+        </ng-template>
 
-              <div class="py-4">
-                <dt
-                  class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
-                >
-                  <i class="pi pi-user text-xs"></i>
-                  Técnico ejecutante
-                </dt>
-                <dd
-                  class="mt-1 wrap-break-word text-sm font-extrabold text-slate-950"
-                >
-                  {{ technicianName(ticket) }}
-                </dd>
-                @if (ticket.tecnicoEjecutante?.staffId) {
-                  <p class="mt-1 text-xs font-semibold text-slate-500">
-                    Staff #{{ ticket.tecnicoEjecutante.staffId }}
-                  </p>
-                }
-              </div>
-            </dl>
-          </aside>
-
-          <section class="min-w-0 space-y-5">
-            <section
-              class="rounded-2xl border border-slate-200 bg-white shadow-sm"
+        <ng-template #content let-ticket>
+          <div class="grid gap-5 xl:grid-cols-[minmax(20rem,24rem)_1fr]">
+            <aside
+              class="self-start rounded-2xl border border-slate-200 bg-white shadow-sm"
             >
-              <div
-                class="flex flex-col gap-3 border-b border-slate-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"
-              >
-                <div>
-                  <h2 class="text-lg font-extrabold text-slate-950">Equipo</h2>
-                  <p class="mt-1 text-sm font-medium text-slate-500">
-                    Datos operativos asociados a la atención.
-                  </p>
+              <div class="border-b border-slate-200 px-5 py-4">
+                <div class="flex items-start gap-3">
+                  <div
+                    class="flex size-12 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary-700"
+                  >
+                    <i class="pi pi-ticket text-xl"></i>
+                  </div>
+
+                  <div class="min-w-0">
+                    <p
+                      class="font-mono text-sm font-extrabold text-primary-700"
+                    >
+                      {{ ticket.number || "#" + ticket.ticketId }}
+                    </p>
+                    <h2
+                      class="mt-1 wrap-break-word text-xl font-extrabold leading-6 text-slate-950"
+                    >
+                      {{ ticket.subject || "Sin asunto" }}
+                    </h2>
+                  </div>
                 </div>
 
-                @if (ticket.equipo?.id) {
-                  <a
-                    pButton
-                    [routerLink]="['/machines', ticket.equipo.id]"
-                    type="button"
-                    variant="outlined"
-                    class="inline-flex h-10 w-fit items-center justify-center gap-2 rounded-xl border-slate-200 px-4 text-sm font-bold text-primary-700 transition hover:bg-primary-50"
+                <div class="mt-4 flex flex-wrap gap-2">
+                  <span
+                    class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold ring-1"
+                    [ngClass]="statusClass(ticket.estado)"
                   >
-                    <i class="pi pi-microchip text-sm"></i>
-                    <span>Ver equipo</span>
-                  </a>
-                }
+                    <i class="pi pi-circle-fill text-[7px]"></i>
+                    {{ ticket.estado?.valor || "Sin estado" }}
+                  </span>
+
+                  <span
+                    class="inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-bold ring-1"
+                    [ngClass]="
+                      maintenanceClass(ticket.tipoMantenimiento?.valor)
+                    "
+                  >
+                    <i class="pi pi-wrench text-xs"></i>
+                    {{ ticket.tipoMantenimiento?.valor || "Sin tipo" }}
+                  </span>
+                </div>
               </div>
 
-              <div class="grid gap-0 md:grid-cols-2">
-                <div class="border-b border-slate-100 px-5 py-4 xl:border-r">
-                  <p class="text-xs font-bold uppercase text-slate-500">
-                    Equipo
-                  </p>
-                  <p
-                    class="mt-1 wrap-break-word text-sm font-extrabold text-slate-950"
+              <dl class="divide-y divide-slate-100 px-5">
+                <div class="py-4">
+                  <dt
+                    class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
                   >
-                    {{ ticket.equipo?.valor || "Sin equipo" }}
-                  </p>
+                    <i class="pi pi-hashtag text-xs"></i>
+                    ID interno
+                  </dt>
+                  <dd class="mt-1 text-sm font-extrabold text-slate-950">
+                    #{{ ticket.ticketId }}
+                  </dd>
                 </div>
 
-                <div class="border-b border-slate-100 px-5 py-4 xl:border-r">
-                  <p class="text-xs font-bold uppercase text-slate-500">
-                    Modelo
-                  </p>
-                  <p
+                <div class="py-4">
+                  <dt
+                    class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
+                  >
+                    <i class="pi pi-map-marker text-xs"></i>
+                    Agencia
+                  </dt>
+                  <dd
                     class="mt-1 wrap-break-word text-sm font-extrabold text-slate-950"
                   >
-                    {{ ticket.modelo?.valor || "Sin modelo" }}
-                  </p>
+                    {{ ticket.agencia?.valor || "Sin agencia" }}
+                  </dd>
                 </div>
 
-                <!-- <div class="border-b border-slate-100 px-5 py-4">
+                <div class="py-4">
+                  <dt
+                    class="flex items-center gap-2 text-xs font-bold uppercase text-slate-500"
+                  >
+                    <i class="pi pi-user text-xs"></i>
+                    Técnico ejecutante
+                  </dt>
+                  <dd
+                    class="mt-1 wrap-break-word text-sm font-extrabold text-slate-950"
+                  >
+                    {{ technicianName(ticket) }}
+                  </dd>
+                  @if (ticket.tecnicoEjecutante?.staffId) {
+                    <p class="mt-1 text-xs font-semibold text-slate-500">
+                      Staff #{{ ticket.tecnicoEjecutante.staffId }}
+                    </p>
+                  }
+                </div>
+              </dl>
+            </aside>
+
+            <section class="min-w-0 space-y-5">
+              <section
+                class="rounded-2xl border border-slate-200 bg-white shadow-sm"
+              >
+                <div
+                  class="flex flex-col gap-3 border-b border-slate-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div>
+                    <h2 class="text-lg font-extrabold text-slate-950">
+                      Equipo
+                    </h2>
+                    <p class="mt-1 text-sm font-medium text-slate-500">
+                      Datos operativos asociados a la atención.
+                    </p>
+                  </div>
+
+                  @if (ticket.equipo?.id) {
+                    <a
+                      pButton
+                      [routerLink]="['/machines', ticket.equipo.id]"
+                      type="button"
+                      variant="outlined"
+                      class="inline-flex h-10 w-fit items-center justify-center gap-2 rounded-xl border-slate-200 px-4 text-sm font-bold text-primary-700 transition hover:bg-primary-50"
+                    >
+                      <i class="pi pi-microchip text-sm"></i>
+                      <span>Ver equipo</span>
+                    </a>
+                  }
+                </div>
+
+                <div class="grid gap-0 md:grid-cols-2">
+                  <div class="border-b border-slate-100 px-5 py-4 xl:border-r">
+                    <p class="text-xs font-bold uppercase text-slate-500">
+                      Equipo
+                    </p>
+                    <p
+                      class="mt-1 wrap-break-word text-sm font-extrabold text-slate-950"
+                    >
+                      {{ ticket.equipo?.valor || "Sin equipo" }}
+                    </p>
+                  </div>
+
+                  <div class="border-b border-slate-100 px-5 py-4 xl:border-r">
+                    <p class="text-xs font-bold uppercase text-slate-500">
+                      Modelo
+                    </p>
+                    <p
+                      class="mt-1 wrap-break-word text-sm font-extrabold text-slate-950"
+                    >
+                      {{ ticket.modelo?.valor || "Sin modelo" }}
+                    </p>
+                  </div>
+
+                  <!-- <div class="border-b border-slate-100 px-5 py-4">
                   <p class="text-xs font-bold uppercase text-slate-500">Zona</p>
                   <p class="mt-1 wrap-break-word text-sm font-extrabold text-slate-950">
                     {{ ticket.zona?.valor || "Sin zona" }}
@@ -262,169 +271,171 @@
                   </p>
                 </div> -->
 
-                <!-- <div class="px-5 py-4">
+                  <!-- <div class="px-5 py-4">
                   <p class="text-xs font-bold uppercase text-slate-500">Provincia</p>
                   <p class="mt-1 wrap-break-word text-sm font-extrabold text-slate-950">
                     {{ ticket.provincia?.valor || "Sin provincia" }}
                   </p>
                 </div> -->
-              </div>
-            </section>
-
-            <section
-              class="rounded-2xl border border-slate-200 bg-white shadow-sm"
-            >
-              <div class="border-b border-slate-200 px-5 py-4">
-                <h2 class="text-lg font-extrabold text-slate-950">
-                  Fechas del servicio
-                </h2>
-                <p class="mt-1 text-sm font-medium text-slate-500">
-                  Solicitud, programación y ejecución reportadas por mesa de
-                  ayuda.
-                </p>
-              </div>
-
-              <div class="grid gap-0 md:grid-cols-3">
-                <div
-                  class="border-b border-slate-100 px-5 py-4 md:border-b-0 md:border-r"
-                >
-                  <div class="flex items-center gap-3">
-                    <span
-                      class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-sky-50 text-sky-700"
-                    >
-                      <i class="pi pi-inbox text-sm"></i>
-                    </span>
-                    <div class="min-w-0">
-                      <p class="text-xs font-bold uppercase text-slate-500">
-                        Solicitud
-                      </p>
-                      <p class="mt-1 text-sm font-extrabold text-slate-950">
-                        @if (toDate(ticket.fechaSolicitud); as date) {
-                          {{ date | date: "dd/MM/yyyy HH:mm" }}
-                        } @else {
-                          Sin fecha
-                        }
-                      </p>
-                    </div>
-                  </div>
                 </div>
+              </section>
 
-                <div
-                  class="border-b border-slate-100 px-5 py-4 md:border-b-0 md:border-r"
-                >
-                  <div class="flex items-center gap-3">
-                    <span
-                      class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-700"
-                    >
-                      <i class="pi pi-calendar-clock text-sm"></i>
-                    </span>
-                    <div class="min-w-0">
-                      <p class="text-xs font-bold uppercase text-slate-500">
-                        Programada
-                      </p>
-                      <p class="mt-1 text-sm font-extrabold text-slate-950">
-                        @if (toDate(ticket.fechaProgramada); as date) {
-                          {{ date | date: "dd/MM/yyyy HH:mm" }}
-                        } @else {
-                          Sin fecha
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="px-5 py-4">
-                  <div class="flex items-center gap-3">
-                    <span
-                      class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700"
-                    >
-                      <i class="pi pi-check-circle text-sm"></i>
-                    </span>
-                    <div class="min-w-0">
-                      <p class="text-xs font-bold uppercase text-slate-500">
-                        Ejecución
-                      </p>
-                      <p class="mt-1 text-sm font-extrabold text-slate-950">
-                        @if (toDate(ticket.fechaEjecucion); as date) {
-                          {{ date | date: "dd/MM/yyyy HH:mm" }}
-                        } @else {
-                          Sin fecha
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section
-              class="rounded-2xl border border-slate-200 bg-white shadow-sm"
-            >
-              <div
-                class="flex flex-col gap-3 border-b border-slate-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"
+              <section
+                class="rounded-2xl border border-slate-200 bg-white shadow-sm"
               >
-                <div>
+                <div class="border-b border-slate-200 px-5 py-4">
                   <h2 class="text-lg font-extrabold text-slate-950">
-                    Documentos
+                    Fechas del servicio
                   </h2>
                   <p class="mt-1 text-sm font-medium text-slate-500">
-                    Archivos técnicos vinculados al ticket.
+                    Solicitud, programación y ejecución reportadas por mesa de
+                    ayuda.
                   </p>
                 </div>
-              </div>
 
-              <div class="grid gap-0 md:grid-cols-3">
-                @for (document of documents(ticket); track document.label) {
+                <div class="grid gap-0 md:grid-cols-3">
                   <div
-                    class="border-b border-slate-100 px-5 py-4 md:border-b-0 md:border-r last:border-r-0"
+                    class="border-b border-slate-100 px-5 py-4 md:border-b-0 md:border-r"
                   >
-                    <div class="flex min-h-32 flex-col gap-4">
-                      <div class="flex items-start gap-3">
-                        <span
-                          class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-700"
-                        >
-                          <i [class]="'pi ' + document.icon + ' text-sm'"></i>
-                        </span>
-
-                        <div class="min-w-0">
-                          <p class="text-sm font-extrabold text-slate-950">
-                            {{ document.label }}
-                          </p>
-                          <p class="mt-1 text-sm font-medium text-slate-500">
-                            {{ document.description }}
-                          </p>
-                          <p
-                            class="mt-1 truncate text-xs font-semibold text-slate-400"
-                          >
-                            {{ document.fileName || "Sin archivo" }}
-                          </p>
-                        </div>
-                      </div>
-
-                      <button
-                        pButton
-                        type="button"
-                        variant="outlined"
-                        [disabled]="!document.url"
-                        pTooltip="Previsualizar documento"
-                        tooltipPosition="top"
-                        class="mt-auto inline-flex h-10 w-full items-center justify-center gap-2 rounded-xl border-slate-200 px-4 text-sm font-bold text-primary-700 transition hover:bg-primary-50 disabled:cursor-not-allowed disabled:opacity-60"
-                        (click)="openDocument(document)"
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-sky-50 text-sky-700"
                       >
-                        <i class="pi pi-eye text-sm"></i>
-                        <span>Ver documento</span>
-                      </button>
+                        <i class="pi pi-inbox text-sm"></i>
+                      </span>
+                      <div class="min-w-0">
+                        <p class="text-xs font-bold uppercase text-slate-500">
+                          Solicitud
+                        </p>
+                        <p class="mt-1 text-sm font-extrabold text-slate-950">
+                          @if (toDate(ticket.fechaSolicitud); as date) {
+                            {{ date | date: "dd/MM/yyyy HH:mm" }}
+                          } @else {
+                            Sin fecha
+                          }
+                        </p>
+                      </div>
                     </div>
                   </div>
-                }
-              </div>
+
+                  <div
+                    class="border-b border-slate-100 px-5 py-4 md:border-b-0 md:border-r"
+                  >
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-700"
+                      >
+                        <i class="pi pi-calendar-clock text-sm"></i>
+                      </span>
+                      <div class="min-w-0">
+                        <p class="text-xs font-bold uppercase text-slate-500">
+                          Programada
+                        </p>
+                        <p class="mt-1 text-sm font-extrabold text-slate-950">
+                          @if (toDate(ticket.fechaProgramada); as date) {
+                            {{ date | date: "dd/MM/yyyy HH:mm" }}
+                          } @else {
+                            Sin fecha
+                          }
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="px-5 py-4">
+                    <div class="flex items-center gap-3">
+                      <span
+                        class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-700"
+                      >
+                        <i class="pi pi-check-circle text-sm"></i>
+                      </span>
+                      <div class="min-w-0">
+                        <p class="text-xs font-bold uppercase text-slate-500">
+                          Ejecución
+                        </p>
+                        <p class="mt-1 text-sm font-extrabold text-slate-950">
+                          @if (toDate(ticket.fechaEjecucion); as date) {
+                            {{ date | date: "dd/MM/yyyy HH:mm" }}
+                          } @else {
+                            Sin fecha
+                          }
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section
+                class="rounded-2xl border border-slate-200 bg-white shadow-sm"
+              >
+                <div
+                  class="flex flex-col gap-3 border-b border-slate-200 px-5 py-4 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <div>
+                    <h2 class="text-lg font-extrabold text-slate-950">
+                      Documentos
+                    </h2>
+                    <p class="mt-1 text-sm font-medium text-slate-500">
+                      Archivos técnicos vinculados al ticket.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="grid gap-0 md:grid-cols-3">
+                  @for (document of documents(ticket); track document.label) {
+                    <div
+                      class="border-b border-slate-100 px-5 py-4 md:border-b-0 md:border-r last:border-r-0"
+                    >
+                      <div class="flex min-h-32 flex-col gap-4">
+                        <div class="flex items-start gap-3">
+                          <span
+                            class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-primary-700"
+                          >
+                            <i [class]="'pi ' + document.icon + ' text-sm'"></i>
+                          </span>
+
+                          <div class="min-w-0">
+                            <p class="text-sm font-extrabold text-slate-950">
+                              {{ document.label }}
+                            </p>
+                            <p class="mt-1 text-sm font-medium text-slate-500">
+                              {{ document.description }}
+                            </p>
+                            <p
+                              class="mt-1 truncate text-xs font-semibold text-slate-400"
+                            >
+                              {{ document.fileName || "Sin archivo" }}
+                            </p>
+                          </div>
+                        </div>
+
+                        <button
+                          pButton
+                          type="button"
+                          variant="outlined"
+                          [disabled]="!document.url"
+                          pTooltip="Previsualizar documento"
+                          tooltipPosition="top"
+                          class="mt-auto inline-flex h-10 w-full items-center justify-center gap-2 rounded-xl border-slate-200 px-4 text-sm font-bold text-primary-700 transition hover:bg-primary-50 disabled:cursor-not-allowed disabled:opacity-60"
+                          (click)="openDocument(document)"
+                        >
+                          <i class="pi pi-eye text-sm"></i>
+                          <span>Ver documento</span>
+                        </button>
+                      </div>
+                    </div>
+                  }
+                </div>
+              </section>
             </section>
-          </section>
-        </div>
-      </ng-template>
-    </app-error-boundary>
-  }
-</app-blank>
+          </div>
+        </ng-template>
+      </app-error-boundary>
+    }
+  </app-blank>
+</div>
+
 
 @defer (when !!documentPreviewUrl(); prefetch on idle) {
   @if (documentPreviewUrl()) {
